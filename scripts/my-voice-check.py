@@ -12,7 +12,7 @@ PUNCT = re.compile(r"[^\w\s]")
 def norm(s):
     s = DIAC.sub("", s)
     s = PUNCT.sub(" ", s)
-    s = re.sub("[إأآا]", "ا", s).replace("ى", "ي").replace("ة", "ه")
+    s = re.sub("[إأآا]", "ا", s).replace("ى", "ا").replace("ة", "ه")  # final alif maqsura is spoken as alif
     return s.split()
 
 
