@@ -15,3 +15,6 @@
   (HTML to video); use it only when the user asks for it.
 - Three skills copied from the user's Claude account are also in `.claude/skills/`:
   `video-ad-editor`, `video-editing-toolkit`, `clawd-animation`.
+- `onetake` skill (from https://github.com/feitangyuan/onetake, PolyForm Noncommercial license:
+  free for noncommercial use only) is in `.claude/skills/onetake/`. Example mp4/gif files were
+  left out to keep the repo small; see the upstream repo for them.
