@@ -18,3 +18,8 @@
 - `onetake` skill (from https://github.com/feitangyuan/onetake, PolyForm Noncommercial license:
   free for noncommercial use only) is in `.claude/skills/onetake/`. Example mp4/gif files were
   left out to keep the repo small; see the upstream repo for them.
+- `openmontage/` is a copy of https://github.com/calesthio/OpenMontage (AGPLv3), kept for when it
+  is needed; demo media, `.agents`, `.codex`, `.cursor` and `assets/` were left out. Its own
+  CLAUDE.md and `.claude/skills/` do not load from the repo root: read `openmontage/AGENT_GUIDE.md`
+  and the relevant skill there when a task needs it. Most of its pipelines call paid APIs
+  (fal.ai, Veo, Kling, Google TTS...) that the cloud container's network blocks.
