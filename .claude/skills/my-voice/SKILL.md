@@ -22,13 +22,18 @@ scripts/my-voice setup /path/to/my-voice-reference.mp3 "اجعل لسانك رط
 ```
 (For a different clip: 3-10 s, clean, one sentence, and pass its exact words.)
 
-## Generate
+## Generate (line by line, checked, retaken until clean)
 ```bash
-scripts/my-voice say out.wav "السطر الأول." "السطر الثاني." ...     # one take per line, 0.45 s pauses, -16 LUFS
+scripts/my-voice lines private/<job>/lines private/<job>/lines.txt 7   # NN.wav per line, resumable
+scripts/my-voice check private/<job>/lines private/<job>/lines.txt     # Whisper: word match, stutter, long pauses
+scripts/my-voice retake private/<job>/lines 5 "النص" 31                # redo line 5 with another seed (or fixed spelling)
+scripts/my-voice join private/<job>/lines video/public/<job>/vo.wav    # 0.45 s pauses + studio chain, -16 LUFS
 ```
-Then: Whisper-check each line (`scratchpad tts/hear.py` style: faster-whisper large-v3, language ar) and regenerate any
-line whose words differ; get word timings from Whisper for captions (see the Tasbih reel v2 pipeline in
-`audio/README.md`); put the file in an ignored path (e.g. `video/public/vo/`, `private/`).
+**Quality bar (the creator asked for it explicitly): no wrong word, no stutter.** Run `check` after every batch; a line passes
+only with ≥95 % word match (normalised: no diacritics, alef/ya/ta-marbuta folded), no repeated word, no pause > 0.7 s
+and 1.4-3.6 words/s. Retake failing lines with new seeds (up to 4), then try a spelling/tashkeel fix on the misheard
+word. Whisper's MSA spelling of a correct word (هذه/هذي, digits) is not an error — judge those by reading the diff.
+Get word timings for captions from Whisper on the joined file.
 
 ## Tips
 - Same language as the reference (MSA reference → MSA lines) for natural pronunciation; numbers as words.
