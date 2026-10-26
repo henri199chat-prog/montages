@@ -13,3 +13,5 @@
   `.claude/skills/` (`hyperframes`, `hyperframes-cli`, `hyperframes-registry`, `media-use`,
   `slideshow`, `figma`, `remotion-to-hyperframes`). HyperFrames is a separate framework
   (HTML to video); use it only when the user asks for it.
+- Three skills copied from the user's Claude account are also in `.claude/skills/`:
+  `video-ad-editor`, `video-editing-toolkit`, `clawd-animation`.
