@@ -1,8 +1,8 @@
 {
   ".claude/settings.json": {
-    "mtime": 1793018760.2455657,
-    "seen": 1793018875.3362918,
-    "ast_hash": "d5b9c2b5460e861bd123924cd9768f6e",
+    "mtime": 1793019242.1612267,
+    "seen": 1793020310.4905457,
+    "ast_hash": "06d47756bb33d422d5bd6c81bb8379ee",
     "semantic_hash": ""
   },
   ".claude/skills/figma/scripts/verify-motion.mjs": {
@@ -9030,9 +9030,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1793018760.1316957,
-    "seen": 1793018875.3391771,
-    "ast_hash": "ee889e825718a4b42cf2dfbdec253996",
+    "mtime": 1793020027.6003125,
+    "seen": 1793020310.4955053,
+    "ast_hash": "1c7574972aa0dd6f25780779e63e1e93",
     "semantic_hash": ""
   },
   "README.md": {
@@ -14145,6 +14145,60 @@
     "mtime": 1793017436.2452438,
     "seen": 1793018875.340909,
     "ast_hash": "8b2a058b47f6fc9c94ba5804cc321b37",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os-README.md": {
+    "mtime": 1793020027.5860403,
+    "seen": 1793020310.5003707,
+    "ast_hash": "d79a85da65ffb7e525b6b2360cc2e266",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os.skill": {
+    "mtime": 1793020027.5859833,
+    "seen": 1793020310.5003755,
+    "ast_hash": "7f2559a8b14d0a954d75a0bfeb04338d",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os/SKILL.md": {
+    "mtime": 1793020027.5846136,
+    "seen": 1793020310.5003786,
+    "ast_hash": "2dab525d5aa1a6f25518c04b2a246c9a",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os/references/content-log.md": {
+    "mtime": 1793020027.5854955,
+    "seen": 1793020310.5003812,
+    "ast_hash": "f8b5907bfa65a3fa4a4aebd726c28817",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os/references/detailed-package.md": {
+    "mtime": 1793020027.5856156,
+    "seen": 1793020310.5003831,
+    "ast_hash": "36e037737b537e1552d878d746bfe6ab",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os/references/editor-brief.md": {
+    "mtime": 1793020027.5856621,
+    "seen": 1793020310.5003858,
+    "ast_hash": "58ce09df60725d8238ba46348eb85dfa",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os/references/on-screen-captions.md": {
+    "mtime": 1793020027.5857258,
+    "seen": 1793020310.5003889,
+    "ast_hash": "fad985ac10e0b5a4ca09e3f91f21e7c0",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os/references/performance-analysis.md": {
+    "mtime": 1793020027.5859187,
+    "seen": 1793020310.5003917,
+    "ast_hash": "726422e122fe33b5ddb892627061807b",
+    "semantic_hash": ""
+  },
+  "reels/sam-content-os/references/series-templates.md": {
+    "mtime": 1793020027.5859487,
+    "seen": 1793020310.5003943,
+    "ast_hash": "63993512c3a14e4bf5e8df274673bb81",
     "semantic_hash": ""
   }
 }
