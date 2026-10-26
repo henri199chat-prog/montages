@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Search YouTube (metadata only, no download) and list results, official channels first.
+#   scripts/yt-search "Black Clover official trailer" [N]
+# Needs yt-dlp: python3 -m venv ~/.ytdlp-venv && ~/.ytdlp-venv/bin/pip install -q yt-dlp
+set -euo pipefail
+Q=$1; N=${2:-10}
+YT=~/.ytdlp-venv/bin/yt-dlp
+[ -x "$YT" ] || { python3 -m venv ~/.ytdlp-venv && ~/.ytdlp-venv/bin/pip install -q yt-dlp; }
+"$YT" --no-warnings --flat-playlist --print "%(channel)s|%(duration)s|%(id)s|%(title)s" "ytsearch$N:$Q" |
+python3 -c '
+import sys
+OFFICIAL = ("crunchyroll", "vizmedia", "viz", "netflix", "toho", "aniplex", "animax", "tv tokyo", "shueisha", "jump", "funimation", "muse", "ani-one")
+rows = []
+for line in sys.stdin:
+    ch, dur, vid, title = line.rstrip("\n").split("|", 3)
+    off = any(o in ch.lower() for o in OFFICIAL)
+    rows.append((not off, ch, dur, vid, title))
+for nonoff, ch, dur, vid, title in sorted(rows, key=lambda r: r[0]):
+    d = int(float(dur)) if dur not in ("NA", "None", "") else 0
+    print(("★ " if not nonoff else "  ") + f"{d//60}:{d%60:02d}  {ch}  |  {title}\n     https://youtu.be/{vid}")
+'
