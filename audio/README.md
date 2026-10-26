@@ -92,3 +92,12 @@ Used by the `TasbihReel` composition (`video/public/vo/tasbih-reel-vo.wav`, word
 - Whisper large-v3 check per line: all lines match the script except Whisper's usual MSA spellings (هذه/هذي, العدى/العدّ).
   «مسبحة» needed three takes (one take was heard as «مستباحة»); tashkeel on الذِّكر made it worse, so lines are plain text.
 - edge-tts (ar-KW-FahedNeural) is not usable from the cloud container: it needs a WebSocket, which the proxy blocks.
+
+## v2 (current): the creator's own voice, MSA: `tasbih_reel_voice_pro.mp3`
+
+`tasbih_reel_voice_raw.m4a` is the original phone take (one take, 59.6 s, about -26 LUFS, noise floor about -70 dB).
+`tasbih_reel_voice_pro.mp3` is what the reel uses (`video/public/vo/tasbih-reel-vo.wav`, 51.0 s, -15.8 LUFS, -1.5 dBTP):
+pauses tightened (0.45 s between lines, at most 0.28 s inside a line), atempo 1.05, then
+`highpass 80 · afftdn nr6 · EQ +2.5 dB @120 / -3 dB @320 / -1 dB @900 / +2.5 dB @3.8 kHz · deesser · high shelf +2 dB @10 kHz ·
+compressor 3:1 @-24 dB + 2:1 @-14 dB · loudnorm -16 LUFS / -1.5 dBTP`.
+Word timings: Whisper large-v3 on the final file, line starts snapped to the speech onsets (`tasbih_reel_voice_pro_timing.json`).

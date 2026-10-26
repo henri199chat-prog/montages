@@ -18,6 +18,7 @@ import POINTS from "./tasbih-reel-points.json";
 
 loadFont({ family: "Cairo", url: staticFile("fonts/Cairo-Variable.woff2"), weight: "200 1000" });
 loadFont({ family: "Reem Kufi", url: staticFile("fonts/reemkufi-ar.woff2"), weight: "400 700" });
+loadFont({ family: "Amiri", url: staticFile("fonts/amiri-700-ar.woff2"), weight: "700" });
 
 const FPS = 30;
 const GOLD = "#d4af6a";
@@ -44,21 +45,22 @@ const E = {
   hookTapsEnd: segEnd(0),
   chip1: word(2, 0), // «تختار»
   chip2: word(2, 1), // «الذِّكر»
-  chip0: word(2, 2), // «وتحدِّد»
-  t33: word(2, 4), // «ثلاثة»
-  t100: word(2, 7), // «مية»
-  tCustom: word(2, 9), // «رقم»
+  chip0: word(2, 3), // «تحدّد»
+  t33: word(2, 5), // «ثلاثًا»
+  t100: word(2, 8), // «مئة»
+  tCustom: word(2, 11), // «رقمٍ»
   t33back: segEnd(2) + 4,
   countStart: segStart(3) - 4,
-  done: word(3, 4), // round complete lands on «يهتز»
+  done: word(3, 3), // round complete lands on «يهتزّ»
   tabMorning: word(4, 1), // «فيها»
   card0: word(5, 0), // «تضغط»
-  card1: [word(5, 3), word(5, 4), word(5, 5)], // «وهو يعدّ عنك»
-  totalZoom: word(6, 2), // «ومجموع»
-  profile: segStart(7) - 8, // cut to the creator's profile
-  bioZoom: word(7, 3), // «بالبايو»
-  linkTap: word(8, 0), // «اضغطوا»
-  outro: word(8, 2) - 4, // «ويوديكم» -> download end card
+  card1: [word(5, 3), word(5, 4), word(5, 5)], // «فيعدّ عنك، ويتجدّد»
+  totalZoom: word(6, 3), // «ويحفظ»
+  motive: segStart(7) - 6, // «اجعل لسانك رطبًا بذكر الله»
+  profile: segStart(8) - 8, // cut to the creator's profile
+  bioZoom: word(8, 4), // «البايو»
+  linkTap: word(8, 5), // «اضغط»
+  outro: word(8, 8) - 4, // «مباشرةً» -> download end card
 };
 
 // The link chip sits where Instagram shows profile links (over the "+ Add" chip in the screenshot).
@@ -71,7 +73,7 @@ const countTap = (i: number) =>
   Math.round(E.countStart + (E.done - E.countStart) * Math.pow((i - 1) / (COUNT_TAPS - 1), 0.75));
 // A few slow taps under the hook and line 2 («تفتحها وتضغط بس»).
 const HOOK_TAPS = [8, 16, 23, 29, 34, 39, 44].filter((x) => x < E.hookTapsEnd);
-const INTRO_TAPS = [word(1, 3), word(1, 4), word(1, 5)]; // «تفتحها وتضغط بس»
+const INTRO_TAPS = [word(1, 4), word(1, 5), word(1, 7)]; // «تفتحه، وتضغط، وهو يعدّ»
 
 type Shot = { src: string; touch?: { x: number; y: number }; tapAt?: number };
 
@@ -80,6 +82,7 @@ const shotAt = (frame: number): Shot => {
   const s = (name: string) => `reel-shots/${name}.png`;
   const tap = POINTS.tap;
   if (frame >= E.profile) return { src: s("profile"), touch: LINK_TOUCH, tapAt: E.linkTap };
+  if (frame >= E.motive) return { src: s("dhikr-0") };
   if (frame >= E.totalZoom) return { src: s("count-33") };
   if (frame >= E.card0) {
     let n = 1;
@@ -139,14 +142,16 @@ const Phone: React.FC = () => {
     * interpolate(frame, [E.done + 10, E.tabMorning], [1, 1 / 1.08], clamp);
   const buzz = frame >= E.done && frame < E.done + 14 ? Math.sin((frame - E.done) * 2.6) * 9 * (1 - (frame - E.done) / 14) : 0;
   const ease = { ...clamp, easing: Easing.inOut(Easing.cubic) };
-  const zHeader = interpolate(frame, [E.totalZoom, E.totalZoom + 14, E.profile - 10, E.profile], [0, 1, 1, 0], ease);
+  const zHeader = interpolate(frame, [E.totalZoom, E.totalZoom + 14, E.motive - 8, E.motive + 4], [0, 1, 1, 0], ease);
+  // The reminder line: the phone steps back and dims under the big verse-like title.
+  const calm = interpolate(frame, [E.motive, E.motive + 14, E.profile - 10, E.profile], [0, 1, 1, 0], ease);
   const zBio = interpolate(frame, [E.bioZoom - 4, E.bioZoom + 12], [0, 1], ease);
   const z = Math.max(zHeader, zBio);
   const focus = zHeader > 0 ? { x: 0.5, y: 0.07, s: 1.7 } : { x: 0.5, y: 0.24, s: 1.6 };
   const swap = interpolate(frame, [E.profile - 4, E.profile, E.profile + 8], [0, 1, 0], clamp);
   const out = interpolate(frame, [E.outro, E.outro + 16], [0, 1], { ...clamp, easing: Easing.in(Easing.cubic) });
   const zoomS = 1 + (focus.s - 1) * z;
-  const scale = countPush * zoomS * (1 - swap * 0.06) * (1 - out * 0.3);
+  const scale = countPush * zoomS * (1 - swap * 0.06) * (1 - out * 0.3) * (1 - calm * 0.12);
   // Bring the focus point to (540, 800): offset from the phone centre, scaled, then moved by z.
   const centerY = PHONE_TOP + SCREEN_H / 2;
   const zoomX = z * (540 - 540 - zoomS * (focus.x - 0.5) * SCREEN_W);
@@ -168,9 +173,9 @@ const Phone: React.FC = () => {
         borderRadius: 82,
         background: "#0a0f0d",
         boxShadow: `0 0 0 3px #2b3a33, 0 50px 120px rgba(0,0,0,0.6), 0 0 ${150 * glow}px ${44 * glow}px rgba(240,217,164,${0.55 * glow})`,
-        transform: `translate(${buzz + zoomX}px, ${(1 - rise) * 1600 + zoomY - out * 140}px) scale(${scale})`,
+        transform: `translate(${buzz + zoomX}px, ${(1 - rise) * 1600 + zoomY - out * 140 + calm * 230}px) scale(${scale})`,
         transformOrigin: "50% 50%",
-        opacity: 1 - out,
+        opacity: (1 - out) * (1 - calm * 0.55),
       }}
     >
       <div style={{ position: "absolute", inset: BEZEL, borderRadius: 66, overflow: "hidden", background: "#061a15" }}>
@@ -240,12 +245,12 @@ const LinkChip: React.FC = () => {
 
 // Top keyword title for each beat (key words only, not the script).
 const TITLES: { text: string; from: number; to: number; big?: boolean }[] = [
-  { text: "تضيع العدّ؟", from: 4, to: segEnd(0) + 6, big: true },
-  { text: "اختر الذكر", from: E.chip1 - 4, to: E.t33 - 2 },
-  { text: "33 أو 100 أو مخصّص", from: E.t33 - 2, to: E.countStart },
-  { text: "يهتز لك إذا خلّصت", from: E.done - 2, to: segEnd(3) + 4 },
+  { text: "ضاع منك العدّ؟", from: 4, to: segEnd(0) + 6, big: true },
+  { text: "اختر الذِّكر", from: E.chip1 - 4, to: E.t33 - 2 },
+  { text: "33 أو 100 أو أي رقم", from: E.t33 - 2, to: E.countStart },
+  { text: "يهتزّ عند الإتمام", from: E.done - 2, to: segEnd(3) + 4 },
   { text: "أذكار الصباح والمساء", from: segStart(4), to: segEnd(5) + 4 },
-  { text: "بدون إنترنت", from: segStart(6), to: E.totalZoom },
+  { text: "دون إنترنت", from: segStart(6), to: E.totalZoom },
   { text: "الرابط في البايو", from: E.profile + 4, to: E.outro },
 ];
 
@@ -256,7 +261,7 @@ const Title: React.FC = () => {
   if (!t) return null;
   const p = spring({ frame: frame - t.from, fps, config: { damping: 14, stiffness: 180 } });
   const fade = interpolate(frame, [t.to - 6, t.to], [1, 0], clamp);
-  const offline = t.text === "بدون إنترنت";
+  const offline = t.text === "دون إنترنت";
   return (
     <div
       style={{
@@ -318,7 +323,7 @@ const Captions: React.FC = () => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   const seg = CHUNKS.find((c, i) => t >= c.start - 0.05 && t < Math.min(c.end + 0.25, (CHUNKS[i + 1]?.start ?? 1e9) - 0.05));
-  if (!seg || frame >= E.outro + 4) return null;
+  if (!seg || frame >= E.outro + 4 || (frame >= E.motive && frame < E.profile)) return null;
   const pop = spring({ frame: frame - f(seg.start - 0.05), fps: FPS, config: { damping: 15, stiffness: 220 } });
   return (
     <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 150 }}>
@@ -450,6 +455,7 @@ const Soundtrack: React.FC = () => {
       <Sfx at={segStart(4)} src="pluck_kalimba_soft" volume={0.16} len={f(3)} />
       <Sfx at={E.card1[2]} src="mallet_celesta" volume={0.22} len={f(0.5)} />
       <Sfx at={E.totalZoom - 6} src="swish_cane" volume={0.22} len={f(0.8)} />
+      <Sfx at={E.motive} src="shimmer_m3" volume={0.18} len={f(3.6)} />
       <Sfx at={E.profile - 6} src="swish_soft" volume={0.3} len={f(0.9)} />
       <Sfx at={E.bioZoom} src="mallet_glock" volume={0.2} len={f(0.5)} />
       <Sfx at={E.linkTap} src="click_01" volume={0.3} len={6} />
@@ -459,11 +465,38 @@ const Soundtrack: React.FC = () => {
   );
 };
 
+// «اجعل لسانك رطبًا بذكر الله، في كل وقتٍ وكل مكان»: big Naskh lines, word by word on the voice.
+const Reminder: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  if (frame < E.motive || frame >= E.profile) return null;
+  const seg = SEGS[7];
+  const fade = interpolate(frame, [E.profile - 10, E.profile], [1, 0], clamp);
+  const lines = [seg.words.slice(0, 5), seg.words.slice(5)];
+  return (
+    <AbsoluteFill style={{ justifyContent: "flex-start", alignItems: "center", paddingTop: 230, opacity: fade }}>
+      {lines.map((ws, li) => (
+        <div key={li} dir="rtl" lang="ar" style={{ display: "flex", gap: "0 0.25em", fontFamily: "Amiri, serif", fontWeight: 700, fontSize: li ? 74 : 96, lineHeight: 1.6, color: li ? INK : GOLD_LIGHT, textShadow: "0 6px 30px rgba(0,0,0,0.6)" }}>
+          {ws.map((w, i) => {
+            const p = spring({ frame: frame - f(w.start) + 3, fps, config: { damping: 16, mass: 0.6 } });
+            return (
+              <span key={i} style={{ display: "inline-block", opacity: p, transform: `translateY(${(1 - p) * 30}px)`, filter: `blur(${(1 - p) * 6}px)` }}>
+                {w.w}
+              </span>
+            );
+          })}
+        </div>
+      ))}
+    </AbsoluteFill>
+  );
+};
+
 export const TasbihReel: React.FC = () => (
   <AbsoluteFill>
     <Background />
     <Phone />
     <Title />
+    <Reminder />
     <Outro />
     <Overlays />
     <Captions />
