@@ -9,3 +9,7 @@
   Render: `cd video && npx remotion render <CompositionId> ../videos/<name>-v<N>.mp4`
 - `video/remotion.config.ts` points to the preinstalled Chrome in the cloud container,
   because Remotion cannot download its own there.
+- HyperFrames skills (official, from https://github.com/heygen-com/hyperframes) are also in
+  `.claude/skills/` (`hyperframes`, `hyperframes-cli`, `hyperframes-registry`, `media-use`,
+  `slideshow`, `figma`, `remotion-to-hyperframes`). HyperFrames is a separate framework
+  (HTML to video); use it only when the user asks for it.
