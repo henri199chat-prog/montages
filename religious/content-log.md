@@ -7,3 +7,4 @@ Dates in Ayman's local date (Africa/Tunis). Leave metrics empty until Ayman give
 |---|---|---|---|---|---|---|---|---|---|---|
 | 2026-10-23 | تلاوة: العنكبوت ٢–٧ (الابتلاء والصبر) — made by the old bot, project 001 | (recitation, no voiceover hook) | visualised recitation, character layer | 88 | | | | | | Figures were too small: made 1.5× bigger after |
 | 2026-10-23 | تلاوة: التوبة ١٠٢–١٠٤ (الاعتراف بالذنب والتوبة) — project 002 | (recitation, no voiceover hook) | visualised recitation, character + soul layer | 63 | | | | | | Ayman asked for more effort so the viewer lives the ayat |
+| 2026-10-26 | نصيحة: شكر النعم + ﴿وَإِن تَعُدُّوا۟ نِعْمَةَ ٱللَّهِ لَا تُحْصُوهَآ﴾ (النحل ١٨) — audio from a TikTok clip Ayman sent (@ajr_a6 watermark), music removed | «والله لا ندري أنشكر الله على جميل ما أظهر أم قبيح ما ستر» | talk, character layer + 8-blessings hub, countless-points scene on the verse | 36 | 86 | | | | | First talk reel; speaker not named (unknown) |

@@ -22,7 +22,9 @@ export const TipCaption: React.FC<{
   y?: number; // centre y of the text block
   size?: number;
   maxWidth?: number;
-}> = ({ words, start, end, source, variant = "sans", y = 1300, size = 58, maxWidth = 900 }) => {
+  breaks?: number[]; // word indices that start a new line
+  boxes?: boolean; // gold glow box around k="g" words (tips); false = gold text only (naseeha / hadith)
+}> = ({ words, start, end, source, variant = "sans", y = 1300, size = 58, maxWidth = 900, breaks = [], boxes = true }) => {
   const t = useCurrentFrame() / FPS;
   const op = P(t, start - 0.2, 0.35, E.s) * (1 - P(t, end - 0.3, 0.3, E.s));
   if (op <= 0.001) return null;
@@ -58,21 +60,27 @@ export const TipCaption: React.FC<{
       >
         {words.map((w, i) => {
           const u = P(t, w.on - 0.03, 0.18, E.o);
-          const key = w.k === "g";
+          const gold = w.k === "g";
+          const key = gold && boxes;
           const neg = w.k === "c" || w.k === "x";
-          const tgt = key ? C.gold : neg ? C.coralText : C.white;
+          const tgt = gold ? C.gold : neg ? C.coralText : C.white;
           const box = key ? P(t, w.on, 0.45, E.o) : 0;
           const act = env(t, w.on - 0.03, 0.1, w.off, 0.5);
           const strike = w.k === "x" ? P(t, w.off, 0.35, E.io) : 0;
           return (
             <React.Fragment key={i}>
+              {breaks.includes(i) && <br />}
               <span
                 style={{
                   position: "relative",
                   display: "inline-block",
                   padding: key ? "0 .18em" : undefined,
                   color: col(C.grey, tgt, u, lerp(0.42, 1, u)),
-                  textShadow: act > 0.01 ? `0 0 14px rgba(240,242,235,${(0.16 * act).toFixed(3)})` : "none",
+                  textShadow: gold
+                    ? `0 0 ${(10 + 10 * act).toFixed(1)}px rgba(227,204,143,${(0.2 * u + 0.22 * act).toFixed(3)})`
+                    : act > 0.01
+                      ? `0 0 14px rgba(240,242,235,${(0.16 * act).toFixed(3)})`
+                      : "none",
                 }}
               >
                 {key && box > 0 && (

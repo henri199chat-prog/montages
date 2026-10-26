@@ -5,3 +5,5 @@ graphify-out/.graphify_*
 
 # scratch audio for religious reels (raw/recitation audio stays out of git)
 /work/
+# mixed voice of reels made from someone else's audio (it is inside the MP4; rebuild with religious/tools/mix_master.py)
+/video/public/religious/niam/
