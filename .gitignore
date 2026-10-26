@@ -2,3 +2,6 @@ __pycache__/
 *.egg-info/
 graphify-out/cache/
 graphify-out/.graphify_*
+
+# scratch audio for religious reels (raw/recitation audio stays out of git)
+/work/

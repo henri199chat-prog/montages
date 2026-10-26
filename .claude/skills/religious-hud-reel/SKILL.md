@@ -1,6 +1,6 @@
 ---
 name: religious-hud-reel
-description: Use before planning or building ANY Islamic religious reel in Remotion (Quran verses, numerical miracles, hadith, reflections, recitation videos) - the house HUD / data-visualisation motion-graphics style with calm SFX and NO music, navy/gold palette, Uthmani verse typography, verification rules and a component kit.
+description: Generic style. For Ayman's own religious videos use the religious-reel skill first (it wins on conflicts). Use before planning or building ANY Islamic religious reel in Remotion (Quran verses, numerical miracles, hadith, reflections, recitation videos) - the house HUD / data-visualisation motion-graphics style with calm SFX and NO music, navy/gold palette, Uthmani verse typography, verification rules and a component kit.
 ---
 
 # Religious HUD reel (Remotion)

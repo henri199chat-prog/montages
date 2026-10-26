@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<style>
+@font-face{font-family:AQ;src:url(fonts/AmiriQuran-gf.ttf)}
+@font-face{font-family:PlexAr;src:url(fonts/IBMPlexSansArabic-Medium.ttf);font-weight:500}
+@font-face{font-family:PlexAr;src:url(fonts/IBMPlexSansArabic-SemiBold.ttf);font-weight:600}
+@font-face{font-family:PlexMono;src:url(fonts/IBMPlexMono-Medium.ttf)}
+@font-face{font-family:PlexMonoR;src:url(fonts/IBMPlexMono-Regular.ttf)}
+html,body{margin:0;padding:0;background:#0A141D;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0A141D url(assets/bg.png)}
+#fx,#svg,#fx2{position:absolute;left:0;top:0;width:1080px;height:1920px}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 78% 62% at 50% 46%,rgba(5,10,15,0) 55%,rgba(5,10,15,.55) 100%)}
+#shield{position:absolute;left:0;top:1180px;width:1080px;height:740px;pointer-events:none;background:linear-gradient(180deg,rgba(10,20,29,0) 0,rgba(10,20,29,.55) 110px,rgba(10,20,29,.62) 100%)}
+#grain{position:absolute;inset:0;mix-blend-mode:overlay;opacity:.075;pointer-events:none}
+.hud{position:absolute;font-family:PlexMono;letter-spacing:.32em;font-size:21px;color:#608F8C;direction:ltr;white-space:nowrap}
+#hdrL{left:78px;top:92px}
+#hdrR{right:78px;top:84px;font-family:PlexAr;font-weight:500;font-size:27px;letter-spacing:0;direction:rtl;color:#97A0A2}
+#hdrR b{color:#B09F75;font-weight:500}
+#ftrL{left:78px;top:1826px}
+#ftrC{left:0;width:1080px;text-align:center;top:1826px;font-size:19px;letter-spacing:.42em;color:#7f8f90}
+#wm{right:78px;top:1828px;font-family:PlexMonoR;font-size:18px;letter-spacing:.22em;color:#E3CC8F}
+#wm i{font-style:normal;color:#97A0A2}
+.ayah{position:absolute;left:40px;width:1000px;top:1290px;height:480px;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:AQ;color:#97A0A2;opacity:0}
+.ln{white-space:nowrap;text-align:center;direction:rtl}
+.w,.br,.med{display:inline-block}
+.br,.med{color:#B09F75}
+#cta{position:absolute;left:0;width:1080px;top:1135px;text-align:center;font-family:PlexAr;font-weight:600;font-size:46px;color:#F0F2EB;opacity:0}
+#cta b{color:#E3CC8F;font-weight:600}
+#logoBig{position:absolute;opacity:0;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 64%,transparent 71%)}
+#logoTop{position:absolute;opacity:0;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 60%,transparent 71%)}
+.name{position:absolute;left:0;width:1080px;text-align:center;font-family:PlexMono;direction:ltr;white-space:nowrap;color:#E3CC8F;opacity:0}
+.sub{position:absolute;left:0;width:1080px;text-align:center;font-family:PlexMonoR;direction:ltr;white-space:nowrap;color:#608F8C;font-size:19px;letter-spacing:.5em;opacity:0}
+#sweep{position:absolute;opacity:0;pointer-events:none;mix-blend-mode:screen}
+</style></head>
+<body><div id="stage">
+<canvas id="fx" width="1080" height="1920"></canvas>
+<svg id="svg" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"></svg>
+<canvas id="fx2" width="1080" height="1920"></canvas>
+<div id="vig"></div>
+<div id="shield"></div>
+<img id="logoBig" src="assets/logo_rgba.png">
+<div id="sweep"></div>
+<img id="logoTop" src="assets/logo_rgba.png">
+<div class="name" id="nameIn">aymen.1303</div>
+<div class="sub" id="subIn">QURAN · RECITATION</div>
+<div class="hud" id="hdrL">QURAN · 09:102</div>
+<div class="hud" id="hdrR"><b>القرآن الكريم</b> · سورة التوبة</div>
+<div class="hud" id="ftrL">01 / 03</div>
+<div class="hud" id="ftrC">AT-TAWBAH · 9 : 102 — 104</div>
+<div class="hud" id="wm">aymen<i>.</i>1303</div>
+<div id="texts"></div>
+<div id="cta">شاركها لعلها تكون <b>صدقة جارية</b></div>
+<div id="grain"></div>
+</div>
+<script src="data.js"></script>
+<script src="lib.js"></script>
+<script src="scene.js"></script>
+</body></html>
