@@ -78,3 +78,17 @@ Note: the current Remotion composition is 15 s. Extend it to about 20.5 s (615 f
 | 5 | 17.51 | 18.40 |
 
 للتحويل إلى إطارات في Remotion: `frame = Math.round(seconds * fps)`. توقيت كل كلمة موجود في `voiceover_*_timing.json` (الحقل `words`).
+
+---
+
+# Tasbih reel voiceover (Gulf, 2026-10-26): `tasbih_reel_vo_gulf.mp3`
+
+Used by the `TasbihReel` composition (`video/public/vo/tasbih-reel-vo.wav`, word timings in
+`video/src/tasbih-reel-vo.json`, copy in `tasbih_reel_vo_gulf_timing.json`). 29.1 s, -16.3 LUFS, -1.5 dBTP.
+
+- Engine: Habibi-TTS **Specialized SAU** model with the `Gulf.wav` reference prompt from the Habibi repo, CPU, one
+  generation per line (nfe 32). **Licence: CC-BY-NC-SA-4.0 (non-commercial).** Fine for a free app's organic reel;
+  for paid ads or a monetised account, regenerate with the MSA / IRQ models (Apache-2.0) or a recorded voice.
+- Whisper large-v3 check per line: all lines match the script except Whisper's usual MSA spellings (هذه/هذي, العدى/العدّ).
+  «مسبحة» needed three takes (one take was heard as «مستباحة»); tashkeel on الذِّكر made it worse, so lines are plain text.
+- edge-tts (ar-KW-FahedNeural) is not usable from the cloud container: it needs a WebSocket, which the proxy blocks.

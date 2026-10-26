@@ -55,8 +55,15 @@ const E = {
   card0: word(5, 0), // «تضغط»
   card1: [word(5, 3), word(5, 4), word(5, 5)], // «وهو يعدّ عنك»
   totalZoom: word(6, 2), // «ومجموع»
-  outro: segStart(7) - 6,
+  profile: segStart(7) - 8, // cut to the creator's profile
+  bioZoom: word(7, 3), // «بالبايو»
+  linkTap: word(8, 0), // «اضغطوا»
+  outro: word(8, 2) - 4, // «ويوديكم» -> download end card
 };
+
+// The link chip sits where Instagram shows profile links (over the "+ Add" chip in the screenshot).
+const LINK_CHIP = { x0: 0.7, x1: 0.855, y0: 0.3005, y1: 0.3295 };
+const LINK_TOUCH = { x: (LINK_CHIP.x0 + LINK_CHIP.x1) / 2, y: (LINK_CHIP.y0 + LINK_CHIP.y1) / 2 };
 
 // The 33 counting taps accelerate from countStart to done.
 const COUNT_TAPS = 33;
@@ -72,6 +79,7 @@ type Shot = { src: string; touch?: { x: number; y: number }; tapAt?: number };
 const shotAt = (frame: number): Shot => {
   const s = (name: string) => `reel-shots/${name}.png`;
   const tap = POINTS.tap;
+  if (frame >= E.profile) return { src: s("profile"), touch: LINK_TOUCH, tapAt: E.linkTap };
   if (frame >= E.totalZoom) return { src: s("count-33") };
   if (frame >= E.card0) {
     let n = 1;
@@ -125,20 +133,28 @@ const Phone: React.FC = () => {
   const rise = spring({ frame: frame - E.phoneIn, fps, config: { damping: 16, mass: 0.7 } });
   const shot = shotAt(frame);
 
-  // Camera: push in on the counter while counting, buzz on «يهتز», zoom to the total header, then leave.
+  // Camera: push in on the counter while counting, buzz on «يهتز», zoom to the header total,
+  // then to the profile's bio and link, then leave.
   const countPush = interpolate(frame, [E.countStart, E.done], [1, 1.08], clamp)
     * interpolate(frame, [E.done + 10, E.tabMorning], [1, 1 / 1.08], clamp);
   const buzz = frame >= E.done && frame < E.done + 14 ? Math.sin((frame - E.done) * 2.6) * 9 * (1 - (frame - E.done) / 14) : 0;
-  const zoom = interpolate(frame, [E.totalZoom, E.totalZoom + 16], [0, 1], { ...clamp, easing: Easing.inOut(Easing.cubic) });
+  const ease = { ...clamp, easing: Easing.inOut(Easing.cubic) };
+  const zHeader = interpolate(frame, [E.totalZoom, E.totalZoom + 14, E.profile - 10, E.profile], [0, 1, 1, 0], ease);
+  const zBio = interpolate(frame, [E.bioZoom - 4, E.bioZoom + 12], [0, 1], ease);
+  const z = Math.max(zHeader, zBio);
+  const focus = zHeader > 0 ? { x: 0.5, y: 0.07, s: 1.7 } : { x: 0.5, y: 0.24, s: 1.6 };
+  const swap = interpolate(frame, [E.profile - 4, E.profile, E.profile + 8], [0, 1, 0], clamp);
   const out = interpolate(frame, [E.outro, E.outro + 16], [0, 1], { ...clamp, easing: Easing.in(Easing.cubic) });
-  const scale = countPush * (1 + zoom * 0.75) * (1 - out * 0.3);
-  // When zoomed, aim at the header (total counter top-left of the screen).
-  const zoomX = zoom * 190;
-  const zoomY = zoom * 560;
+  const zoomS = 1 + (focus.s - 1) * z;
+  const scale = countPush * zoomS * (1 - swap * 0.06) * (1 - out * 0.3);
+  // Bring the focus point to (540, 800): offset from the phone centre, scaled, then moved by z.
+  const centerY = PHONE_TOP + SCREEN_H / 2;
+  const zoomX = z * (540 - 540 - zoomS * (focus.x - 0.5) * SCREEN_W);
+  const zoomY = z * (800 - centerY - zoomS * (focus.y - 0.5) * SCREEN_H);
   const glow = interpolate(frame, [E.done, E.done + 6, E.done + 34], [0, 1, 0], clamp);
 
   const press = shot.tapAt !== undefined ? interpolate(frame - shot.tapAt, [0, 7], [1, 0], clamp) : 0;
-  const fingerOn = shot.touch && shot.tapAt !== undefined && frame - shot.tapAt < 18 && frame < E.totalZoom;
+  const fingerOn = shot.touch && shot.tapAt !== undefined && frame - shot.tapAt < 18 && (frame < E.totalZoom || frame >= E.profile);
   const fingerOpacity = fingerOn ? interpolate(frame - (shot.tapAt as number), [0, 2, 12, 18], [0, 1, 1, 0], clamp) : 0;
 
   return (
@@ -153,12 +169,13 @@ const Phone: React.FC = () => {
         background: "#0a0f0d",
         boxShadow: `0 0 0 3px #2b3a33, 0 50px 120px rgba(0,0,0,0.6), 0 0 ${150 * glow}px ${44 * glow}px rgba(240,217,164,${0.55 * glow})`,
         transform: `translate(${buzz + zoomX}px, ${(1 - rise) * 1600 + zoomY - out * 140}px) scale(${scale})`,
-        transformOrigin: "50% 40%",
+        transformOrigin: "50% 50%",
         opacity: 1 - out,
       }}
     >
       <div style={{ position: "absolute", inset: BEZEL, borderRadius: 66, overflow: "hidden", background: "#061a15" }}>
         <Img src={staticFile(shot.src)} style={{ width: SCREEN_W, height: SCREEN_H, display: "block" }} />
+        {frame >= E.profile ? <LinkChip /> : null}
         {shot.touch ? (
           <div
             style={{
@@ -180,14 +197,56 @@ const Phone: React.FC = () => {
   );
 };
 
+// The app link in the profile: appears on «بالبايو», pulses, pressed on «اضغطوا».
+const LinkChip: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const p = spring({ frame: frame - E.bioZoom, fps, config: { damping: 13 } });
+  const pulse = frame < E.linkTap ? 0.5 + 0.5 * Math.sin((frame - E.bioZoom) / 4) : 0;
+  const press = interpolate(frame - E.linkTap, [0, 4, 12], [0, 1, 0], clamp);
+  const w = (LINK_CHIP.x1 - LINK_CHIP.x0) * SCREEN_W;
+  const h = (LINK_CHIP.y1 - LINK_CHIP.y0) * SCREEN_H;
+  return (
+    <div
+      dir="rtl"
+      style={{
+        position: "absolute",
+        left: LINK_CHIP.x0 * SCREEN_W - 4,
+        top: LINK_CHIP.y0 * SCREEN_H,
+        width: w + 8,
+        height: h,
+        borderRadius: h / 2,
+        background: `rgba(212,175,106,${0.92 - press * 0.25})`,
+        boxShadow: `0 0 ${10 + pulse * 18}px rgba(240,217,164,${0.5 + pulse * 0.4})`,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 4,
+        fontFamily: CAIRO,
+        fontWeight: 800,
+        fontSize: 15,
+        color: "#0d1015",
+        opacity: p,
+        transform: `scale(${(0.6 + 0.4 * p) * (1 - press * 0.08)})`,
+      }}
+    >
+      <svg width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="#0d1015" strokeWidth={2.6} strokeLinecap="round">
+        <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" />
+      </svg>
+      مِسْبَحَة
+    </div>
+  );
+};
+
 // Top keyword title for each beat (key words only, not the script).
 const TITLES: { text: string; from: number; to: number; big?: boolean }[] = [
   { text: "تضيع العدّ؟", from: 4, to: segEnd(0) + 6, big: true },
   { text: "اختر الذكر", from: E.chip1 - 4, to: E.t33 - 2 },
-  { text: "٣٣ أو ١٠٠ أو مخصّص", from: E.t33 - 2, to: E.countStart },
+  { text: "33 أو 100 أو مخصّص", from: E.t33 - 2, to: E.countStart },
   { text: "يهتز لك إذا خلّصت", from: E.done - 2, to: segEnd(3) + 4 },
   { text: "أذكار الصباح والمساء", from: segStart(4), to: segEnd(5) + 4 },
-  { text: "بدون إنترنت", from: segStart(6), to: E.outro },
+  { text: "بدون إنترنت", from: segStart(6), to: E.totalZoom },
+  { text: "الرابط في البايو", from: E.profile + 4, to: E.outro },
 ];
 
 const Title: React.FC = () => {
@@ -218,8 +277,8 @@ const Title: React.FC = () => {
         dir="rtl"
         lang="ar"
         style={{
-          fontFamily: KUFI,
-          fontWeight: 700,
+          fontFamily: /[0-9]/.test(t.text) ? CAIRO : KUFI,
+          fontWeight: /[0-9]/.test(t.text) ? 800 : 700,
           fontSize: t.big ? 118 : 84,
           color: GOLD_LIGHT,
           textShadow: "0 6px 30px rgba(0,0,0,0.5)",
@@ -240,14 +299,14 @@ const WifiOff: React.FC = () => (
   </svg>
 );
 
-// Caption chunks: break after punctuation or at 5 words, never across VO lines.
+// Caption chunks: break after punctuation or at 6 words, never across VO lines.
 const CHUNKS: { start: number; end: number; words: Word[] }[] = [];
 SEGS.forEach((s) => {
   let cur: Word[] = [];
   s.words.forEach((w, i) => {
     cur.push(w);
     const last = i === s.words.length - 1;
-    if (last || /[،,.:؟?]$/.test(w.w) || cur.length >= 5) {
+    if (last || /[،,.:؟?]$/.test(w.w) || cur.length >= 6) {
       CHUNKS.push({ start: cur[0].start, end: last ? s.end : cur[cur.length - 1].end, words: cur });
       cur = [];
     }
@@ -313,12 +372,30 @@ const Outro: React.FC = () => {
       <div
         dir="rtl"
         lang="ar"
-        style={{ fontFamily: CAIRO, fontWeight: 700, fontSize: 56, color: INK, opacity: p2, transform: `translateY(${(1 - p2) * 30}px)`, display: "flex", alignItems: "center", gap: 18, marginTop: 30 }}
+        style={{
+          fontFamily: CAIRO,
+          fontWeight: 800,
+          fontSize: 54,
+          color: "#0d1015",
+          background: GOLD,
+          borderRadius: 60,
+          padding: "14px 44px 18px",
+          opacity: p2,
+          transform: `translateY(${(1 - p2) * 30}px)`,
+          display: "flex",
+          alignItems: "center",
+          gap: 16,
+          marginTop: 34,
+          boxShadow: "0 14px 40px rgba(0,0,0,0.4)",
+        }}
       >
-        <svg width={58} height={58} viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-          <path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v14" />
+        <svg width={52} height={52} viewBox="0 0 24 24" fill="none" stroke="#0d1015" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 14v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5M8 10l4 4 4-4M12 3v11" />
         </svg>
-        ارسله لأحد تبيه يحافظ على أذكاره
+        رابط التحميل في البايو
+      </div>
+      <div style={{ fontFamily: CAIRO, fontWeight: 700, fontSize: 50, color: INK, opacity: p2 * 0.9, marginTop: 6, letterSpacing: 1 }}>
+        @aymen.1303
       </div>
     </AbsoluteFill>
   );
@@ -373,6 +450,9 @@ const Soundtrack: React.FC = () => {
       <Sfx at={segStart(4)} src="pluck_kalimba_soft" volume={0.16} len={f(3)} />
       <Sfx at={E.card1[2]} src="mallet_celesta" volume={0.22} len={f(0.5)} />
       <Sfx at={E.totalZoom - 6} src="swish_cane" volume={0.22} len={f(0.8)} />
+      <Sfx at={E.profile - 6} src="swish_soft" volume={0.3} len={f(0.9)} />
+      <Sfx at={E.bioZoom} src="mallet_glock" volume={0.2} len={f(0.5)} />
+      <Sfx at={E.linkTap} src="click_01" volume={0.3} len={6} />
       <Sfx at={E.outro + 8 - f(1.2)} src="reverse_swell_breath" volume={0.28} len={f(1.3)} />
       <Sfx at={E.outro + 8} src="logo_sting_soft_bloom" volume={0.34} len={f(1.9)} />
     </>
