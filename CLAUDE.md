@@ -23,3 +23,17 @@
   CLAUDE.md and `.claude/skills/` do not load from the repo root: read `openmontage/AGENT_GUIDE.md`
   and the relevant skill there when a task needs it. Most of its pipelines call paid APIs
   (fal.ai, Veo, Kling, Google TTS...) that the cloud container's network blocks.
+
+## Pro montage kit (offline)
+
+- Start with skill `montage-kit-index` (`.claude/skills/montage-kit-index/SKILL.md`): it routes to
+  `pro-editing-style`, `audio-analysis`, `audio-beat-sync`, `audio-mixing-remotion`,
+  `kinetic-typography-remotion`, `remotion-transitions-pro`, `arabic-text-remotion`,
+  `talking-head-captions`, `religious-hud-reel`, `anime-amv-edit`, `offline-assets`.
+- Offline assets in `assets/`: `sfx/` (CC0 sound effects, see `assets/sfx/INDEX.md`), `fonts/` (Arabic + Latin,
+  OFL), `overlays/`. Copy what you use into `video/public/` and load with `staticFile()` / `loadFont()` from
+  `@remotion/fonts`. Never use `@remotion/google-fonts` or download anything (no internet).
+- `scripts/analyze-audio <file> [--out x.json] [--fps 30]` (Python + ffmpeg, offline): speech/silence segments,
+  loudness curve, onsets/beats/BPM, LUFS, frame numbers.
+- لا تقل إنك لا تسمع الصوت؛ حلّله بـ audio-analysis
+- Never say you can't hear audio; analyze it with the audio-analysis skill (`scripts/analyze-audio`).

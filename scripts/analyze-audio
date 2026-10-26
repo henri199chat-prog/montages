@@ -1,0 +1,263 @@
+#!/usr/bin/env python3
+"""analyze-audio: offline audio analysis for syncing Remotion videos.
+
+Needs only Python 3 (standard library) + ffmpeg/ffprobe on PATH. No internet, no pip.
+
+Usage:
+  scripts/analyze-audio <file> [--out out.json] [--fps 30] [--noise -35] [--min-silence 0.25]
+                        [--min-speech 0.12] [--hop 0.05] [--top 12] [--lines script.txt]
+                        [--no-curve] [--quiet]
+
+Output (JSON): duration, loudness (integrated LUFS, LRA, true peak), speech/silence segments,
+loudness curve (RMS dBFS every --hop s), strongest moments, onsets, low-end hits (kicks/booms),
+tempo (BPM) + beat grid, and optional mapping of script lines to speech segments (--lines).
+Every time in seconds also has a *_frame (or frames list) for --fps.
+"""
+import argparse, array, json, math, os, re, subprocess, sys
+
+SR = 16000  # analysis sample rate
+
+
+def die(msg):
+    sys.stderr.write("analyze-audio: " + msg + "\n"); sys.exit(1)
+
+
+def run(cmd, binary=False):
+    try:
+        p = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    except FileNotFoundError:
+        die("ffmpeg/ffprobe not found on PATH")
+    return p if binary else subprocess.CompletedProcess(cmd, p.returncode, p.stdout.decode("utf-8", "replace"), p.stderr.decode("utf-8", "replace"))
+
+
+def probe_duration(path):
+    p = run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "default=nw=1:nk=1", path])
+    try:
+        return float(p.stdout.strip())
+    except ValueError:
+        die("cannot read duration (is this an audio/video file?): " + p.stderr.strip()[:300])
+
+
+def loudness(path):
+    p = run(["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-vn", "-af", "ebur128=peak=true", "-f", "null", "-"])
+    s = p.stderr
+    tail = s[s.rfind("Summary:"):] if "Summary:" in s else s
+    def grab(pat):
+        m = re.search(pat, tail)
+        return float(m.group(1)) if m else None
+    return {"integrated_lufs": grab(r"I:\s+(-?[\d.]+|-inf) LUFS"), "lra_lu": grab(r"LRA:\s+(-?[\d.]+) LU"),
+            "true_peak_dbtp": grab(r"Peak:\s+(-?[\d.]+|-inf) dBFS")}
+
+
+def silences(path, noise, min_sil, dur):
+    p = run(["ffmpeg", "-hide_banner", "-nostats", "-i", path, "-vn", "-af",
+             "silencedetect=n=%sdB:d=%s" % (noise, min_sil), "-f", "null", "-"])
+    out, start = [], None
+    for line in p.stderr.splitlines():
+        m = re.search(r"silence_start: (-?[\d.]+)", line)
+        if m: start = max(0.0, float(m.group(1)))
+        m = re.search(r"silence_end: ([\d.]+)", line)
+        if m and start is not None:
+            out.append([start, float(m.group(1))]); start = None
+    if start is not None: out.append([start, dur])
+    return out
+
+
+def decode(path):
+    """Two mono envelopes: full band (ch0) and low band <150 Hz (ch1)."""
+    fc = "[0:a]aformat=channel_layouts=mono,asplit[a][b];[b]lowpass=f=150,lowpass=f=150[l];[a][l]amerge=inputs=2[o]"
+    p = run(["ffmpeg", "-v", "error", "-i", path, "-vn", "-filter_complex", fc, "-map", "[o]",
+             "-ac", "2", "-ar", str(SR), "-f", "s16le", "-"], binary=True)
+    if p.returncode != 0: die("decode failed: " + p.stderr.decode("utf-8", "replace")[:300])
+    a = array.array("h"); a.frombytes(p.stdout[: len(p.stdout) // 4 * 4])
+    if sys.byteorder == "big": a.byteswap()
+    return a[0::2], a[1::2]
+
+
+def rms_db(x, hop_s):
+    hop = max(1, int(SR * hop_s)); out = []
+    for i in range(0, len(x), hop):
+        seg = x[i:i + hop]
+        if not seg: break
+        ms = sum(v * v for v in seg) / len(seg)
+        out.append(10 * math.log10(ms / (32768.0 ** 2) + 1e-12))
+    return out
+
+
+def smooth(v, k):
+    if k <= 1: return v[:]
+    h = k // 2; out = []
+    for i in range(len(v)):
+        w = v[max(0, i - h): i + h + 1]; out.append(sum(w) / len(w))
+    return out
+
+
+def median(v):
+    s = sorted(v); n = len(s)
+    return 0.0 if n == 0 else (s[n // 2] if n % 2 else 0.5 * (s[n // 2 - 1] + s[n // 2]))
+
+
+def onset_env(db, floor=-60.0, lag=2):
+    """Energy flux in dB: half-wave rectified difference over `lag` steps (onset strength)."""
+    d = [max(floor, x) for x in db]
+    return [0.0] * lag + [max(0.0, d[i] - d[i - lag]) for i in range(lag, len(d))]
+
+
+def pick_peaks(env, hop_s, min_gap_s, k=1.5, win_s=1.0, min_abs=1.0, level=None, level_floor=-50):
+    w = max(1, int(win_s / hop_s)); gap = max(1, int(min_gap_s / hop_s)); peaks = []
+    for i in range(1, len(env) - 1):
+        if env[i] < min_abs or env[i] < env[i - 1] or env[i] < env[i + 1]: continue
+        if level is not None and max(level[i:i + 6] or [-120]) < level_floor: continue
+        loc = env[max(0, i - w): i + w + 1]; med = median(loc)
+        mad = median([abs(x - med) for x in loc]) or 0.1
+        if env[i] > med + k * 1.4826 * mad:
+            if peaks and i - peaks[-1] < gap:
+                if env[i] > env[peaks[-1]]: peaks[-1] = i
+            else:
+                peaks.append(i)
+    return peaks
+
+
+def tempo(env, hop_s, lo=60, hi=200):
+    n = min(len(env), int(120 / hop_s))  # first 2 minutes is enough
+    e = env[:n]
+    if n < int(4 / hop_s): return None
+    m = sum(e) / n; e = [x - m for x in e]
+    best, best_lag, scores = -1e18, None, {}
+    e0 = sum(x * x for x in e) / n or 1e-9
+    for lag in range(int(60 / hi / hop_s), int(60 / lo / hop_s) + 1):
+        s = sum(e[i] * e[i - lag] for i in range(lag, n)) / (n - lag)
+        scores[lag] = s
+        if s > best: best, best_lag = s, lag
+    if best_lag is None or best <= 0: return None
+    # parabolic refinement
+    a, b, c = scores.get(best_lag - 1, best), best, scores.get(best_lag + 1, best)
+    den = a - 2 * b + c; off = 0.5 * (a - c) / den if den else 0.0
+    period = (best_lag + off) * hop_s; bpm = 60.0 / period
+    while bpm < 70: bpm *= 2; period /= 2
+    while bpm > 180: bpm /= 2; period *= 2
+    conf = best / e0  # normalised autocorrelation: >0.3 = clear steady beat, <0.15 = no real tempo (speech)
+    # phase: offset that maximises onset energy on the grid
+    P = period / hop_s; best_ph, best_sum = 0, -1
+    for ph in range(int(P)):
+        s, t = 0.0, ph
+        while t < len(env): s += env[int(t)]; t += P
+        if s > best_sum: best_sum, best_ph = s, ph
+    beats, t = [], best_ph * hop_s
+    while t < len(env) * hop_s: beats.append(round(t, 3)); t += period
+    return {"bpm": round(bpm, 1), "period_s": round(period, 4), "confidence": round(max(0.0, min(1.0, conf)), 2),
+            "first_beat_s": round(best_ph * hop_s, 3), "beats_s": beats}
+
+
+def map_lines(lines, speech):
+    """Assign script lines (in order) to speech segments. Returns [{line, start, end}]."""
+    segs = [list(s) for s in speech]
+    if not lines or not segs: return []
+    L, S = len(lines), len(segs)
+    weights = [max(1, len(re.sub(r"\s+", "", l))) for l in lines]
+    if S > L:  # too many segments: merge the pair separated by the shortest gap until counts match
+        while len(segs) > L:
+            gaps = [segs[i + 1][0] - segs[i][1] for i in range(len(segs) - 1)]
+            i = gaps.index(min(gaps)); segs[i] = [segs[i][0], segs[i + 1][1]]; del segs[i + 1]
+        groups = [[i] for i in range(L)]
+    elif S < L:  # too few segments: give each segment a run of lines, split by character count
+        tot_w, tot_d = sum(weights), sum(e - s for s, e in segs)
+        groups, li = [], 0
+        for si, (s, e) in enumerate(segs):
+            remaining_segs = S - si; remaining_lines = L - li
+            want = (e - s) / tot_d * tot_w; acc, g = 0, []
+            while li < L and (not g or acc + weights[li] / 2 <= want) and remaining_lines - len(g) > remaining_segs - 1:
+                g.append(li); acc += weights[li]; li += 1
+            if si == S - 1:
+                while li < L: g.append(li); li += 1
+            groups.append(g)
+        out = []
+        for (s, e), g in zip(segs, groups):
+            w = sum(weights[i] for i in g); t = s
+            for i in g:
+                d = (e - s) * weights[i] / w; out.append({"line": lines[i], "start": round(t, 3), "end": round(t + d, 3), "estimated": len(g) > 1}); t += d
+        return out
+    return [{"line": lines[i], "start": round(segs[i][0], 3), "end": round(segs[i][1], 3), "estimated": False} for i in range(L)]
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("file"); ap.add_argument("--out"); ap.add_argument("--fps", type=float, default=30)
+    ap.add_argument("--noise", type=float, default=-35, help="silence threshold dBFS (default -35; use -30 for noisy, -45 for very clean)")
+    ap.add_argument("--min-silence", type=float, default=0.25, help="min pause length in s (default 0.25)")
+    ap.add_argument("--min-speech", type=float, default=0.12, help="drop speech blips shorter than this (s)")
+    ap.add_argument("--hop", type=float, default=0.05, help="loudness-curve step in s (default 0.05)")
+    ap.add_argument("--top", type=int, default=12, help="number of strongest moments")
+    ap.add_argument("--lines", help="text file, one script line per line, to map onto speech segments in order")
+    ap.add_argument("--no-curve", action="store_true", help="omit the loudness curve from the JSON")
+    ap.add_argument("--quiet", action="store_true")
+    a = ap.parse_args()
+    if not os.path.exists(a.file): die("file not found: " + a.file)
+    fps = a.fps; F = lambda t: int(round(t * fps))
+
+    dur = probe_duration(a.file)
+    loud = loudness(a.file)
+    sil = silences(a.file, a.noise, a.min_silence, dur)
+    speech, t = [], 0.0
+    for s, e in sil:
+        if s - t >= a.min_speech: speech.append([t, s])
+        t = e
+    if dur - t >= a.min_speech: speech.append([t, dur])
+
+    full, low = decode(a.file)
+    fine = 0.01
+    db_f = rms_db(full, fine); db_l = rms_db(low, fine)
+    env = onset_env(smooth(db_f, 3)); env_l = onset_env(smooth(db_l, 3))
+    on = pick_peaks(env, fine, 0.10, k=2.0, min_abs=2.0, level=db_f)
+    kicks = pick_peaks(env_l, fine, 0.18, k=2.5, min_abs=3.0, level=db_l, level_floor=-45)
+    tp = tempo(env, fine)
+
+    curve = rms_db(full, a.hop)
+    # strongest moments: local maxima of the curve, min 0.5 s apart
+    order = sorted(range(len(curve)), key=lambda i: curve[i], reverse=True); chosen = []
+    gap = int(0.5 / a.hop)
+    for i in order:
+        if all(abs(i - j) >= gap for j in chosen): chosen.append(i)
+        if len(chosen) >= a.top: break
+    peaks = sorted(chosen)
+
+    def seg(s, e): return {"start": round(s, 3), "end": round(e, 3), "dur": round(e - s, 3), "start_frame": F(s), "end_frame": F(e)}
+    out = {
+        "file": os.path.basename(a.file), "fps": fps, "duration_s": round(dur, 3), "duration_frames": int(math.ceil(dur * fps)),
+        "loudness": loud,
+        "settings": {"noise_db": a.noise, "min_silence_s": a.min_silence, "min_speech_s": a.min_speech, "hop_s": a.hop},
+        "speech_segments": [seg(s, e) for s, e in speech],
+        "silences": [seg(s, e) for s, e in sil],
+        "strongest_moments": [{"t": round(i * a.hop, 3), "frame": F(i * a.hop), "rms_db": round(curve[i], 1)} for i in peaks],
+        "onsets": [{"t": round(i * fine, 3), "frame": F(i * fine), "strength": round(env[i], 1)} for i in on],
+        "low_hits": [{"t": round(i * fine, 3), "frame": F(i * fine), "strength": round(env_l[i], 1)} for i in kicks],
+        "tempo": None,
+    }
+    if tp:
+        tp["beat_frames"] = [F(b) for b in tp["beats_s"]]; out["tempo"] = tp
+    if a.lines:
+        lines = [l.strip() for l in open(a.lines, encoding="utf-8") if l.strip()]
+        ml = map_lines(lines, speech)
+        for m in ml: m["start_frame"], m["end_frame"] = F(m["start"]), F(m["end"])
+        out["lines"] = ml
+    if not a.no_curve:
+        out["curve"] = {"hop_s": a.hop, "rms_db": [round(x, 1) for x in curve]}
+
+    js = json.dumps(out, ensure_ascii=False, indent=1)
+    if a.out:
+        with open(a.out, "w", encoding="utf-8") as f: f.write(js + "\n")
+    else:
+        print(js)
+    if not a.quiet:
+        L = loud; e = sys.stderr
+        e.write("== %s: %.2f s (%d frames @ %g fps)\n" % (out["file"], dur, out["duration_frames"], fps))
+        e.write("   loudness: %s LUFS, LRA %s LU, true peak %s dBTP\n" % (L["integrated_lufs"], L["lra_lu"], L["true_peak_dbtp"]))
+        e.write("   speech segments: %d | onsets: %d | low hits: %d | tempo: %s\n" % (
+            len(speech), len(on), len(kicks), ("%s BPM (conf %s)" % (tp["bpm"], tp["confidence"])) if tp else "n/a"))
+        for s in out["speech_segments"][:40]:
+            e.write("   speech %7.2f-%7.2f s  frames %5d-%5d\n" % (s["start"], s["end"], s["start_frame"], s["end_frame"]))
+        if a.out: e.write("   JSON written to %s\n" % a.out)
+
+
+if __name__ == "__main__":
+    main()
