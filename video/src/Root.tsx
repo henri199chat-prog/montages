@@ -3,6 +3,7 @@ import { TasbihAdV2 } from "./TasbihAdV2";
 import { REEL_FRAMES, TasbihReel } from "./TasbihReel";
 import { AYMEN_FRAMES, AymenEdit } from "./AymenEdit";
 import { KIDNEY_FRAMES, KidneyReel } from "./KidneyReel";
+import { JOURNEY_FRAMES, KidneyJourney } from "./KidneyJourney";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -35,6 +36,14 @@ export const RemotionRoot: React.FC = () => {
         id="KidneyReel"
         component={KidneyReel}
         durationInFrames={KIDNEY_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="KidneyJourney"
+        component={KidneyJourney}
+        durationInFrames={JOURNEY_FRAMES}
         fps={30}
         width={1080}
         height={1920}
