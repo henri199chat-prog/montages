@@ -98,7 +98,7 @@ const Chip: React.FC<{ t: number; from: number; text: string; color?: string; ic
   const p = spring({ frame: f(t - from), fps: FPS, config: { damping: 14, stiffness: 170 } });
   if (t < from) return null;
   return (
-    <div dir="rtl" style={{ position: "absolute", top: y, left: "50%", transform: `translateX(-50%) scale(${p})`, display: "flex", alignItems: "center", gap: 18, padding: "16px 34px", borderRadius: 60, background: "rgba(8,30,56,0.85)", border: `3px solid ${color}`, fontFamily: "Cairo", fontWeight: 800, fontSize: 52, color: C.ink, whiteSpace: "nowrap", boxShadow: `0 0 30px ${color}55` }}>
+    <div dir="rtl" style={{ position: "absolute", top: y, left: "50%", transform: `translateX(-50%) scale(${0.85 + 0.15 * p})`, opacity: Math.min(1, p * 1.4), display: "flex", alignItems: "center", gap: 18, padding: "16px 34px", borderRadius: 60, background: "rgba(8,30,56,0.85)", border: `3px solid ${color}`, fontFamily: "Cairo", fontWeight: 800, fontSize: 52, color: C.ink, whiteSpace: "nowrap", boxShadow: `0 0 30px ${color}55` }}>
       {icon}
       {text}
     </div>
@@ -312,7 +312,7 @@ const S6: React.FC<{ t: number }> = ({ t }) => {
         const r = Math.max(0, rings - i * 0.2);
         return <div key={i} style={{ position: "absolute", width: 300 + 700 * r, height: 300 + 700 * r, borderRadius: "50%", border: `4px solid ${C.aqua}`, opacity: (1 - r) * 0.8 }} />;
       })}
-      <div dir="rtl" style={{ fontFamily: "Cairo", fontWeight: 1000, fontSize: 200, color: C.aqua, transform: `scale(${p})`, textShadow: `0 0 60px ${C.aqua}88` }}>الوقاية</div>
+      <div dir="rtl" style={{ fontFamily: "Cairo", fontWeight: 1000, fontSize: 200, color: C.aqua, opacity: Math.min(1, p * 1.5), transform: `scale(${0.6 + 0.4 * p})`, textShadow: `0 0 60px ${C.aqua}88` }}>الوقاية</div>
     </AbsoluteFill>
   );
 };
@@ -357,7 +357,7 @@ const S8: React.FC<{ t: number }> = ({ t }) => {
           <span style={{ position: "absolute", left: 0, right: 0, top: "55%", height: 10, background: C.red, transform: `scaleX(${strike})`, transformOrigin: "right", borderRadius: 6 }} />
         </span>
       </div>
-      <div dir="rtl" style={{ position: "absolute", top: 760, left: 60, right: 60, textAlign: "center", fontFamily: "Cairo", fontWeight: 1000, fontSize: 104, color: C.aqua, lineHeight: 1.25, opacity: interpolate(t, [w2, w2 + 0.3], [0, 1], clamp), transform: `scale(${spring({ frame: f(t - w2), fps: FPS, config: { damping: 13 } })})` }}>
+      <div dir="rtl" style={{ position: "absolute", top: 760, left: 60, right: 60, textAlign: "center", fontFamily: "Cairo", fontWeight: 1000, fontSize: 104, color: C.aqua, lineHeight: 1.25, opacity: interpolate(t, [w2, w2 + 0.3], [0, 1], clamp), transform: `scale(${0.7 + 0.3 * spring({ frame: f(t - w2), fps: FPS, config: { damping: 13 } })})` }}>
         نبدأ بالوقاية
       </div>
       <Title t={t} from={at(12, "قبل")} y={1020} size={58} color={C.ink}>قبل أن نحتاج إلى العلاج</Title>
