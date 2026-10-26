@@ -290,3 +290,5 @@ export const TasbihAd: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+export const TIMING = { PHONE_IN, TAP_START, TAPS, DONE_FRAME, MORNING_TAP, EVENING_TAP, OUTRO, tapFrame };
