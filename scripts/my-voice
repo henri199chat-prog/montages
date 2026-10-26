@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Speak any text in the creator's own cloned voice (OmniVoice, Apache-2.0, CPU).
+#   scripts/my-voice setup REF_AUDIO "exact words spoken in REF_AUDIO"   (once per session; 3-10 s clean clip)
+#   scripts/my-voice say OUT.wav "النص" [more lines...]                   one take per line, joined with 0.45 s pauses
+# The voice lives only in ~/.my-voice (never in the repo; the repo is public).
+set -euo pipefail
+V=$HOME/.omni-venv; D=$HOME/.my-voice
+[ -x "$V/bin/python" ] || { python3 -m venv "$V"
+  "$V/bin/pip" install -q torch==2.8.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cpu
+  "$V/bin/pip" install -q omnivoice; }
+mkdir -p "$D"; chmod 700 "$D"
+case "${1:-}" in
+setup)
+  ffmpeg -loglevel error -y -i "$2" -af "highpass=f=70" -ac 1 -ar 24000 "$D/ref.wav"
+  printf '%s\n' "$3" > "$D/ref.txt"
+  "$V/bin/python" - <<'PY'
+import os, torch
+from omnivoice import OmniVoice
+d = os.path.expanduser("~/.my-voice")
+m = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cpu", dtype=torch.float32)
+m.create_voice_clone_prompt(ref_audio=f"{d}/ref.wav", ref_text=open(f"{d}/ref.txt").read().strip()).save(f"{d}/voice.pt")
+print("voice saved in ~/.my-voice")
+PY
+  ;;
+say)
+  OUT=$2; shift 2
+  [ -f "$D/voice.pt" ] || { [ -f "$D/aymen_voice.pt" ] && cp "$D/aymen_voice.pt" "$D/voice.pt"; }
+  [ -f "$D/voice.pt" ] || { echo "no voice yet: ask the user for their reference clip, then: scripts/my-voice setup clip.mp3 \"words\""; exit 2; }
+  TMP=$(mktemp -d)
+  "$V/bin/python" - "$TMP" "$@" <<'PY'
+import os, sys, time, torch, numpy as np, soundfile as sf
+from omnivoice import OmniVoice, VoiceClonePrompt
+torch.set_num_threads(os.cpu_count() or 4)
+tmp, lines = sys.argv[1], sys.argv[2:]
+m = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cpu", dtype=torch.float32)
+p = VoiceClonePrompt.load(os.path.expanduser("~/.my-voice/voice.pt"))
+gap = np.zeros(int(0.45 * 24000), np.float32); out = []
+for i, t in enumerate(lines):
+    s = time.time(); a = m.generate(text=t, voice_clone_prompt=p, num_step=32)[0].astype(np.float32)
+    out += [a, gap]; print(f"line {i+1}: {len(a)/24000:.1f}s ({time.time()-s:.0f}s)", flush=True)
+sf.write(f"{tmp}/raw.wav", np.concatenate(out[:-1]), 24000)
+PY
+  # same studio chain as the Tasbih reel v2, -16 LUFS
+  ffmpeg -loglevel error -y -i "$TMP/raw.wav" -af "highpass=f=80,equalizer=f=120:t=q:w=0.9:g=2,equalizer=f=320:t=q:w=1.2:g=-2.5,equalizer=f=3800:t=q:w=1.2:g=2,acompressor=threshold=-24dB:ratio=3:attack=5:release=90:makeup=2,loudnorm=I=-16:TP=-1.5" -ar 48000 -ac 1 "$OUT"
+  rm -rf "$TMP"; echo "saved $OUT";;
+*) sed -n 2,6p "$0";;
+esac

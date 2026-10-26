@@ -2,3 +2,11 @@ __pycache__/
 *.egg-info/
 graphify-out/cache/
 graphify-out/.graphify_*
+# The creator's own voice never goes to GitHub (public repo): raw takes, processed voice tracks, clone tests.
+audio/tasbih_reel_voice_raw.m4a
+audio/tasbih_reel_voice_pro.mp3
+audio/voice_clone_test.mp3
+video/public/vo/tasbih-reel-vo.wav
+video/public/aymen/voice.wav
+private/
+*.voice.pt
