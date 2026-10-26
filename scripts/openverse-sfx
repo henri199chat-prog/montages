@@ -1,0 +1,97 @@
+#!/usr/bin/env python3
+"""Search and download free sounds from the Openverse API (https://api.openverse.org).
+
+Only licences that allow commercial use and editing are accepted:
+  default : cc0, pdm (public domain, no credit needed)
+  --allow-by : also cc "by" (credit required; written to CREDITS.md)
+NC, ND and SA licences are always refused, at search time and again at download time.
+
+  scripts/openverse-sfx search "wind chimes" [--max-sec 6] [--allow-by] [--category sound_effect] [-n 20]
+  scripts/openverse-sfx get <id> [--name calm_chime] [--allow-by]
+Downloads go to assets/sfx/openverse/ as mp3, with a line in assets/sfx/openverse/CREDITS.md.
+"""
+import argparse, json, os, re, subprocess, sys, tempfile, urllib.error, urllib.parse, urllib.request
+
+API = "https://api.openverse.org/v1/audio/"
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUT = os.path.join(ROOT, "assets", "sfx", "openverse")
+FREE = {"cc0", "pdm"}
+
+
+def allowed(allow_by):
+    return FREE | ({"by"} if allow_by else set())
+
+
+def fetch(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "montages-openverse-sfx/1.0 (https://github.com/henri199chat-prog/montages) python-urllib"})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return r.read()
+
+
+def search(a):
+    params = {"q": a.query, "license": ",".join(sorted(allowed(a.allow_by))), "page_size": a.n}
+    if a.category:
+        params["category"] = a.category
+    data = json.loads(fetch(API + "?" + urllib.parse.urlencode(params)))
+    rows = []
+    for r in data["results"]:
+        sec = (r.get("duration") or 0) / 1000
+        if r["license"] not in allowed(a.allow_by) or (a.max_sec and sec > a.max_sec):
+            continue
+        rows.append(r)
+        print(f"{r['id']}  {sec:6.1f}s  {r['license']:<4} {r['source']:<10} {r['title'][:50]}  by {r.get('creator') or '?'}")
+    print(f"-- {len(rows)} shown of {data['result_count']} found (licences: {params['license']})")
+
+
+def get(a):
+    r = json.loads(fetch(API + a.id + "/"))
+    lic = r["license"]
+    if lic not in allowed(a.allow_by):
+        sys.exit(f"refused: licence '{lic}' {r.get('license_version') or ''} is not allowed "
+                 f"(allowed: {', '.join(sorted(allowed(a.allow_by)))})")
+    name = a.name or re.sub(r"[^a-z0-9]+", "_", r["title"].lower()).strip("_")[:40] or r["id"][:8]
+    os.makedirs(OUT, exist_ok=True)
+    dest = os.path.join(OUT, name + ".mp3")
+    with tempfile.NamedTemporaryFile(suffix="." + (r.get("filetype") or "bin"), delete=False) as f:
+        src = f.name
+        try:
+            f.write(fetch(r["url"]))
+        except urllib.error.HTTPError as e:
+            os.unlink(src)
+            sys.exit(f"download refused by {urllib.parse.urlparse(r['url']).netloc}: HTTP {e.code}. "
+                     f"Download it by hand from {r.get('foreign_landing_url') or r['url']} "
+                     f"and put it in assets/sfx/openverse/ (licence {lic}).")
+    try:
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src, "-ac", "2", "-ar", "48000",
+                        "-codec:a", "libmp3lame", "-q:a", "2", dest], check=True)
+    finally:
+        os.unlink(src)
+    credits = os.path.join(OUT, "CREDITS.md")
+    if not os.path.exists(credits):
+        with open(credits, "w") as f:
+            f.write("# Openverse sounds\n\nfile | title | creator | licence | source page\n--- | --- | --- | --- | ---\n")
+    lic_txt = f"{lic.upper()} {r.get('license_version') or ''}".strip()
+    with open(credits, "a") as f:
+        f.write(f"{name}.mp3 | {r['title']} | {r.get('creator') or '?'} | {lic_txt} | {r.get('foreign_landing_url') or r['url']}\n")
+    print(f"saved {os.path.relpath(dest, ROOT)}  ({lic_txt}{', credit required' if lic == 'by' else ''})")
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = p.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("search")
+    s.add_argument("query")
+    s.add_argument("--max-sec", type=float)
+    s.add_argument("--category", help="sound_effect, music, podcast, audiobook, news, pronunciation")
+    s.add_argument("-n", type=int, default=20)
+    s.add_argument("--allow-by", action="store_true")
+    g = sub.add_parser("get")
+    g.add_argument("id")
+    g.add_argument("--name")
+    g.add_argument("--allow-by", action="store_true")
+    a = p.parse_args()
+    search(a) if a.cmd == "search" else get(a)
+
+
+if __name__ == "__main__":
+    main()

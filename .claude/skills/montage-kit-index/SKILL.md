@@ -33,6 +33,9 @@ no `npm install`, no Google Fonts download, no sound downloads. Everything you n
 | Quran / hadith / Islamic reflection reel (calm HUD, no music) | `religious-hud-reel` |
 | Anime AMV / edit to a song | `anime-amv-edit` |
 | Where the fonts/SFX/overlays are and how to load them | `offline-assets` |
+| Make a sound effect in code (calm set in `assets/sfx/earshot_calm/`), measure/listen to audio | `earshot` (then `real-sound` for a full licensed soundtrack) |
+| Put every SFX on its exact frame and mix a new MP4 + SFX track | `real-sfx` |
+| A real recorded sound that is not in `assets/sfx/` (free, licence-checked) | `openverse-sfx` |
 | Remotion API basics | `remotion-best-practices` (official) |
 
 ## Default specs

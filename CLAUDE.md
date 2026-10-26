@@ -32,8 +32,20 @@
   `talking-head-captions`, `religious-hud-reel`, `anime-amv-edit`, `offline-assets`.
 - Offline assets in `assets/`: `sfx/` (CC0 sound effects, see `assets/sfx/INDEX.md`), `fonts/` (Arabic + Latin,
   OFL), `overlays/`. Copy what you use into `video/public/` and load with `staticFile()` / `loadFont()` from
-  `@remotion/fonts`. Never use `@remotion/google-fonts` or download anything (no internet).
+  `@remotion/fonts`. Never use `@remotion/google-fonts`. Prefer the offline assets; new sounds only via `openverse-sfx`.
 - `scripts/analyze-audio <file> [--out x.json] [--fps 30]` (Python + ffmpeg, offline): speech/silence segments,
   loudness curve, onsets/beats/BPM, LUFS, frame numbers.
 - لا تقل إنك لا تسمع الصوت؛ حلّله بـ audio-analysis
 - Never say you can't hear audio; analyze it with the audio-analysis skill (`scripts/analyze-audio`).
+
+## Sound tools (added 2026-10-26)
+
+- `earshot` + `real-sound` skills (https://github.com/Leonxlnx/earshot, MIT, vendored in `tools/earshot/`): make sound
+  effects in code and "listen" to audio. Install each session: `scripts/install-earshot` (light) or `--full` (models).
+  30 calm code-made sounds are already rendered in `assets/sfx/earshot_calm/` (see `assets/sfx/INDEX.md`).
+- `real-sfx` skill (https://github.com/Clipwing/skills, scripts MIT, bundled uisfx sounds CC0; see its `LICENSE.md`):
+  places each sound on the exact frame and returns a mixed MP4 + SFX WAV. Its `config.json` uses `assets/sfx/` as the
+  main library; rebuild the index after adding sounds: `cd .claude/skills/real-sfx && python3 scripts/build_index.py`.
+- `openverse-sfx` skill + `scripts/openverse-sfx`: search Openverse for free sounds; only CC0 / public domain
+  (CC BY with credit and the user's OK). Never NC / ND / SA. Freesound and Wikimedia file downloads are blocked from
+  the cloud container; the search still works.

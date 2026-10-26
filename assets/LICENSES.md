@@ -134,3 +134,14 @@ Generated for this kit with Python (procedural gradients and noise). Original wo
 
 - Mixkit and Pixabay sounds: their licenses allow use in videos but forbid redistributing the files themselves, so they cannot be stored in a repo.
 - CC-BY sounds: avoided so that no attribution is ever required in a video.
+
+## Code-made calm SFX (`assets/sfx/earshot_calm/`)
+
+Rendered in this repo with earshot (https://github.com/Leonxlnx/earshot, MIT, vendored in `tools/earshot/`) from its
+built-in recipe bank: no recordings involved. The rendered files are original works of this repo, dedicated to the public
+domain under CC0 1.0. Exact ids are listed in `assets/sfx/INDEX.md`.
+
+## Openverse downloads (`assets/sfx/openverse/`)
+
+Fetched with `scripts/openverse-sfx`; only CC0 / public domain (or CC BY with credit). Per-file credits:
+`assets/sfx/openverse/CREDITS.md`.

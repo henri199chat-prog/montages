@@ -147,3 +147,43 @@ Use in Remotion: copy the files you need to `video/public/sfx/` and play them wi
 - Layer for weight: `boom_sub_02` + `hit_trailer_01` on the same frame.
 - Vary repeated sounds (swish_01..04, click_01/02, whoosh_air_06/07) so it does not sound mechanical.
 - Religious reels: only drones, soft ticks/beeps, risers, gong, chimes, shimmer, swell, soft whoosh. No music.
+
+## Calm, made in code with earshot (`earshot_calm/`)
+
+30 sounds rendered from the earshot bank (`tools/earshot`, MIT; output is original, CC0) with
+`earshot sfx render <id> --peak -6`, 48 kHz MP3. Peak -6 dBFS (quieter than the rest of the kit, on purpose).
+Good for religious reels, Tasbih/Misbaha ads, reflective edits. Re-render any one with another `--dur` / `--pitch` /
+`--seed` (skill `earshot`).
+
+| file | earshot id | duration (s) | when to use | suggested volume |
+|---|---|---|---|---|
+| `earshot_calm/shimmer_m0.mp3` | `shimmer/m0` | 4.22 | Soft sparkle tail under a title or verse reveal | 0.3-0.5 |
+| `earshot_calm/shimmer_m1.mp3` | `shimmer/m1` | 4.03 | Soft sparkle tail under a title or verse reveal | 0.3-0.5 |
+| `earshot_calm/shimmer_m3.mp3` | `shimmer/m3` | 3.62 | Soft sparkle tail under a title or verse reveal | 0.3-0.5 |
+| `earshot_calm/shimmer_m5.mp3` | `shimmer/m5` | 4.44 | Soft sparkle tail under a title or verse reveal | 0.3-0.5 |
+| `earshot_calm/pro_shimmer_m1.mp3` | `pro_shimmer/m1` | 1.44 | Short sparkle on a highlight | 0.3-0.5 |
+| `earshot_calm/pro_shimmer_m4.mp3` | `pro_shimmer/m4` | 2.42 | Short sparkle on a highlight | 0.3-0.5 |
+| `earshot_calm/notify_m0.mp3` | `notify/m0` | 2.33 | Gentle bell/notification, counter step, tasbih count | 0.3-0.5 |
+| `earshot_calm/notify_m2.mp3` | `notify/m2` | 1.82 | Gentle bell/notification, counter step, tasbih count | 0.3-0.5 |
+| `earshot_calm/notify_m3.mp3` | `notify/m3` | 2.54 | Gentle bell/notification, counter step, tasbih count | 0.3-0.5 |
+| `earshot_calm/notify_m4.mp3` | `notify/m4` | 1.82 | Gentle bell/notification, counter step, tasbih count | 0.3-0.5 |
+| `earshot_calm/notify_mid_wood.mp3` | `notify/mid_wood` | 0.36 | Gentle bell/notification, counter step, tasbih count | 0.3-0.5 |
+| `earshot_calm/pluck_kalimba_soft.mp3` | `pluck/kalimba_soft` | 3.02 | Kalimba note, warm and slow | 0.3-0.5 |
+| `earshot_calm/pluck_kalimba_ring.mp3` | `pluck/kalimba_ring` | 3.02 | Kalimba note, warm and slow | 0.3-0.5 |
+| `earshot_calm/mallet_celesta.mp3` | `mallet/celesta` | 0.46 | Small celesta/glock/marimba tap on text pop | 0.35-0.55 |
+| `earshot_calm/mallet_glock.mp3` | `mallet/glock` | 0.46 | Small celesta/glock/marimba tap on text pop | 0.35-0.55 |
+| `earshot_calm/mallet_marimba.mp3` | `mallet/marimba` | 0.60 | Small celesta/glock/marimba tap on text pop | 0.35-0.55 |
+| `earshot_calm/mallet_flourish.mp3` | `mallet/flourish` | 0.55 | Small celesta/glock/marimba tap on text pop | 0.35-0.55 |
+| `earshot_calm/bell_small_bell.mp3` | `fit/bell/small_bell` | 1.70 | Small bell, a single calm accent | 0.3-0.5 |
+| `earshot_calm/drip_drop.mp3` | `drip/drop` | 0.36 | Water drop on a soft pop or bead | 0.35-0.55 |
+| `earshot_calm/drip_plink.mp3` | `drip/plink` | 0.29 | Water drop on a soft pop or bead | 0.35-0.55 |
+| `earshot_calm/drip_bloop.mp3` | `drip/bloop` | 0.41 | Water drop on a soft pop or bead | 0.35-0.55 |
+| `earshot_calm/reverse_swell_breath.mp3` | `reverse_swell/breath` | 1.27 | Breath-like swell into a cut | 0.35-0.55 |
+| `earshot_calm/reverse_swell_ring.mp3` | `reverse_swell/ring` | 1.70 | Breath-like swell into a cut | 0.35-0.55 |
+| `earshot_calm/swish_soft.mp3` | `swish/soft` | 0.91 | Soft slow swish for gentle slides | 0.4-0.6 |
+| `earshot_calm/swish_cane.mp3` | `swish/cane` | 0.74 | Soft slow swish for gentle slides | 0.4-0.6 |
+| `earshot_calm/riser_swell.mp3` | `riser/swell` | 2.23 | Airy slow build into a reveal | 0.35-0.55 |
+| `earshot_calm/riser_air.mp3` | `riser/air` | 2.42 | Airy slow build into a reveal | 0.35-0.55 |
+| `earshot_calm/logo_sting_soft_bloom.mp3` | `logo_sting/soft_bloom` | 1.90 | Soft bloom for logo / end card | 0.4-0.6 |
+| `earshot_calm/logo_sting_reverse_bloom.mp3` | `logo_sting/reverse_bloom` | 2.16 | Soft bloom for logo / end card | 0.4-0.6 |
+| `earshot_calm/downlifter_air_fall.mp3` | `downlifter/air_fall` | 2.09 | Airy fall after a peak, outro | 0.35-0.55 |
