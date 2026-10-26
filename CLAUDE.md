@@ -26,10 +26,11 @@
 
 ## Pro montage kit (offline)
 
+- **For any religious / Islamic video (Quran, hadith, naseeha, Islamic tips): use the `religious-reel` skill and read `religious/README.md` first.** It is Ayman's confirmed style and overrides `religious-hud-reel`.
 - Start with skill `montage-kit-index` (`.claude/skills/montage-kit-index/SKILL.md`): it routes to
   `pro-editing-style`, `audio-analysis`, `audio-beat-sync`, `audio-mixing-remotion`,
   `kinetic-typography-remotion`, `remotion-transitions-pro`, `arabic-text-remotion`,
-  `talking-head-captions`, `religious-hud-reel`, `anime-amv-edit`, `offline-assets`.
+  `talking-head-captions`, `religious-reel` (Ayman's style, first) / `religious-hud-reel` (generic), `anime-amv-edit`, `offline-assets`.
 - Offline assets in `assets/`: `sfx/` (CC0 sound effects, see `assets/sfx/INDEX.md`), `fonts/` (Arabic + Latin,
   OFL), `overlays/`. Copy what you use into `video/public/` and load with `staticFile()` / `loadFont()` from
   `@remotion/fonts`. Never use `@remotion/google-fonts`. Prefer the offline assets; new sounds only via `openverse-sfx`.

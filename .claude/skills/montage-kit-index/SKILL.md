@@ -30,7 +30,8 @@ no `npm install`, no Google Fonts download, no sound downloads. Everything you n
 | Whip pan, zoom-through, match cut, mask wipe, glitch, light leak, flash | `remotion-transitions-pro` |
 | ANY Arabic text on screen (RTL, tashkeel, fonts, numerals) | `arabic-text-remotion` |
 | Word-by-word captions for talking-head / VO reels | `talking-head-captions` |
-| Quran / hadith / Islamic reflection reel (calm HUD, no music) | `religious-hud-reel` |
+| Ayman's Quran / hadith / Islamic reel (his confirmed style, read first) | `religious-reel` + `religious/README.md` |
+| Quran / hadith / Islamic reflection reel, generic style only if religious-reel does not cover it | `religious-hud-reel` |
 | Anime AMV / edit to a song | `anime-amv-edit` |
 | Where the fonts/SFX/overlays are and how to load them | `offline-assets` |
 | Make a sound effect in code (calm set in `assets/sfx/earshot_calm/`), measure/listen to audio | `earshot` (then `real-sound` for a full licensed soundtrack) |
