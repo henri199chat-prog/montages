@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# FreeLLMAPI (https://github.com/tashfeenahmed/freellmapi, MIT): one local OpenAI-compatible endpoint over many free AI tiers.
+#   scripts/freellmapi start     install (first time ~2 min), start on :3001, add keyless providers + any env keys
+#   scripts/freellmapi env       print the base URL and unified key exports
+#   scripts/freellmapi stop
+# Optional provider keys, read from the environment (set them in the cloud environment settings, never in chat):
+#   GEMINI_API_KEY  GROQ_API_KEY  OPENROUTER_API_KEY  HF_TOKEN  MISTRAL_API_KEY  CLOUDFLARE_AI_KEY ("account_id:api_token")
+set -euo pipefail
+APP=$HOME/apps/freellmapi; ENVF=$HOME/.freellmapi.env; LOG=$HOME/apps/freellmapi.log; PORT=3001
+up() { curl -s -o /dev/null -w "%{http_code}" localhost:$PORT/v1/models 2>/dev/null | grep -qE "200|401"; }
+case "${1:-start}" in
+start)
+  if [ ! -f "$APP/server/dist/index.js" ]; then
+    mkdir -p "$HOME/apps"; rm -rf "$APP"
+    git clone -q --depth 1 https://github.com/tashfeenahmed/freellmapi "$APP"
+    (cd "$APP" && npm install --no-audit --no-fund >/dev/null 2>&1 && npm run build >/dev/null 2>&1)
+  fi
+  [ -f "$ENVF" ] || { umask 077; {
+    echo "ENCRYPTION_KEY=$(node -e 'console.log(require("crypto").randomBytes(32).toString("hex"))')"
+    echo "FREELLMAPI_EMAIL=admin@localhost.local"
+    echo "FREELLMAPI_PASSWORD=$(node -e 'console.log(require("crypto").randomBytes(18).toString("base64url"))')"; } > "$ENVF"; }
+  set -a; . "$ENVF"; set +a
+  if ! up; then
+    (cd "$APP" && NODE_ENV=production NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt nohup node server/dist/index.js > "$LOG" 2>&1 &)
+    for _ in $(seq 1 60); do up && break; sleep 1; done
+  fi
+  curl -s -X POST localhost:$PORT/api/auth/setup -H 'content-type: application/json' \
+    -d "{\"email\":\"$FREELLMAPI_EMAIL\",\"password\":\"$FREELLMAPI_PASSWORD\"}" >/dev/null || true
+  TOK=$(curl -s -X POST localhost:$PORT/api/auth/login -H 'content-type: application/json' \
+    -d "{\"email\":\"$FREELLMAPI_EMAIL\",\"password\":\"$FREELLMAPI_PASSWORD\"}" | python3 -c 'import json,sys;print(json.load(sys.stdin)["token"])')
+  A="authorization: Bearer $TOK"
+  have=$(curl -s localhost:$PORT/api/keys -H "$A" | python3 -c 'import json,sys;d=json.load(sys.stdin);d=d.get("keys",d) if isinstance(d,dict) else d;print(" ".join(k["platform"] for k in d))')
+  add() { case " $have " in *" $1 "*) ;; *) curl -s -X POST localhost:$PORT/api/keys -H "$A" -H 'content-type: application/json' \
+            -d "{\"platform\":\"$1\",\"key\":\"$2\",\"label\":\"$3\"}" >/dev/null; echo "added $1";; esac; }
+  for p in kilo ovh aihorde; do add $p "" keyless; done
+  [ -n "${GEMINI_API_KEY:-}" ] && add google "$GEMINI_API_KEY" env
+  [ -n "${GROQ_API_KEY:-}" ] && add groq "$GROQ_API_KEY" env
+  [ -n "${OPENROUTER_API_KEY:-}" ] && add openrouter "$OPENROUTER_API_KEY" env
+  [ -n "${HF_TOKEN:-}" ] && add huggingface "$HF_TOKEN" env
+  [ -n "${MISTRAL_API_KEY:-}" ] && add mistral "$MISTRAL_API_KEY" env
+  [ -n "${CLOUDFLARE_AI_KEY:-}" ] && add cloudflare "$CLOUDFLARE_AI_KEY" env
+  K=$(curl -s localhost:$PORT/api/settings/api-key -H "$A" | python3 -c 'import json,sys;d=json.load(sys.stdin);print(d.get("apiKey") or d.get("key"))')
+  grep -q '^FREELLMAPI_KEY=' "$ENVF" || echo "FREELLMAPI_KEY=$K" >> "$ENVF"
+  echo "FreeLLMAPI ready on http://localhost:$PORT/v1  (key in $ENVF as FREELLMAPI_KEY)";;
+env) set -a; . "$ENVF"; set +a; echo "export OPENAI_BASE_URL=http://localhost:$PORT/v1 OPENAI_API_KEY=$FREELLMAPI_KEY";;
+stop) pkill -f "node server/dist/index.js" || true;;
+esac
