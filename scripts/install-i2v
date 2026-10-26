@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Install the image-to-video tools (CPU torch + Depth Anything V2 via transformers + OpenCV) into ~/.i2v-venv.
+set -euo pipefail
+V="$HOME/.i2v-venv"
+[ -x "$V/bin/python" ] || python3 -m venv "$V"
+"$V/bin/pip" install -q torch --index-url https://download.pytorch.org/whl/cpu
+"$V/bin/pip" install -q transformers pillow numpy "opencv-python-headless<5"
+echo "ready: $V/bin/python scripts/image-to-video.py"
