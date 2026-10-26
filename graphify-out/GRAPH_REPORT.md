@@ -1,7 +1,7 @@
 # Graph Report - montages  (2026-10-26)
 
 ## Corpus Check
-- 2069 files · ~2,360,412 words
+- 2069 files · ~2,360,473 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 98 file(s) not represented in the graph (top: .woff2 42, (none) 27, .ttf 17)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9fa642a8`
+- Built from commit: `2bbf4bb4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -6124,7 +6124,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `ToolStatus` be split into smaller, more focused modules?**
   _Cohesion score 0.030086690464048955 - nodes in this community are weakly interconnected._
 - **Why does `ToolResult` connect `ToolResult` to `ToolStatus`, `json`, `DoubaoTTS`, `RemotionCaptionBurn`, `MusicLibrary`, `test_kling_official_core.py`, `VideoCompose`, `VideoAnalyzer`, `GreenScreenComposite`, `PixabayMusic`, `SeedanceVideo`, `test_provider_refresh.py`, `GoogleTTS`, `GrokVideo`, `test_mps_device.py`, `TTSSelector`, `RealtimeAudioSession`, `ToolRegistry`, `test_hyperframes_compose.py`, `test_phase3_contracts.py`, `AtlasImage`, `HunyuanImage`, `test_phase2_contracts.py`, `HyperFramesCompose`, `DependencyError`, `FishAudioTTS`, `ComfyUIError`, `.run_command`, `KlingLipSync`, `.execute`, `KlingOfficialVideo`, `test_seedream_image.py`, `DashscopeAsr`, `WanVideo`, `VideoUnderstand`, `VideoStitch`, `VeoVideo`, `generate_wan`, `AzureSpeechToText`, `AzureTTS`, `ImageSelector`, `KlingOfficialImage`, `test_3d_asset_generation.py`, `pytest`, `VideoSelector`, `HunyuanCloudVideo`, `test_base_tool_cache.py`, `AudioMixer`, `ElevenLabsTTS`, `SilenceCutter`, `ScreenRecorder`, `test_backlot_contract.py`, `AtlasVideo`, `MathAnimate`, `MiniMaxImage`, `ComfyUIMusic`, `SunoMusic`, `.execute`, `KlingVideo`, `SubtitleGen`, `test_asset_cache_output_references.py`, `ThreeJSWorld`, `JimengVideo`, `Transcriber`, `GrokImage`, `CogVideoVideo`, `SeedanceArkVideo`, `Any`, `._generate`, `EyeEnhance`, `._generate`, `test_openai_image_multi_output.py`, `_oom_aware_error`, `GreenScreenProcessor`, `MiniMaxVideo`, `SoraVideo`, `_wan_engine.py`, `ComfyUIVideo`, `RunwayVideo`, `AutoReframe`, `DashscopeImage`, `atlas_client.py`, `._download`, `ComfyUIImage`, `DashscopeTTS`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
 - **Are the 141 inferred relationships involving `ToolStatus` (e.g. with `TestContract` and `_DegradedComfyImage`) actually correct?**
   _`ToolStatus` has 141 INFERRED edges - model-reasoned connections that need verification._
 - **Should `json` be split into smaller, more focused modules?**

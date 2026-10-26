@@ -14310,9 +14310,9 @@
     "semantic_hash": ""
   },
   "religious/tools/mix_master.py": {
-    "mtime": 1793025291.1149497,
-    "seen": 1793025983.0245764,
-    "ast_hash": "3619a86af5ab67a6919f062e2f422ca6",
+    "mtime": 1793026462.240747,
+    "seen": 1793026672.4482913,
+    "ast_hash": "bff420a6181db8ec294cd3525e7461b3",
     "semantic_hash": ""
   },
   "religious/tools/quran.py": {
@@ -14388,9 +14388,9 @@
     "semantic_hash": ""
   },
   "video/src/religious/data/niam.json": {
-    "mtime": 1793025352.149977,
-    "seen": 1793025983.0248787,
-    "ast_hash": "6597cc7286be4b1e5a7bd92dc0a6a358",
+    "mtime": 1793026448.8500104,
+    "seen": 1793026672.456709,
+    "ast_hash": "20912633013696905655a9234b495be6",
     "semantic_hash": ""
   },
   "video/src/religious/data/sample-tawbah-102-104.json": {
@@ -14448,9 +14448,9 @@
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793025911.0929635,
-    "seen": 1793025983.026761,
-    "ast_hash": "070df5ebabcf7726b66de0af1632a328",
+    "mtime": 1793026609.873853,
+    "seen": 1793026672.5059159,
+    "ast_hash": "1449c575006b8ff16f1b063572450be4",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -14655,6 +14655,12 @@
     "mtime": 1793025861.0219815,
     "seen": 1793025983.0272994,
     "ast_hash": "c96174c4596056c047d3323c99aeec78",
+    "semantic_hash": ""
+  },
+  "videos/niam-shukr-v2.mp4": {
+    "mtime": 1793026583.7060184,
+    "seen": 1793026672.5217774,
+    "ast_hash": "f656bae6b18bd7f8d682cdf728ea94f9",
     "semantic_hash": ""
   }
 }

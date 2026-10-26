@@ -75,10 +75,14 @@ def main():
     # no IR normalisation: irnorm=-1 on ffmpeg >= 7, gtype=-1 on ffmpeg 6
     afh = subprocess.run(["ffmpeg", "-hide_banner", "-h", "filter=afir"], stdout=subprocess.PIPE).stdout.decode()
     nonorm = "irnorm=-1" if "irnorm" in afh else "gtype=-1"
-    ff("-i", f"{tmp}/v.wav", "-i", f"{tmp}/ir0.wav", "-i", f"{tmp}/ir1.wav", "-filter_complex",
+    # the voice is placed at --off by concatenating real silence in front of it: adelay after amix was silently
+    # ignored on ffmpeg 6 (the voice then started at 0 s, 3 s before the captions)
+    ff("-i", f"{tmp}/v.wav", "-i", f"{tmp}/ir0.wav", "-i", f"{tmp}/ir1.wav",
+       "-f", "lavfi", "-i", f"anullsrc=r=48000:cl=stereo:d={a.off}", "-filter_complex",
        f"[0]asplit=3[d][a][b];[a][1]afir=dry=0:wet=1:{nonorm}[wl];[b][2]afir=dry=0:wet=1:{nonorm}[wr];"
        f"[wl][wr]join=inputs=2:channel_layout=stereo,volume={wet:.5f}[w];[d]pan=stereo|c0=c0|c1=c0,apad=pad_dur=1.8[dd];"
-       f"[dd][w]amix=inputs=2:normalize=0:duration=first,adelay={int(a.off * 1000)}:all=1,apad,atrim=0:{total}",
+       f"[dd][w]amix=inputs=2:normalize=0:duration=first,aformat=sample_fmts=fltp:channel_layouts=stereo[m];"
+       f"[3][m]concat=n=2:v=0:a=1,apad,atrim=0:{total}",
        "-ar", "48000", "-c:a", "pcm_f32le", f"{tmp}/voice_fx.wav")
     inputs = ["-i", f"{tmp}/voice_fx.wav"]
     if not a.no_drone:
