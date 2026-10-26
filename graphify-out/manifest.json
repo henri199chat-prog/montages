@@ -14352,9 +14352,9 @@
     "semantic_hash": ""
   },
   "video/src/religious/NiamReel.tsx": {
-    "mtime": 1793025755.07197,
-    "seen": 1793025983.024871,
-    "ast_hash": "18c4cf8af2c4222fbc801495156a7017",
+    "mtime": 1793030664.832531,
+    "seen": 1793030859.2399402,
+    "ast_hash": "4d345a0790d48b72cd431bde12870cb6",
     "semantic_hash": ""
   },
   "video/src/religious/RecitationReel.tsx": {
@@ -14448,9 +14448,9 @@
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793026609.873853,
-    "seen": 1793026672.5059159,
-    "ast_hash": "1449c575006b8ff16f1b063572450be4",
+    "mtime": 1793030796.1951294,
+    "seen": 1793030859.2748203,
+    "ast_hash": "79df304f6e8919a128902ff038b57af7",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -14661,6 +14661,12 @@
     "mtime": 1793026583.7060184,
     "seen": 1793026672.5217774,
     "ast_hash": "f656bae6b18bd7f8d682cdf728ea94f9",
+    "semantic_hash": ""
+  },
+  "videos/niam-shukr-v3.mp4": {
+    "mtime": 1793030782.8565378,
+    "seen": 1793030859.2868252,
+    "ast_hash": "6c668fe270559b658a3d3bf072163fc7",
     "semantic_hash": ""
   }
 }

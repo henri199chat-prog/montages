@@ -19,6 +19,8 @@ import data from "./data/niam.json";
  * (coral dots turn gold and rise) · 2 حلمه (slow dial), كرمه (orbs fall into open hands) · 3 three blessings (home,
  * health, loved ones) · 4 Quran + iman (open book, glowing orb) · 5 hub of 8 blessings counted, all glow on «نعمة» ·
  * 6 worries straighten into gold, dua · 7 Quran quote: countless points (لا تحصوها). Light SFX on talk only, none on the verse.
+ * Sound (v3, Ayman asked): the ORIGINAL audio of the clip, unseparated, only cut before the TikTok end sound and mastered
+ * (mix_orig.wav); v1–v2 used the separated clean voice + drone (mix.wav).
  */
 type Word = { t: string; on: number; off: number; k: string };
 type Page = { kind: string; start: number; end: number; breaks: number[]; words: Word[] };
@@ -502,7 +504,7 @@ export const NiamReel: React.FC = () => {
           }
         />
       </NavyBackground>
-      <Audio src={staticFile("religious/niam/mix.wav")} />
+      <Audio src={staticFile("religious/niam/mix_orig.wav")} />
       {SFX.filter(([at]) => at < QURAN_FROM || at >= QURAN_TO).map(([at, src, vol], i) => (
         <Sequence key={i} from={Math.max(0, Math.round(at * FPS))} layout="none">
           <Audio src={staticFile(src)} volume={vol} />
