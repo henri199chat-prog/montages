@@ -1,0 +1,69 @@
+{
+ "file": "misbaha_vo_male_alt.mp3",
+ "duration_s": 20.05,
+ "loudness": {
+  "integrated_lufs": -16.4,
+  "lra_lu": 3.0,
+  "true_peak_dbtp": -1.6
+ },
+ "engine": "Habibi-TTS Specialized/MSA (F5-TTS fine-tune, Apache-2.0), CPU, voice prompt: ClArTTS male narrator (CC-BY-4.0, LibriVox)",
+ "measured_with": "scripts/analyze-audio --noise -40 --min-silence 0.3",
+ "segments": [
+  {
+   "id": "s1a",
+   "text": "سُبْحَانَ اللّٰهِ",
+   "start": 0.44,
+   "end": 1.42,
+   "start_frame_30fps": 13,
+   "end_frame_30fps": 43
+  },
+  {
+   "id": "s1b",
+   "text": "اَلْحَمْدُ لِلّٰهِ",
+   "start": 2.24,
+   "end": 3.25,
+   "start_frame_30fps": 67,
+   "end_frame_30fps": 97
+  },
+  {
+   "id": "s1c",
+   "text": "اَللّٰهُ أَكْبَرُ",
+   "start": 4.01,
+   "end": 5.09,
+   "start_frame_30fps": 120,
+   "end_frame_30fps": 153
+  },
+  {
+   "id": "s2",
+   "text": "اِجْعَلْ ذِكْرَ اللّٰهِ رَفِيقَكَ فِي كُلِّ وَقْتٍ.",
+   "start": 5.99,
+   "end": 8.74,
+   "start_frame_30fps": 180,
+   "end_frame_30fps": 262
+  },
+  {
+   "id": "s3",
+   "text": "عَدَّادٌ لِلتَّسْبِيحِ، وَأَذْكَارُ الصَّبَاحِ وَالْمَسَاءِ مِنْ حِصْنِ الْمُسْلِمِ.",
+   "start": 9.66,
+   "end": 14.5,
+   "start_frame_30fps": 290,
+   "end_frame_30fps": 435
+  },
+  {
+   "id": "s4",
+   "text": "يَعْمَلُ بِدُونِ إِنْتَرْنِتْ.",
+   "start": 15.47,
+   "end": 16.96,
+   "start_frame_30fps": 464,
+   "end_frame_30fps": 509
+  },
+  {
+   "id": "s5",
+   "text": "مِسْبَحَة.",
+   "start": 18.28,
+   "end": 19.16,
+   "start_frame_30fps": 548,
+   "end_frame_30fps": 575
+  }
+ ]
+}
