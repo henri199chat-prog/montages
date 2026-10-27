@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<style>
+  @font-face { font-family: "Tajawal"; font-weight: 800; src: url("assets/fonts/Tajawal-800-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+FB50-FDFF, U+FE70-FEFF; }
+  @font-face { font-family: "Tajawal"; font-weight: 800; src: url("assets/fonts/Tajawal-800-latin.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Aref Ruqaa"; font-weight: 700; src: url("assets/fonts/ArefRuqaa-700-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+FB50-FDFF, U+FE70-FEFF; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1920px; overflow: hidden; font-family: "Tajawal", sans-serif; color: #2b2540;
+    background: linear-gradient(165deg, #ece5fb 0%, #f1ecfc 45%, #e3f3fc 100%); position: relative; }
+  .glow { position: absolute; left: 90px; top: 760px; width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle, rgba(255,190,150,.85) 0%, rgba(255,211,191,0) 68%); }
+  #folder { position: absolute; left: 240px; top: 1020px; width: 600px; height: 460px; }
+  #tab { position: absolute; left: 36px; top: 0; width: 240px; height: 96px; border-radius: 28px; background: #b39ce6; }
+  #back { position: absolute; left: 0; top: 48px; width: 600px; height: 410px; border-radius: 36px; background: #b39ce6; }
+  #paper { position: absolute; left: 100px; top: -200px; width: 400px; height: 480px; border-radius: 26px; background: #fff; padding: 90px 44px 0;
+    box-shadow: 0 0 90px 26px rgba(255,180,140,.9); }
+  #paper .nm { position: absolute; top: 24px; left: 0; width: 400px; text-align: center; font-family: monospace; font-weight: 700; font-size: 38px; color: #e8775a; direction: ltr; }
+  #paper i { display: block; height: 18px; border-radius: 9px; background: #c9b8ef; margin-bottom: 20px; }
+  #front { position: absolute; left: 0; top: 170px; width: 600px; height: 290px; border-radius: 36px; background: linear-gradient(180deg, #d9ccf7, #c9b8ef);
+    transform: perspective(900px) rotateX(-40deg); transform-origin: 50% 100%; }
+  h1 { position: absolute; top: 300px; left: 0; width: 1080px; text-align: center; font-size: 128px; line-height: 1.18; font-weight: 800; padding: 0 60px; }
+  h1 .c { direction: ltr; display: inline-block; }
+  h1 .hl { display: inline-block; background: #e8775a; color: #fff; border-radius: 28px; padding: 0 28px 14px; margin-top: 14px; }
+  .sub { position: absolute; top: 1530px; left: 0; width: 1080px; text-align: center; font-weight: 800; font-size: 56px; color: #e8775a; }
+  .handle { position: absolute; top: 1760px; left: 0; width: 1080px; text-align: center; font-weight: 800; font-size: 36px; color: #8a82a3; direction: ltr; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <h1>سرّ <span class="c">Claude</span><br>اللي ما يعرفوش<br><span class="hl">أغلب الناس</span></h1>
+  <div id="folder">
+    <div id="tab"></div><div id="back"></div>
+    <div id="paper"><div class="nm">SKILL.md</div><i></i><i style="width:80%;background:#bfe3f7"></i><i style="width:90%"></i><i style="width:60%;background:#ffd3bf"></i></div>
+    <div id="front"></div>
+  </div>
+  <div class="sub">الـ Skills</div>
+  <div class="handle">aymen.ai.lab</div>
+</body>
+</html>

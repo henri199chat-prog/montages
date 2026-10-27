@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Tajawal"; font-weight: 500; font-display: block; src: url("assets/fonts/Tajawal-500-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      @font-face { font-family: "Tajawal"; font-weight: 500; font-display: block; src: url("assets/fonts/Tajawal-500-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Tajawal"; font-weight: 800; font-display: block; src: url("assets/fonts/Tajawal-800-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      @font-face { font-family: "Tajawal"; font-weight: 800; font-display: block; src: url("assets/fonts/Tajawal-800-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Aref Ruqaa"; font-weight: 700; font-display: block; src: url("assets/fonts/ArefRuqaa-700-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      @font-face { font-family: "Aref Ruqaa"; font-weight: 700; font-display: block; src: url("assets/fonts/ArefRuqaa-700-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+
+      :root {
+        --lavender: #c9b8ef;
+        --lavender-soft: #ece5fb;
+        --sky: #bfe3f7;
+        --sky-soft: #e3f3fc;
+        --peach: #ffd3bf;
+        --accent: #e8775a;
+        --ink: #2b2540;
+        --muted: #8a82a3;
+        --term: #221d33;
+        --font: "Tajawal", sans-serif;
+        --hand: "Aref Ruqaa", serif;
+        --mono: "JetBrains Mono", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--lavender-soft); }
+      #root { position: relative; width: 1080px; height: 1920px; font-family: var(--font); color: var(--ink); }
+
+      /* background */
+      #bg { position: absolute; inset: 0; background: linear-gradient(165deg, var(--lavender-soft) 0%, #f1ecfc 45%, var(--sky-soft) 100%); }
+      #glow { position: absolute; left: 140px; top: 520px; width: 800px; height: 800px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 211, 191, .75) 0%, rgba(255, 211, 191, 0) 70%); }
+      #glow2 { position: absolute; left: -200px; top: 1300px; width: 700px; height: 700px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(191, 227, 247, .9) 0%, rgba(191, 227, 247, 0) 70%); }
+      #handle { position: absolute; left: 60px; top: 70px; font-family: var(--font); font-weight: 800; font-size: 30px;
+        color: var(--muted); direction: ltr; letter-spacing: .02em; }
+
+      .card { position: absolute; background: #fff; border-radius: 34px; box-shadow: 0 30px 60px -20px rgba(60, 40, 110, .28), 0 4px 12px rgba(60, 40, 110, .08); }
+
+      /* ---------- Scene A: hook ---------- */
+      #kicker { position: absolute; top: 230px; left: 0; width: 1080px; text-align: center; font-weight: 800; font-size: 30px; color: var(--accent); letter-spacing: .04em; }
+      #h1 { position: absolute; top: 290px; left: 0; width: 1080px; text-align: center; font-weight: 800; font-size: 86px; line-height: 1.15; }
+      #h2 { position: absolute; top: 420px; left: 0; width: 1080px; text-align: center; font-family: var(--hand); font-size: 112px; color: var(--accent); line-height: 1.3; }
+      #skill { left: 690px; top: 760px; width: 190px; height: 230px; padding: 34px 30px; }
+      #skill i { display: block; height: 14px; border-radius: 7px; background: var(--lavender); margin-bottom: 18px; }
+      #skill i:nth-child(2) { width: 80%; } #skill i:nth-child(3) { width: 60%; background: var(--sky); }
+      #skill b { position: absolute; bottom: 26px; left: 0; width: 190px; text-align: center; font-family: var(--mono); font-size: 26px; color: var(--muted); direction: ltr; font-weight: 400; }
+      #wire { position: absolute; left: 560px; top: 873px; width: 130px; height: 6px; border-radius: 3px; background: var(--accent); }
+      #spark { left: 380px; top: 780px; width: 180px; height: 180px; display: flex; align-items: center; justify-content: center; }
+      #spark svg { width: 104px; height: 104px; }
+      #counter { position: absolute; left: 150px; top: 832px; height: 76px; padding: 0 30px; border-radius: 22px; background: var(--ink); color: #fff;
+        font-weight: 800; font-size: 40px; display: flex; align-items: center; gap: 14px; }
+      #counter .n { position: relative; display: inline-block; width: 70px; height: 50px; text-align: center; font-family: var(--font); }
+      #counter .n span { position: absolute; left: 0; top: 0; width: 70px; text-align: center; line-height: 50px; }
+      .mini { position: absolute; top: 1010px; width: 200px; height: 300px; border-radius: 26px; overflow: hidden; box-shadow: 0 24px 40px -14px rgba(60, 40, 110, .35); }
+      .mini .sun { position: absolute; width: 74px; height: 74px; border-radius: 50%; left: 63px; top: 70px; }
+      .mini .wave { position: absolute; left: -20px; width: 240px; height: 120px; border-radius: 50%; }
+      #m1 { left: 70px; background: linear-gradient(180deg, #8fb7f2, #3e5fb8); } #m1 .sun { background: #fff3c4; } #m1 .wave { top: 220px; background: #2c4a99; }
+      #m2 { left: 270px; background: linear-gradient(180deg, #ffd3bf, #f29b7e); } #m2 .sun { background: #fff; } #m2 .wave { top: 210px; background: #e8775a; }
+      #m3 { left: 440px; background: linear-gradient(180deg, #c9b8ef, #7d63c9); } #m3 .sun { background: #ffe9a8; } #m3 .wave { top: 230px; background: #5b45a8; }
+      #m4 { left: 610px; background: linear-gradient(180deg, #bfe3f7, #5ea9d6); } #m4 .sun { background: #ffd3bf; } #m4 .wave { top: 215px; background: #3f8cbf; }
+      #m5 { left: 800px; background: linear-gradient(180deg, #2d2552, #120f26); } #m5 .sun { background: #f4f1ff; width: 56px; height: 56px; } #m5 .wave { top: 225px; background: #3a2f6b; }
+
+      /* ---------- Scene B: demo ---------- */
+      #note { position: absolute; top: 300px; left: 640px; font-family: var(--hand); font-size: 64px; color: var(--accent); }
+      #term { position: absolute; left: 160px; top: 440px; width: 760px; height: 600px; border-radius: 34px; background: var(--term);
+        box-shadow: 0 40px 80px -24px rgba(34, 29, 51, .55); overflow: hidden; }
+      #term .bar { height: 70px; display: flex; align-items: center; gap: 12px; padding: 0 28px; direction: ltr; border-bottom: 1px solid rgba(255,255,255,.08); }
+      #term .bar i { width: 16px; height: 16px; border-radius: 50%; background: #5a5373; }
+      #term .bar i:first-child { background: var(--accent); }
+      #term .bar b { margin-left: 14px; color: #cfc8e6; font-family: var(--mono); font-size: 24px; font-weight: 400; }
+      #prompt { margin: 30px 28px 0; padding: 22px 26px; border-radius: 18px; border: 2px solid rgba(255,255,255,.14); color: #fff; font-size: 38px; font-weight: 500; display: flex; gap: 16px; align-items: center; }
+      #prompt .caret { color: var(--accent); font-family: var(--mono); }
+      #typed { display: inline-block; white-space: nowrap; }
+      #code { direction: ltr; margin: 34px 34px 0; font-family: var(--mono); font-size: 25px; line-height: 1.8; color: #bdb5d8; }
+      #code div { white-space: nowrap; }
+      #code .k { color: #ff9f85; } #code .s { color: #9fd8f5; } #code .f { color: #c9b8ef; } #code .c { color: #6e6790; }
+      #preview { left: 640px; top: 520px; width: 330px; height: 560px; overflow: hidden; background: linear-gradient(180deg, #fff6f1, #ffe0d1); }
+      #preview .t { position: absolute; top: 60px; left: 0; width: 330px; text-align: center; font-weight: 800; font-size: 46px; }
+      #preview .t2 { position: absolute; top: 118px; left: 0; width: 330px; text-align: center; font-family: var(--hand); font-size: 50px; color: var(--accent); }
+      #cup { position: absolute; left: 105px; top: 250px; width: 120px; height: 120px; border-radius: 30px; background: var(--accent); }
+      #cup::after { content: ""; position: absolute; left: 30px; top: 34px; width: 60px; height: 44px; border-radius: 0 0 22px 22px; background: #fff; }
+      .steam { position: absolute; top: 200px; width: 10px; height: 40px; border-radius: 5px; background: rgba(232, 119, 90, .5); }
+      #st1 { left: 140px; } #st2 { left: 160px; } #st3 { left: 180px; }
+      #preview .pill { position: absolute; left: 55px; top: 440px; width: 220px; height: 54px; border-radius: 27px; background: var(--ink); color: #fff; text-align: center; line-height: 54px; font-weight: 800; font-size: 26px; }
+      #badge { position: absolute; left: 230px; top: 1100px; height: 64px; padding: 0 28px; border-radius: 20px; background: var(--ink); color: #fff; font-size: 30px; font-weight: 800; display: flex; align-items: center; gap: 12px; }
+      #badge .m { font-family: var(--mono); font-weight: 400; color: var(--peach); direction: ltr; }
+
+      /* ---------- Scene C: not video AI ---------- */
+      #frame { left: 150px; top: 380px; width: 780px; height: 780px; overflow: hidden; padding: 0; }
+      #art { position: absolute; inset: 0; background: linear-gradient(180deg, #2d2552 0%, #5b45a8 48%, #f29b7e 100%); }
+      #moon { position: absolute; left: 470px; top: 120px; width: 150px; height: 150px; border-radius: 50%; background: #fff3dc; box-shadow: 0 0 80px 20px rgba(255, 243, 220, .45); }
+      .sea { position: absolute; left: -60px; width: 900px; height: 260px; border-radius: 50%; }
+      #sea1 { top: 520px; background: #4a3a8f; } #sea2 { top: 600px; background: #3a2f6b; } #sea3 { top: 680px; background: #2b2552; }
+      #boat { position: absolute; left: 250px; top: 470px; width: 120px; height: 90px; }
+      #codeHalf { position: absolute; left: 0; top: 0; width: 390px; height: 780px; background: #1b1730; padding: 120px 34px; direction: ltr;
+        font-family: var(--mono); font-size: 22px; line-height: 1.9; color: #9d95bd; overflow: hidden; }
+      #codeHalf .k { color: #ff9f85; } #codeHalf .s { color: #9fd8f5; } #codeHalf .f { color: #c9b8ef; }
+      #divider { position: absolute; left: 388px; top: 0; width: 5px; height: 780px; background: #fff; }
+      .tag { position: absolute; left: 32px; top: 32px; height: 56px; padding: 0 22px; border-radius: 16px; font-size: 28px; font-weight: 800; display: flex; align-items: center; }
+      #tagAI { background: rgba(255,255,255,.92); color: var(--ink); }
+      #strike { position: absolute; left: 14px; right: 14px; top: 26px; height: 5px; border-radius: 3px; background: var(--accent); }
+      #tagCode { background: var(--accent); color: #fff; direction: ltr; font-family: var(--mono); font-weight: 400; }
+      #credits { left: 220px; top: 1200px; width: 640px; height: 110px; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; }
+      #credits .l { font-size: 34px; font-weight: 800; color: var(--muted); }
+      #credits .r { font-size: 64px; font-weight: 800; color: var(--accent); font-family: var(--font); }
+      #credits .track { position: absolute; left: 40px; right: 40px; bottom: 18px; height: 6px; border-radius: 3px; background: var(--lavender-soft); }
+
+      /* ---------- captions ---------- */
+      .cap-wrap { position: absolute; left: 0; top: 1440px; width: 1080px; }
+      .cap { width: 1080px; text-align: center; font-weight: 800; font-size: 72px; line-height: 1.3; padding: 0 70px; }
+      .w { display: inline-block; }
+      .key { background: var(--accent); color: #fff; border-radius: 18px; padding: 0 20px 6px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__END__" data-width="1080" data-height="1920">
+      <audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-track-index="20" data-volume="1"></audio>
+
+      <div id="background" class="clip" data-start="0" data-duration="__END__" data-track-index="0" style="position:absolute;inset:0">
+        <div id="bg"></div><div id="glow"></div><div id="glow2"></div>
+        <div id="handle">aymen.ai.lab</div>
+      </div>
+
+      <!-- Scene A -->
+      <div id="sA" class="clip" data-start="0" data-duration="4.75" data-track-index="1" style="position:absolute;inset:0">
+        <div id="kicker">● هل تعرف؟</div>
+        <div id="h1">مهارة وحدة في Claude</div>
+        <div id="h2">ريلز بلا حدود</div>
+        <div id="skill" class="card"><i></i><i></i><i></i><b>.skill</b></div>
+        <div id="wire"></div>
+        <div id="spark" class="card">
+          <svg viewBox="0 0 100 100"><g fill="#e8775a">
+            <rect x="45" y="6" width="10" height="88" rx="5"/>
+            <rect x="45" y="6" width="10" height="88" rx="5" transform="rotate(45 50 50)"/>
+            <rect x="45" y="6" width="10" height="88" rx="5" transform="rotate(90 50 50)"/>
+            <rect x="45" y="6" width="10" height="88" rx="5" transform="rotate(135 50 50)"/></g></svg>
+        </div>
+        <div id="counter">ريلز:<span class="n"><span id="n0">0</span><span id="n1">4</span><span id="n2">33</span><span id="n3">∞</span></span></div>
+        <div id="m1" class="mini"><div class="sun"></div><div class="wave"></div></div>
+        <div id="m2" class="mini"><div class="sun"></div><div class="wave"></div></div>
+        <div id="m3" class="mini"><div class="sun"></div><div class="wave"></div></div>
+        <div id="m4" class="mini"><div class="sun"></div><div class="wave"></div></div>
+        <div id="m5" class="mini"><div class="sun"></div><div class="wave"></div></div>
+      </div>
+
+      <!-- Scene B -->
+      <div id="sB" class="clip" data-start="4.55" data-duration="5.4" data-track-index="2" style="position:absolute;inset:0">
+        <div id="note">فكرة وحدة ↓</div>
+        <div id="term">
+          <div class="bar"><i></i><i></i><i></i><b>Claude Code</b></div>
+          <div id="prompt"><span class="caret">›</span><span id="typed">سوّ لي ريل عن مقهاي ☕</span></div>
+          <div id="code">
+            <div id="cl1"><span class="c">// reel.html</span></div>
+            <div id="cl2"><span class="k">&lt;h1</span> <span class="f">class</span>=<span class="s">"title"</span><span class="k">&gt;</span>قهوة الصباح<span class="k">&lt;/h1&gt;</span></div>
+            <div id="cl3"><span class="k">const</span> tl = gsap.<span class="f">timeline</span>();</div>
+            <div id="cl4">tl.<span class="f">from</span>(<span class="s">"#cup"</span>, { y: <span class="s">80</span> });</div>
+            <div id="cl5">tl.<span class="f">to</span>(<span class="s">".steam"</span>, { y: <span class="s">-30</span> });</div>
+            <div id="cl6"><span class="f">render</span>(<span class="s">"1080x1920"</span>);</div>
+          </div>
+        </div>
+        <div id="preview" class="card">
+          <div class="t">قهوة الصباح</div>
+          <div class="t2">تحضير بحب</div>
+          <div id="st1" class="steam"></div><div id="st2" class="steam"></div><div id="st3" class="steam"></div>
+          <div id="cup"></div>
+          <div class="pill">اطلب الحين</div>
+        </div>
+        <div id="badge">✓ مكتوب بالكود <span class="m">reel.html</span></div>
+      </div>
+
+      <!-- Scene C -->
+      <div id="sC" class="clip" data-start="9.7" data-duration="4.9" data-track-index="3" style="position:absolute;inset:0">
+        <div id="frame" class="card">
+          <div id="art">
+            <div id="moon"></div>
+            <svg id="boat" viewBox="0 0 120 90"><path d="M10 60 L110 60 L92 82 L28 82 Z" fill="#ffd3bf"/><path d="M60 8 L60 56 L94 56 Z" fill="#fff"/><path d="M56 18 L56 56 L28 56 Z" fill="#c9b8ef"/></svg>
+            <div id="sea1" class="sea"></div><div id="sea2" class="sea"></div><div id="sea3" class="sea"></div>
+          </div>
+          <div id="codeHalf">
+            <div><span class="k">for</span> (wave <span class="k">of</span> sea)</div>
+            <div>&nbsp;&nbsp;wave.<span class="f">rise</span>(<span class="s">0.4</span>);</div>
+            <div>moon.<span class="f">glow</span>(<span class="s">80</span>);</div>
+            <div>boat.<span class="f">drift</span>(<span class="s">"x"</span>, <span class="s">120</span>);</div>
+            <div><span class="k">const</span> sky =</div>
+            <div>&nbsp;&nbsp;<span class="f">gradient</span>(<span class="s">"#2d2552"</span>,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"#f29b7e"</span>);</div>
+            <div><span class="f">render</span>(scene);</div>
+          </div>
+          <div id="divider"></div>
+          <div id="tagAI" class="tag">فيديو AI<div id="strike"></div></div>
+          <div id="tagCode" class="tag">&lt;/&gt; code</div>
+        </div>
+        <div id="credits" class="card"><span class="l">كريدت فيديو مستخدم</span><span class="r" id="cnum">0</span><div class="track"></div></div>
+      </div>
+
+      <!-- captions -->
+      <!--CAPTIONS-->
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // background drift
+      tl.fromTo("#glow", { x: -60, y: 0 }, { x: 80, y: 120, duration: __END__, ease: "sine.inOut" }, 0);
+      tl.fromTo("#glow2", { x: 0 }, { x: 160, duration: __END__, ease: "sine.inOut" }, 0);
+
+      // ---------- Scene A (0 – 4.75) ----------
+      tl.fromTo("#kicker", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .3, ease: "power2.out" }, .05);
+      tl.fromTo("#h1", { opacity: 0, y: 40, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: .45, ease: "power3.out" }, .15);
+      tl.fromTo("#skill", { opacity: 0, scale: .6, rotation: 8 }, { opacity: 1, scale: 1, rotation: -4, duration: .45, ease: "back.out(2)" }, .35);
+      tl.fromTo("#wire", { scaleX: 0, transformOrigin: "right center" }, { scaleX: 1, duration: .35, ease: "power2.inOut" }, .8);
+      tl.fromTo("#spark", { opacity: 0, scale: .4 }, { opacity: 1, scale: 1, duration: .45, ease: "back.out(2.4)" }, 1.05);
+      tl.fromTo("#spark svg", { rotation: -90 }, { rotation: 0, duration: .8, ease: "power3.out" }, 1.05);
+      tl.to("#spark svg", { rotation: 180, duration: 3, ease: "none" }, 1.85);
+      tl.fromTo("#counter", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: .35, ease: "power2.out" }, 1.55);
+      tl.set(["#n1", "#n2", "#n3"], { opacity: 0 }, 0);
+      [["#n0", "#n1", 2.3], ["#n1", "#n2", 2.75], ["#n2", "#n3", 3.2]].forEach(([a, b, t]) => {
+        tl.to(a, { opacity: 0, y: -30, duration: .15, ease: "power2.in" }, t);
+        tl.fromTo(b, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .2, ease: "power2.out" }, t + .1);
+      });
+      tl.fromTo("#h2", { opacity: 0, scale: .7 }, { opacity: 1, scale: 1, duration: .5, ease: "back.out(2)" }, 2.2);
+      ["#m3", "#m2", "#m4", "#m1", "#m5"].forEach((id, i) => {
+        const rot = [-2, -9, 8, -16, 15][i];
+        const yy = [0, 30, 30, 70, 70][i];
+        tl.fromTo(id, { opacity: 0, x: 0, y: -180, scale: .3, rotation: 0 }, { opacity: 1, y: yy, scale: 1, rotation: rot, duration: .55, ease: "back.out(1.6)" }, 2.45 + i * .12);
+      });
+      tl.to(".mini .wave", { y: -14, duration: 1.2, ease: "sine.inOut", stagger: .1 }, 3.0);
+      // exit
+      tl.to("#sA > *", { opacity: 0, scale: .92, filter: "blur(8px)", duration: .3, ease: "power2.in", stagger: .015 }, 4.35);
+
+      // ---------- Scene B (4.55 – 9.95) ----------
+      tl.fromTo("#term", { opacity: 0, rotationY: -35, rotationX: 10, scale: .8, transformPerspective: 1400 }, { opacity: 1, rotationY: 0, rotationX: 0, scale: 1, duration: .6, ease: "power3.out" }, 4.6);
+      tl.fromTo("#note", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .3, ease: "power2.out" }, 4.95);
+      tl.fromTo("#typed", { clipPath: "inset(0 0 0 100%)" }, { clipPath: "inset(0 0 0 0%)", duration: .9, ease: "steps(20)" }, 4.95);
+      ["#cl1", "#cl2", "#cl3", "#cl4", "#cl5", "#cl6"].forEach((id, i) => {
+        tl.fromTo(id, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: .18, ease: "power2.out" }, 6.2 + i * .17);
+      });
+      tl.to("#term", { x: -120, scale: .86, duration: .5, ease: "power3.inOut" }, 7.2);
+      tl.to("#note", { x: -120, duration: .5, ease: "power3.inOut" }, 7.2);
+      tl.fromTo("#preview", { opacity: 0, x: 260, rotation: 10 }, { opacity: 1, x: 0, rotation: 3, duration: .55, ease: "back.out(1.4)" }, 7.3);
+      tl.fromTo("#cup", { y: 120, scale: .5 }, { y: 0, scale: 1, duration: .45, ease: "back.out(2.2)" }, 7.6);
+      tl.fromTo(".steam", { opacity: 0, y: 20 }, { opacity: 1, y: -10, duration: .5, ease: "sine.out", stagger: .1 }, 7.95);
+      tl.to(".steam", { y: -40, opacity: 0, duration: .9, ease: "sine.in", stagger: .1 }, 8.5);
+      tl.fromTo("#preview .t2", { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .35, ease: "back.out(2)" }, 7.9);
+      tl.fromTo("#preview .pill", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .3, ease: "power2.out" }, 8.2);
+      tl.fromTo("#badge", { opacity: 0, y: 30, scale: .8 }, { opacity: 1, y: 0, scale: 1, duration: .35, ease: "back.out(2)" }, 8.45);
+      tl.to("#preview", { rotation: 0, scale: 1.04, duration: .5, ease: "power2.out" }, 8.6);
+      // exit: zoom into preview
+      tl.to(["#term", "#note", "#badge"], { opacity: 0, filter: "blur(10px)", duration: .3, ease: "power2.in" }, 9.4);
+      tl.to("#preview", { opacity: 0, scale: 1.5, duration: .35, ease: "power2.in" }, 9.5);
+
+      // ---------- Scene C (9.7 – 14.6) ----------
+      tl.fromTo("#frame", { opacity: 0, scale: .7, y: 80 }, { opacity: 1, scale: 1, y: 0, duration: .5, ease: "power3.out" }, 9.75);
+      tl.set(["#codeHalf", "#divider"], { clipPath: "inset(0 100% 0 0)" }, 0);
+      tl.set("#tagCode", { opacity: 0 }, 0);
+      tl.fromTo("#tagAI", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: .25, ease: "power2.out" }, 10.05);
+      tl.fromTo("#moon", { scale: .8 }, { scale: 1, duration: 4, ease: "sine.out" }, 9.75);
+      tl.fromTo("#boat", { x: -60 }, { x: 60, duration: 4.8, ease: "sine.inOut" }, 9.75);
+      tl.fromTo(".sea", { x: -30 }, { x: 30, duration: 2.2, ease: "sine.inOut", stagger: .2, yoyo: true, repeat: 1 }, 9.75);
+      tl.fromTo("#strike", { scaleX: 0, transformOrigin: "right center" }, { scaleX: 1, duration: .35, ease: "power2.inOut" }, 10.55);
+      tl.to("#tagAI", { opacity: .55, duration: .2 }, 10.9);
+      tl.to(["#codeHalf", "#divider"], { clipPath: "inset(0 0% 0 0)", duration: .55, ease: "power3.inOut" }, 11.55);
+      tl.to("#tagAI", { opacity: 0, y: -10, duration: .2 }, 11.6);
+      tl.fromTo("#tagCode", { opacity: 0, scale: .7 }, { opacity: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 11.75);
+      tl.fromTo("#credits", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: .4, ease: "back.out(1.6)" }, 12.6);
+      tl.fromTo("#cnum", { scale: 1 }, { scale: 1.35, duration: .18, ease: "power2.out", yoyo: true, repeat: 1 }, 13.35);
+      tl.to("#frame", { scale: .97, duration: .6, ease: "sine.inOut" }, 13.8);
+
+      // ---------- captions ----------
+      /*CAPTION_TWEENS*/
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
