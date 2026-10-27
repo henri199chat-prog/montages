@@ -1,0 +1,34 @@
+📌 مصادر @aymen.ai.lab
+
+🎬 برومبتات وأمثلة موشن
+• Prompt Motion (معرض فيديوهات Claude مع البرومبت)
+https://prompt-motion.com/
+• قالب Showreel
+https://prompt-motion.com/templates/showreel
+• تخصيص أي برومبت (مجاني)
+https://prompt-motion.com/customize
+
+🧩 Skills
+• مهارات Instagram (13 مهارة)
+https://github.com/Jakeschincariol/instagram-agent-skill
+• البحث عن Skills
+https://skills.sh/
+• مهارات GSAP الرسمية (لتحسين الحركة)
+https://github.com/greensock/gsap-skills
+
+🛠️ أدوات المونتاج
+• HyperFrames (أساس ريلزنا)
+https://github.com/heygen-com/hyperframes
+• Remotion skills
+https://github.com/remotion-dev/skills
+• ElevenLabs (الصوت والمؤثرات)
+https://elevenlabs.io/
+
+📲 Instagram
+• Windsor.ai (الأرقام والنشر)
+https://onboard.windsor.ai/
+• ManyChat (رسائل تلقائية، لاحقًا)
+https://manychat.com/
+
+📁 كل شغلنا محفوظ هنا
+https://github.com/henri199chat-prog/montages
