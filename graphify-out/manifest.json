@@ -14724,9 +14724,9 @@
     "semantic_hash": ""
   },
   "video/src/religious/DinarReel.tsx": {
-    "mtime": 1793126255.2390723,
-    "seen": 1793126640.8658009,
-    "ast_hash": "0e04f6758d99c42472bac6c374a63618",
+    "mtime": 1793128385.401407,
+    "seen": 1793128644.9918182,
+    "ast_hash": "cd8dd9171fdfa77b5184152807e33479",
     "semantic_hash": ""
   },
   "video/src/religious/data/dinar.json": {
@@ -14835,6 +14835,12 @@
     "mtime": 1793126544.8245747,
     "seen": 1793126640.9147031,
     "ast_hash": "05242a8b455aaa593bc97cee3583508d",
+    "semantic_hash": ""
+  },
+  "videos/dinar-v2.mp4": {
+    "mtime": 1793128565.1014605,
+    "seen": 1793128645.0567904,
+    "ast_hash": "eab8ca03fb7d532aa43708b2f1f1c632",
     "semantic_hash": ""
   }
 }

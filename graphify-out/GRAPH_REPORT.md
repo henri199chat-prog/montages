@@ -1,7 +1,7 @@
 # Graph Report - montages  (2026-10-27)
 
 ## Corpus Check
-- 2095 files · ~2,389,259 words
+- 2095 files · ~2,389,278 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 98 file(s) not represented in the graph (top: .woff2 42, (none) 27, .ttf 17)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `82f14890`
+- Built from commit: `04b30459`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -6171,7 +6171,7 @@ Nodes (3): Avatar, Talking Photo, Using Different Character Types
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `ToolResult` connect `ToolResult` to `ToolStatus`, `RemotionCaptionBurn`, `DoubaoTTS`, `ThreeJSAssetCatalog`, `VideoCompose`, `VideoAnalyzer`, `test_local_video_cache_inputs.py`, `HeyGenVideo`, `PixabayMusic`, `test_provider_refresh.py`, `GoogleTTS`, `write_checkpoint`, `GrokVideo`, `test_mps_device.py`, `TTSSelector`, `RealtimeAudioSession`, `ToolRegistry`, `test_hyperframes_compose.py`, `test_phase0_contracts.py`, `corpus_builder.py`, `HunyuanImage`, `test_phase2_contracts.py`, `HyperFramesCompose`, `DependencyError`, `FishAudioTTS`, `ComfyUIError`, `KlingLipSync`, `.execute`, `KlingOfficialVideo`, `test_seedream_image.py`, `DashscopeAsr`, `WanVideo`, `VideoUnderstand`, `VideoStitch`, `test_no_timeout_flag_when_not_requested`, `ToolStatus`, `AzureTTS`, `ImageSelector`, `KlingOfficialImage`, `test_3d_asset_generation.py`, `pytest`, `VideoSelector`, `HunyuanCloudVideo`, `test_base_tool_cache.py`, `AudioMixer`, `ElevenLabsTTS`, `ScreenRecorder`, `MiniMaxFalVideo`, `test_backlot_contract.py`, `AtlasVideo`, `MathAnimate`, `MiniMaxImage`, `ComfyUIMusic`, `SunoMusic`, `.execute`, `KlingVideo`, `video_compose.py`, `SubtitleGen`, `KlingTTS`, `ThreeJSWorld`, `JimengVideo`, `.execute`, `GrokImage`, `test_export_bundle.py`, `SeedanceArkVideo`, `Any`, `._generate`, `EyeEnhance`, `._generate`, `test_openai_image_multi_output.py`, `.execute`, `.execute`, `.estimate_cost`, `AtlasImage`, `._safe_error`, `_oom_aware_error`, `GreenScreenProcessor`, `test_kling_official_avatar.py`, `MiniMaxVideo`, `SoraVideo`, `_wan_engine.py`, `Corpus`, `ComfyUIVideo`, `RunwayVideo`, `AutoReframe`, `DashscopeImage`, `atlas_client.py`, `LipSync`, `ComfyUIImage`, `DashscopeTTS`?**
-  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Are the 159 inferred relationships involving `ToolResult` (e.g. with `Tool Class Naming Convention` and `BaseTool Contract`) actually correct?**
   _`ToolResult` has 159 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `earshot` to the rest of the system?**

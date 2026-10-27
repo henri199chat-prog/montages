@@ -385,6 +385,9 @@ export const DinarReel: React.FC = () => {
           cta={
             <>
               اللهم اجعل الدنيا <span style={{ color: C.gold }}>في أيدينا</span> لا في قلوبنا
+              <div style={{ marginTop: 34, fontSize: 40, fontWeight: 500, color: C.grey }}>
+                انشرها لتنال <span style={{ color: C.gold }}>الأجر</span>
+              </div>
             </>
           }
         />
