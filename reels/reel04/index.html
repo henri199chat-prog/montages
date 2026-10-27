@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Tajawal"; font-weight: 800; font-display: block; src: url("assets/fonts/Tajawal-800-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      @font-face { font-family: "Tajawal"; font-weight: 800; font-display: block; src: url("assets/fonts/Tajawal-800-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Tajawal"; font-weight: 500; font-display: block; src: url("assets/fonts/Tajawal-500-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      @font-face { font-family: "Aref Ruqaa"; font-weight: 700; font-display: block; src: url("assets/fonts/ArefRuqaa-700-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      /* Skills ad, vertical, after the Prompt Motion "CLAUDE motion designer" showreel structure.
+         Bold blocks of the brand palette, one display face (Tajawal 800), Ruqaa for accents, mono for HUD. */
+      :root { --ink: #1d1830; --acc: #e8775a; --cream: #f6f1ea; --lav: #c9b8ef; --sky: #bfe3f7; --mono: "JetBrains Mono", monospace; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ink); }
+      #root { position: relative; width: 1080px; height: 1920px; font-family: "Tajawal", sans-serif; font-weight: 800; color: var(--ink); }
+      .sc { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+      .hud { position: absolute; font-family: var(--mono); font-size: 22px; font-weight: 400; letter-spacing: .08em; direction: ltr; }
+      .corner { position: absolute; width: 40px; height: 40px; border-color: currentColor; border-style: solid; }
+      .ab { position: absolute; }
+
+      /* S1 */
+      #s1 { background: var(--ink); color: var(--cream); }
+      #ring0 { left: 490px; top: 830px; width: 100px; height: 100px; border-radius: 50%; border: 3px solid rgba(246,241,234,.5); }
+      #dot1 { left: 515px; top: 855px; width: 50px; height: 50px; border-radius: 50%; background: var(--acc); }
+      #burst { left: 240px; top: 580px; width: 600px; height: 600px; }
+      #rings circle { fill: none; stroke: rgba(246,241,234,.25); stroke-width: 2; }
+      #orbitText { left: 190px; top: 530px; width: 700px; height: 700px; }
+      #orbitText text { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 26px; fill: #f6f1ea; letter-spacing: 8px; }
+      #dotW { left: 530px; top: 870px; width: 20px; height: 20px; border-radius: 50%; background: var(--cream); }
+
+      /* S2 */
+      #s2 { background: var(--acc); }
+      .slice { position: absolute; left: 0; top: 640px; width: 1080px; text-align: center; font-size: 300px; line-height: 420px; height: 420px; }
+      #sub2 { position: absolute; left: 0; top: 1080px; width: 1080px; text-align: center; font-family: "Aref Ruqaa"; font-size: 110px; color: var(--cream); }
+      #rule2 { position: absolute; left: 140px; top: 600px; width: 800px; height: 4px; background: var(--ink); }
+
+      /* S3 */
+      #s3 { background: var(--cream); }
+      #h3 { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-size: 76px; }
+      #h3 span { font-family: "Aref Ruqaa"; color: var(--acc); }
+      .row { position: absolute; left: 80px; width: 920px; height: 120px; }
+      .row .lb { position: absolute; right: 0; top: 30px; width: 200px; text-align: right; font-size: 44px; }
+      .row .ez { position: absolute; right: 0; top: 82px; width: 200px; text-align: right; font-family: var(--mono); font-size: 18px; font-weight: 400; color: #8a82a3; direction: ltr; }
+      .row .tr { position: absolute; left: 0; top: 58px; width: 690px; height: 3px; background: rgba(29,24,48,.15); }
+      .row .rd { position: absolute; left: 650px; top: 38px; width: 44px; height: 44px; border-radius: 50%; }
+      #dotL { left: 518px; top: 1460px; width: 44px; height: 44px; border-radius: 50%; background: var(--lav); }
+
+      /* S4 */
+      #s4 { background: var(--lav); }
+      #morph { left: 190px; top: 560px; width: 700px; height: 700px; }
+      #orbit4 { left: 140px; top: 510px; width: 800px; height: 800px; }
+      #lab4 { position: absolute; left: 0; top: 1340px; width: 1080px; text-align: center; font-size: 78px; line-height: 1.3; }
+
+      /* S5 */
+      #s5 { background: var(--ink); }
+      #grid9 { left: 390px; top: 810px; width: 300px; height: 300px; }
+      #grid9 i { position: absolute; width: 92px; height: 92px; background: var(--cream); border-radius: 10px; }
+      #truchet { left: 0; top: 0; width: 1080px; height: 1920px; }
+      #truchet path { fill: none; stroke: var(--cream); stroke-width: 26; stroke-linecap: round; }
+      #lab5 { left: 140px; top: 1580px; width: 800px; height: 140px; border-radius: 34px; background: var(--ink); color: var(--cream); font-size: 64px; display: flex; align-items: center; justify-content: center; }
+
+      /* S6 */
+      #s6 { background: var(--ink); color: var(--cream); }
+      #cloud { left: 0; top: 260px; width: 1080px; height: 1280px; }
+      #lab6 { position: absolute; left: 0; top: 1560px; width: 1080px; text-align: center; font-family: var(--mono); font-size: 46px; font-weight: 700; color: var(--acc); direction: ltr; }
+
+      /* S7 */
+      .kw { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: flex; align-items: center; justify-content: center; font-size: 230px; }
+      .kw b { color: var(--acc); }
+
+      /* S8 */
+      #s8 { background: var(--acc); }
+      #end { position: absolute; left: 0; top: 700px; width: 1080px; text-align: center; }
+      #endT { font-size: 128px; line-height: 1.1; color: var(--ink); }
+      #endT svg { width: 120px; height: 120px; vertical-align: middle; margin-left: 20px; }
+      #endS { margin-top: 20px; font-family: "Aref Ruqaa"; font-size: 84px; color: var(--cream); }
+      #endRule { margin: 34px auto 0; width: 760px; height: 4px; background: var(--ink); }
+      #endM { margin-top: 18px; font-family: var(--mono); font-size: 26px; font-weight: 400; direction: ltr; color: var(--ink); }
+      #cta { position: absolute; left: 190px; top: 1260px; width: 700px; height: 120px; border-radius: 36px; background: var(--ink); color: var(--cream); font-size: 50px; display: flex; align-items: center; justify-content: center; }
+      #burst8 { left: 390px; top: 760px; width: 300px; height: 300px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="16" data-width="1080" data-height="1920">
+      <audio id="aw1" class="clip" src="assets/whoosh.wav" data-start="1.48" data-track-index="21" data-volume="0.45"></audio>
+      <audio id="aw2" class="clip" src="assets/whoosh.wav" data-start="3.18" data-track-index="22" data-volume="0.45"></audio>
+      <audio id="aw3" class="clip" src="assets/whoosh.wav" data-start="5.38" data-track-index="23" data-volume="0.45"></audio>
+      <audio id="aw4" class="clip" src="assets/whoosh.wav" data-start="7.28" data-track-index="24" data-volume="0.45"></audio>
+      <audio id="aw5" class="clip" src="assets/whoosh.wav" data-start="9.38" data-track-index="25" data-volume="0.45"></audio>
+      <audio id="aw6" class="clip" src="assets/whoosh.wav" data-start="12.68" data-track-index="26" data-volume="0.45"></audio>
+      <audio id="ap1" class="clip" src="assets/pop.wav" data-start="0.3" data-track-index="27" data-volume="0.5"></audio>
+      <audio id="ap2" class="clip" src="assets/pop.wav" data-start="6.25" data-track-index="28" data-volume="0.4"></audio>
+      <audio id="ap3" class="clip" src="assets/pop.wav" data-start="6.65" data-track-index="29" data-volume="0.4"></audio>
+      <audio id="ap4" class="clip" src="assets/pop.wav" data-start="7.05" data-track-index="30" data-volume="0.4"></audio>
+      <audio id="ap5" class="clip" src="assets/pop.wav" data-start="7.45" data-track-index="31" data-volume="0.4"></audio>
+      <audio id="atk0" class="clip" src="assets/tick.wav" data-start="11.3" data-track-index="32" data-volume="0.5"></audio>
+      <audio id="atk1" class="clip" src="assets/tick.wav" data-start="11.6" data-track-index="33" data-volume="0.5"></audio>
+      <audio id="atk2" class="clip" src="assets/tick.wav" data-start="11.9" data-track-index="34" data-volume="0.5"></audio>
+      <audio id="atk3" class="clip" src="assets/tick.wav" data-start="12.2" data-track-index="35" data-volume="0.5"></audio>
+      <audio id="atk4" class="clip" src="assets/tick.wav" data-start="12.45" data-track-index="36" data-volume="0.5"></audio>
+      <audio id="atk5" class="clip" src="assets/tick.wav" data-start="12.7" data-track-index="37" data-volume="0.5"></audio>
+      <audio id="ahit" class="clip" src="assets/hit.wav" data-start="13.12" data-track-index="40" data-volume="0.9"></audio>
+
+      <!-- S1: point -> burst -> point -->
+      <div id="s1" class="sc clip" data-start="0" data-duration="1.9" data-track-index="1">
+        <div id="ring0" class="ab"></div><div id="dot1" class="ab"></div>
+        <svg id="rings" class="ab" style="left:0;top:0" width="1080" height="1920"><circle id="rg1" cx="540" cy="880" r="230"/><circle id="rg2" cx="540" cy="880" r="400"/></svg>
+        <svg id="burst" class="ab" viewBox="-300 -300 600 600"><g id="burstG" stroke="#e8775a" stroke-width="16" stroke-linecap="round"><line class="ray" x1="0" y1="0" x2="260.0" y2="0.0"/><line class="ray" x1="0" y1="0" x2="234.3" y2="112.8"/><line class="ray" x1="0" y1="0" x2="162.1" y2="203.3"/><line class="ray" x1="0" y1="0" x2="57.9" y2="253.5"/><line class="ray" x1="0" y1="0" x2="-57.9" y2="253.5"/><line class="ray" x1="0" y1="0" x2="-162.1" y2="203.3"/><line class="ray" x1="0" y1="0" x2="-234.3" y2="112.8"/><line class="ray" x1="0" y1="0" x2="-260.0" y2="0.0"/><line class="ray" x1="0" y1="0" x2="-234.3" y2="-112.8"/><line class="ray" x1="0" y1="0" x2="-162.1" y2="-203.3"/><line class="ray" x1="0" y1="0" x2="-57.9" y2="-253.5"/><line class="ray" x1="0" y1="0" x2="57.9" y2="-253.5"/><line class="ray" x1="0" y1="0" x2="162.1" y2="-203.3"/><line class="ray" x1="0" y1="0" x2="234.3" y2="-112.8"/></g></svg>
+        <svg id="orbitText" class="ab" viewBox="0 0 700 700"><defs><path id="circ" d="M350,80 a270,270 0 1,1 -0.1,0"/></defs><text direction="ltr"><textPath href="#circ">SKILLS · CLAUDE · SKILL.md · SKILLS · CLAUDE · SKILL.md · </textPath></text></svg>
+        <div id="dotW" class="ab"></div>
+        <div class="hud" style="left:60px;top:70px">01 — البداية</div><div class="hud" style="right:60px;top:70px">SKILLS REEL · 2026</div>
+        <div class="hud" style="left:60px;bottom:70px">00:00</div><div class="hud" style="right:60px;bottom:70px">@aymen.ai.lab</div>
+      </div>
+
+      <!-- S2: the word assembles from slices -->
+      <div id="s2" class="sc clip" data-start="1.9" data-duration="1.7" data-track-index="2">
+        <div id="rule2"></div>
+        <div class="slice" style="clip-path:inset(0% 0 80% 0)">مهارات</div><div class="slice" style="clip-path:inset(20% 0 60% 0)">مهارات</div><div class="slice" style="clip-path:inset(40% 0 40% 0)">مهارات</div><div class="slice" style="clip-path:inset(60% 0 20% 0)">مهارات</div><div class="slice" style="clip-path:inset(80% 0 0% 0)">مهارات</div>
+        <div id="sub2">لـ Claude</div>
+        <div class="hud" style="left:60px;top:70px">02 — الكلمة</div><div class="hud" style="right:60px;top:70px">SKILL.md</div>
+      </div>
+
+      <!-- S3: one task, six skills, six eases -->
+      <div id="s3" class="sc clip" data-start="3.6" data-duration="2.2" data-track-index="3">
+        <div id="h3">مهمة وحدة… <span>ست مهارات</span></div>
+        <div class="row" style="top:520px"><div class="lb">كابشن</div><div class="ez">linear</div><div class="tr"></div><div class="rd" id="rd0" style="background:#e8775a"></div></div><div class="row" style="top:670px"><div class="lb">مونتاج</div><div class="ez">ease-in-out</div><div class="tr"></div><div class="rd" id="rd1" style="background:#1d1830"></div></div><div class="row" style="top:820px"><div class="lb">تقارير</div><div class="ez">expo-out</div><div class="tr"></div><div class="rd" id="rd2" style="background:#9b84d9"></div></div><div class="row" style="top:970px"><div class="lb">تصميم</div><div class="ez">back-out</div><div class="tr"></div><div class="rd" id="rd3" style="background:#5ea9d6"></div></div><div class="row" style="top:1120px"><div class="lb">جداول</div><div class="ez">elastic</div><div class="tr"></div><div class="rd" id="rd4" style="background:#e8775a"></div></div><div class="row" style="top:1270px"><div class="lb">رسائل</div><div class="ez">bounce</div><div class="tr"></div><div class="rd" id="rd5" style="background:#1d1830"></div></div>
+        <div id="dotL" class="ab"></div>
+        <div class="hud" style="left:60px;top:70px">03 — السرعة</div><div class="hud" style="right:60px;top:70px">A → B</div>
+      </div>
+
+      <!-- S4: one shape, many forms -->
+      <div id="s4" class="sc clip" data-start="5.8" data-duration="1.9" data-track-index="4">
+        <svg id="orbit4" class="ab" viewBox="-400 -400 800 800"><g id="orbG"><circle class="orb" cx="360.0" cy="0.0" r="14" fill="#1d1830"/><path class="orb" d="M311.8,164.0 L326.8,192.0 L296.8,192.0 Z" fill="#e8775a"/><rect class="orb" x="168.0" y="299.8" width="24" height="24" rx="5" fill="#f6f1ea"/><circle class="orb" cx="0.0" cy="360.0" r="14" fill="#1d1830"/><path class="orb" d="M-180.0,295.8 L-165.0,323.8 L-195.0,323.8 Z" fill="#e8775a"/><rect class="orb" x="-323.8" y="168.0" width="24" height="24" rx="5" fill="#f6f1ea"/><circle class="orb" cx="-360.0" cy="0.0" r="14" fill="#1d1830"/><path class="orb" d="M-311.8,-196.0 L-296.8,-168.0 L-326.8,-168.0 Z" fill="#e8775a"/><rect class="orb" x="-192.0" y="-323.8" width="24" height="24" rx="5" fill="#f6f1ea"/><circle class="orb" cx="-0.0" cy="-360.0" r="14" fill="#1d1830"/><path class="orb" d="M180.0,-327.8 L195.0,-299.8 L165.0,-299.8 Z" fill="#e8775a"/><rect class="orb" x="299.8" y="-192.0" width="24" height="24" rx="5" fill="#f6f1ea"/></g></svg>
+        <svg id="morph" class="ab" viewBox="-350 -350 700 700"><path id="mp" fill="#f6f1ea" stroke="#e8775a" stroke-width="6"/></svg>
+        <div id="lab4">شكل واحد<br><span style="font-family:'Aref Ruqaa';color:#e8775a">يتشكّل لكل مهمة</span></div>
+        <div class="hud" style="left:60px;top:70px">04 — الشكل</div><div class="hud" style="right:60px;top:70px">MORPH</div>
+      </div>
+
+      <!-- S5: grid -> pattern -> wave -->
+      <div id="s5" class="sc clip" data-start="7.7" data-duration="2.1" data-track-index="5">
+        <svg id="truchet" class="ab" width="1080" height="1920"><g transform="translate(0,0)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(120,0)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(240,0)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(360,0)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,0)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,0)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(720,0)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,0)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(960,0)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,120)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,120)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,120)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,120)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,120)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,120)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(720,120)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,120)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(960,120)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,240)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,240)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(240,240)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,240)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,240)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,240)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,240)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,240)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,240)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(0,360)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(120,360)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,360)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(360,360)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(480,360)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,360)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,360)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(840,360)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,360)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(0,480)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,480)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(240,480)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(360,480)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(480,480)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,480)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,480)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,480)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,480)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,600)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(120,600)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(240,600)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,600)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(480,600)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,600)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,600)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,600)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(960,600)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(0,720)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,720)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,720)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,720)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(480,720)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,720)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,720)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,720)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,720)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,840)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,840)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,840)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,840)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,840)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,840)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(720,840)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,840)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(960,840)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(0,960)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(120,960)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(240,960)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,960)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(480,960)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,960)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,960)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,960)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,960)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(360,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(720,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(840,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,1080)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(120,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(360,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(960,1200)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(0,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(480,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(720,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(840,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,1320)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(0,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(240,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(720,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(960,1440)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(600,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(840,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,1560)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(120,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(240,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(480,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(840,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(960,1680)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(0,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(120,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,0 120,60 M0,60 A60,60 0 0,1 60,120"/></g></g><g transform="translate(240,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(360,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(480,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(600,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(720,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(840,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g><g transform="translate(960,1800)"><g class="tile"><path d="M60,0 A60,60 0 0,1 0,60 M120,60 A60,60 0 0,0 60,120"/></g></g></svg>
+        <div id="grid9" class="ab"><i style="left:0px;top:0px"></i><i style="left:104px;top:0px"></i><i style="left:208px;top:0px"></i><i style="left:0px;top:104px"></i><i style="left:104px;top:104px"></i><i style="left:208px;top:104px"></i><i style="left:0px;top:208px"></i><i style="left:104px;top:208px"></i><i style="left:208px;top:208px"></i></div>
+        <div id="lab5" class="ab">نظام كامل يشتغل لك</div>
+        <div class="hud" style="left:60px;top:70px;color:#f6f1ea">05 — النظام</div>
+      </div>
+
+      <!-- S6: 3D point cloud -->
+      <div id="s6" class="sc clip" data-start="9.8" data-duration="1.5" data-track-index="6">
+        <canvas id="cloud" class="ab" width="1080" height="1280"></canvas>
+        <div id="lab6">~/.claude/skills/</div>
+        <div class="hud" style="left:60px;top:70px">06 — العمق</div><div class="hud" style="right:60px;top:70px">3D</div>
+      </div>
+
+      <!-- S7: kinetic words -->
+      <div id="s7" class="sc clip" data-start="11.3" data-duration="1.8" data-track-index="7">
+        <div id="k1" class="kw" style="background:#e8775a">اكتبها</div>
+        <div id="k2" class="kw" style="background:#1d1830;color:#f6f1ea">مرة<b>.</b></div>
+        <div id="k3" class="kw" style="background:#f6f1ea">وحدة<b>.</b></div>
+        <div id="k4" class="kw" style="background:#c9b8ef">تشتغل</div>
+        <div id="k5" class="kw" style="background:#bfe3f7">دائمًا<b>.</b></div>
+        <div id="k6" class="kw" style="background:#1d1830;color:#f6f1ea">بطريقتك<b>.</b></div>
+      </div>
+
+      <!-- S8: end card -->
+      <div id="s8" class="sc clip" data-start="13.1" data-duration="2.9" data-track-index="8">
+        <svg id="burst8" class="ab" viewBox="-300 -300 600 600"><g id="burst8G" stroke="#1d1830" stroke-width="22" stroke-linecap="round"><line class="ray8" x1="0" y1="0" x2="230.0" y2="0.0"/><line class="ray8" x1="0" y1="0" x2="199.2" y2="115.0"/><line class="ray8" x1="0" y1="0" x2="115.0" y2="199.2"/><line class="ray8" x1="0" y1="0" x2="0.0" y2="230.0"/><line class="ray8" x1="0" y1="0" x2="-115.0" y2="199.2"/><line class="ray8" x1="0" y1="0" x2="-199.2" y2="115.0"/><line class="ray8" x1="0" y1="0" x2="-230.0" y2="0.0"/><line class="ray8" x1="0" y1="0" x2="-199.2" y2="-115.0"/><line class="ray8" x1="0" y1="0" x2="-115.0" y2="-199.2"/><line class="ray8" x1="0" y1="0" x2="-0.0" y2="-230.0"/><line class="ray8" x1="0" y1="0" x2="115.0" y2="-199.2"/><line class="ray8" x1="0" y1="0" x2="199.2" y2="-115.0"/></g></svg>
+        <div id="end">
+          <div id="endT"><span id="eWord">مهارات Claude</span></div>
+          <div id="endS">اكتبها مرة، واستعملها كل مرة</div>
+          <div id="endRule"></div>
+          <div id="endM">@aymen.ai.lab · SKILLS · 2026</div>
+        </div>
+        <div id="cta">تابع وابنِ أول Skill معنا</div>
+        <div class="hud" style="left:60px;top:70px">08 — النهاية</div><div class="hud" style="right:60px;top:70px">@aymen.ai.lab</div>
+      </div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // ---------- S1 (0 – 1.9) ----------
+      tl.fromTo("#ring0", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: .25, ease: "back.out(2)" }, 0);
+      tl.fromTo("#dot1", { scale: 0 }, { scale: 1, duration: .25, ease: "back.out(3)" }, .25);
+      tl.to(["#ring0", "#dot1"], { scale: 0, duration: .15, ease: "power3.in" }, .5);
+      tl.fromTo(".ray", { scale: 0, transformOrigin: "0px 0px" }, { scale: 1, duration: .45, ease: "expo.out", stagger: .015 }, .55);
+      tl.fromTo("#burstG", { rotation: -30, svgOrigin: "0 0" }, { rotation: 20, duration: 1.2, ease: "power2.out" }, .55);
+      tl.fromTo(["#rg1", "#rg2"], { scale: 0, svgOrigin: "540 880" }, { scale: 1, duration: .6, ease: "expo.out", stagger: .08 }, .6);
+      tl.fromTo("#orbitText", { opacity: 0, rotation: -40 }, { opacity: 1, rotation: 40, duration: 1.1, ease: "power1.out" }, .7);
+      tl.to(["#burst", "#rings", "#orbitText"], { scale: 0, opacity: 0, duration: .25, ease: "power4.in" }, 1.5);
+      tl.fromTo("#dotW", { scale: 0 }, { scale: 1, duration: .15, ease: "back.out(3)" }, 1.72);
+
+      // ---------- S2 (1.9 – 3.6) ----------
+      tl.fromTo("#rule2", { scaleX: 0, transformOrigin: "right center" }, { scaleX: 1, duration: .35, ease: "expo.out" }, 1.9);
+      document.querySelectorAll(".slice").forEach((s, i) => {
+        tl.fromTo(s, { x: i % 2 ? -700 : 700 }, { x: 0, duration: .32, ease: "expo.out" }, 1.92 + i * .05);
+      });
+      tl.fromTo("#sub2", { y: 60, clipPath: "inset(0 0 100% 0)" }, { y: 0, clipPath: "inset(0 0 0% 0)", duration: .35, ease: "expo.out" }, 2.5);
+      tl.to(".slice", { scaleX: .96, duration: .5, ease: "sine.inOut" }, 2.6);
+      document.querySelectorAll(".slice").forEach((s, i) => tl.to(s, { x: i % 2 ? 900 : -900, duration: .25, ease: "power4.in" }, 3.25 + i * .03));
+      tl.to(["#sub2", "#rule2"], { opacity: 0, y: 40, duration: .2 }, 3.3);
+
+      // ---------- S3 (3.6 – 5.8): six dots race right-to-left on six eases ----------
+      tl.fromTo("#h3", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: .3, ease: "expo.out" }, 3.62);
+      tl.fromTo(".row", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: .25, ease: "expo.out", stagger: .04 }, 3.65);
+      const eases = ["none", "power2.inOut", "expo.out", "back.out(2.2)", "elastic.out(1,0.35)", "bounce.out"];
+      eases.forEach((e, i) => tl.fromTo("#rd" + i, { x: 0 }, { x: -650, duration: 1.15, ease: e }, 4.0));
+      tl.to(".rd", { x: -212, y: (i) => 902 - 150 * i, duration: .35, ease: "expo.in" }, 5.3);
+      tl.to([".row .lb", ".row .ez", ".row .tr", "#h3"], { opacity: 0, duration: .2 }, 5.25);
+      tl.set("#dotL", { opacity: 0 }, 0);
+      tl.set("#dotL", { opacity: 1 }, 5.66);
+      tl.set(".rd", { opacity: 0 }, 5.66);
+
+      // ---------- S4 (5.8 – 7.7): radial morph ----------
+      const N = 120, TAU = Math.PI * 2;
+      const poly = (n, rot) => th => { const a = ((th - rot) % (TAU / n) + TAU / n) % (TAU / n); return Math.cos(Math.PI / n) / Math.cos(a - Math.PI / n); };
+      const shapes = [
+        () => 1,
+        poly(3, -Math.PI / 2),
+        th => { const k = Math.cos(5 * (th + Math.PI / 2)); return .62 + .38 * Math.sign(k) * Math.pow(Math.abs(k), .5); },
+        th => Math.pow(Math.pow(Math.abs(Math.cos(th)), 6) + Math.pow(Math.abs(Math.sin(th)), 6), -1 / 6) * .9,
+        poly(4, Math.PI / 4),
+      ];
+      const R = 240, mp = document.getElementById("mp");
+      const radii = shapes.map(f => Array.from({ length: N }, (_, j) => f(j / N * TAU)));
+      const M = { m: 0 };
+      const drawMorph = () => {
+        const k = Math.min(shapes.length - 1.0001, Math.max(0, M.m)), a = Math.floor(k), f = k - a;
+        let d = "";
+        for (let j = 0; j < N; j++) {
+          const th = j / N * TAU, r = R * (radii[a][j] * (1 - f) + radii[a + 1][j] * f);
+          d += (j ? "L" : "M") + (r * Math.cos(th)).toFixed(1) + "," + (r * Math.sin(th)).toFixed(1);
+        }
+        mp.setAttribute("d", d + "Z");
+      };
+      drawMorph();
+      tl.fromTo("#morph", { scale: .1 }, { scale: 1, duration: .3, ease: "back.out(2)" }, 5.8);
+      [[6.2, 1], [6.6, 2], [7.0, 3], [7.4, 4]].forEach(([t, v]) => tl.to(M, { m: v, duration: .3, ease: "expo.inOut", onUpdate: drawMorph }, t));
+      tl.fromTo("#orbG", { rotation: 0, svgOrigin: "0 0" }, { rotation: 140, duration: 1.9, ease: "none" }, 5.8);
+      tl.fromTo(".orb", { scale: 0 }, { scale: 1, duration: .25, ease: "back.out(3)", stagger: .03 }, 5.9);
+      tl.fromTo("#lab4", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .3, ease: "expo.out" }, 6.0);
+      tl.to("#morph", { scale: 300 / 480, duration: .25, ease: "expo.in" }, 7.45);
+
+      // ---------- S5 (7.7 – 9.8): 3x3 grid -> truchet pattern -> peach wave ----------
+      tl.fromTo("#grid9 i", { scale: 0 }, { scale: 1, duration: .2, ease: "back.out(2)", stagger: { each: .02, from: "center" } }, 7.7);
+      tl.to("#grid9 i", { rotation: 90, borderRadius: "46px", duration: .25, ease: "expo.inOut", stagger: { each: .02, from: "center" } }, 7.95);
+      tl.to("#grid9", { scale: 6, opacity: 0, duration: .3, ease: "power3.in" }, 8.15);
+      tl.fromTo(".tile", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: .22, ease: "back.out(2)", stagger: { grid: [16, 9], from: "center", amount: .45 } }, 8.2);
+      tl.to(".tile path", { stroke: "#e8775a", duration: .15, stagger: { grid: [16, 9], from: "start", amount: .7 } }, 8.75);
+      tl.to(".tile path", { stroke: "#c9b8ef", duration: .15, stagger: { grid: [16, 9], from: "start", amount: .7 } }, 9.05);
+      tl.fromTo("#lab5", { y: 160, opacity: 0 }, { y: 0, opacity: 1, duration: .3, ease: "expo.out" }, 8.6);
+      tl.to(".tile", { scale: 0, duration: .2, ease: "power3.in", stagger: { grid: [16, 9], from: "edges", amount: .25 } }, 9.4);
+
+      // ---------- S6 (9.8 – 11.3): point cloud plane -> sphere -> torus ----------
+      const cv = document.getElementById("cloud"), cx = cv.getContext("2d");
+      const G = 34, pts = [];
+      for (let i = 0; i < G; i++) for (let j = 0; j < G; j++) {
+        const u = i / (G - 1), v = j / (G - 1);
+        const plane = [(u - .5) * 900, 140, (v - .5) * 900];
+        const th = u * TAU, ph = v * Math.PI;
+        const sph = [330 * Math.sin(ph) * Math.cos(th), 330 * Math.cos(ph), 330 * Math.sin(ph) * Math.sin(th)];
+        const tor = [(270 + 110 * Math.cos(v * TAU)) * Math.cos(th), 110 * Math.sin(v * TAU), (270 + 110 * Math.cos(v * TAU)) * Math.sin(th)];
+        pts.push([plane, sph, tor, (i * 7 + j * 3) % 11 === 0]);
+      }
+      const P = { m: 0, a: 0 };
+      const drawCloud = () => {
+        cx.clearRect(0, 0, 1080, 1280);
+        const k = Math.min(1.9999, Math.max(0, P.m)), a = Math.floor(k), f = k - a, ca = Math.cos(P.a), sa = Math.sin(P.a), tilt = .45;
+        for (const p of pts) {
+          const A = p[a], B = p[a + 1];
+          let x = A[0] + (B[0] - A[0]) * f, y = A[1] + (B[1] - A[1]) * f, z = A[2] + (B[2] - A[2]) * f;
+          const x1 = x * ca - z * sa, z1 = x * sa + z * ca;
+          const y2 = y * Math.cos(tilt) - z1 * Math.sin(tilt), z2 = y * Math.sin(tilt) + z1 * Math.cos(tilt);
+          const s = 1100 / (1100 + z2 + 400);
+          cx.fillStyle = p[3] ? "#e8775a" : "rgba(246,241,234," + (0.35 + 0.65 * s).toFixed(2) + ")";
+          cx.beginPath(); cx.arc(540 + x1 * s, 640 + y2 * s, (p[3] ? 5 : 3.2) * s, 0, TAU); cx.fill();
+        }
+      };
+      drawCloud();
+      tl.fromTo(P, { a: 0 }, { a: 2.2, duration: 1.5, ease: "none", onUpdate: drawCloud }, 9.8);
+      tl.to(P, { m: 1, duration: .45, ease: "expo.inOut", onUpdate: drawCloud }, 10.15);
+      tl.to(P, { m: 2, duration: .45, ease: "expo.inOut", onUpdate: drawCloud }, 10.7);
+      tl.fromTo("#cloud", { opacity: 0 }, { opacity: 1, duration: .2 }, 9.8);
+      tl.fromTo("#lab6", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: .4, ease: "steps(18)" }, 10.0);
+
+      // ---------- S7 (11.3 – 13.1): one word per quarter-beat ----------
+      const ks = ["#k1", "#k2", "#k3", "#k4", "#k5", "#k6"], kt = [11.3, 11.6, 11.9, 12.2, 12.45, 12.7];
+      tl.set(ks, { opacity: 0 }, 0);
+      ks.forEach((k, i) => {
+        tl.set(k, { opacity: 1 }, kt[i]);
+        tl.fromTo(k, { scale: 1.25 }, { scale: 1, duration: .2, ease: "power4.out" }, kt[i]);
+        if (i < ks.length - 1) tl.set(k, { opacity: 0 }, kt[i + 1]);
+      });
+      tl.to("#k6", { scale: .85, opacity: 0, duration: .2, ease: "power3.in" }, 12.9);
+
+      // ---------- S8 (13.1 – 16): burst returns, end title ----------
+      tl.fromTo(".ray8", { scale: 0, transformOrigin: "0px 0px" }, { scale: 1, duration: .4, ease: "expo.out", stagger: .012 }, 13.1);
+      tl.fromTo("#burst8G", { rotation: 0, svgOrigin: "0 0" }, { rotation: 90, duration: 2.9, ease: "power1.out" }, 13.1);
+      tl.to("#burst8", { scale: .45, x: 0, y: -330, duration: .45, ease: "expo.inOut" }, 13.6);
+      tl.fromTo("#eWord", { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: .35, ease: "expo.out" }, 13.75);
+      tl.fromTo("#endS", { clipPath: "inset(0 0 100% 0)", y: 30 }, { clipPath: "inset(0 0 0% 0)", y: 0, duration: .35, ease: "expo.out" }, 14.05);
+      tl.fromTo("#endRule", { scaleX: 0, transformOrigin: "right center" }, { scaleX: 1, duration: .4, ease: "expo.out" }, 14.2);
+      tl.fromTo("#endM", { opacity: 0 }, { opacity: 1, duration: .3 }, 14.35);
+      tl.fromTo("#cta", { scale: .4, opacity: 0 }, { scale: 1, opacity: 1, duration: .35, ease: "back.out(2.4)" }, 14.6);
+      tl.to("#cta", { scale: 1.06, duration: .15, yoyo: true, repeat: 1, ease: "sine.inOut" }, 15.3);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
