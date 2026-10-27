@@ -219,3 +219,19 @@ Talk/tips reels: same intro/outro idea; the CTA can be the takeaway (e.g. «اط
 - `speech_ref4` (speech-visualisation reference) has no contact sheet; only the method is described above.
 - Hadith/tafsir sources are NOT bundled offline: verify with Ayman when unsure.
 - Recitation audio is not in the repo (copyright/size): Ayman sends it each time.
+
+## 15. ما نأخذه من دليل @aymen.ai.lab — Lessons from the Instagram session (`docs/montage-playbook.md`)
+Taken because they fit Ayman's style; everything else in that playbook (slow 4.5 % push-in, hard cuts, black frame at the
+end, lavender/peach palette, accent pill `#e8775a`, AI voiceover) does NOT apply to religious reels.
+- **Each shot is made from the previous one** (dot → line → shape → figure…) and **match cuts**: elements collapse into the
+  point the next scene grows from. Same idea as our "element-level morph, no hard cuts" (§3), use it actively.
+- **Reference-video analysis**: `ffprobe`; cut points with `select='gt(scene,0.2)'`; contact sheets at 4 fps (10 fps around
+  transitions); `ebur128` for loudness; a table «second → scene → can we match it». Then rebuild in our style.
+- **Word timing cross-check**: ElevenLabs `eleven_scribe_v1` (connector, uses credits) next to MMS forced alignment.
+- **Metrics**: Windsor.ai connector can read Instagram numbers into `religious/content-log.md`. Posting only with
+  explicit approval of the exact post.
+- **Pitfalls**: Arabic on an SVG `textPath` does not render (place letters by hand); long Arabic titles 86–130 px on
+  1080 wide; screen-left = small `left` (read the script literally in RTL); measure loudness with `ebur128` after render.
+- **Captions/hooks**: `ig-reel` (`hookscore.py`, `beats.py`) and `ig-caption` skills are English-centric; scores on
+  Arabic are rough. Religious text rules (§7) always win.
+- Sources list: `docs/resources.md`.

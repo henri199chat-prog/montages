@@ -3,6 +3,7 @@ import { TasbihAdV2 } from "./TasbihAdV2";
 import { ReligiousDemo } from "./religious/ReligiousDemo";
 import religiousSample from "./religious/data/sample-tawbah-102-104.json";
 import { NiamReel, NIAM_TOTAL } from "./religious/NiamReel";
+import { DinarReel, DINAR_TOTAL } from "./religious/DinarReel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -29,6 +30,15 @@ export const RemotionRoot: React.FC = () => {
         id="NiamReel"
         component={NiamReel}
         durationInFrames={Math.round(NIAM_TOTAL * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      {/* Hadith talk «تعس عبد الدينار» (original audio of the clip Ayman sent) */}
+      <Composition
+        id="DinarReel"
+        component={DinarReel}
+        durationInFrames={Math.round(DINAR_TOTAL * 30)}
         fps={30}
         width={1080}
         height={1920}

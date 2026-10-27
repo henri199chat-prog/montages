@@ -7,3 +7,4 @@ graphify-out/.graphify_*
 /work/
 # mixed voice of reels made from someone else's audio (it is inside the MP4; rebuild with religious/tools/mix_master.py)
 /video/public/religious/niam/
+/video/public/religious/dinar/

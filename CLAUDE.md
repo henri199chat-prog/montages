@@ -39,6 +39,10 @@
 - لا تقل إنك لا تسمع الصوت؛ حلّله بـ audio-analysis
 - Never say you can't hear audio; analyze it with the audio-analysis skill (`scripts/analyze-audio`).
 
+- `docs/montage-playbook.md` + `docs/resources.md` (from the @aymen.ai.lab Instagram session) and the `ig-*` Instagram
+  skills (`.claude/skills/ig-*`, MIT, Jake Schincariol, English-centric scoring). For religious reels only what
+  `religious/README.md` §15 lists applies.
+
 ## Sound tools (added 2026-10-26)
 
 - `earshot` + `real-sound` skills (https://github.com/Leonxlnx/earshot, MIT, vendored in `tools/earshot/`): make sound
