@@ -1,0 +1,20 @@
+      /* what is a skill */
+      #dT { position: absolute; left: 0; top: 300px; width: 1080px; text-align: center; font-weight: 800; font-size: 84px; }
+      #dT span { color: var(--acc); }
+      #dFold { position: absolute; left: 120px; top: 480px; width: 840px; height: 720px; }
+      #dFold .tb { position: absolute; left: 30px; top: 0; width: 460px; height: 80px; border-radius: 24px; background: #b39ce6; }
+      #dFold .bk { position: absolute; left: 0; top: 40px; width: 840px; height: 680px; border-radius: 34px; background: var(--lav); }
+      #dFold .lb { position: absolute; left: 40px; top: 3px; font-family: var(--mono); font-size: 24px; font-weight: 700; color: #fff; direction: ltr; }
+      #dDoc { left: 170px; top: 580px; width: 740px; height: 580px; padding: 34px 40px; direction: ltr; font-family: var(--mono); }
+      #dDoc h4 { font-size: 26px; color: var(--muted); font-weight: 700; }
+      #dMeta { margin-top: 20px; padding: 18px 22px; border-radius: 18px; background: var(--lav-soft); font-size: 27px; line-height: 1.6; }
+      #dMeta em { font-style: normal; color: #6d55b8; font-weight: 700; }
+      #dMeta .ar { font-family: "Tajawal", sans-serif; direction: rtl; unicode-bidi: isolate; }
+      #dBody { margin-top: 26px; }
+      #dBody p { font-size: 27px; font-weight: 700; margin-bottom: 18px; }
+      #dBody i { display: block; height: 18px; border-radius: 9px; background: var(--lav); margin-bottom: 20px; }
+      #dEye { position: absolute; right: 200px; top: 600px; height: 64px; padding: 0 26px; border-radius: 22px; background: var(--acc); color: #fff; font-weight: 800; font-size: 32px; line-height: 64px; white-space: nowrap; }
+      #dReq { position: absolute; right: 90px; top: 1230px; padding: 22px 32px; border-radius: 30px 30px 8px 30px; background: var(--ink); color: #fff; font-size: 34px; font-weight: 500; }
+      #dOk { position: absolute; left: 90px; top: 1236px; height: 70px; padding: 0 26px; border-radius: 22px; background: var(--ok); color: #fff; font-weight: 800; font-size: 32px; line-height: 70px; }
+      .src { position: absolute; left: 0; top: 1800px; width: 1080px; text-align: center; font-size: 24px; color: var(--muted); font-weight: 500; }
+      .src b { font-family: var(--mono); font-weight: 400; direction: ltr; unicode-bidi: isolate; }
