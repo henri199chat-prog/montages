@@ -1,7 +1,7 @@
 # Graph Report - montages  (2026-10-28)
 
 ## Corpus Check
-- 2097 files · ~2,396,796 words
+- 2097 files · ~2,396,877 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 98 file(s) not represented in the graph (top: .woff2 42, (none) 27, .ttf 17)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `60b4f375`
+- Built from commit: `aed2a268`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

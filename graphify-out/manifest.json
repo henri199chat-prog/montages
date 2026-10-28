@@ -14442,15 +14442,15 @@
     "semantic_hash": ""
   },
   "religious/README.md": {
-    "mtime": 1793125261.1508796,
-    "seen": 1793126640.9040964,
-    "ast_hash": "c207cc7f47621a5d10f502948e3139c4",
+    "mtime": 1793179571.287214,
+    "seen": 1793179629.292743,
+    "ast_hash": "8c623862e926ce25f1412e79e736eaf7",
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793173627.2948906,
-    "seen": 1793173706.4651828,
-    "ast_hash": "594a9bbc52eaaa1d94c980fcbf583d07",
+    "mtime": 1793179571.2944827,
+    "seen": 1793179629.2927465,
+    "ast_hash": "880ec141086a8b2053ede26c0afece76",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -14844,9 +14844,9 @@
     "semantic_hash": ""
   },
   "video/src/religious/BaoudaReel.tsx": {
-    "mtime": 1793173033.4308264,
-    "seen": 1793173706.4350061,
-    "ast_hash": "1a69f3f39d887331be2d26cd43f90a4b",
+    "mtime": 1793179571.285696,
+    "seen": 1793179629.2610075,
+    "ast_hash": "4651822e59a6c50aa5be5598ee6c3488",
     "semantic_hash": ""
   },
   "video/src/religious/data/baouda.json": {
@@ -14859,6 +14859,12 @@
     "mtime": 1793173570.0259976,
     "seen": 1793173706.474275,
     "ast_hash": "86afcd82e3de5cb87eda625729e024cc",
+    "semantic_hash": ""
+  },
+  "videos/baouda-v2.mp4": {
+    "mtime": 1793179542.9663527,
+    "seen": 1793179629.3020349,
+    "ast_hash": "bf91a9b748dd394540d3b7b42952c2ea",
     "semantic_hash": ""
   }
 }

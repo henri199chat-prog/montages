@@ -13,8 +13,9 @@ import type { AyahData } from "./types";
 import data from "./data/baouda.json";
 
 /**
- * «البعوضة» — science narration around Al-Baqarah 2:26 (voice only from the clip Ayman sent: music + effects removed
- * with demucs, light EQ/compression only, one 5 s silent pause shortened; quiet drone bed; NO sound effects).
+ * «البعوضة» — science narration around Al-Baqarah 2:26 (voice only from the clip Ayman sent: music + effects removed,
+ * light EQ/compression only, one 5 s silent pause shortened; quiet drone bed; NO sound effects).
+ * v2 voice = average of the BS-RoFormer and htdemucs_ft vocal stems (Ayman picked it by ear; v1 used htdemucs alone).
  * Line-art mosquito that takes itself apart, then one close-up per part, each keyed to the narrator's words:
  * dot -> mosquito -> exploded parts -> compound eye -> CO2 / heat -> six stylets -> flight muscles -> legs on water ->
  * wing, veins, scales, halteres -> 600 beats/s -> parasite -> bite through the skin -> drinks 3× -> 300 eggs -> itch.
@@ -607,7 +608,7 @@ export const BaoudaReel: React.FC = () => {
           }
         />
       </NavyBackground>
-      <Audio src={staticFile("religious/baouda/mix.wav")} />
+      <Audio src={staticFile("religious/baouda/mix_ens.wav")} />
     </AbsoluteFill>
   );
 };

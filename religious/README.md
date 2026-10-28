@@ -114,6 +114,10 @@ All in `video/src/religious/theme.ts` (`C`).
    no noise, no chatter, no music. Chain used in 002 (`religious/tools/clean_voice.sh`): demucs vocals → DeepFilterNet3
    (atten-lim 24 dB) → ffmpeg EQ/de-ess/gentle compression/light afftdn. If demucs/DFN are missing, the script falls back
    to ffmpeg-only and says so — tell Ayman honestly.
+   **Removing music from a voice (Ayman's ear test, 2026-10-28):** htdemucs alone left a garbled residue under the
+   words. Best = the average of two stems: BS-RoFormer (`pip install "audio-separator[cpu]" audioread`, model
+   `model_bs_roformer_ep_317_sdr_12.9755.ckpt`, ~25 s CPU per 1 s of audio) and `demucs -n htdemucs_ft`. Then only light
+   EQ / de-ess / compression; heavy denoise (anlmdn) makes the voice sound unnatural.
 2. Quran recitation: subtle stereo hall reverb (wet −17 dB) + a **very quiet low drone** (D2/A2/D3/A3 soft partials,
    lowpass 420 Hz, ≈ **−35 dBFS RMS**). **No sound effects, no music, ever.**
 3. Podcast / hadith / talk / tips: **light SFX synced to the visuals, kept low** (from `assets/sfx/`, see INDEX.md:
