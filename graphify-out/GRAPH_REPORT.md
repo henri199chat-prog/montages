@@ -1,40 +1,41 @@
-# Graph Report - montages  (2026-10-27)
+# Graph Report - montages  (2026-10-28)
 
 ## Corpus Check
-- 2095 files · ~2,389,278 words
+- 2097 files · ~2,396,796 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 98 file(s) not represented in the graph (top: .woff2 42, (none) 27, .ttf 17)
 
 ## Summary
-- 28396 nodes · 53306 edges · 1437 communities (1183 shown, 254 thin omitted)
+- 28420 nodes · 53411 edges · 1459 communities (1191 shown, 268 thin omitted)
 - Extraction: 93% EXTRACTED · 7% INFERRED · 0% AMBIGUOUS · INFERRED: 3712 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `04b30459`
+- Built from commit: `60b4f375`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - ToolStatus
-- json
-- test_forge_search.py
+- sys
+- forge/__init__.py
 - n_of
 - test_forge_critic.py
-- ToolResult
+- validate_artifact
 - test_models_hub.py
 - rng
-- width
+- test_semantics.py
+- Cards over talking-head footage
 - test_kling_official_core.py
 - VideoCompose
-- VideoAnalyzer
+- VideoTrimmer
 - bank.py
 - vocab.py
 - Explainer.tsx
 - earshot/critique.py
 - test_provider_refresh.py
 - GoogleTTS
-- forge/__init__.py
+- _tonal.py
 - write_checkpoint
 - realness.py
 - sines.py
@@ -57,28 +58,28 @@
 - audio.py
 - test_hyperframes_compose.py
 - test_forge_recipes_digital.py
-- unbake.py
-- test_phase0_contracts.py
+- math
+- json
 - scene.js
 - test_clip_cache.py
-- timeline
+- quality.py
 - scale
 - space.py
 - ref_react
 - knobs.py
 - common.py
-- tts.mjs
+- audio.mjs
 - HunyuanImage
-- test_forge_recipes_tonal04.py
-- resolveAsset
-- fit
-- verify-motion.mjs
-- test_phase2_contracts.py
+- scripts/critique.py
+- CollageBurst.tsx
+- emit
+- tts.mjs
+- DiagramGen
 - earshot/gallery.py
 - manimlib
 - HyperFramesCompose
-- gain_db
-- DependencyError
+- fade_out
+- load_pipeline
 - render
 - manifest.mjs
 - FishAudioTTS
@@ -91,17 +92,17 @@
 - scoring.py
 - remotion-markup/SKILL.md
 - .claude/skills/real-sound/scripts/qa.py
-- sys
+- argparse
 - KlingClient
-- forge/search.py
+- VeoVideo
 - schema.py
 - load_json
 - ref_remotion
 - KlingLipSync
-- polish.py
+- numpy
 - test_fit_timeshape.py
 - Motion-design SFX: how the pros build them, as synthesis recipes
-- forge
+- click.py
 - remotion-composer/package.json
 - KlingOfficialVideo
 - test_seedream_image.py
@@ -129,21 +130,21 @@
 - spectral.py
 - test_forge_refsets.py
 - ui_events.py
-- audio.mjs
-- test_05_video_compose.py
+- earshot/skills/real-sound/scripts/mix.py
+- .claude/skills/real-sound/scripts/mix.py
 - settle
-- glob
-- .claude/skills/real-sound/scripts/master.py
+- earshot/skills/real-sound/scripts/licences.py
+- AzureSpeechToText
 - state.py
 - D3.js Colour Schemes and Palette Recommendations
 - Music API Reference
 - Reviewer — Meta Skill
-- ToolStatus
+- _shared.py
 - AzureTTS
 - video/package.json
 - ImageSelector
 - compare.py
-- test_forge.py
+- skills/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx
 - openmontage/README.md
 - python-client.py
 - Command Line Interface in ManimGL
@@ -196,7 +197,7 @@
 - Configuration in ManimGL
 - test_backlot_contract.py
 - README_zh-CN.md
-- AtlasVideo
+- .execute
 - MathAnimate
 - MiniMaxImage
 - carve.mjs
@@ -211,7 +212,7 @@
 - ComfyUIMusic
 - remotion-best-practices/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx
 - features.py
-- numpy
+- impact.py
 - Captions
 - Photo Avatars (Talking Photos)
 - FLUX.2 Model Family
@@ -236,16 +237,16 @@
 - MapTiler maps in Remotion
 - Using calculateMetadata
 - MapTiler maps in Remotion
-- test_stock_source_adapters.py
+- typing.py
 - board.js
 - Widget Embedding
 - Multi-Reference Image Editing
 - equation_transforms.py
 - Transform Animations in ManimGL
-- ComfyUIClient
-- array
+- test_fit_takes.py
+- analyze-audio
 - earshot: ears for an agent
-- video_compose.py
+- get_profile
 - Lambda rendering on AWS
 - onetake/scripts/look.py
 - remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx
@@ -259,7 +260,7 @@
 - SubtitleGen
 - _FakeResponse
 - KlingTTS
-- test_forge_core_r3.py
+- SilenceCutter
 - مونتاج إعلان الفيديو — بلا برنامج مونتاج
 - HeyGen Voices
 - HeyGen Voices
@@ -291,18 +292,18 @@
 - Mermaid Syntax Reference
 - FLUX.1 Model Family
 - Hex Color Prompting
-- backlot_visual_eval.py
+- maskmodel.py
 - earshot fit: translate a recording into code
 - Three.js Animation
 - Three.js Geometry
-- test_export_bundle.py
+- test_gate_scenarios.py
 - kling_official_animated_explainer_e2e.py
 - Long-Form Video Pipeline (10+ Minutes)
 - Executive Producer — Animation Pipeline
 - Process
 - Process
 - SeedanceArkVideo
-- test_pixabay_per_page_clamp.py
+- ._filter_candidates
 - bgm.mjs
 - remotion-best-practices/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs
 - Using audio in Remotion
@@ -319,7 +320,7 @@
 - Video Translation (HeyGen)
 - ParticleOverlay.tsx
 - backlot_watch_captures.py
-- build
+- listen.py
 - Biennale Yellow — Frame (video / frame layer)
 - BlockFrame — Frame (video / frame layer)
 - Blue Professional — Frame (video / frame layer)
@@ -335,7 +336,7 @@
 - skills/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs
 - skills/remotion-markup/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs
 - Superposition
-- media.py
+- kling_official_image.py
 - Webhooks
 - Webhooks
 - FFmpeg Reference
@@ -350,7 +351,7 @@
 - Process
 - TestDashscopeImageMultiOutput
 - TestToolSpecific
-- levels.py
+- MusicLibrary
 - test_audio_mixer_amix_normalize.py
 - _Assets
 - Animating Clawd
@@ -387,7 +388,7 @@
 - manimgl-best-practices/SKILL.md
 - openmontage/.claude/skills/remotion-best-practices/SKILL.md
 - TestContract
-- test_openai_image_multi_output.py
+- fit
 - blender-world-runtime.py
 - dither.mjs
 - one-dot-15s — the concept film
@@ -402,16 +403,16 @@
 - attention_scenes.py
 - mlp_neurons_flow.py
 - SpringMassSystem
-- Launch-film sound: the playbook for coding agents
+- earshot/skills/real-sound/scripts/variant.py
 - Local Providers (Free, No API Key)
 - Process
 - Process
 - FakeResponse
 - captured_synthesize
 - web/lib.js
-- archive_org.py
+- gesture.py
 - Per category
-- .estimate_cost
+- centers
 - gallery
 - test_silence_speed_timeline.py
 - earshot
@@ -430,14 +431,14 @@
 - GreenScreenProcessor
 - Color Grading for Video Production
 - Process
-- test_kling_official_avatar.py
+- KlingAvatar
 - MiniMaxVideo
 - SoraVideo
 - _wan_engine.py
 - telemetry.mjs
 - real-sfx/scripts/look.py
 - skills/remotion-markup/remotion-maps/REFERENCE.md
-- stock_sources/__init__.py
+- render
 - Video Backgrounds
 - Beautiful Mermaid Diagram Rendering
 - Face Swap (HeyGen API)
@@ -457,18 +458,17 @@
 - Process
 - Process
 - ComfyUIVideo
-- test_documentary_governance.py
+- music
 - RunwayVideo
-- pexels.py
-- codegen.py
-- mallet.py
+- .claude/skills/real-sound/scripts/variant.py
+- test_forge_recipes_cut_noise.py
 - AutoReframe
 - English
 - remotion-best-practices/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
 - remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
 - skills/remotion-markup/remotion-maps/techniques/cesium/scripts/prep-cesium-path.mjs
 - Process
-- manim
+- YourCameraScene
 - Protocol
 - ElevenLabs Agents Platform
 - Asset Upload and Management
@@ -485,14 +485,14 @@
 - Talking Head Generation Usage for OpenMontage
 - edit
 - Process
-- test_corpus_builder_total_failure.py
+- .dry_run
 - DashscopeImage
 - completed
-- Scene
+- LowRankTransformation
 - test_remotion_staging_lifecycle.py
 - atlas_client.py
-- emit
-- test_phase2_comparison.py
+- llm.py
+- AudioEnhance
 - Coral — Frame (video / frame layer)
 - wait-bgm.mjs
 - remotion-saas/REFERENCE.md
@@ -512,7 +512,7 @@
 - sqrt_random_process.py
 - 3d_scene.py
 - ElevenLabs Sound Effects
-- load_board_state
+- test_theme_text_contrast_contract.py
 - score_slideshow_risk
 - Screen Recording Pipeline
 - softmax
@@ -529,17 +529,16 @@
 - test_new_video_model_support.py
 - RemotionCaptionBurn
 - DoubaoTTS
-- nasa.py
+- test_remotion_media_staging.py
 - Story
-- create-html.ts
+- transcribe.mjs
 - moment_test.py
-- ThreeJSAssetCatalog
+- _fit_texture
 - remotion-best-practices/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
 - remotion-best-practices/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
 - skills/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
 - skills/remotion-markup/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx
 - tier-3-data-driven/remotion-src/package.json
-- test_local_video_cache_inputs.py
 - Standalone HyperFrames Slideshow Harness
 - PixabayMusic
 - earshot/tests/conftest.py
@@ -562,8 +561,8 @@
 - Process
 - Process
 - RealtimeAudioSession
-- _clap_alts
-- info, upgrade, compositions, timeline, docs, benchmark, telemetry, asset preprocessing
+- test_fit_choice.py
+- .execute
 - Text To Speech
 - Media operations: agent guidance
 - .claude/skills/real-sound/scripts/mux.mjs
@@ -594,14 +593,14 @@
 - Executive Producer — Avatar Spokesperson Pipeline
 - Scene Director - Avatar Spokesperson Pipeline
 - Process
+- CinematicRenderer.tsx
 - Process
-- Process
-- ComfyUIError
+- .execute
 - ToolCommandError
 - earshot/skills/real-sound/scripts/mux.mjs
 - audio-duck.mjs
 - threshold
-- run_fit
+- build
 - skills/remotion-markup/compositions.md
 - skills/remotion-markup/transitions.md
 - tier-1-title-card/remotion-src/package.json
@@ -624,7 +623,7 @@
 - weight_matrix_product.py
 - weights_vs_data.py
 - 7. JavaScript Performance
-- Commands
+- The process
 - Visual Style
 - attributes
 - stages
@@ -636,7 +635,7 @@
 - Music Generation Usage for OpenMontage
 - Sound Design for Video Production
 - Storytelling & Narrative Structure for Explainer Videos
-- The construction route
+- test_fit_gesture.py
 - Process
 - Executive Producer — Clip Factory Pipeline
 - render_report
@@ -649,7 +648,7 @@
 - Process
 - Sequencing translation: Sequence, Series, Composition root
 - generate_wan
-- unsplash.py
+- style_bridge
 - scipy
 - SFX index (`assets/sfx/`)
 - Carry — the three cuts of Pocket Weather Club
@@ -657,7 +656,6 @@
 - Critic lens: sync (does every sound land on its cause?)
 - Outbound Calls
 - flux-best-practices/SKILL.md
-- heygen/SKILL.md
 - manim-composer/SKILL.md
 - Coordinate Systems
 - Grouping Mobjects
@@ -671,7 +669,7 @@
 - rules/transitions.md
 - Server-Side Real-Time Streaming
 - React Best Practices
-- test_base_tool_cache_formats.py
+- VideoDownloader
 - properties
 - Diagram Generation Usage for OpenMontage
 - HunyuanVideo 1.5 — Prompting Guide
@@ -687,7 +685,7 @@
 - stat_card
 - typography
 - TestToolSpecific
-- _gate_map
+- ScreenCaptureSelector
 - ScreenRecorder
 - الأسلوب الديني لأيمن — Ayman's religious reel style (aymen.1303)
 - .claude/skills/real-sound/scripts/analyze.py
@@ -704,7 +702,7 @@
 - Avatar Video
 - Error Handling
 - Scene Examples
-- manimce-best-practices/examples/lorenz_attractor.py
+- Operations Reference
 - bloch_sphere_3d.py
 - EigenvectorMatrixTransformation
 - ManimGL Frame (Camera) Control
@@ -722,7 +720,7 @@
 - Process
 - Idea Director - Avatar Spokesperson Pipeline
 - Process
-- apply_post
+- Video Toolkit
 - Process
 - Process
 - Process
@@ -739,8 +737,8 @@
 - typography
 - typography
 - typography
-- _CMA
-- bake-basemap.mjs
+- FalElevenLabsMusic
+- _synth
 - TestPhase1ToolContracts
 - .estimate_cost_cny
 - test_music_gen_force_instrumental.py
@@ -752,7 +750,7 @@
 - Files
 - Recipes (practice, use deliberately)
 - Sound design rules: launch videos and code-made films
-- check_scene_variation
+- bench_runner.py
 - test_unicode_tokenizers.py
 - ui/lib.js
 - Rate Limiting
@@ -800,9 +798,9 @@
 - Sound design rules: launch videos and code-made films
 - Correct Arabic text in Remotion
 - Background Removal
-- Request Fields
+- verify_promo.py
 - Pro editing style & pacing (AG Anime house style)
-- Using audio in Remotion
+- Compose Director - Cinematic Pipeline
 - Religious HUD reel (Remotion)
 - Color correction
 - MapTiler maps in Remotion
@@ -810,7 +808,7 @@
 - Eval: how to validate a translation end-to-end
 - Patterns that work with caveats
 - eigenvalue_equations.py
-- character
+- bandwidths
 - render.ts
 - Polling Patterns
 - Sections
@@ -859,12 +857,12 @@
 - Quick Reference
 - Ready-to-Use Templates
 - Create Video
-- fit_hybrid
+- test_mcp_stdio_describe_keeps_models_warm
 - Reference Files
 - Narrative Patterns for Math Explainers
 - TestStoryboardVisualSelection
 - MLPNetworkIcon
-- mlp_neuron_activation.py
+- skills/INDEX.md
 - mlp_relu_visualization.py
 - Using audio in Remotion
 - Using videos in Remotion
@@ -902,12 +900,12 @@
 - Audio Visualization in Remotion
 - Using Animated images in Remotion
 - Map Explainer — architecture reference
-- api-map.md
 - Lottie translation: @remotion/lottie → HF lottie adapter
 - Reference "House Style" Analysis: Ayman's religious edits
 - Files
 - Transitions in Remotion (offline, no extra packages)
 - أدوات المونتاج الاحترافية — فهرس ودليل تثبيت
+- TestVideoRoutes
 - renderApprovalReview
 - bfl-api/SKILL.md
 - fibonacci_eigenvalues.py
@@ -978,7 +976,7 @@
 - interface
 - interface
 - interface
-- music
+- The process
 - interface
 - test_kling_official_e2e_script.py
 - openNarrModal
@@ -1002,15 +1000,14 @@
 - Executive Producer - Documentary Montage Pipeline
 - resolve_precision
 - Quality Validation Plan — Phase 3.5 + G3.11
-- LipSync
-- Pond5PublicDomainSource
-- DarefulSource
-- ESASource
-- JAXASource
+- ._process_candidate
+- TalkingHead
+- MapTiler maps in Remotion
+- spring_mass_system.py
 - ig-caption
-- MixkitSource
+- Ready-to-Use Templates
 - Frame Treatments
-- NOAASource
+- OpenMontageConfig
 - spectrogram_rgb
 - ig-comment
 - Audio mixing in Remotion
@@ -1028,8 +1025,8 @@
 - Licences: what may go into a film, how to verify it, how to credit it
 - Critic lens: director (does the soundtrack tell the film's story?)
 - ig-reply
-- Brief: design the {{CATEGORY}} fragment
-- 07-custom-hook.tsx
+- _doc
+- verify_scene_pacing.py
 - Measuring text in Remotion
 - remotion-best-practices/remotion-markup/timing.md
 - simple_test.py
@@ -1039,16 +1036,16 @@
 - skills/remotion-markup/timing.md
 - remotion-render/SKILL.md
 - run.sh
-- Get Avatar Details (v2 API)
-- ChangeHub
+- Animation Runtime Selector
+- earshot: ears for an agent
 - CRUD Operations
 - Get Avatar Details (v2 API)
 - Example Requests
 - Font Style Categories
 - Apple Silicon (MPS) Support
-- HeyGenVideo
+- FakeRequests
 - CubeProjection3D
-- _fit_gate
+- test_transcriber_device_selection.py
 - interactive_scene.py
 - Importing assets in Remotion
 - Using calculateMetadata
@@ -1059,7 +1056,7 @@
 - Connectors
 - Connectors
 - Connectors
-- test_mps_device.py
+- ._build_upsampler
 - BGM Montage Lite
 - Provider refresh — October 23, 2026
 - Google — TTS + Imagen + Music + Video (Shared Key)
@@ -1078,11 +1075,12 @@
 - TestPhase2ToolContracts
 - TestRemotionScaffold
 - corpus_builder.py
-- peak_db
+- ImageGen
 - gateway
 - _EmptySoup
+- pith-21s — the window grew out of the terminal
 - renderAt
-- HyperFrames
+- Decision Communication Contract
 - Licences: what may go into a film, how to verify it, how to credit it
 - ig-audit
 - Critic lens: director (does the soundtrack tell the film's story?)
@@ -1105,8 +1103,8 @@
 - infra-25s — every image starts as heat (25.5 s, accepted v6, 2026-10-12)
 - motion-web-15s — the worked example
 - Sound — a palette in a room
-- listen_page.py
-- HexagonCubeCorrespondence
+- make_handler
+- add-motion.mjs
 - Brief: licence audit of every recording
 - Brief: music supervisor (choose the track, verify its grid, edit it to the picture)
 - Brief: source real recordings for {{CATEGORY}}
@@ -1121,17 +1119,17 @@
 - Map element data sources
 - When to bow out: the runtime interop pattern
 - Map element data sources
-- platform_settings
+- OpenMontage - Shared Project Context
 - Tier 2 — title-image-outro
 - lozenge_tiling.py
 - Common Visual Metaphors
 - rules/compositions.md
-- Adding AI voiceover to a Remotion composition
+- rules/voiceover.md
 - Workflow
 - Sections
 - 1. Eliminating Waterfalls
 - React Best Practices
-- Transparent Background Videos (WebM)
+- Compose Director - Documentary Montage Pipeline
 - contact_links
 - PULL_REQUEST_TEMPLATE.md
 - mocap-figure/ink-puppet.js
@@ -1151,20 +1149,20 @@
 - identity
 - TestGuardBlocksOutbound
 - atlas_media_smoke.py
-- Transparent Background Videos (WebM)
+- The process: how a real-recordings soundtrack gets built by agents who cannot hear
 - test_no_timeout_flag_when_not_requested
 - Brief: licence audit of every recording
 - Brief: music supervisor (choose the track, verify its grid, edit it to the picture)
 - Brief: source real recordings for {{CATEGORY}}
 - Series templates
-- init, capture, skills
+- The process: how a real-recordings soundtrack gets built by agents who cannot hear
 - doctor, browser
 - Characters, mascots and story shorts
 - Numbers, charts and data stories
 - manifest.json
 - Local media commands
 - User memory — preferences and recipes
-- Getting audio duration with Mediabunny
+- .__init__
 - openverse-sfx: free sounds from Openverse, licence-checked
 - Production Governance
 - Flyover data sources
@@ -1189,8 +1187,8 @@
 - Core Principles
 - Scene 1: [Scene Name]
 - Scene 3: [Scene Name]
-- MultiHeadedAttention
-- test_chromakey_preserves_frame_size_and_keys
+- Critic lens: tonal (pleasant on phones and laptops: harshness, brightness, low end, width, key, limiter)
+- Using Three.js and React Three Fiber in Remotion
 - _FakeWSConn
 - Checking if a video can be decoded
 - MiniMaxFalVideo
@@ -1199,10 +1197,10 @@
 - Using Lottie Animations in Remotion
 - 4. Client-Side Data Fetching
 - Web Interface Guidelines
-- remotion-best-practices/rules/text-animations.md
+- Captions for talking-head / VO reels
 - Alibaba DashScope — Qwen Image + TTS + ASR
 - Volcengine Jimeng — 即梦 AI Video Generation
-- Rendering Transparent Videos
+- WordVectorAnalogy
 - Sponsors
 - Critic lens: sync (does every sound land on its cause?)
 - montages
@@ -1217,10 +1215,10 @@
 - TestModelRequirements
 - hunyuan_env
 - TestGoldenScenarioArtifacts
-- fake_requests
+- Using Three.js and React Three Fiber in Remotion
 - Transition Selection
 - ig-profile
-- Examples
+- Gotchas in practice (hard-earned)
 - SFX Credits
 - click
 - click-soft
@@ -1258,9 +1256,9 @@
 - body
 - headings
 - test_agent_instruction_integrity.py
-- Request Fields
+- Executive Producer - Character Animation Pipeline
 - rankings
-- Critic lens: masking and density (can every sound be heard; is the effect layer dense or repetitive?)
+- gain_db
 - Mocap provenance & licensing
 - LUT library (authoring)
 - ebb 15s
@@ -1326,7 +1324,7 @@
 - js-set-map-lookups.md
 - js-tosorted-immutable.md
 - rendering-activity.md
-- Integration: earshot inside a Cinetic film
+- DummyTool
 - rendering-conditional-render.md
 - rendering-content-visibility.md
 - rendering-hoist-jsx.md
@@ -1369,21 +1367,21 @@
 - README.md
 - earshot
 - master_voice.sh
-- Import into HyperFrames
+- _clicks
 - Doubao Speech — Mandarin TTS
-- Client Tools
+- .__init__
 - SAM Content OS — مهارة صناعة ريلز انستقرام على Claude
 - Content log
 - On-screen captions (subtitles for the video)
 - Reel performance analysis
 - 制作治理
 - Storyboard recipe — plan a video as stills the person approves
-- atelier_snapshots.py
+- Critic lens: tonal (pleasant on phones and laptops: harshness, brightness, low end, width, key, limiter)
 - TestDashscopeRegistryDiscovery
 - omni.py
 - Detailed director-level package
 - Editor brief
-- test_utf8_file_io.py
+- Skill installation and freshness
 - reels/content-log.md
 - religious/content-log.md
 - voice_chain.sh
@@ -1395,11 +1393,30 @@
 - AtlasImage
 - Kling Official — Direct API
 - MiniMax — Official Direct Image and Video API
-- Measuring DOM nodes in Remotion
-- skills/remotion-markup/motion-blur.md
+- Mixing in HyperFrames
+- Editable video timelines
 - مصادر العمل — @aymen.ai.lab
-- Using Different Character Types
-- Using Different Character Types
+- Transitions translation: @remotion/transitions → HF crossfades / shader-transitions
+- YourScene
+- test_decision_log_approval_policy.py
+- test_remotion_render_preserves_direct_cinematic_scenes
+- fit_report
+- compact
+- Offline assets: SFX, fonts, overlays
+- 2. Technical Implementation
+- Composition Authoring Mode Review
+- BudgetExceededError
+- Using fonts in Remotion
+- Pipeline System
+- TestPhase2ToolNames
+- operation_routes
+- isolated_tool_registry
+- EntryStatus
+- _call
+- test_wan21_1_3b_does_not_claim_image_to_video
+- test_default_variant_covers_the_full_matrix
+- test_ti2v_is_the_only_32_aligned_line
+- azure_env
 
 ## God Nodes (most connected - your core abstractions)
 1. `ToolResult` - 581 edges
@@ -1428,179 +1445,183 @@
 ## Import Cycles
 - None detected.
 
-## Communities (1437 total, 254 thin omitted)
+## Communities (1459 total, 268 thin omitted)
 
 ### Community 0 - "ToolStatus"
 Cohesion: 0.03
-Nodes (44): VisualQA, InworldTTS, BaseTool, Determinism, ExecutionMode, ResourceProfile, ResumeSupport, RetryPolicy (+36 more)
+Nodes (55): BaseTool Contract, Tool Contract, When Building New Tools, _clear_atlas_env(), TestContract, TestPhase1ToolStatus, test_local_qwen_missing_weights_is_unavailable(), AudioEnergy (+47 more)
 
-### Community 1 - "json"
-Cohesion: 0.04
-Nodes (67): authenticate(), agreement(), band_balance(), cmd_check(), cmd_eval(), cmd_prepare(), cmd_prompt(), cmd_snapshot() (+59 more)
+### Community 1 - "sys"
+Cohesion: 0.06
+Nodes (50): build_film(), put_stem(), cmd_build(), cmd_ladder(), db(), duck_stem(), excerpt(), ff() (+42 more)
 
-### Community 2 - "test_forge_search.py"
-Cohesion: 0.07
-Nodes (34): gather(), Round 2 notes (judge + integrator, 08:15-08:55), render_params(), artifacts(), describe(), envelope_stats(), _envvec(), _evaluate() (+26 more)
+### Community 2 - "forge/__init__.py"
+Cohesion: 0.02
+Nodes (167): Multilingual (Kokoro voice prefix → language), func(), overlay, 0.2.0 - 2026-10-16, Added, Changed, Known limits, 1. What was built (+159 more)
 
 ### Community 3 - "n_of"
-Cohesion: 0.02
-Nodes (120): rate(), The bank, butter(), fade(), mic(), n_of(), svf(), trim_tail() (+112 more)
+Cohesion: 0.01
+Nodes (206): `data-fx-chain`: effects, Common Request Parameters, FLUX.2 [flex] Specific, Image-to-Image (I2I), Text-to-Image (T2I), Added, 3. Downlifter (downsweep, fall), The universal design chain (per sound) (+198 more)
 
 ### Community 4 - "test_forge_critic.py"
-Cohesion: 0.05
-Nodes (42): total_v2(), _anchors(), bandgram(), _bank(), env_dist(), cost(), EnvRef, label() (+34 more)
-
-### Community 5 - "ToolResult"
 Cohesion: 0.03
-Nodes (33): BaseTool Contract, Tool Contract, When Building New Tools, test_character_animation_smoke_flow(), test_character_renderer_can_handoff_to_video_compose(), fake_hyperframes_execute(), test_character_reviewer_success_false_when_qa_finds_issues(), test_character_style_is_normalized_for_schema() (+25 more)
+Nodes (65): Critic, _fv(), _holdout_dir(), _holdout_get(), holdout_key(), _holdout_put(), _mono(), resolve_mode() (+57 more)
+
+### Community 5 - "validate_artifact"
+Cohesion: 0.06
+Nodes (33): validate_artifact(), test_character_animation_smoke_flow(), test_character_renderer_can_handoff_to_video_compose(), fake_hyperframes_execute(), test_character_reviewer_success_false_when_qa_finds_issues(), test_character_style_is_normalized_for_schema(), TestSchemas, _inputs() (+25 more)
 
 ### Community 6 - "test_models_hub.py"
 Cohesion: 0.03
-Nodes (70): _fn(), __getattr__(), _default_home(), ensure_dirs(), offline(), threads(), add_cli(), bank_info() (+62 more)
+Nodes (69): _default_home(), ensure_dirs(), offline(), threads(), add_cli(), bank_info(), check(), fetch() (+61 more)
 
 ### Community 7 - "rng"
-Cohesion: 0.04
-Nodes (61): Loop 5: make a film's sound kit (earshot sfx / earshot kit), rng(), load_recipe(), recipes(), _attack_ms(), _centroid(), _corr(), _env_db() (+53 more)
+Cohesion: 0.03
+Nodes (73): Loop 5: make a film's sound kit (earshot sfx / earshot kit), sound(), rng(), wander(), critic_words(), split(), load_recipe(), Loop 5: make a film's sound kit (earshot sfx / earshot kit) (+65 more)
 
-### Community 9 - "width"
-Cohesion: 0.04
-Nodes (62): Cards over talking-head footage, Pitfalls, Timing, Where the video sits, Common Request Parameters, FLUX.2 [flex] Specific, Image-to-Image (I2I), Text-to-Image (T2I) (+54 more)
+### Community 8 - "test_semantics.py"
+Cohesion: 0.05
+Nodes (51): check_paths(), add_cli(), _dedupe(), _edit_gaps(), _env_db(), event_candidates(), find(), _find_text() (+43 more)
+
+### Community 9 - "Cards over talking-head footage"
+Cohesion: 0.40
+Nodes (4): Cards over talking-head footage, Pitfalls, Timing, Where the video sits
 
 ### Community 10 - "test_kling_official_core.py"
-Cohesion: 0.07
-Nodes (23): HelperFakeClient, HelperFakeResponse, HelperFakeSession, read(), test_account_usage_cache_is_scoped_by_api_identity(), test_account_usage_helper_uses_endpoint_cache_and_throttle(), test_account_usage_helper_uses_kling_auth_header(), test_ai_video_skill_metadata_and_new_skill_link() (+15 more)
+Cohesion: 0.08
+Nodes (22): HelperFakeClient, HelperFakeResponse, HelperFakeSession, read(), test_account_usage_cache_is_scoped_by_api_identity(), test_account_usage_helper_uses_endpoint_cache_and_throttle(), test_account_usage_helper_uses_kling_auth_header(), test_ai_video_skill_metadata_and_new_skill_link() (+14 more)
 
 ### Community 11 - "VideoCompose"
 Cohesion: 0.04
-Nodes (19): Remotion scene types available in `remotion-composer/`, TestVideoComposeOperations, test_cinematic_cut_adapter_builds_a_sequential_timeline(), test_cinematic_cut_adapter_preserves_playback_speed(), test_remotion_media_staging_decodes_file_uris(), test_remotion_render_adapts_cuts_and_stages_local_video(), fake_run_command(), test_remotion_render_preserves_direct_cinematic_scenes() (+11 more)
+Nodes (17): Remotion scene types available in `remotion-composer/`, TestVideoComposeOperations, test_cinematic_cut_adapter_builds_a_sequential_timeline(), test_cinematic_cut_adapter_preserves_playback_speed(), test_remotion_media_staging_decodes_file_uris(), test_documentary_renderer_family_maps_to_remotion(), test_video_compose_blocks_silent_hyperframes_swap(), test_video_compose_ffmpeg_engine_reflects_path_availability() (+9 more)
 
-### Community 12 - "VideoAnalyzer"
-Cohesion: 0.03
-Nodes (19): Tool Class Naming Convention, TestPhase1ErrorHandling, TestPhase1ToolNames, TestPhase1ToolStatus, _Info, test_transcriber_falls_back_when_cuda_fails_during_iteration(), transcribe(), test_transcriber_uses_ctranslate2_cuda_without_torch() (+11 more)
+### Community 12 - "VideoTrimmer"
+Cohesion: 0.05
+Nodes (12): TestPhase1ErrorHandling, BinaryDependencyTests, DummyTool, api_key(), no_api_key(), SceneDetectEscapingTests, test_existing_concat_directory_is_not_owned_by_call(), test_nested_concat_keeps_outer_file_list() (+4 more)
 
 ### Community 13 - "bank.py"
 Cohesion: 0.05
-Nodes (47): add_fit(), add_partial(), BankError, _block(), build(), build_forge04(), build_pluck(), category_info() (+39 more)
+Nodes (38): add_fit(), add_partial(), BankError, build(), build_forge04(), build_pluck(), check(), check_sr() (+30 more)
 
 ### Community 14 - "vocab.py"
-Cohesion: 0.02
-Nodes (108): 1. Turn The Shape Into A Beat Count, Knobs: dur, apex, pitch, level, callable_module(), add_cli(), _ast(), _ast_text(), _ast_top(), describe() (+100 more)
+Cohesion: 0.04
+Nodes (57): 1. Turn The Shape Into A Beat Count, db(), callable_module(), common(), add_cli(), _ast(), _ast_text(), _ast_top() (+49 more)
 
 ### Community 15 - "Explainer.tsx"
-Cohesion: 0.04
-Nodes (115): Shared Components, Adding a new scene type, Cut types (`cut.type`), Existing synthetic-UI components, Overlay types (`overlay.type`), Remotion Composer — Scene & Overlay Cheat Sheet, AnimeScene(), AnimeSceneProps (+107 more)
+Cohesion: 0.03
+Nodes (130): Shared Components, Adding a new scene type, Cut types (`cut.type`), Existing synthetic-UI components, Overlay types (`overlay.type`), Remotion Composer — Scene & Overlay Cheat Sheet, calculateCinematicMetadata(), AnimeScene() (+122 more)
 
 ### Community 16 - "earshot/critique.py"
 Cohesion: 0.05
-Nodes (54): main(), _parser(), _register(), _actions(), add_cli(), _cmd(), critique(), critique_text() (+46 more)
+Nodes (52): main(), _parser(), _register(), _actions(), add_cli(), _cmd(), critique(), critique_text() (+44 more)
 
 ### Community 17 - "test_provider_refresh.py"
 Cohesion: 0.02
-Nodes (87): response(), test_bfl_resume_cannot_send_key_to_other_host(), test_bfl_resume_does_not_resubmit(), test_bfl_string_reference_and_dimension_pair(), test_bria_fal_url_edit_maps_instruction(), test_catalog_preserves_returned_codec(), test_grok_alignment_envelope(), test_heygen_bad_extension_rejected_before_charge() (+79 more)
+Nodes (89): response(), test_bfl_resume_cannot_send_key_to_other_host(), test_bfl_resume_does_not_resubmit(), test_bfl_string_reference_and_dimension_pair(), test_bria_fal_url_edit_maps_instruction(), test_catalog_preserves_returned_codec(), test_grok_alignment_envelope(), test_heygen_bad_extension_rejected_before_charge() (+81 more)
 
 ### Community 18 - "GoogleTTS"
-Cohesion: 0.03
-Nodes (33): TestGoogleCredentials, TestGoogleImagen, TestGoogleMusic, TestGoogleTTS, TestVeoVideo, _FakeResponse, imagen_tool(), _post() (+25 more)
+Cohesion: 0.04
+Nodes (24): TestGoogleCredentials, TestGoogleImagen, TestGoogleMusic, TestGoogleTTS, _FakeResponse, imagen_tool(), _post(), test_all_requested_images_are_written() (+16 more)
 
-### Community 19 - "forge/__init__.py"
+### Community 19 - "_tonal.py"
 Cohesion: 0.03
-Nodes (48): place(), limit(), _variety(), burst(), centre(), click_layers(), family_params(), family_space() (+40 more)
+Nodes (30): excite(), allows(), _bubble(), check(), render(), _hit(), render(), _damper() (+22 more)
 
 ### Community 20 - "write_checkpoint"
 Cohesion: 0.05
-Nodes (56): Checkpoint System, _archive_superseded_checkpoint(), _checkpoint_path(), CheckpointValidationError, _decision_log_path(), _enforce_stage_prerequisites(), get_completed_stages(), get_latest_checkpoint() (+48 more)
+Nodes (49): Checkpoint System, _archive_superseded_checkpoint(), _checkpoint_path(), CheckpointValidationError, _decision_log_path(), _enforce_stage_prerequisites(), get_completed_stages(), get_latest_checkpoint() (+41 more)
 
 ### Community 21 - "realness.py"
 Cohesion: 0.04
-Nodes (66): Files, manifests, tools, Licences: what is allowed, Picture map (film seconds; cue ids from `{{CUES}}`), Quality bar, SOUND BRIEF: {{FILM}} soundtrack from professional recordings, Sound concept, db(), list_media() (+58 more)
+Nodes (66): Files, manifests, tools, Licences: what is allowed, Picture map (film seconds; cue ids from `{{CUES}}`), Quality bar, SOUND BRIEF: {{FILM}} soundtrack from professional recordings, Sound concept, list_media(), add_cli() (+58 more)
 
 ### Community 22 - "sines.py"
-Cohesion: 0.02
-Nodes (81): Takes: a fit rendered for use (0.3), _analyze(), _band_centers(), _band_env(), _db(), describe(), _env_bias(), fade_in_s() (+73 more)
+Cohesion: 0.03
+Nodes (62): _analyze(), _band_centers(), _band_env(), _db(), describe(), _env_bias(), fade_in_s(), finish() (+54 more)
 
 ### Community 23 - "timeline.py"
-Cohesion: 0.03
-Nodes (61): Level 2: what gets installed and from where, to_mono(), get(), _accents(), _analyse(), _answer(), _ascii(), _attack() (+53 more)
+Cohesion: 0.02
+Nodes (109): Keep verification clean and inspect the actual pixels, snapshot, Zooming into a reported finding, References, Level 2: what gets installed and from where, 2. The steps, Useful flags, Frame Object (+101 more)
 
 ### Community 24 - "taste_test.py"
 Cohesion: 0.03
-Nodes (88): candidates(), main(), pieces(), scan(), tags_of(), usable(), centroid_window(), clean_hits() (+80 more)
+Nodes (90): candidates(), main(), pieces(), scan(), tags_of(), usable(), centroid_window(), clean_hits() (+82 more)
 
 ### Community 25 - "GrokVideo"
 Cohesion: 0.24
 Nodes (6): test_grok_video_has_quality_score(), test_quality_score_surfaces_in_tool_info(), test_grok_lite_and_pinned_frame_validation(), _file_to_data_uri(), GrokVideo, _normalize_media_ref()
 
 ### Community 26 - "auto.py"
-Cohesion: 0.06
-Nodes (41): _anchor_times(), _anchors(), _assign(), _circ(), _dc_block(), deterministic(), finished(), _fit_n() (+33 more)
+Cohesion: 0.04
+Nodes (56): gesture(), _add_space(), _anchor_times(), _anchors(), mk(), _assign(), _cand_fit(), channels_of() (+48 more)
 
 ### Community 27 - "test_interfaces.py"
-Cohesion: 0.04
-Nodes (64): build_prompt(), _check(), context(), critique(), encode(), Gemini, _json(), LLMError (+56 more)
+Cohesion: 0.12
+Nodes (31): build_prompt(), critique(), to_json(), _answer(), _bursts(), fake(), _json_part(), keyed() (+23 more)
 
 ### Community 28 - "TTSSelector"
-Cohesion: 0.06
-Nodes (21): _DegradedComfyImage, test_flux2_workflow_has_templated_nodes(), test_i2v_workflow_has_templated_nodes(), test_t2v_workflow_has_templated_nodes(), test_t2v_workflow_latent_is_temporal_not_an_image_batch(), test_t2v_workflow_uses_14b_compatible_vae(), test_workflow_exists_and_valid_json(), _response() (+13 more)
+Cohesion: 0.09
+Nodes (13): _response(), test_contract_models_and_cost(), test_error_redacts_fal_key(), test_execute_submits_once_and_downloads_audio(), test_invalid_model_does_not_submit(), test_tts_selector_routes_to_fal_provider(), TestSelectorRouting, test_mai_selector_normalizes_controls() (+5 more)
 
 ### Community 29 - "modal.py"
-Cohesion: 0.02
-Nodes (97): ir(), dip_end(), _attack_modes(), _band_candidates(), band_centres(), band_masks(), _cancelling(), check() (+89 more)
+Cohesion: 0.04
+Nodes (59): _attack_modes(), _band_candidates(), band_centres(), band_masks(), _cancelling(), check(), _dedupe(), env_corr() (+51 more)
 
 ### Community 30 - "whoosh.py"
-Cohesion: 0.04
-Nodes (42): _comb(), preset(), recipe(), render(), _box(), _buffer(), _grid(), recipe_for() (+34 more)
+Cohesion: 0.05
+Nodes (27): _comb(), preset(), recipe(), render(), local_space(), recipe(), render(), local_space() (+19 more)
 
 ### Community 31 - "beats.py"
-Cohesion: 0.07
-Nodes (27): beat_grid(), check_grid(), decode(), detect(), detrend(), kick_peaks(), kick_phase_shift(), kick_stats() (+19 more)
+Cohesion: 0.09
+Nodes (19): beat_grid(), check_grid(), decode(), detect(), detrend(), kick_peaks(), kick_phase_shift(), kick_stats() (+11 more)
 
 ### Community 32 - "kit.py"
-Cohesion: 0.04
-Nodes (75): Anti-patterns, How to read the numbers (and how far to trust them), Mix keys (0.4), Python and MCP, add_warning(), get(), add_cli(), run() (+67 more)
+Cohesion: 0.05
+Nodes (56): add_cli(), run(), audition(), check(), corr(), _digest(), _edit_problems(), _flags() (+48 more)
 
 ### Community 33 - "mcp_server.py"
-Cohesion: 0.04
-Nodes (65): Brief: the fixer (one agent applies the critics' changes), Context, Operations (the format every critic used; `scripts/variant.py` applies them), Return, Rules, Steps, 4b. Voiceover (per-scene), Step 5: Validate Against Playbook (+57 more)
+Cohesion: 0.10
+Nodes (29): _api(), _cues(), _detail(), _file(), _image_for_agent(), _many(), _opt_file(), _out_path() (+21 more)
 
 ### Community 34 - "NiamReel.tsx"
-Cohesion: 0.06
-Nodes (105): 6. Build in Remotion (`video/src/religious/`), 13. خريطة الملفات — File map, AR_DIGITS, arNum(), clamp(), E, Ease, env() (+97 more)
+Cohesion: 0.05
+Nodes (126): 6. Build in Remotion (`video/src/religious/`), 13. خريطة الملفات — File map, AR_DIGITS, arNum(), clamp(), E, Ease, env() (+118 more)
 
 ### Community 35 - "re"
 Cohesion: 0.03
-Nodes (77): analyse(), main(), render(), render_box(), visible_window(), _cp(), humanize(), load_lexicon() (+69 more)
+Nodes (79): 1. Get timestamps (offline), 2. Helpers, 3. Cuts on beats with Series, 4. Placement rules (pro, not mechanical), 5. Check, Beat & audio sync in Remotion, _cp(), humanize() (+71 more)
 
 ### Community 36 - "ref_node_fs"
 Cohesion: 0.05
-Nodes (41): isMainModule(), CLI_MEDIA_USE, SKILLS, skillScripts(), invocation(), manifests, pluginVersion(), root (+33 more)
+Nodes (34): CENTER, COUNTRIES, framesDir, MARGIN, N, isMainModule(), CLI_MEDIA_USE, SKILLS (+26 more)
 
 ### Community 37 - "ToolRegistry"
-Cohesion: 0.04
-Nodes (35): Tool Registry, isolated_tool_registry(), test_registry_discovers_atlas_tools(), TestComfyUISetupOffer, TestRegistryDiscovery, TestRegistryDiscovery, test_registry_discovers_kling_avatar(), test_registry_discovers_kling_lip_sync() (+27 more)
+Cohesion: 0.05
+Nodes (35): Tool Registry, test_registry_discovers_atlas_tools(), TestRegistryDiscovery, TestRegistryDiscovery, test_registry_discovers_kling_avatar(), test_registry_discovers_kling_lip_sync(), test_phase3_does_not_register_audio_or_video_effect_tools(), test_image_selector_prefers_official_provider() (+27 more)
 
 ### Community 38 - "argparse"
-Cohesion: 0.04
-Nodes (54): generate_bgm(), main(), parse_args(), energy(), energy_map(), flow(), main(), sheets() (+46 more)
+Cohesion: 0.06
+Nodes (36): generate_bgm(), main(), parse_args(), frames(), main(), run(), collect(), collect_page() (+28 more)
 
 ### Community 39 - "audio.py"
 Cohesion: 0.04
-Nodes (52): array_id(), AudioError, check_paths(), _decode(), _ffmpeg_reason(), file_id(), _key(), probe() (+44 more)
+Nodes (58): Step 5b: Generate Subtitles (Mandatory), _fn(), __getattr__(), array_id(), AudioError, _decode(), _ffmpeg_reason(), file_id() (+50 more)
 
 ### Community 40 - "test_hyperframes_compose.py"
 Cohesion: 0.03
-Nodes (42): _first(), _font(), _motion_easing(), _render_design_md(), style_bridge(), test_agent_guide_references_provider_menu_summary(), test_animation_proposal_director_has_no_hardcoded_costs_or_keys(), test_both_runtimes_visible_in_render_engines_when_available() (+34 more)
+Nodes (32): test_agent_guide_references_provider_menu_summary(), test_animation_proposal_director_has_no_hardcoded_costs_or_keys(), test_both_runtimes_visible_in_render_engines_when_available(), test_composition_validator_hyperframes_asset_root(), test_decision_log_accepts_render_runtime_selection_with_both_options(), test_hyperframes_get_info_reports_runtime(), test_hyperframes_layer2_skill_names_correct_package(), test_hyperframes_lint_requires_workspace() (+24 more)
 
 ### Community 41 - "test_forge_recipes_digital.py"
-Cohesion: 0.04
-Nodes (49): 10. Glitch / stutter / digital, peq(), crush(), _fade_edges(), glitch(), stutter(), _box(), _buffer() (+41 more)
+Cohesion: 0.05
+Nodes (44): 10. Glitch / stutter / digital, peq(), crush(), _fade_edges(), glitch(), stutter(), _box(), _buffer() (+36 more)
 
-### Community 42 - "unbake.py"
-Cohesion: 0.10
-Nodes (26): _best_lag(), classify(), coarse_lag(), _corr(), _decode(), _decode_sum(), _dot(), _duration() (+18 more)
-
-### Community 43 - "test_phase0_contracts.py"
+### Community 42 - "math"
 Cohesion: 0.04
-Nodes (30): check_extension_permitted(), _condition_is_active(), ExtensionNotPermitted, get_permitted_extensions(), get_reference_input_config(), get_required_tools(), get_stage_order(), get_stage_review_focus() (+22 more)
+Nodes (56): bed(), Rules, Sound already in the project: synthesis, stems, a synthesizer script, The loudness of the replaced layer and the author's chain, What the project has → what the script does, steadiness(), active_level_diff(), band_env() (+48 more)
+
+### Community 43 - "json"
+Cohesion: 0.01
+Nodes (137): authenticate(), main(), run_steps(), sweep(), main(), build(), cut_moment(), duration_of() (+129 more)
 
 ### Community 44 - "scene.js"
 Cohesion: 0.02
@@ -1610,81 +1631,81 @@ Nodes (89): AR, archC, archC2, archFill, beamTop, bigHalo, braidB, braidB2 (+81 
 Cohesion: 0.07
 Nodes (38): _default_metadata(), _fake_clip(), test_cache_entry_from_dict_tolerates_missing_fields(), test_cache_entry_round_trip_through_dict(), test_cache_hit_is_a_hard_link_not_a_copy_when_possible(), test_default_cache_dir_falls_back_to_home(), test_default_cache_dir_uses_env_override(), test_default_max_total_bytes_ignores_garbage_override() (+30 more)
 
-### Community 46 - "timeline"
-Cohesion: 0.05
-Nodes (40): References, 2. The steps, Useful flags, 0.1.0 - 2026-10-16, 0.2.1 - 2026-10-17, Added, Changed, Changelog (+32 more)
+### Community 46 - "quality.py"
+Cohesion: 0.07
+Nodes (33): vary(), 6. The self-critique loop (required before showing the result), Credits: the fitted sounds, Quality metrics (`fit/quality.py`), Add your own fit, Fit entries (from public-domain recordings), _align(), _align2() (+25 more)
 
 ### Community 47 - "scale"
 Cohesion: 0.03
-Nodes (72): Common faults, Motion, Motion craft, Seeing motion, The right mechanism, Transitions with a cause, bar(), check_burstiness() (+64 more)
+Nodes (61): Common faults, Motion, Motion craft, Seeing motion, The right mechanism, Transitions with a cause, bar(), check_burstiness() (+53 more)
 
 ### Community 48 - "space.py"
-Cohesion: 0.03
-Nodes (70): gesture(), vary(), Added, Credits: the fitted sounds, Quality metrics (`fit/quality.py`), Add your own fit, Fit entries (from public-domain recordings), _align() (+62 more)
+Cohesion: 0.06
+Nodes (37): band_masks(), active_span(), band_powers(), _db(), _decay_rate(), describe(), diffuse_power(), _env1() (+29 more)
 
 ### Community 49 - "ref_react"
-Cohesion: 0.04
-Nodes (35): CountryLabel(), clamp01(), Country, countryPolygons, DRAW, EMPTY, END, lerp() (+27 more)
+Cohesion: 0.05
+Nodes (19): Props, handle, CustomHookDriven(), useFadeIn(), Item, Cases, Tier 4 — escape-hatch, Validation (+11 more)
 
 ### Community 50 - "knobs.py"
 Cohesion: 0.06
-Nodes (44): Variables, Text Overflow Prevention, Choose schema fields, Choose schema fields, estimate_pitch(), _aim_tonal(), first_step(), meas() (+36 more)
+Nodes (38): Fixed (review before release), _aim_tonal(), meas(), upd(), apply(), _cat(), describe(), _dur_method() (+30 more)
 
 ### Community 51 - "common.py"
-Cohesion: 0.02
-Nodes (101): _catalog_key(), describe(), load_catalog(), main(), _num(), pack_record(), _read_catalog(), scan() (+93 more)
+Cohesion: 0.04
+Nodes (60): _catalog_key(), describe(), load_catalog(), main(), _num(), pack_record(), _read_catalog(), scan() (+52 more)
 
-### Community 52 - "tts.mjs"
-Cohesion: 0.05
-Nodes (56): Cloned voices — `scripts/heygen-voice.mjs`, argv, dur, output, positional, clone(), list(), main() (+48 more)
+### Community 52 - "audio.mjs"
+Cohesion: 0.04
+Nodes (50): anomalies, argv, audioMeta, bgmFields, bgmModeOverride, HERE, hyperframesDir, langOverride (+42 more)
 
 ### Community 53 - "HunyuanImage"
 Cohesion: 0.06
 Nodes (33): test_api_key_filters_comment_like_values(), test_api_key_strips_whitespace(), test_auth_headers(), test_build_payload_all_params(), test_build_payload_logo_param_skips_empty(), test_build_payload_minimal(), test_build_payload_omits_none_seed(), test_build_payload_with_logo_param() (+25 more)
 
-### Community 54 - "test_forge_recipes_tonal04.py"
-Cohesion: 0.07
-Nodes (37): check(), _bubble(), check(), _ends_on_peak(), layers(), live_ms(), _load(), _mono() (+29 more)
+### Community 54 - "scripts/critique.py"
+Cohesion: 0.06
+Nodes (26): decode_mono(), events_track(), _fold(), fold_cues(), fold_report(), grab(), stereo_samples(), voice_share() (+18 more)
 
-### Community 55 - "resolveAsset"
-Cohesion: 0.03
-Nodes (71): Announce Before Execution, Ask Before Major Changes, Composition Authoring Mode — Templated vs Atelier, Decision Communication Contract, Escalate Blockers Explicitly, No Unilateral Substitutions, Present Both Composition Runtimes (HARD RULE), Re-log Changed Decisions (Binding) (+63 more)
-
-### Community 56 - "fit"
+### Community 55 - "CollageBurst.tsx"
 Cohesion: 0.11
-Nodes (22): fit(), scored(), load_recipe(), write_recipe(), fit(), tone_model(), _strongest_mode(), struck() (+14 more)
+Nodes (18): CardFlash(), CollageBurst(), CollageBurstProps, CollageCard(), CollageClip, CollageTransition, { fontFamily: playfairFamily }, { fontFamily: playfairItalic } (+10 more)
 
-### Community 57 - "verify-motion.mjs"
-Cohesion: 0.12
-Nodes (11): crop, dims, dir, interval, min, minMotion, refDur, reference (+3 more)
-
-### Community 58 - "test_phase2_contracts.py"
+### Community 56 - "emit"
 Cohesion: 0.05
-Nodes (10): TestCodeSnippetUnit, TestDiagramGenUnit, TestPhase2ErrorHandling, TestPhase2ToolNames, TestPresets, AudioEnhance, ColorGrade, FaceEnhance (+2 more)
+Nodes (42): fit_pair(), scored(), render(), save(), _is_scalar(), _lit(), literal(), load_recipe() (+34 more)
+
+### Community 57 - "tts.mjs"
+Cohesion: 0.06
+Nodes (41): crop, dims, dir, interval, min, minMotion, refDur, reference (+33 more)
+
+### Community 58 - "DiagramGen"
+Cohesion: 0.12
+Nodes (4): TestCodeSnippetUnit, TestDiagramGenUnit, CodeSnippet, DiagramGen
 
 ### Community 59 - "earshot/gallery.py"
-Cohesion: 0.14
-Nodes (22): _bench_block(), bench_of(), bench_stale(), bench_summary(), _card(), critic_of(), _e(), _f() (+14 more)
+Cohesion: 0.08
+Nodes (34): align_variants(), audition_ok(), _bench_block(), _bench_index(), bench_of(), bench_stale(), bench_summary(), build() (+26 more)
 
 ### Community 60 - "manimlib"
-Cohesion: 0.04
-Nodes (9): CostFunction, DotProductVisualization, EmbeddingMatrixScene, LinearRegression, QueryKeyDotProducts, QueryKeySpaceMapping, SemanticSimilarity, ThreeDVectorSpace (+1 more)
+Cohesion: 0.03
+Nodes (11): CostFunction, DotProductVisualization, EmbeddingMatrixScene, HexagonCubeCorrespondence, LinearRegression, ClassicNeuronDiagram, NeuronActivationStates, QueryKeyDotProducts (+3 more)
 
 ### Community 61 - "HyperFramesCompose"
 Cohesion: 0.07
-Nodes (3): test_hyperframes_render_resolves_relative_output_path_once(), test_hyperframes_render_existing_preserves_authored_entry(), HyperFramesCompose
+Nodes (5): test_hyperframes_render_resolves_relative_output_path_once(), test_hyperframes_render_existing_preserves_authored_entry(), test_video_compose_routes_empty_cut_atelier_to_existing_workspace(), fake_hyperframes_execute(), HyperFramesCompose
 
-### Community 62 - "gain_db"
-Cohesion: 0.04
-Nodes (65): 5. Build, 10. buses and master, 11. What mix.py writes, 12. qa_ok: acknowledging a deliberate exception, 13. Worked examples from a shipped film, 2. The cue file, 3. samples, 4. slices (+57 more)
+### Community 62 - "fade_out"
+Cohesion: 0.08
+Nodes (25): 3. samples, 4. slices, 8. ambience, 9. music, fade_out(), glide(), 10. buses and master, 11. What mix.py writes (+17 more)
 
-### Community 63 - "DependencyError"
-Cohesion: 0.09
-Nodes (13): BinaryDependencyTests, DummyTool, test_bg_remove_selects_model_through_rembg_session(), _inputs(), test_cinematic_compose_advertises_lite_as_an_optional_route(), test_existing_output_is_never_overwritten(), test_missing_video_fails_before_runtime_checks(), test_run_emits_mp4_timeline_audiomap_and_openmontage_report() (+5 more)
+### Community 63 - "load_pipeline"
+Cohesion: 0.06
+Nodes (11): load_pipeline(), _build_approval_projects(), _complete_predecessors(), staged_backlot_server(), test_every_canonical_gate_promotes_its_artifact_before_approval(), TestPipelineInstructionArchitecture, TestTalkingHeadManifest, TestTalkingHeadManifest (+3 more)
 
 ### Community 64 - "render"
 Cohesion: 0.04
-Nodes (56): study_measures(), _end(), _env_db(), extra_for(), family_space(), _head_env(), measure(), _outside() (+48 more)
+Nodes (77): study_measures(), extra_for(), measure(), _outside(), pro_penalty(), measure(), pro_penalty(), extra_for() (+69 more)
 
 ### Community 65 - "manifest.mjs"
 Cohesion: 0.08
@@ -1692,15 +1713,15 @@ Nodes (53): recordInManifest(), SFX_SOURCES, noBgm, voicePaths(), writtenAssets(
 
 ### Community 66 - "FishAudioTTS"
 Cohesion: 0.08
-Nodes (12): api_key(), _FakeResponse, no_api_key(), TestGenerate, TestIdempotencyKey, TestKeyRedaction, TestModelContract, TestRegistryMetadata (+4 more)
+Nodes (9): _FakeResponse, TestCost, TestGenerate, TestIdempotencyKey, TestKeyRedaction, TestModelContract, TestRegistryMetadata, TestStatus (+1 more)
 
 ### Community 67 - "Cloud Providers"
 Cohesion: 0.04
 Nodes (51): API Notes, API Notes, API Notes, Atlas Cloud — Image and Video Gateway, Azure AI Speech — Speech-to-Text, Azure AI Speech — Text-to-Speech, Cloud Providers, ElevenLabs — Voice, Music, Sound Effects (+43 more)
 
 ### Community 68 - "source_media_review.py"
-Cohesion: 0.06
-Nodes (26): detect_media_type(), has_user_media(), _infer_audio_usability(), _infer_video_usability(), _parse_fps(), _probe_audio(), _probe_image(), _probe_video() (+18 more)
+Cohesion: 0.07
+Nodes (20): detect_media_type(), has_user_media(), _infer_audio_usability(), _infer_video_usability(), _parse_fps(), _probe_audio(), _probe_image(), _probe_video() (+12 more)
 
 ### Community 69 - "remotion-markup/REFERENCE.md"
 Cohesion: 0.04
@@ -1712,71 +1733,71 @@ Nodes (27): asset_cache_enabled(), AssetCache, AssetCacheEntry, _copy_file(), de
 
 ### Community 71 - "synth.py"
 Cohesion: 0.10
-Nodes (45): bell(), bleep(), boom(), conv(), downl(), drone(), fade(), fft_filt() (+37 more)
+Nodes (46): bell(), bleep(), boom(), conv(), downl(), drone(), fade(), fft_filt() (+38 more)
 
 ### Community 73 - "scoring.py"
 Cohesion: 0.08
-Nodes (17): _compute_continuity(), _compute_control(), _compute_cost_efficiency(), _compute_task_fit(), _expand_synonyms(), format_ranking(), _is_stock_like_provider(), _keyword_overlap() (+9 more)
+Nodes (18): _compute_continuity(), _compute_control(), _compute_cost_efficiency(), _compute_task_fit(), _expand_synonyms(), format_ranking(), _is_stock_like_provider(), _keyword_overlap() (+10 more)
 
 ### Community 74 - "remotion-markup/SKILL.md"
 Cohesion: 0.04
-Nodes (41): Cropping, Color picker, 3D content, Advanced Images, Advanced sequencing, Arabic and right-to-left text, Assets, Audio visualization (+33 more)
+Nodes (46): Cropping, Measuring DOM nodes in Remotion, Measuring element dimensions, `<HtmlInCanvasMotionBlur>`, Motion blur, Color picker, Choose the timing boundary, 3D content (+38 more)
 
 ### Community 75 - ".claude/skills/real-sound/scripts/qa.py"
-Cohesion: 0.04
-Nodes (59): apply_fades(), auto_curve(), biquad(), check_files(), db2a(), decode(), dump(), env_index() (+51 more)
+Cohesion: 0.08
+Nodes (31): bands(), centroid(), check_audibility(), check_clicks(), check_coverage(), check_density(), check_edges(), check_harshness() (+23 more)
 
-### Community 76 - "sys"
-Cohesion: 0.03
-Nodes (80): 1. Get timestamps (offline), 2. Helpers, 3. Cuts on beats with Series, 4. Placement rules (pro, not mechanical), 5. Check, Beat & audio sync in Remotion, compute_band_edges(), compute_fft_bands() (+72 more)
+### Community 76 - "argparse"
+Cohesion: 0.04
+Nodes (42): analyse(), main(), render(), render_box(), visible_window(), analyse(), main(), pretty() (+34 more)
 
 ### Community 77 - "KlingClient"
-Cohesion: 0.09
-Nodes (20): FakeResponse, FakeSession, test_1303_retryable_message_mentions_concurrency(), test_business_error_preserves_code_message_request_id(), test_classic_create_and_poll_parse_result_paths(), test_headers_use_bearer_api_key(), test_missing_api_key_header_error(), test_turbo_create_and_poll_parse_result_paths() (+12 more)
+Cohesion: 0.10
+Nodes (18): FakeResponse, FakeSession, test_1303_retryable_message_mentions_concurrency(), test_business_error_preserves_code_message_request_id(), test_classic_create_and_poll_parse_result_paths(), test_headers_use_bearer_api_key(), test_missing_api_key_header_error(), test_turbo_create_and_poll_parse_result_paths() (+10 more)
 
-### Community 78 - "forge/search.py"
+### Community 78 - "VeoVideo"
 Cohesion: 0.08
-Nodes (31): func(), 4. What is still weak, _clip(), _ctx(), fill_start(), _inside(), load_seeds(), midrange() (+23 more)
+Nodes (9): TestVeoVideo, _Models, test_blank_google_location_uses_documented_default(), test_google_music_requests_the_global_vertex_location(), test_veo_accepts_vertex_and_requires_inline_bytes(), _VertexClient, _VideoAsset, resolve_google_location() (+1 more)
 
 ### Community 79 - "schema.py"
 Cohesion: 0.08
-Nodes (30): Step 7: Angle Synthesis, block(), check_final(), one(), compare(), _defaults_for(), fill(), legacy_block() (+22 more)
+Nodes (29): capture, init, init, capture, skills, skills, block(), one(), compare(), _defaults_for() (+21 more)
 
 ### Community 80 - "load_json"
-Cohesion: 0.12
-Nodes (19): norm_path(), read_stdin_text(), abspath(), apply_batch(), cues_from_events(), fix_base_audio(), freeze(), _index_roles() (+11 more)
+Cohesion: 0.05
+Nodes (47): _decode_text(), gesture_times(), load_json(), norm_path(), read_stdin_text(), read_text_any(), run(), audio_level() (+39 more)
 
 ### Community 81 - "ref_remotion"
 Cohesion: 0.07
 Nodes (34): RemotionRoot(), TitleCard(), ImageScene(), MultiScene(), OutroScene(), TitleScene(), RemotionRoot(), Composition shape (+26 more)
 
 ### Community 82 - "KlingLipSync"
-Cohesion: 0.18
-Nodes (5): test_auto_select_face_area_avoids_position_inflation(), test_full_lip_sync_preserves_nested_face_timing_defaults(), test_identify_face_payload_and_local_video_rejection(), test_lip_sync_cost_estimate_is_not_zero(), KlingLipSync
+Cohesion: 0.09
+Nodes (15): test_advanced_lip_sync_accepts_official_nested_face_choose(), test_advanced_lip_sync_execute_downloads_video(), test_advanced_lip_sync_payload_uses_face_and_audio_path(), test_advanced_lip_sync_rejects_conflicting_top_level_and_nested_values(), test_auto_select_face_area_avoids_position_inflation(), test_avatar_payload_uses_image_and_audio_paths(), test_avatar_schema_and_local_tool_are_distinct(), test_full_lip_sync_auto_selects_largest_face_and_downloads() (+7 more)
 
-### Community 83 - "polish.py"
-Cohesion: 0.06
-Nodes (39): The audit: `sfx check`, _kpower(), aliasing(), attack(), body(), _cepstrum_peak(), _chans(), clicks() (+31 more)
+### Community 83 - "numpy"
+Cohesion: 0.03
+Nodes (100): blocks(), bus_comp(), edge_fades(), finish(), gate(), glue(), integrated(), _kw() (+92 more)
 
 ### Community 84 - "test_fit_timeshape.py"
-Cohesion: 0.09
-Nodes (30): _fit_env(), fit_post(), _pre_clamp(), render(), _smooth_cuts(), render(), _bed(), _chirp() (+22 more)
+Cohesion: 0.05
+Nodes (51): Request Parameters, How it works, apply_post(), bed_noise(), bed_of(), character(), _env_frames(), _env_gain() (+43 more)
 
 ### Community 85 - "Motion-design SFX: how the pros build them, as synthesis recipes"
-Cohesion: 0.08
-Nodes (24): 0. The difference between a "real" sound and a motion-design sound, 11. Typing, 12. Logo sting / reveal, 13. Levels and mixing in launch videos, 14. The cheap-SFX checklist (all categories), 15. What this means for earshot forge recipes, 1. Whoosh / swish / swipe, 2. Riser (uplifter, build) (+16 more)
+Cohesion: 0.11
+Nodes (17): 0. The difference between a "real" sound and a motion-design sound, 11. Typing, 12. Logo sting / reveal, 13. Levels and mixing in launch videos, 14. The cheap-SFX checklist (all categories), 15. What this means for earshot forge recipes, 1. Whoosh / swish / swipe, 2. Riser (uplifter, build) (+9 more)
 
-### Community 86 - "forge"
-Cohesion: 0.07
-Nodes (29): 0.2.0 - 2026-10-16, Added, Changed, Known limits, 1. What was built, 2. How to try it, 3. Before / after on the held-out benchmark, 5. Checklist before merging (+21 more)
+### Community 86 - "click.py"
+Cohesion: 0.10
+Nodes (23): burst(), centre(), click_layers(), family_params(), family_space(), finish(), gate(), narrow() (+15 more)
 
 ### Community 87 - "remotion-composer/package.json"
 Cohesion: 0.06
 Nodes (47): Bar(), {fontFamily}, MyAnimation(), Title(), XAxis(), YAxis(), dependencies, d3-geo@^3.1.1 (+39 more)
 
 ### Community 88 - "KlingOfficialVideo"
-Cohesion: 0.10
-Nodes (16): test_classic_image_to_video_uses_reference_image_path(), test_classic_text_to_video_payload(), test_execute_downloads_video_and_returns_artifact(), test_omni_reference_payload(), test_turbo_payloads(), test_video_account_resource_error_includes_diagnostic(), create_classic_task(), test_video_callback_payloads_and_validation() (+8 more)
+Cohesion: 0.09
+Nodes (15): test_classic_image_to_video_uses_reference_image_path(), test_classic_text_to_video_payload(), test_execute_downloads_all_omni_video_outputs_and_records_metadata(), test_execute_downloads_video_and_returns_artifact(), test_omni_reference_payload(), test_turbo_payloads(), test_video_account_resource_error_includes_diagnostic(), create_classic_task() (+7 more)
 
 ### Community 89 - "test_seedream_image.py"
 Cohesion: 0.08
@@ -1784,15 +1805,15 @@ Nodes (14): _build_image_content(), _build_result_response(), _build_status_resp
 
 ### Community 90 - "motion.js"
 Cohesion: 0.06
-Nodes (55): 6. Transitions always, Painting, What the film added to the skill, Beat sheet, camera(), carouselLoop(), cursor(), flyThrough() (+47 more)
+Nodes (55): 6. Transitions always, Painting, What the film added to the skill, Beat sheet, carouselLoop(), cursor(), flyThrough(), follow() (+47 more)
 
 ### Community 91 - "sfx_palette.py"
-Cohesion: 0.08
-Nodes (28): air(), bp(), bubble(), demo(), glass(), hp(), impulse(), lp() (+20 more)
+Cohesion: 0.12
+Nodes (18): air(), bp(), bubble(), demo(), glass(), hp(), impulse(), lp() (+10 more)
 
 ### Community 92 - "wave"
-Cohesion: 0.04
-Nodes (56): save_loop(), steadiness(), analyse(), ath_power(), band_power(), bark(), decode(), judged() (+48 more)
+Cohesion: 0.07
+Nodes (35): check(), click_stem(), click_track(), ff(), fixture_library(), main(), beeps(), click_rms() (+27 more)
 
 ### Community 93 - "stages"
 Cohesion: 0.04
@@ -1808,11 +1829,11 @@ Nodes (47): category, compatible_playbooks, also_works, custom_allowed, recommen
 
 ### Community 97 - "replace_quietly"
 Cohesion: 0.08
-Nodes (13): Core API (already built; use it), earshot: design notes, Environment, Evaluation data (not redistributed), Layout and ownership (one owner per file during the build), Principles, Public functions (the contract other modules and the MCP server rely on), replace_quietly() (+5 more)
+Nodes (13): Core API (already built; use it), earshot: design notes, Environment, Evaluation data (not redistributed), Layout and ownership (one owner per file during the build), Principles, Public functions (the contract other modules and the MCP server rely on), windows() (+5 more)
 
 ### Community 98 - "earshot/skills/real-sound/scripts/qa.py"
-Cohesion: 0.04
-Nodes (60): at(), apply_fades(), auto_curve(), biquad(), check_files(), db2a(), decode(), dump() (+52 more)
+Cohesion: 0.08
+Nodes (32): at(), bands(), centroid(), check_audibility(), check_clicks(), check_coverage(), check_density(), check_edges() (+24 more)
 
 ### Community 99 - "character-animation.yaml"
 Cohesion: 0.04
@@ -1823,12 +1844,12 @@ Cohesion: 0.13
 Nodes (4): TestContract, TestPlan, TestRuntimeEstimate, WanVideo
 
 ### Community 101 - "plugin-installation.md"
-Cohesion: 0.06
-Nodes (27): Access, Commands, Figma → HyperFrames, Motion (connector), Shaders, Storyboards: frames are KEYFRAMES, not slides, Edit the timeline, HyperFrames CLI (+19 more)
+Cohesion: 0.05
+Nodes (32): Access, Commands, Figma → HyperFrames, Motion (connector), Shaders, Storyboards: frames are KEYFRAMES, not slides, Edit the timeline, HyperFrames CLI (+24 more)
 
 ### Community 102 - "HeyGen Avatars"
-Cohesion: 0.05
-Nodes (38): Avatar Categories, Avatar Groups, Avatar Styles, Avatar Types, Basic Avatar Usage, By Gender, By Name, Circle Style for Talking Heads (+30 more)
+Cohesion: 0.04
+Nodes (45): Avatar Categories, Avatar Groups, Avatar Styles, Avatar Types, Basic Avatar Usage, By Gender, By Name, Circle Style for Talking Heads (+37 more)
 
 ### Community 103 - "Three.js Textures"
 Cohesion: 0.04
@@ -1844,55 +1865,55 @@ Nodes (9): fake_ffmpeg(), FakePIL, _seek_positions(), test_duration_probe_reject
 
 ### Community 106 - "test_bank.py"
 Cohesion: 0.06
-Nodes (25): render(), pitch_warning(), _final(), test_a_missed_pitch_is_a_pitch_off_warning(), test_add_fit_refuses_vary_for_an_air_only_gesture(), test_apex_lands_within_5_ms(), test_apex_ok_is_false_when_the_delivered_file_misses(), test_apex_with_a_short_tail_lands_and_edits_say_what_ships() (+17 more)
+Nodes (39): add_warning(), _block(), category_info(), get(), __getattr__(), ids(), list_sounds(), _load() (+31 more)
 
 ### Community 107 - "earshot/skills/real-sound/scripts/master.py"
 Cohesion: 0.11
 Nodes (19): blocks(), bus_comp(), edge_fades(), finish(), gate(), glue(), integrated(), _kw() (+11 more)
 
 ### Community 109 - "cuthit.py"
-Cohesion: 0.10
-Nodes (20): room(), room_ir(), _air(), _bloom(), _click(), _end(), _kick(), _peak1() (+12 more)
+Cohesion: 0.12
+Nodes (16): modal(), modal_cloud(), room(), _air(), _bloom(), _click(), _end(), _kick() (+8 more)
 
 ### Community 110 - "playbook_loader.py"
-Cohesion: 0.05
-Nodes (28): check_color_blind_safety(), _composite_alpha(), compute_type_scale(), generate_harmony(), _has_alpha(), _hex_to_hsl(), _hex_to_rgb(), _hsl_to_hex() (+20 more)
+Cohesion: 0.08
+Nodes (19): check_color_blind_safety(), _composite_alpha(), compute_type_scale(), generate_harmony(), _has_alpha(), _hex_to_hsl(), _hex_to_rgb(), _hsl_to_hex() (+11 more)
 
 ### Community 111 - "spectral.py"
-Cohesion: 0.02
-Nodes (121): air(), _air_tail(), check(), _deterministic(), fit(), _fit_tones(), load(), _load() (+113 more)
+Cohesion: 0.15
+Nodes (17): _attack_ms(), compare(), _env_db(), _group_blend(), _group_centres(), _hann(), _interp_rows(), _keyframes() (+9 more)
 
 ### Community 112 - "test_forge_refsets.py"
-Cohesion: 0.05
-Nodes (45): check, Deprecated: validate, inspect, layout, Discipline (motion-heavy work), Keep verification clean and inspect the actual pixels, lint, lint, check, snapshot, Motion verification (`*.motion.json` sidecar), snapshot (+37 more)
+Cohesion: 0.07
+Nodes (29): check, Deprecated: validate, inspect, layout, Discipline (motion-heavy work), lint, lint, check, snapshot, Commands by job, Animate using `useCurrentFrame()`, No animations not driven by `useCurrentFrame()` (+21 more)
 
 ### Community 113 - "ui_events.py"
-Cohesion: 0.06
-Nodes (23): analyse(), checkpoints_picture(), draw_timeline(), drop_periodic(), grid_results(), _in_range(), main(), native_windows() (+15 more)
-
-### Community 114 - "audio.mjs"
 Cohesion: 0.07
-Nodes (24): anomalies, argv, audioMeta, bgmFields, bgmModeOverride, HERE, hyperframesDir, langOverride (+16 more)
+Nodes (21): analyse(), checkpoints_picture(), draw_timeline(), drop_periodic(), grid_results(), _in_range(), main(), native_windows() (+13 more)
 
-### Community 115 - "test_05_video_compose.py"
-Cohesion: 0.07
-Nodes (10): get_env(), load_env(), require_env(), test_env_example_does_not_turn_comments_into_credentials(), generate_fixture(), ensure_audio(), ensure_image(), ensure_subtitle() (+2 more)
+### Community 114 - "earshot/skills/real-sound/scripts/mix.py"
+Cohesion: 0.11
+Nodes (24): apply_fades(), auto_curve(), biquad(), check_files(), db2a(), decode(), dump(), env_index() (+16 more)
+
+### Community 115 - ".claude/skills/real-sound/scripts/mix.py"
+Cohesion: 0.11
+Nodes (24): apply_fades(), auto_curve(), biquad(), check_files(), db2a(), decode(), dump(), env_index() (+16 more)
 
 ### Community 116 - "settle"
 Cohesion: 0.06
 Nodes (37): settle(), 1. Provider initialization, 2. The camera path — structure & generation, 3. Camera animation per frame (position, heading, pitch, bank), 3D Flyover — architecture reference, 4. The feel — proven water-wars values, 5. The complete component, 6. Render (+29 more)
 
-### Community 117 - "glob"
-Cohesion: 0.06
-Nodes (18): and_join(), credits(), main(), processing(), say(), classify(), load_manifests(), rel() (+10 more)
+### Community 117 - "earshot/skills/real-sound/scripts/licences.py"
+Cohesion: 0.20
+Nodes (4): classify(), load_manifests(), rel(), source_name()
 
-### Community 118 - ".claude/skills/real-sound/scripts/master.py"
-Cohesion: 0.11
-Nodes (19): blocks(), bus_comp(), edge_fades(), finish(), gate(), glue(), integrated(), _kw() (+11 more)
+### Community 118 - "AzureSpeechToText"
+Cohesion: 0.09
+Nodes (8): azure_env(), _FakeResponse, TestContract, TestExecute, fake_post(), TestParsePayload, TestStatus, AzureSpeechToText
 
 ### Community 119 - "state.py"
-Cohesion: 0.10
-Nodes (15): _asset_entry(), _build_stage_rail(), _build_storyboard(), _collect_artifacts(), _collect_checkpoints(), _collect_history(), _find_poster(), _find_scene_snapshot() (+7 more)
+Cohesion: 0.07
+Nodes (25): _asset_entry(), _build_stage_rail(), _build_storyboard(), _collect_artifacts(), _collect_checkpoints(), _collect_history(), _find_poster(), _find_scene_snapshot() (+17 more)
 
 ### Community 120 - "D3.js Colour Schemes and Palette Recommendations"
 Cohesion: 0.05
@@ -1903,12 +1924,12 @@ Cohesion: 0.05
 Nodes (38): bad_composition_plan, bad_prompt, Common HTTP Errors, compose, compose_detailed, composition_plan.create, cURL, Error Handling (+30 more)
 
 ### Community 122 - "Reviewer — Meta Skill"
-Cohesion: 0.05
-Nodes (37): At compose stage:, At compose stage (when composition_mode == "atelier"):, At edit stage:, At edit stage:, At proposal stage:, At publish stage (when composition_mode == "atelier"):, At scene_plan / edit stage (when composition_mode == "atelier"):, At scene_plan stage: (+29 more)
+Cohesion: 0.06
+Nodes (32): At compose stage:, At edit stage:, At edit stage:, At scene_plan stage:, Checks:, Checks:, Checks:, Checks: (+24 more)
 
-### Community 123 - "ToolStatus"
-Cohesion: 0.02
-Nodes (42): test_default_variant_covers_the_full_matrix(), test_ti2v_is_the_only_32_aligned_line(), test_wan21_1_3b_does_not_claim_image_to_video(), azure_env(), _FakeResponse, TestContract, TestExecute, fake_post() (+34 more)
+### Community 123 - "_shared.py"
+Cohesion: 0.03
+Nodes (36): test_2b_variant_is_t2v_only(), test_execute_allows_i2v_for_5b_variant(), test_execute_rejects_i2v_for_2b_variant(), test_is_operation_available_reflects_default_variant(), _make_pipeline_mocks(), mock_torch(), test_face_restore_uses_signature_guard(), test_get_torch_device_cpu_when_mps_backend_missing() (+28 more)
 
 ### Community 124 - "AzureTTS"
 Cohesion: 0.10
@@ -1919,24 +1940,24 @@ Cohesion: 0.06
 Nodes (39): eslint, prettier, @remotion/eslint-config-flat, @remotion/fonts, @types/web, allowScripts, esbuild, dependencies (+31 more)
 
 ### Community 126 - "ImageSelector"
-Cohesion: 0.13
+Cohesion: 0.11
 Nodes (6): TestCustomWorkflowSelectorEligibility, test_image_selector_maps_model_name_to_google_model(), test_image_selector_maps_shared_reference_input(), fake_execute(), test_exact_image_tool_selects_same_host_sibling(), ImageSelector
 
 ### Community 127 - "compare.py"
-Cohesion: 0.05
-Nodes (37): load(), ab(), active_length(), active_lufs(), add_cli(), _closer(), compare(), _compare_text() (+29 more)
+Cohesion: 0.10
+Nodes (25): ab(), active_lufs(), add_cli(), _closer(), compare(), _compare_text(), differences(), feats() (+17 more)
 
-### Community 128 - "test_forge.py"
-Cohesion: 0.12
-Nodes (21): Round 4 notes (finalizer, 13:35-14:00), _decode(), diverse(), ok(), pdist(), _encode(), test_forge_families_runs_one_search_per_member(), FakeCritic (+13 more)
+### Community 128 - "skills/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx"
+Cohesion: 0.09
+Nodes (22): CountryLabel(), clamp01(), Country, countryPolygons, DRAW, EMPTY, END, lerp() (+14 more)
 
 ### Community 129 - "openmontage/README.md"
 Cohesion: 0.07
 Nodes (27): Backlot — the living storyboard, How it stays live, Add API Keys (optional — more keys = more tools), Adding a New Pipeline, Adding a New Tool, Agent Compatibility, Architecture, Contact (+19 more)
 
 ### Community 130 - "python-client.py"
-Cohesion: 0.07
-Nodes (9): AuthenticationError, BFLClient, BFLError, GenerationError, GenerationResult, InsufficientCreditsError, RateLimitError, ValidationError (+1 more)
+Cohesion: 0.08
+Nodes (8): AuthenticationError, BFLClient, BFLError, GenerationError, GenerationResult, InsufficientCreditsError, RateLimitError, ValidationError
 
 ### Community 131 - "Command Line Interface in ManimGL"
 Cohesion: 0.05
@@ -1947,16 +1968,16 @@ Cohesion: 0.08
 Nodes (16): _create_minimal_playbook(), generate_playbook(), list_playbooks(), load_existing_playbook(), _load_playbook_schema(), save_playbook(), _declared_stages(), test_declared_approval_gates_are_enforceable() (+8 more)
 
 ### Community 133 - "KlingOfficialImage"
-Cohesion: 0.11
-Nodes (13): test_edit_payload_converts_image_path_to_base64(), test_execute_downloads_all_image_results(), test_execute_image_omni_series_records_references_callback_and_artifacts(), test_generation_payload(), test_image_cost_estimate_is_not_zero(), test_image_model_must_match_api_family(), test_image_omni_element_list_and_callback_payload(), test_image_schema_and_skill() (+5 more)
+Cohesion: 0.12
+Nodes (12): test_edit_payload_converts_image_path_to_base64(), test_execute_downloads_all_image_results(), test_execute_image_omni_series_records_references_callback_and_artifacts(), test_generation_payload(), test_image_cost_estimate_is_not_zero(), test_image_model_must_match_api_family(), test_image_omni_element_list_and_callback_payload(), test_image_schema_and_skill() (+4 more)
 
 ### Community 134 - "test_3d_asset_generation.py"
-Cohesion: 0.09
-Nodes (19): _Response, test_atlas_cost_matrix_and_missing_key(), test_atlas_success_downloads_glb_and_provenance(), fake_get(), test_blender_doctor_explains_missing_optional_runtime(), test_blender_doctor_reports_detected_runtime(), test_blender_resume_finds_first_missing_contiguous_frame(), test_fal_cost_matrix_and_input_validation() (+11 more)
+Cohesion: 0.08
+Nodes (17): _Response, test_atlas_cost_matrix_and_missing_key(), test_atlas_success_downloads_glb_and_provenance(), fake_get(), test_blender_doctor_explains_missing_optional_runtime(), test_blender_doctor_reports_detected_runtime(), test_blender_resume_finds_first_missing_contiguous_frame(), test_fal_cost_matrix_and_input_validation() (+9 more)
 
 ### Community 135 - "pytest"
-Cohesion: 0.08
-Nodes (31): FakeResponse, gemini_env(), _install_fake_requests(), test_gemini_omni_accepted_response_without_video_preserves_usage_cost(), test_gemini_omni_canonical_rest_steps_video_is_downloaded(), test_gemini_omni_cost_estimate_includes_available_media_inputs(), test_gemini_omni_cost_estimate_includes_prior_video_for_edit(), test_gemini_omni_cost_estimate_uses_max_output_not_duration_hint() (+23 more)
+Cohesion: 0.05
+Nodes (40): test_optional_live_doc_snapshot_check(), test_pipeline_contract_files_use_explicit_utf8(), FakeResponse, gemini_env(), _install_fake_requests(), test_gemini_omni_accepted_response_without_video_preserves_usage_cost(), test_gemini_omni_canonical_rest_steps_video_is_downloaded(), test_gemini_omni_cost_estimate_includes_available_media_inputs() (+32 more)
 
 ### Community 136 - "keypress.py"
 Cohesion: 0.10
@@ -1979,8 +2000,8 @@ Cohesion: 0.10
 Nodes (32): balloon(), el(), fabrik(), inkPath(), inkRibbon(), lerpTo(), mascot(), poseArm() (+24 more)
 
 ### Community 141 - "VideoSelector"
-Cohesion: 0.05
-Nodes (20): _DegradedComfyVideo, TestVideoOperationReadiness, test_gemini_omni_is_routed_by_video_selector(), _ScoreStub, _StubTool, test_ark_local_reference_routes_without_fal_upload(), test_estimate_cost_uses_selected_provider(), test_estimate_cost_zero_when_no_providers() (+12 more)
+Cohesion: 0.06
+Nodes (18): test_gemini_omni_is_routed_by_video_selector(), _ScoreStub, _StubTool, test_ark_local_reference_routes_without_fal_upload(), test_estimate_cost_uses_selected_provider(), test_estimate_cost_zero_when_no_providers(), test_estimate_runtime_uses_selected_provider(), test_fallback_excludes_image_selector_for_image_to_video() (+10 more)
 
 ### Community 142 - "HeyGen Avatars"
 Cohesion: 0.05
@@ -2027,24 +2048,24 @@ Cohesion: 0.05
 Nodes (36): category, compatible_playbooks, also_works, custom_allowed, recommended, default_checkpoint_policy, description, extensions (+28 more)
 
 ### Community 153 - "test_base_tool_cache.py"
-Cohesion: 0.04
-Nodes (42): get_default_asset_cache(), reset_default_asset_cache(), test_get_default_asset_cache_honors_env_and_is_singleton(), clean_owned_cache(), test_actual_stitch_dry_run_bypasses_cached_output(), reset_owned_cache(), test_actual_chromakey_cache_hit_reports_restored_video(), test_nonmatching_or_multiple_output_entries_are_preserved() (+34 more)
+Cohesion: 0.09
+Nodes (26): cache_on(), _DetGen, _DetGenV2, _FailingGen, _GenBase, _InputFileGen, _MultiArtGen, _NoPathGen (+18 more)
 
 ### Community 154 - "AudioMixer"
-Cohesion: 0.11
-Nodes (9): _filter(), test_default_target_is_podcast_minus_16(), test_non_numeric_target_falls_back_to_default(), test_out_of_range_target_is_clamped(), test_schema_exposes_loudnorm_target_default(), test_youtube_target_minus_14_is_honored(), test_segmented_music_amix_disables_normalize(), test_delayed_track_with_fade_out_remains_audible_after_its_start() (+1 more)
+Cohesion: 0.09
+Nodes (11): _filter(), test_default_target_is_podcast_minus_16(), test_non_numeric_target_falls_back_to_default(), test_out_of_range_target_is_clamped(), test_schema_exposes_loudnorm_target_default(), test_youtube_target_minus_14_is_honored(), test_segmented_music_amix_disables_normalize(), test_delayed_track_with_fade_out_remains_audible_after_its_start() (+3 more)
 
 ### Community 155 - "test_forge_integration.py"
-Cohesion: 0.06
-Nodes (32): run(), pick_refs(), keep(), resolve_refs(), _cat(), categories(), check_split(), held_out() (+24 more)
+Cohesion: 0.09
+Nodes (21): The reference sets this produced (local only), _category_of(), keep(), _cat(), categories(), check_split(), held_out(), load() (+13 more)
 
 ### Community 156 - ".provider_menu"
-Cohesion: 0.08
-Nodes (21): Composition Runtimes (Inside video_compose), Critical Rule: Motion-Required Requests, Mandatory Preflight, Provider Menu (Mandatory at Preflight), Setup Offer Protocol, Anti-Patterns, Onboarding — Meta Skill, Protocol (+13 more)
+Cohesion: 0.06
+Nodes (25): Composition Runtimes (Inside video_compose), Critical Rule: Motion-Required Requests, Mandatory Preflight, Provider Menu (Mandatory at Preflight), Setup Offer Protocol, Agent Skill and Setup Contract, Anti-Patterns, Onboarding — Meta Skill (+17 more)
 
 ### Community 157 - "ElevenLabsTTS"
 Cohesion: 0.06
-Nodes (20): TestCapabilityMetadata, TestElevenLabsTTS, TestMusicGen, TestNewToolsRegistry, TestPiperTTS, _alignment(), _json_response(), test_default_path_is_unchanged() (+12 more)
+Nodes (21): Tool Class Naming Convention, TestCapabilityMetadata, TestElevenLabsTTS, TestMusicGen, TestNewToolsRegistry, TestPiperTTS, _alignment(), _json_response() (+13 more)
 
 ### Community 158 - "HeyGen + Remotion Integration"
 Cohesion: 0.06
@@ -2067,8 +2088,8 @@ Cohesion: 0.06
 Nodes (35): 1. Use Green Screen for Flexibility, 2. Match Frame Rates, 3. URL vs Download: When to Use Each, 4. Handle Avatar Positioning, Audio Sync Issues, Basic Usage, Best Practices, Choosing the Right Output Format (+27 more)
 
 ### Community 163 - "u"
-Cohesion: 0.08
-Nodes (12): AnimatedSurface, Basic3DScene, CameraMovement3D, Function3DPlot, Line3DExample, MultipleObjects3D, ParametricSurfaceExample, SphereVisualization (+4 more)
+Cohesion: 0.07
+Nodes (13): AnimatedSurface, Basic3DScene, CameraMovement3D, Function3DPlot, Line3DExample, MultipleObjects3D, ParametricSurfaceExample, SphereVisualization (+5 more)
 
 ### Community 164 - "graph_plotting.py"
 Cohesion: 0.07
@@ -2095,24 +2116,24 @@ Cohesion: 0.06
 Nodes (35): category, compatible_playbooks, also_works, custom_allowed, recommended, default_checkpoint_policy, description, extensions (+27 more)
 
 ### Community 170 - "earshot/README.md"
-Cohesion: 0.07
-Nodes (25): forge v2: overnight iteration log (historical; forge v2 shipped in 0.2.0), How progress is measured (so the overnight work cannot fool itself), Round 1 notes (integrator), Round 3 notes (judge + integrator, 11:00-11:30), Round 5 notes (finalizer, 15:56-16:30), Round 6 notes (finalizer, 19:02-19:40; after the user got the showcase), Rounds, Cannot judge (+17 more)
+Cohesion: 0.08
+Nodes (21): forge v2: overnight iteration log (historical; forge v2 shipped in 0.2.0), How progress is measured (so the overnight work cannot fool itself), 1. What Cinetic produces that the soundtrack needs, 2. The bridge, step by step (Cinetic untouched), 3. Where earshot slots into Cinetic's self-critique loop, 4. A minimal change list for a future Cinetic, Integration: earshot inside a Cinetic film, score.json sections -> an arrange.py arc (+13 more)
 
 ### Community 171 - "duration"
-Cohesion: 0.04
-Nodes (45): Query one-liners (jq, node fallback if jq is absent), timeline, Example, Frontmatter (global direction), Notes, Parsed manifest, Per-frame sections, `SCRIPT.md` (out of scope here) (+37 more)
+Cohesion: 0.03
+Nodes (53): Motion verification (`*.motion.json` sidecar), Asset Preprocessing, benchmark, compositions, docs, info, info, upgrade, compositions, timeline, docs, benchmark, telemetry, asset preprocessing, Query one-liners (jq, node fallback if jq is absent), Remaining harness usage (+45 more)
 
 ### Community 172 - "remotion-interactivity/SKILL.md"
-Cohesion: 0.10
-Nodes (17): Effects should be inline too, Animate using `interpolate()`, Effects should be inline too, Give interactive elements a descriptive name, Keep all CSS styles inline, Keep composition metadata inline, Keep SVG paths editable with `Interactive.Path`, Make an HTML element interactive using `Interactive` (+9 more)
+Cohesion: 0.06
+Nodes (32): Adding media, Attributes you'll use most, Composition format, Fonts, Layout audit opt-outs, Linked clips, Lint errors you'll meet first, Shape of a project (+24 more)
 
 ### Community 173 - "remotion-interactivity/REFERENCE.md"
-Cohesion: 0.05
-Nodes (37): Adding the Basic Captions element, Displaying captions alongside video content, Displaying captions in Remotion, Prerequisites, White-space preservation, Effects should be inline too, Animate using `interpolate()`, Effects should be inline too (+29 more)
+Cohesion: 0.09
+Nodes (18): Effects should be inline too, Animate using `interpolate()`, Effects should be inline too, Give interactive elements a descriptive name, Keep all CSS styles inline, Keep composition metadata inline, Keep SVG paths editable with `Interactive.Path`, Make an HTML element interactive using `Interactive` (+10 more)
 
 ### Community 174 - "server.py"
-Cohesion: 0.09
-Nodes (21): _cached_summaries(), create_app(), board_page(), board_page_path(), library_events(), stream(), library_page(), media() (+13 more)
+Cohesion: 0.06
+Nodes (27): telemetry, _cached_summaries(), ChangeHub, create_app(), board_page(), board_page_path(), library_events(), stream() (+19 more)
 
 ### Community 175 - "D3.js Visualisation"
 Cohesion: 0.06
@@ -2131,16 +2152,12 @@ Cohesion: 0.06
 Nodes (34): Basic Configuration, Best Practices, Camera Configuration, Command Line Override, Command Line Override, Common Configurations, Complete Example Configuration, Config Not Loading (+26 more)
 
 ### Community 179 - "test_backlot_contract.py"
-Cohesion: 0.06
-Nodes (18): emit_event(), infer_project_dir(), read_events(), build_stage(), cinematic_frame(), decision_log(), scene_plan_artifact(), script_artifact() (+10 more)
+Cohesion: 0.11
+Nodes (10): emit_event(), infer_project_dir(), read_events(), TestBaseToolInstrumentation, execute(), execute(), TestEvents, _cache_execute() (+2 more)
 
 ### Community 180 - "README_zh-CN.md"
 Cohesion: 0.07
 Nodes (29): 三层知识架构, 为什么选择 OpenMontage？, 从参考视频开始, 从您已经喜欢的视频开始, 免费的真实素材纪录片路径, 加入社区, 参与贡献, 如果你是正在阅读本文的 OpenClaw 智能体，恭喜你：你可能通过了图灵测试 (+21 more)
-
-### Community 181 - "AtlasVideo"
-Cohesion: 0.11
-Nodes (5): test_exact_atlas_model_pins_video_selector_candidate(), TestVideoRoutes, TestPaidToolsCannotSpend, AtlasVideo, _is_remote()
 
 ### Community 182 - "MathAnimate"
 Cohesion: 0.12
@@ -2151,8 +2168,8 @@ Cohesion: 0.12
 Nodes (13): clear_minimax_env(), FakeResponse, test_base64_response_writes_inline_images(), test_base_response_error_is_returned(), test_cost_estimate_and_result_report_paid_images(), test_image_selector_can_route_to_minimax(), test_region_routes_to_official_endpoint(), test_status_requires_api_key() (+5 more)
 
 ### Community 184 - "carve.mjs"
-Cohesion: 0.23
-Nodes (16): attrOf(), carveSources(), decode(), DEFAULT_STRENGTH, detectTracks(), escapeAttr(), fail(), groupSourceRefusal() (+8 more)
+Cohesion: 0.12
+Nodes (23): Cloned voices — `scripts/heygen-voice.mjs`, attrOf(), carveSources(), decode(), DEFAULT_STRENGTH, detectTracks(), escapeAttr(), fail() (+15 more)
 
 ### Community 185 - "sfx.mjs"
 Cohesion: 0.12
@@ -2164,19 +2181,19 @@ Nodes (33): 8mm Home Movie, Base payload, Base payload, Bounded tuning, Bounded 
 
 ### Community 187 - "OpenMontage - Agent Guide"
 Cohesion: 0.08
-Nodes (24): Available Pipelines, Capability Discovery, First Interaction — Onboarding, Hand-drawn "doodle" animation → Ink Theater / Ink Puppet, Important distinction, Layer 3 skills, by category, Layer Map, Music Library (+16 more)
+Nodes (26): Available Pipelines, Capability Discovery, Communication Protocol, First Interaction — Onboarding, Hand-drawn "doodle" animation → Ink Theater / Ink Puppet, Human Checkpoint Protocol, Important distinction, Layer 3 skills, by category (+18 more)
 
 ### Community 188 - "Video Generation"
-Cohesion: 0.11
-Nodes (18): Adding Pauses to Scripts, Basic Video Generation, Best Practices, Complete Workflow Example, curl, Custom Audio, Error Handling, Full Configuration Example (+10 more)
+Cohesion: 0.07
+Nodes (28): Adding Pauses to Scripts, Avatar, Basic Video Generation, Best Practices, Complete Workflow Example, curl, curl, Custom Audio (+20 more)
 
 ### Community 189 - "Continuous scales"
 Cohesion: 0.06
 Nodes (33): Adaptive scale based on data range, Band scale, Clamping, Colour scale with explicit categories, Colour spaces and interpolation, Common patterns, Continuous scales, Copy scales (+25 more)
 
 ### Community 190 - "Video Generation"
-Cohesion: 0.11
-Nodes (18): Adding Pauses to Scripts, Basic Video Generation, Best Practices, Complete Workflow Example, curl, Custom Audio, Error Handling, Full Configuration Example (+10 more)
+Cohesion: 0.07
+Nodes (28): Adding Pauses to Scripts, Avatar, Basic Video Generation, Best Practices, Complete Workflow Example, curl, curl, Custom Audio (+20 more)
 
 ### Community 191 - "Animation Groups in ManimGL"
 Cohesion: 0.06
@@ -2191,16 +2208,16 @@ Cohesion: 0.12
 Nodes (3): TestComfyUIMusic, fake_generate(), ComfyUIMusic
 
 ### Community 194 - "remotion-best-practices/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx"
-Cohesion: 0.09
+Cohesion: 0.10
 Nodes (22): CountryLabel(), clamp01(), Country, countryPolygons, DRAW, EMPTY, END, lerp() (+14 more)
 
 ### Community 195 - "features.py"
-Cohesion: 0.12
-Nodes (20): resample(), brightness_hz(), db(), envelope_times(), frame_rms(), integrated_lufs(), key_estimate(), _kw() (+12 more)
+Cohesion: 0.11
+Nodes (22): resample(), add_cli(), run(), brightness_hz(), db(), envelope_times(), frame_rms(), integrated_lufs() (+14 more)
 
-### Community 196 - "numpy"
-Cohesion: 0.02
-Nodes (97): `data-fx-chain`: effects, 3. Downlifter (downsweep, fall), air(), bell(), _blep(), contact(), curve(), env_curve() (+89 more)
+### Community 196 - "impact.py"
+Cohesion: 0.04
+Nodes (53): Per-frame sections, _air3(), _blast3(), _body(), _body3(), _boom(), _crack(), _crack3() (+45 more)
 
 ### Community 197 - "Captions"
 Cohesion: 0.06
@@ -2236,11 +2253,11 @@ Nodes (32): Agent-First Architecture, Canonical Artifacts and Schemas, Checkpoin
 
 ### Community 206 - "Process — Standard Path (Corpus + CLIP Retrieval)"
 Cohesion: 0.06
-Nodes (31): 10. Quality Gate, 1. Resolve The Corpus Directory, 2. Fan Out The Queries Into `corpus_builder`, 3. Sanity-Check The Corpus Before Retrieval, 4. Rank Candidates Per Slot, 5. Pick With Judgement, Not By Score, 6. Grow The Corpus When Retrieval Is Weak, 7. Diversify Adjacent Picks (+23 more)
+Nodes (32): 10. Quality Gate, 1. Resolve The Corpus Directory, 2. Fan Out The Queries Into `corpus_builder`, 3. Sanity-Check The Corpus Before Retrieval, 4. Rank Candidates Per Slot, 5. Pick With Judgement, Not By Score, 6. Grow The Corpus When Retrieval Is Weak, 7. Diversify Adjacent Picks (+24 more)
 
 ### Community 207 - "Candidate"
-Cohesion: 0.06
-Nodes (11): test_direct_clip_search_honors_overall_timeout(), search(), test_direct_clip_search_reports_downloaded_clip_when_thumbnail_times_out(), search(), test_direct_clip_search_times_out_streaming_download(), search(), Candidate, CoverrSource (+3 more)
+Cohesion: 0.01
+Nodes (65): test_direct_clip_search_honors_overall_timeout(), search(), test_direct_clip_search_reports_downloaded_clip_when_thumbnail_times_out(), search(), _capture_get(), fake_get(), _FakeResponse, _patch_requests_get() (+57 more)
 
 ### Community 208 - "transcript-cut.mjs"
 Cohesion: 0.13
@@ -2259,12 +2276,12 @@ Cohesion: 0.06
 Nodes (31): 2D Camera Movement, 360-degree showcase, 3D Camera Orientation, Accessing and Moving Light, Accessing the Camera Frame, Advanced Camera Patterns, Animating Camera, Basic Movement (+23 more)
 
 ### Community 212 - "OpenMontage Architecture"
-Cohesion: 0.06
-Nodes (31): 1. Agent-First Orchestration, 2. No LLM API Key in Runtime, 3. Dual-Provider Support, 3-Layer Knowledge Architecture, Available Pipelines, Budget Governance, Budget Modes, Composition Runtimes (+23 more)
+Cohesion: 0.07
+Nodes (27): 1. Agent-First Orchestration, 2. No LLM API Key in Runtime, 3. Dual-Provider Support, 3-Layer Knowledge Architecture, Budget Governance, Budget Modes, Composition Runtimes, config.yaml (+19 more)
 
 ### Community 213 - "DeliveryPromise"
-Cohesion: 0.12
-Nodes (15): classify_from_brief(), DeliveryPromise, PromiseType, BenchResult, BenchScenario, build_scenarios(), _cut(), main() (+7 more)
+Cohesion: 0.20
+Nodes (6): classify_from_brief(), DeliveryPromise, PromiseType, test_classify_from_brief_avatar_defaults_stay_motion_required_without_footage(), test_classify_from_brief_explicit_motion_override_survives_reclassification(), test_classify_from_brief_source_led_reclassification_clears_motion_requirement()
 
 ### Community 214 - "Prompt Gallery"
 Cohesion: 0.06
@@ -2279,32 +2296,32 @@ Cohesion: 0.06
 Nodes (31): Animation Styles, Art Movements, Audio Descriptions, Camera Angle (relative to subject), Camera Height (relative to ground), Camera Movements, Camera Shot Types, Cinematic Styles (+23 more)
 
 ### Community 217 - "Ink Theater"
-Cohesion: 0.09
-Nodes (21): Clawd, Dances, Hooks: props and accessories, Options, Parts, Views and turns, walk(), Demos (+13 more)
+Cohesion: 0.10
+Nodes (20): Clawd, Dances, Hooks: props and accessories, Options, Parts, Views and turns, walk(), Demos (+12 more)
 
 ### Community 218 - "MapTiler maps in Remotion"
-Cohesion: 0.06
-Nodes (27): [CesiumJS](techniques/cesium/TECHNIQUE.md), [Mapbox](techniques/mapbox/TECHNIQUE.md), [MapLibre](techniques/maplibre/TECHNIQUE.md), [MapTiler](techniques/maptiler/TECHNIQUE.md), Remotion Maps, [Static map](techniques/static-map/TECHNIQUE.md), Build the flight, Camera behavior (+19 more)
+Cohesion: 0.07
+Nodes (24): [CesiumJS](techniques/cesium/TECHNIQUE.md), [Mapbox](techniques/mapbox/TECHNIQUE.md), [MapLibre](techniques/maplibre/TECHNIQUE.md), [MapTiler](techniques/maptiler/TECHNIQUE.md), Remotion Maps, [Static map](techniques/static-map/TECHNIQUE.md), Build the flight, Camera behavior (+16 more)
 
 ### Community 219 - "Using calculateMetadata"
-Cohesion: 0.06
-Nodes (31): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata, Default Props and scaffold metadata (+23 more)
+Cohesion: 0.07
+Nodes (26): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata, Default Props and scaffold metadata (+18 more)
 
 ### Community 220 - "MapTiler maps in Remotion"
-Cohesion: 0.06
-Nodes (27): [CesiumJS](techniques/cesium/TECHNIQUE.md), [Mapbox](techniques/mapbox/TECHNIQUE.md), [MapLibre](techniques/maplibre/TECHNIQUE.md), [MapTiler](techniques/maptiler/TECHNIQUE.md), Remotion Maps, [Static map](techniques/static-map/TECHNIQUE.md), Build the flight, Camera behavior (+19 more)
+Cohesion: 0.10
+Nodes (16): [CesiumJS](techniques/cesium/TECHNIQUE.md), [Mapbox](techniques/mapbox/TECHNIQUE.md), [MapLibre](techniques/maplibre/TECHNIQUE.md), [MapTiler](techniques/maptiler/TECHNIQUE.md), Remotion Maps, [Static map](techniques/static-map/TECHNIQUE.md), Build the flight, Camera behavior (+8 more)
 
-### Community 221 - "test_stock_source_adapters.py"
-Cohesion: 0.08
-Nodes (20): _adapter_names(), _EmptyOkResponse, _install_fake_transport(), test_search_propagates_transport_errors(), boom(), test_search_returns_empty_when_the_source_has_no_results(), test_stock_source_autodiscovery_includes_new_sources(), test_wikimedia_cascade_falls_back_on_multi_word() (+12 more)
+### Community 221 - "typing.py"
+Cohesion: 0.11
+Nodes (18): The bank, _band(), _burst_env(), _db(), _env_db(), key_mono(), _key_rng(), key_stats() (+10 more)
 
 ### Community 222 - "board.js"
 Cohesion: 0.13
 Nodes (30): app, applyTheme(), encodedProjectId, modal, normalize(), player, projectId, refresh() (+22 more)
 
 ### Community 223 - "Widget Embedding"
-Cohesion: 0.08
-Nodes (25): Appearance, Audio Issues, Authentication, Basic Embed, Behavior, CORS Errors, CSS Customization, Custom Trigger Button (+17 more)
+Cohesion: 0.06
+Nodes (31): Appearance, Audio Issues, Authentication, Basic Embed, Behavior, CORS Errors, CSS Customization, Custom Avatar (+23 more)
 
 ### Community 224 - "Multi-Reference Image Editing"
 Cohesion: 0.06
@@ -2318,25 +2335,25 @@ Nodes (19): BraceAnnotations, ColorCodedSubstitution, HighlightAndTransform, Qua
 Cohesion: 0.06
 Nodes (30): apply_complex_function, apply_function, ApplyMethod, Basic Transform, Best Practices, Common Patterns, Complex Transformations, Derivation Transformation (+22 more)
 
-### Community 228 - "array"
-Cohesion: 0.07
-Nodes (16): voice_share(), active_level_diff(), band_env(), cue_levels(), full_env(), lowend_collisions(), main(), masked_cues() (+8 more)
+### Community 227 - "test_fit_takes.py"
+Cohesion: 0.09
+Nodes (18): hf_rolloff(), _above_20k_db(), _gesture(), _lossy_tone(), _stopped_strike(), strike_model(), _tail_db(), test_coherent_modal_vary_keeps_the_fit_structure() (+10 more)
+
+### Community 228 - "analyze-audio"
+Cohesion: 0.08
+Nodes (16): Best Practices, Rate Functions, 10. Real recordings, not synthesis, 1. Music leads the edit, 2. Loudness and peaks for web delivery, 3. The arc: open strong, hold the body, land the ending, 4. Picture and sound: what the references actually sync, 5. UI foley (clicks, typing, notifications) (+8 more)
 
 ### Community 229 - "earshot: ears for an agent"
-Cohesion: 0.08
-Nodes (22): earshot: ears for an agent, Limits (say these plainly when they matter), Loop 1: choose an asset, Loop 2: review a mix or a film, Loop 3: A/B a change, Loop 4: make a sound in code (earshot forge), Optional: a second opinion in words (audio LLM), Reading the numbers (+14 more)
-
-### Community 230 - "video_compose.py"
-Cohesion: 0.12
-Nodes (8): AspectRatio, ffmpeg_output_args(), get_profile(), get_profiles_for_platform(), MediaProfile, TestMediaProfiles, _run(), test_external_audio_mux_adds_audible_stream_without_changing_video_length()
+Cohesion: 0.15
+Nodes (12): earshot: ears for an agent, Limits (say these plainly when they matter), Loop 1: choose an asset, Loop 2: review a mix or a film, Loop 3: A/B a change, Loop 4: make a sound in code (earshot forge), Optional: a second opinion in words (audio LLM), Reading the numbers (+4 more)
 
 ### Community 231 - "Lambda rendering on AWS"
-Cohesion: 0.05
-Nodes (36): Archive size and `.hyperframesignore`, Authentication, cloud — HeyGen-hosted rendering (zero-infra), Fire-and-forget and webhooks, Managing renders, Render options, Safe retries, Templates and variables (+28 more)
+Cohesion: 0.06
+Nodes (27): Archive size and `.hyperframesignore`, Authentication, cloud — HeyGen-hosted rendering (zero-infra), Fire-and-forget and webhooks, Managing renders, Render options, Safe retries, Templates and variables (+19 more)
 
 ### Community 232 - "onetake/scripts/look.py"
-Cohesion: 0.09
-Nodes (32): build_faces(), check(), cmd_apply(), cmd_check(), cmd_from_shot(), chroma(), hls(), cmd_list() (+24 more)
+Cohesion: 0.12
+Nodes (26): build_faces(), check(), cmd_apply(), cmd_check(), cmd_from_shot(), chroma(), hls(), cmd_list() (+18 more)
 
 ### Community 233 - "remotion-best-practices/remotion-markup/remotion-maps/techniques/maptiler/assets/RiverReveal.tsx"
 Cohesion: 0.09
@@ -2371,20 +2388,20 @@ Cohesion: 0.08
 Nodes (28): add(), ALIAS, chanJoints, clip, fk(), recur(), fkRest(), frames (+20 more)
 
 ### Community 241 - "SubtitleGen"
-Cohesion: 0.10
-Nodes (7): TestSubtitleGenUnit, TestParsePayload, test_all_outputs_are_well_formed(), test_carry_propagates_across_minute_and_hour_boundaries(), test_millisecond_carry_does_not_overflow(), test_normal_values_unchanged(), SubtitleGen
+Cohesion: 0.13
+Nodes (6): TestSubtitleGenUnit, test_all_outputs_are_well_formed(), test_carry_propagates_across_minute_and_hour_boundaries(), test_millisecond_carry_does_not_overflow(), test_normal_values_unchanged(), SubtitleGen
 
 ### Community 242 - "_FakeResponse"
 Cohesion: 0.10
 Nodes (15): _FakeResponse, fake_get(), fake_post(), fake_post(), fake_get(), fake_post(), fake_get(), fake_post() (+7 more)
 
 ### Community 243 - "KlingTTS"
-Cohesion: 0.14
+Cohesion: 0.16
 Nodes (5): test_execute_accepts_synchronous_create_response(), test_execute_downloads_all_audio_results(), test_tts_payload_and_validation(), test_tts_schema_and_skill_metadata(), KlingTTS
 
-### Community 244 - "test_forge_core_r3.py"
-Cohesion: 0.16
-Nodes (18): study_penalties(), widen_targets(), burst(), comb(), gated(), hum(), saw(), subdrop() (+10 more)
+### Community 244 - "SilenceCutter"
+Cohesion: 0.10
+Nodes (7): reset_owned_cache(), test_actual_chromakey_cache_hit_reports_restored_video(), test_nonmatching_or_multiple_output_entries_are_preserved(), test_single_output_aliases_rebind_without_rewriting_provenance(), test_mark_mode_retains_source_coordinates(), _result_from_cache(), SilenceCutter
 
 ### Community 245 - "مونتاج إعلان الفيديو — بلا برنامج مونتاج"
 Cohesion: 0.07
@@ -2403,8 +2420,8 @@ Cohesion: 0.07
 Nodes (28): Bloom (Glow), Chromatic Aberration, Color Correction, Combining Multiple Effects, Common Effects, Custom ShaderPass, Depth of Field (DOF), EffectComposer Setup (+20 more)
 
 ### Community 249 - "Creating a Video"
-Cohesion: 0.07
-Nodes (27): 4a. Background Music, 4c. Scene Images, 4d. Video Clips — B-Roll & Animated Backgrounds (optional), 4e. Image Editing (optional), 4e. Talking Head Narrator (optional), 4f. Upscaling (optional), Composition Patterns, Cost Estimates (Modal) (+19 more)
+Cohesion: 0.13
+Nodes (15): 4a. Background Music, 4b. Voiceover (per-scene), 4c. Scene Images, 4d. Video Clips — B-Roll & Animated Backgrounds (optional), 4e. Image Editing (optional), 4e. Talking Head Narrator (optional), 4f. Upscaling (optional), Creating a Video (+7 more)
 
 ### Community 250 - "Typography for Video Production"
 Cohesion: 0.07
@@ -2415,24 +2432,24 @@ Cohesion: 0.07
 Nodes (28): After ASSETS stage:, After COMPOSE stage:, After EDIT stage:, After IDEA stage:, After SCENE_PLAN stage:, After SCRIPT stage:, Common Pitfalls, Cumulative State (+20 more)
 
 ### Community 252 - "ThreeJSWorld"
-Cohesion: 0.16
-Nodes (15): test_blockout_tier_is_labeled_as_nonproduction(), test_production_tier_rejects_primitive_only_spec(), test_threejs_world_build_is_deterministic_and_editable(), test_threejs_world_rejects_incomplete_camera_path(), test_threejs_world_validate_emits_worldclaw_diagnostics(), test_video_compose_routes_empty_cut_atelier_to_existing_workspace(), fake_hyperframes_execute(), _world_spec() (+7 more)
+Cohesion: 0.18
+Nodes (13): test_blockout_tier_is_labeled_as_nonproduction(), test_production_tier_rejects_primitive_only_spec(), test_threejs_world_build_is_deterministic_and_editable(), test_threejs_world_rejects_incomplete_camera_path(), test_threejs_world_validate_emits_worldclaw_diagnostics(), _world_spec(), _clamp(), _color() (+5 more)
 
 ### Community 253 - "TasbihAd.tsx"
 Cohesion: 0.14
 Nodes (24): Background(), clamp, COUNTER, DONE_FRAME, Heading(), Intro(), Outro(), Phone() (+16 more)
 
 ### Community 254 - "remotion-best-practices/remotion-markup/transitions.md"
-Cohesion: 0.13
-Nodes (14): Available transition types, Calculating total composition duration, Custom presentation, Duration calculation, Getting the duration of a transition, Mixing transitions and overlays, Overlay example, Overlay props (+6 more)
+Cohesion: 0.08
+Nodes (24): Choose how items share time, Complete example, Editable timeline structure, Give substantial groups their own timelines, Connected compositions, Create the connection, Extract an existing group, Make the component independent of its parent (+16 more)
 
 ### Community 255 - "Text-to-Image (T2I) Prompting"
 Cohesion: 0.07
 Nodes (27): Angles, Animals, Architectural, Architecture, Atmospheric, Basic Formula, Camera and Lens Simulation, Camera Bodies (+19 more)
 
 ### Community 256 - "helpers.py"
-Cohesion: 0.04
-Nodes (18): AttentionPattern, ContextAnimation, get_paragraph(), NeuralNetwork, NumericEmbedding, random_bright_color(), RandomizeMatrixEntries, show_attention_flow() (+10 more)
+Cohesion: 0.03
+Nodes (23): AttentionPattern, ContextAnimation, get_paragraph(), NeuralNetwork, NumericEmbedding, random_bright_color(), RandomizeMatrixEntries, show_attention_flow() (+15 more)
 
 ### Community 257 - "StateTracker"
 Cohesion: 0.11
@@ -2459,7 +2476,7 @@ Cohesion: 0.07
 Nodes (27): After ASSETS stage:, After COMPOSE stage:, After EDIT stage:, After PROPOSAL stage:, After RESEARCH stage:, After SCENE_PLAN stage:, After SCRIPT stage:, Common Pitfalls (+19 more)
 
 ### Community 263 - "test_freesound_music.py"
-Cohesion: 0.14
+Cohesion: 0.10
 Nodes (9): _FakeResponse, _run(), _sound(), test_author_is_surfaced_even_without_a_license(), test_falls_back_to_generic_when_license_is_absent(), test_result_carries_the_sound_license(), test_search_requests_the_license_field(), fake_urlopen() (+1 more)
 
 ### Community 264 - "JimengVideo"
@@ -2475,24 +2492,24 @@ Cohesion: 0.13
 Nodes (17): Emotions, _balanced(), extract(), find_functions(), take(), find_scripts(), from_objects(), instrument() (+9 more)
 
 ### Community 268 - "Resolve — command, flags, reuse, adopt, inventory"
-Cohesion: 0.06
-Nodes (29): bed(), voice(), Adopt existing projects, Cross-project reuse, Examples, Flags, How it works, Reading the inventory (+21 more)
+Cohesion: 0.07
+Nodes (27): voice(), Adopt existing projects, Cross-project reuse, Examples, Flags, How it works, Reading the inventory, Resolve — command, flags, reuse, adopt, inventory (+19 more)
 
 ### Community 269 - "remotion-create/REFERENCE.md"
 Cohesion: 0.13
 Nodes (11): Designing a video, Empty folder, Follow-up, Interactivity Best Practices, Is this a multi-scene video?, Is this a timeline of clips?, Non-empty folder, Open the preview before building the video (+3 more)
 
 ### Community 270 - "f"
-Cohesion: 0.11
-Nodes (5): default_comparator(), EvalMode, EvalResult, GoldenScenario, ReplayHarness
+Cohesion: 0.08
+Nodes (13): test_flux2_workflow_has_templated_nodes(), test_i2v_workflow_has_templated_nodes(), test_t2v_workflow_has_templated_nodes(), test_t2v_workflow_latent_is_temporal_not_an_image_batch(), test_t2v_workflow_uses_14b_compatible_vae(), test_workflow_exists_and_valid_json(), default_comparator(), EvalMode (+5 more)
 
 ### Community 271 - "ACE-Step 1.5 Music Generation"
 Cohesion: 0.07
 Nodes (26): 1. Instrumental background track (simplest), 2. Song with vocals and lyrics, 3. Using a preset for video background, ACE-Step 1.5 Music Generation, Brand Consistency, Caption Writing — Layer Dimensions, Combining with Voiceover, complete (future, requires base model) (+18 more)
 
 ### Community 272 - "Client Tools"
-Cohesion: 0.09
-Nodes (21): Basic Webhook, Best Practices, Client Tools, Complete Example, end_call, Error Handling, Parameter Descriptions, Server Implementation (Node.js) (+13 more)
+Cohesion: 0.07
+Nodes (26): Basic Webhook, Best Practices, Client Tool Options, Client Tool Return Values, Client Tools, Client Tools, Complete Example, Defining Client Tools (+18 more)
 
 ### Community 273 - "Mermaid Syntax Reference"
 Cohesion: 0.07
@@ -2506,13 +2523,13 @@ Nodes (26): Basic Edits, Characteristics, Characteristics, Characteristics, Char
 Cohesion: 0.07
 Nodes (26): 1. Always Pair with Description, 2. Associate with Specific Objects, 3. Limit Color Palette, Analogous (Adjacent colors), Best Practices, Brand Colors, Color Bleeding, Color Harmony Patterns (+18 more)
 
-### Community 276 - "backlot_visual_eval.py"
-Cohesion: 0.19
-Nodes (11): capture_screenshot(), capture_shots(), compare_images(), compare_or_bless(), main(), run_interactions(), run_stage(), start_server() (+3 more)
+### Community 276 - "maskmodel.py"
+Cohesion: 0.14
+Nodes (16): analyse(), ath_power(), band_power(), bark(), decode(), judged(), klass(), main() (+8 more)
 
 ### Community 277 - "earshot fit: translate a recording into code"
-Cohesion: 0.12
-Nodes (15): Commands, earshot fit: translate a recording into code, How it works, Licence, Limits (honest), Measured quality, Morph examples, The mini blind test (+7 more)
+Cohesion: 0.14
+Nodes (12): Commands, earshot fit: translate a recording into code, Licence, Limits (honest), Measured quality, Morph examples, Takes: a fit rendered for use (0.3), The mini blind test (+4 more)
 
 ### Community 278 - "Three.js Animation"
 Cohesion: 0.07
@@ -2522,9 +2539,9 @@ Nodes (26): Additive Blending, Animating Morph Targets, Animation Blending, Anim
 Cohesion: 0.07
 Nodes (26): Advanced Shapes, Basic Shapes, BufferAttribute Types, BufferGeometry, Built-in Geometries, Center Geometry, Clone and Transform, Common Patterns (+18 more)
 
-### Community 280 - "test_export_bundle.py"
-Cohesion: 0.19
-Nodes (9): _make_video(), test_chapter_time_formatting_hours(), test_contract_metadata(), test_default_export_dir_inside_project_workspace(), test_export_bundle_layout_and_publish_log(), test_infer_project_name(), test_missing_optional_asset_errors(), test_missing_video_errors() (+1 more)
+### Community 280 - "test_gate_scenarios.py"
+Cohesion: 0.14
+Nodes (14): cmd_open(), cmd_serve(), main(), _port(), _server_alive(), _spawn_server(), _approve_predecessors(), _manifest_artifact() (+6 more)
 
 ### Community 281 - "kling_official_animated_explainer_e2e.py"
 Cohesion: 0.22
@@ -2540,30 +2557,26 @@ Nodes (26): After ASSETS stage:, After COMPOSE stage:, After EDIT stage:, After 
 
 ### Community 284 - "Process"
 Cohesion: 0.07
-Nodes (27): 3a: Title and Emotional Hook, 3b: Emotional Arc, 3c: Delivery Promise, 3d: Visual Treatment, 3e: Renderer Family Selection, 4a: Progressive Reveal, 4b: Diversity Check, 4c: Invite Mixing (+19 more)
+Nodes (26): 3a: Title and Emotional Hook, 3b: Emotional Arc, 3c: Delivery Promise, 3d: Visual Treatment, 3e: Renderer Family Selection, 4a: Progressive Reveal, 4b: Diversity Check, 4c: Invite Mixing (+18 more)
 
 ### Community 285 - "Process"
 Cohesion: 0.07
 Nodes (26): Audience-Aware Query Variants, Common Pitfalls, Example: Good vs Bad Research, Execution Constraints, Prerequisites, Process, Quality Bar, Quote Mining (+18 more)
 
-### Community 287 - "test_pixabay_per_page_clamp.py"
-Cohesion: 0.13
-Nodes (10): _capture_get(), fake_get(), _FakeResponse, _patch_requests_get(), test_pixabay_image_tool_clamps_per_page(), test_pixabay_stock_source_clamps_per_page(), test_pixabay_video_tool_clamps_per_page(), SearchFilters (+2 more)
-
 ### Community 288 - "bgm.mjs"
 Cohesion: 0.13
-Nodes (22): Background music (BGM), Driving it from the request, Failure modes, HeyGen retrieval (default), Local generation (fallback) — Lyria → MusicGen, Lyria knobs (direct recipe use), Mood inference (the generate prompt), BGM_PY_DEPS (+14 more)
+Nodes (21): Background music (BGM), Driving it from the request, Failure modes, HeyGen retrieval (default), Local generation (fallback) — Lyria → MusicGen, Lyria knobs (direct recipe use), Mood inference (the generate prompt), BGM_PY_DEPS (+13 more)
 
 ### Community 289 - "remotion-best-practices/remotion-maps/techniques/maptiler/scripts/prep-geo.mjs"
 Cohesion: 0.08
 Nodes (18): ANCHOR_BBOX, biggestPoly(), borders, COUNTRIES, countryMeta, __dir, flowKm, FRAME_BBOX (+10 more)
 
 ### Community 290 - "Using audio in Remotion"
-Cohesion: 0.12
-Nodes (13): Matching dimensions of a video, Return value, Setting a default outName, Setting duration based on a video, Setting duration based on multiple videos, Transforming props, Using calculateMetadata, Adding AI voiceover to a Remotion composition (+5 more)
+Cohesion: 0.08
+Nodes (23): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+15 more)
 
 ### Community 291 - "test_server.py"
-Cohesion: 0.12
+Cohesion: 0.13
 Nodes (7): _make_project(), TestBacklotHostValidation, TestBacklotPerformanceBudgets, TestBacklotServerApi, TestFindingsFixes, _write_json(), _write_png()
 
 ### Community 292 - "Video Status and Polling"
@@ -2603,8 +2616,8 @@ Cohesion: 0.08
 Nodes (25): Authentication, Basic TTS, Best Practices, curl, curl, Default Workflow, ElevenLabs Settings (optional), Endpoint (+17 more)
 
 ### Community 301 - "Video Translation (HeyGen)"
-Cohesion: 0.08
-Nodes (25): Advanced Options (v4 API), Audio-Only Translation (faster, no lip-sync), Authentication, Basic Translation (with lip-sync), Batch Translation, Best Practices, Checking Translation Status, Complete Workflow (+17 more)
+Cohesion: 0.07
+Nodes (26): Advanced Options (v4 API), Audio-Only Translation (faster, no lip-sync), Authentication, Basic Translation (with lip-sync), Batch Translation, Best Practices, Checking Translation Status, Complete Workflow (+18 more)
 
 ### Community 302 - "ParticleOverlay.tsx"
 Cohesion: 0.06
@@ -2614,9 +2627,9 @@ Nodes (41): Fireflies(), LightRays(), Mist(), ParticleOverlay(), ParticleOverlay
 Cohesion: 0.22
 Nodes (10): active_stage(), capture_project(), capture_slug(), capture_url(), fetch_json(), main(), state_fingerprint(), watch() (+2 more)
 
-### Community 304 - "build"
-Cohesion: 0.11
-Nodes (12): align_variants(), audition_ok(), _bench_index(), build(), _cat_order(), describe_category(), family_of(), _load_json() (+4 more)
+### Community 304 - "listen.py"
+Cohesion: 0.24
+Nodes (12): words(), compare(), describe(), have_runtime(), install(), main(), reexec_in_venv(), status() (+4 more)
 
 ### Community 305 - "Biennale Yellow — Frame (video / frame layer)"
 Cohesion: 0.08
@@ -2678,9 +2691,9 @@ Nodes (18): ANCHOR_BBOX, biggestPoly(), borders, COUNTRIES, countryMeta, __dir, 
 Cohesion: 0.10
 Nodes (6): BitStringVisualization, QuantumParallelism, Superposition, SuperpositionDemo, create_bit_string(), create_ket()
 
-### Community 320 - "media.py"
-Cohesion: 0.17
-Nodes (8): extension_from_content_type(), extension_from_url(), file_to_raw_base64(), image_file_to_raw_base64(), normalize_media_input(), numbered_output_path(), output_path_with_suffix(), strip_data_uri_prefix()
+### Community 320 - "kling_official_image.py"
+Cohesion: 0.07
+Nodes (20): DependencyError, account_usage_hint_for_error(), _cache_key(), get_account_costs(), validate_callback_url(), element_ids(), _code_str(), is_retryable_kling_error() (+12 more)
 
 ### Community 321 - "Webhooks"
 Cohesion: 0.08
@@ -2699,8 +2712,8 @@ Cohesion: 0.08
 Nodes (25): Best Practices, Event Payload Structure, Express.js Example, Handle in Webhook, Handling Webhook Failures, Include Callback ID in Video Generation, Local Development with ngrok, Overview (+17 more)
 
 ### Community 325 - "test_google_imagen_gemini_backend.py"
-Cohesion: 0.13
-Nodes (11): _FakeCandidate, _FakeContent, _FakeInline, _FakePart, _FakeResponse, imagen_tool(), generate_content(), test_gemini_cost_estimate_is_per_image() (+3 more)
+Cohesion: 0.09
+Nodes (14): _FakeCandidate, _FakeContent, _FakeInline, _FakePart, _FakeResponse, imagen_tool(), generate_content(), test_gemini_cost_estimate_is_per_image() (+6 more)
 
 ### Community 326 - "StateTracker"
 Cohesion: 0.11
@@ -2723,16 +2736,16 @@ Cohesion: 0.14
 Nodes (14): 1. Additions beyond the requested models, 2. Requested models: concrete integration map, 3. Important catch-up work outside the strict window, 4. Delivery order and acceptance criteria, 5. Validation and remaining research, 6. Pull and local-work preservation, Implementation status, PR 1 — Model contracts and route correctness (+6 more)
 
 ### Community 331 - "HyperFrames Skill (Layer 2)"
-Cohesion: 0.09
-Nodes (21): Always preview-scrub footage-forward scenes before render, Bump stock-footage legibility, not opacity, Cost model, Decision matrix, Full-frame background video: source-resolution trap (NOT a framework bug), Gotchas in practice (hard-earned), Hard rule: motion-required deliverables, Hard rule: present both runtimes when both are available (+13 more)
+Cohesion: 0.11
+Nodes (17): Anti-patterns, Artifact → HyperFrames mapping, Cost model, Decision matrix, Hard rule: motion-required deliverables, Hard rule: present both runtimes when both are available, HyperFrames Skill (Layer 2), Pipelines adopting HyperFrames (+9 more)
 
 ### Community 332 - "Process"
 Cohesion: 0.08
 Nodes (24): 4a: Title and Hook, 4b: Animation Approach and Visual Identity, 4c: Narrative Structure, 4d: Duration and Platform, 4e: Concept Diversity Check, Common Pitfalls, Gate Reminder (Binding), How This Connects Downstream (+16 more)
 
-### Community 335 - "levels.py"
-Cohesion: 0.17
-Nodes (7): combine(), compare(), edits(), groups(), level_in(), main(), momentary()
+### Community 335 - "MusicLibrary"
+Cohesion: 0.18
+Nodes (10): _make_track(), test_contract_metadata(), test_execute_empty_library(), test_execute_input_dir_overrides_env(), test_execute_lists_tracks_sorted(), test_status_available_with_tracks(), test_status_ignores_non_audio_files(), test_status_unavailable_when_dir_empty() (+2 more)
 
 ### Community 336 - "test_audio_mixer_amix_normalize.py"
 Cohesion: 0.18
@@ -2751,12 +2764,12 @@ Cohesion: 0.25
 Nodes (11): ask_model(), bench(), bench_captions(), ffmpeg(), have_model(), install(), main(), run_jobs() (+3 more)
 
 ### Community 341 - "Using audio in Remotion"
-Cohesion: 0.11
-Nodes (16): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+8 more)
+Cohesion: 0.08
+Nodes (21): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+13 more)
 
 ### Community 342 - "Agent Configuration"
-Cohesion: 0.12
-Nodes (16): Additional Top-Level Fields, agent, Agent Configuration, asr (Automatic Speech Recognition), CI/CD Integration, Configuration Structure, conversation_config, Custom LLM (+8 more)
+Cohesion: 0.09
+Nodes (23): Additional Top-Level Fields, agent, Agent Configuration, asr (Automatic Speech Recognition), auth, call_limits, CI/CD Integration, Configuration Structure (+15 more)
 
 ### Community 343 - "Video Templates"
 Cohesion: 0.08
@@ -2771,7 +2784,7 @@ Cohesion: 0.08
 Nodes (24): 1.1 Core FLUX Prompting Principles, 1. Core Principles, 2.1 FLUX Model Selection Guide, 2.2 FLUX.1 Model Family, 2.3 FLUX.2 Model Family, 2. Model Selection, 3.1 Text-to-Image (T2I) Prompting, 3. Text-to-Image Prompting (+16 more)
 
 ### Community 346 - "Writing Scripts for HeyGen Videos"
-Cohesion: 0.09
+Cohesion: 0.08
 Nodes (23): Adding Pauses with Break Tags, Announcement (30 seconds, ~75 words), Avoid, Consecutive Breaks, Do, Examples, Formatting Rules, Multi-Scene Scripts (+15 more)
 
 ### Community 347 - "Video Templates"
@@ -2787,8 +2800,8 @@ Cohesion: 0.11
 Nodes (7): AnimationComposition, ColorTransitions, GroupOperations, LaggedAnimations, PathAnimations, ShapeCreation, TextAnimations
 
 ### Community 350 - "ParametricCurve"
-Cohesion: 0.09
-Nodes (14): ParametricCurve, ConeUnfolding, ParametricSurface3D, SaddleSurface, SphereSurface, TorusSurface, 1. Core Concept, 2. Technical Implementation (+6 more)
+Cohesion: 0.12
+Nodes (9): ParametricCurve, ConeUnfolding, ParametricSurface3D, SaddleSurface, SphereSurface, TorusSurface, 1. Core Concept, 3. Scene Variants (+1 more)
 
 ### Community 351 - "StateTracker"
 Cohesion: 0.12
@@ -2815,16 +2828,12 @@ Cohesion: 0.08
 Nodes (23): After ASSETS stage:, After COMPOSE stage:, After EDIT stage:, After IDEA stage:, After SCENE_PLAN stage:, After SCRIPT stage:, Common Pitfalls, Cumulative State (+15 more)
 
 ### Community 357 - "ComfyUIClient"
-Cohesion: 0.09
-Nodes (5): _install_fake_websocket(), _raise_on_websocket_import(), TestMultiServer, TestWebsocketWait, ComfyUIClient
-
-### Community 360 - "CostTracker"
-Cohesion: 0.09
-Nodes (7): BudgetMode, TestCostTracker, CostTrackerGovernanceTests, ApprovalRequiredError, BudgetExceededError, CostTracker, EntryStatus
+Cohesion: 0.04
+Nodes (14): `comfyui_image` -- Image Generation, `comfyui_music` -- Music Generation (shipped, with a native-node bundled workflow), `comfyui_video` -- Video Generation, Open Questions, Tool Specifications, _install_fake_websocket(), _raise_on_websocket_import(), TestClientHelpers (+6 more)
 
 ### Community 361 - "test_gallery.py"
-Cohesion: 0.14
-Nodes (14): _html(), _report(), _scrub_module(), test_compare_versions(), test_embed(), test_embed_compressed(), test_gallery_page(), test_refs_never_bench() (+6 more)
+Cohesion: 0.13
+Nodes (15): _html(), _report(), _scrub_module(), test_cli(), test_compare_versions(), test_embed(), test_embed_compressed(), test_gallery_page() (+7 more)
 
 ### Community 362 - "Blocks"
 Cohesion: 0.09
@@ -2859,16 +2868,16 @@ Cohesion: 0.13
 Nodes (4): Blocks3D, update_blocks(), PreviewClip3D, StateTracker
 
 ### Community 370 - "manimgl-best-practices/SKILL.md"
-Cohesion: 0.08
-Nodes (22): Animation Parameters, Animation System Overview, Creation Animations, Indication Animations, LaggedStart and Groups, ManimGL Animations, Movement Animations, Playing Animations (+14 more)
+Cohesion: 0.09
+Nodes (21): Animation Parameters, Animation System Overview, Creation Animations, Indication Animations, LaggedStart and Groups, ManimGL Animations, Movement Animations, Playing Animations (+13 more)
 
 ### Community 371 - "openmontage/.claude/skills/remotion-best-practices/SKILL.md"
-Cohesion: 0.11
-Nodes (11): FFmpeg in Remotion, Trimming videos, Measuring DOM nodes in Remotion, Measuring element dimensions, Color picker, Audio visualization, Captions, How to use (+3 more)
+Cohesion: 0.08
+Nodes (17): FFmpeg in Remotion, Trimming videos, Measuring DOM nodes in Remotion, Measuring element dimensions, Color picker, Text animations, Typewriter Effect, Word Highlighting (+9 more)
 
-### Community 373 - "test_openai_image_multi_output.py"
-Cohesion: 0.14
-Nodes (8): _FakeImage, _FakeImages, _FakeResponse, openai_tool(), test_all_requested_images_are_written(), test_artifacts_match_billed_image_count(), test_multi_output_paths_are_suffixed_and_unique(), test_single_image_keeps_exact_output_path()
+### Community 373 - "fit"
+Cohesion: 0.12
+Nodes (13): _db(), _find_ridges(), _fine_psd(), fit(), _fit_fine(), _lowrank(), _noise_sigma(), _peak_mean_db() (+5 more)
 
 ### Community 374 - "blender-world-runtime.py"
 Cohesion: 0.18
@@ -2883,8 +2892,8 @@ Cohesion: 0.29
 Nodes (6): Beat sheet, Camera, Numbers (the accepted cut), one-dot-15s — the concept film, Sound, Versions
 
 ### Community 377 - "loadFont"
-Cohesion: 0.06
-Nodes (30): Fonts — `assets/fonts/<Family>/` (WOFF2 + OFL.txt), Offline assets: SFX, fonts, overlays, Overlays — `assets/overlays/`, Sound effects — `assets/sfx/` (see `assets/sfx/INDEX.md` for every file), loadFont(), Google Fonts with @remotion/google-fonts, Prerequisites, Using fonts in Remotion (+22 more)
+Cohesion: 0.09
+Nodes (21): loadFont(), Available options, Loading a local font, Loading multiple weights, Prerequisites, Google Fonts with @remotion/google-fonts, Prerequisites, Using fonts in Remotion (+13 more)
 
 ### Community 378 - "refstyle.py"
 Cohesion: 0.14
@@ -2911,7 +2920,7 @@ Cohesion: 0.09
 Nodes (22): 1. Positive Descriptions Only, 2. Prompt Structure Formula, 3. Specificity Matters, 4. Natural Language Works Best, 5. Lighting is Critical, 6. Word Order Matters, 7. Medium Prompt Length, 8. Iterative Refinement (+14 more)
 
 ### Community 384 - "Video Dimensions and Resolution"
-Cohesion: 0.10
+Cohesion: 0.09
 Nodes (21): Avatar IV Dimensions, Background Considerations, Creating a Video Config Factory, curl, Custom Dimensions, Dimension Constraints, Dimension Helper Functions, Instagram Feed Post (+13 more)
 
 ### Community 385 - "attention_scenes.py"
@@ -2922,25 +2931,21 @@ Nodes (8): break_into_pieces(), break_into_words(), ContextAnimation, NumericEmb
 Cohesion: 0.13
 Nodes (4): MLPExpansion3D, MLPNeuronsFlow, NeuralNetworkBasic, value_to_color()
 
-### Community 387 - "SpringMassSystem"
-Cohesion: 0.07
-Nodes (11): Animation runtimes, dotLottie browser setup, GSAP facts that bite, Other runtimes, The seek protocol, MultipleSprings, SpringMassDemo, SpringMassSystem (+3 more)
-
-### Community 388 - "Launch-film sound: the playbook for coding agents"
-Cohesion: 0.13
-Nodes (14): 10. Real recordings, not synthesis, 1. Music leads the edit, 2. Loudness and peaks for web delivery, 3. The arc: open strong, hold the body, land the ending, 4. Picture and sound: what the references actually sync, 5. UI foley (clicks, typing, notifications), 6. Logo sting and endings, 7. Frequency space (+6 more)
+### Community 388 - "earshot/skills/real-sound/scripts/variant.py"
+Cohesion: 0.15
+Nodes (11): apply_ops(), change(), dump1(), edits_for(), find(), ident(), insert(), patch_text() (+3 more)
 
 ### Community 389 - "Local Providers (Free, No API Key)"
 Cohesion: 0.09
 Nodes (22): Clips longer than five seconds, ComfyUI Video — Local Workflows and Hosted Partner Nodes, Fitting a 12GB card, HyperFrames - HTML/CSS/GSAP Video Composition, Local Diffusion — Offline Image Generation (GPU Required), Local Providers (Free, No API Key), Local Video Generation (GPU Required), LTX-2 on Modal — Self-Hosted Cloud GPU (+14 more)
 
 ### Community 390 - "Process"
-Cohesion: 0.09
-Nodes (21): 0. Hard Requirement Check, 1. Resolve The Canvas, 2. Build The Concat Plan For `video_compose`, 3. Apply Grade Via LUT, Not Per Clip, 4. Mix The Audio Once, In Compose, 4b. Render The End-Tag Via Remotion, 5. Render At Documentary Spec, 6. Post-Render Verification (+13 more)
+Cohesion: 0.14
+Nodes (14): 0. Hard Requirement Check, 1. Resolve The Canvas, 2. Build The Concat Plan For `video_compose`, 3. Apply Grade Via LUT, Not Per Clip, 4. Mix The Audio Once, In Compose, 4b. Render The End-Tag Via Remotion, 5. Render At Documentary Spec, 6. Post-Render Verification (+6 more)
 
 ### Community 391 - "Process"
-Cohesion: 0.09
-Nodes (21): Compose Director — Talking Head Pipeline, Prerequisites, Process, Runtime Routing (HARD CONSTRAINT — Remotion or FFmpeg only), Step 0: Pre-flight Checks, Step 10: Submit, Step 1: Run Enhancement Chain, Step 1b: Speed Adjustment (if requested) (+13 more)
+Cohesion: 0.10
+Nodes (20): Compose Director — Talking Head Pipeline, Prerequisites, Process, Runtime Routing (HARD CONSTRAINT — Remotion or FFmpeg only), Step 0: Pre-flight Checks, Step 10: Submit, Step 1: Run Enhancement Chain, Step 1b: Speed Adjustment (if requested) (+12 more)
 
 ### Community 392 - "FakeResponse"
 Cohesion: 0.13
@@ -2954,25 +2959,29 @@ Nodes (3): captured_synthesize(), fake_post(), _FakeResponse
 Cohesion: 0.08
 Nodes (21): arcD(), C, clamp(), E, el(), env(), f2(), Fig (+13 more)
 
-### Community 395 - "archive_org.py"
-Cohesion: 0.12
-Nodes (7): ArchiveOrgSource, _license_from_collection(), _looks_like_year(), _parse_length(), _pick_video_file(), _safe_int(), _to_text()
+### Community 395 - "gesture.py"
+Cohesion: 0.14
+Nodes (12): air(), _air_tail(), check(), _deterministic(), fit(), _fit_tones(), load(), _load() (+4 more)
 
 ### Community 396 - "Per category"
-Cohesion: 0.13
-Nodes (15): Click (`click`), 5 (1 / 2; two measured only), Element pop-in (`pop_in`, not a forge category yet), 10 (10 / 0), Glitch / stutter (`glitch`), 1 (1 / 0), Hover tick (`hover_tick`), 6 (3 / 3), Logo / end sting (`logo_sting`), 2 (1 / 1), Notification ding (`notify`), 4 (4 / 0), Per category, Pop (`pop`), 3 (2 / 1) (+7 more)
+Cohesion: 0.10
+Nodes (20): Click (`click`), 5 (1 / 2; two measured only), Element pop-in (`pop_in`, not a forge category yet), 10 (10 / 0), Glitch / stutter (`glitch`), 1 (1 / 0), Hover tick (`hover_tick`), 6 (3 / 3), How to read the numbers (and how far to trust them), Logo / end sting (`logo_sting`), 2 (1 / 1), Notification ding (`notify`), 4 (4 / 0), Per category (+12 more)
+
+### Community 397 - "centers"
+Cohesion: 0.12
+Nodes (14): centers(), _centroid_oct(), check(), _env_dense(), _group_env(), _group_of(), load(), _mono_render() (+6 more)
 
 ### Community 398 - "gallery"
-Cohesion: 0.15
-Nodes (8): category_of(), compare_versions(), discover(), gallery(), parse_alias(), refs_for(), _split_label(), _wavs()
+Cohesion: 0.13
+Nodes (10): add_cli(), run(), category_of(), compare_versions(), discover(), gallery(), parse_alias(), refs_for() (+2 more)
 
 ### Community 399 - "test_silence_speed_timeline.py"
 Cohesion: 0.16
-Nodes (16): Dashboard tiles, Event catalog (verified present in-project), Identity (see `scripts/lib/telemetry.mjs`), media-use usage dashboard, Recreate in an analytics dashboard, Add your sounds, Step 6: Verify Edit Completeness, command() (+8 more)
+Nodes (15): Dashboard tiles, Event catalog (verified present in-project), Identity (see `scripts/lib/telemetry.mjs`), media-use usage dashboard, Recreate in an analytics dashboard, Add your sounds, Step 6: Verify Edit Completeness, command() (+7 more)
 
 ### Community 400 - "earshot"
-Cohesion: 0.12
-Nodes (17): launch(), 0.4.0 - 2026-10-22, Changed, Measured (replication benchmark), Not done (known gaps), Agent skills, earshot, earshot fit: audio to code (+9 more)
+Cohesion: 0.10
+Nodes (22): launch(), 0.2.1 - 2026-10-17, 0.4.0 - 2026-10-22, Added, Changed, Changed, Changelog, Fixed (+14 more)
 
 ### Community 401 - "from_hyperframes.py"
 Cohesion: 0.15
@@ -3015,8 +3024,8 @@ Cohesion: 0.13
 Nodes (5): AttentionArcs3D, AttentionArcsAnimation, random_bright_color(), SimpleEmbedding, value_to_color()
 
 ### Community 411 - "ComfyUI Provider Adapter for OpenMontage"
-Cohesion: 0.11
-Nodes (17): Agent Skill and Setup Contract, Architecture, ComfyUI Provider Adapter for OpenMontage, Configuration, Design, Future (add models to ComfyUI, no code changes to OpenMontage), Hardware portability, Immediate (with existing models) (+9 more)
+Cohesion: 0.12
+Nodes (16): Architecture, ComfyUI Provider Adapter for OpenMontage, Configuration, Design, Future (add models to ComfyUI, no code changes to OpenMontage), Hardware portability, Immediate (with existing models), Implementation Scope (+8 more)
 
 ### Community 412 - "._process_candidate"
 Cohesion: 0.16
@@ -3030,25 +3039,21 @@ Nodes (20): Accessibility, Applying to OpenMontage, Color Grading for Video Prod
 Cohesion: 0.10
 Nodes (20): Animation authoring — which runtime, Asset Director — Explainer Pipeline, Common Pitfalls, Gate Reminder (Binding), Mid-Production Fact Verification, Pre/Post Self-Review for Generation Prompts, Prerequisites, Process (+12 more)
 
-### Community 416 - "test_kling_official_avatar.py"
-Cohesion: 0.08
-Nodes (14): test_advanced_lip_sync_accepts_official_nested_face_choose(), test_advanced_lip_sync_execute_downloads_video(), test_advanced_lip_sync_payload_uses_face_and_audio_path(), test_advanced_lip_sync_rejects_conflicting_top_level_and_nested_values(), test_avatar_cost_estimate_is_not_zero(), test_avatar_payload_uses_image_and_audio_paths(), test_avatar_requires_image_and_audio(), test_avatar_schema_and_local_tool_are_distinct() (+6 more)
+### Community 416 - "KlingAvatar"
+Cohesion: 0.21
+Nodes (4): test_avatar_cost_estimate_is_not_zero(), test_avatar_requires_image_and_audio(), test_execute_downloads_avatar_video(), KlingAvatar
 
 ### Community 417 - "MiniMaxVideo"
-Cohesion: 0.08
-Nodes (27): _FakeResponse, _h3_success_task(), _isolate_minimax_environment(), test_minimax_h3_normalizes_selector_duration_and_first_last_frames(), test_minimax_h3_reference_content_and_cn_watermark(), fake_get(), fake_post(), test_minimax_h3_text_to_video_v2_contract() (+19 more)
-
-### Community 418 - "SoraVideo"
-Cohesion: 0.16
-Nodes (4): test_sora_video_executes_with_current_create_and_poll_sdk_surface(), test_sora_video_loads_openai_key_from_repo_dotenv_when_process_env_is_empty(), test_sora_video_reports_unavailable_when_openai_sdk_lacks_video_api(), SoraVideo
+Cohesion: 0.09
+Nodes (26): _FakeResponse, _h3_success_task(), _isolate_minimax_environment(), test_minimax_h3_normalizes_selector_duration_and_first_last_frames(), test_minimax_h3_reference_content_and_cn_watermark(), fake_get(), fake_post(), test_minimax_h3_text_to_video_v2_contract() (+18 more)
 
 ### Community 419 - "_wan_engine.py"
 Cohesion: 0.09
 Nodes (18): model_info(), channel_stats(), derive_pipeline(), export_frames(), free_wan_pipelines(), _generate_chained(), _generate_single(), generate_wan() (+10 more)
 
 ### Community 420 - "telemetry.mjs"
-Cohesion: 0.13
-Nodes (24): withFileLock(), mergeTokensToWords(), anonymousId(), __anonymousIdForTest(), heygenAccountDistinctId(), identifyAccount(), isTestOrCiContext(), legacyMediaAnonId() (+16 more)
+Cohesion: 0.22
+Nodes (16): withFileLock(), anonymousId(), __anonymousIdForTest(), heygenAccountDistinctId(), identifyAccount(), isTestOrCiContext(), legacyMediaAnonId(), optedOut() (+8 more)
 
 ### Community 421 - "real-sfx/scripts/look.py"
 Cohesion: 0.25
@@ -3058,9 +3063,9 @@ Nodes (13): at(), esc(), events_sheet(), ff(), find_font(), frames_row(), label_
 Cohesion: 0.10
 Nodes (16): [CesiumJS](techniques/cesium/TECHNIQUE.md), [Mapbox](techniques/mapbox/TECHNIQUE.md), [MapLibre](techniques/maplibre/TECHNIQUE.md), [MapTiler](techniques/maptiler/TECHNIQUE.md), Remotion Maps, [Static map](techniques/static-map/TECHNIQUE.md), Build the flight, Camera behavior (+8 more)
 
-### Community 423 - "stock_sources/__init__.py"
-Cohesion: 0.20
-Nodes (3): StockSource, _is_source_adapter_class(), _source_classes()
+### Community 423 - "render"
+Cohesion: 0.17
+Nodes (15): _motion_tau(), render(), save(), _take_gain(), _band(), _env(), test_crackle_density_order_of_magnitude(), test_flutter_found_and_gaussian_noise_left_plain() (+7 more)
 
 ### Community 424 - "Video Backgrounds"
 Cohesion: 0.10
@@ -3123,36 +3128,32 @@ Cohesion: 0.10
 Nodes (20): 0. Guardrails — No Silent Major Changes, 10. Quality Gate, 1. Set The Rhythm Grid, 2. Arrange By Narrative Beat, Not By Score, 3. Trim Each Clip To Its Beat, 4. Sync To The Music Bed, 5. Choose Transitions From A Small Vocabulary, 6. Apply Register Continuity (+12 more)
 
 ### Community 440 - "Process"
-Cohesion: 0.10
-Nodes (19): Common Pitfalls, Compose Director — Explainer Pipeline, Prerequisites, Process, Runtime Routing (MANDATORY first step), Step 1: Choose Render Strategy, Step 2: Audio Acquisition (Narration, Music, Subtitles), Step 3: Determine Output Profile (+11 more)
+Cohesion: 0.11
+Nodes (18): Common Pitfalls, Compose Director — Explainer Pipeline, Prerequisites, Process, Runtime Routing (MANDATORY first step), Step 1: Choose Render Strategy, Step 2: Audio Acquisition (Narration, Music, Subtitles), Step 3: Determine Output Profile (+10 more)
 
 ### Community 441 - "Process"
-Cohesion: 0.11
-Nodes (18): Common Pitfalls, Enhancement Cues, Example: Well-Written Section, Gate Reminder (Binding), Mid-Production Fact Verification, Prerequisites, Process, Pronunciation Guides (+10 more)
+Cohesion: 0.08
+Nodes (22): Common Pitfalls, Enhancement Cues, Example: Well-Written Section, Gate Reminder (Binding), Mid-Production Fact Verification, Prerequisites, Process, Pronunciation Guides (+14 more)
 
 ### Community 442 - "ComfyUIVideo"
-Cohesion: 0.13
-Nodes (5): test_t2v_builder_patches_frame_count_into_length_not_batch_size(), TestCustomWorkflowContract, test_comfyui_partner_workflows_and_local_h3_metadata(), test_ltx_local_does_not_fall_back_to_wan(), ComfyUIVideo
+Cohesion: 0.10
+Nodes (4): test_t2v_builder_patches_frame_count_into_length_not_batch_size(), TestCustomWorkflowContract, test_comfyui_partner_workflows_and_local_h3_metadata(), ComfyUIVideo
 
-### Community 443 - "test_documentary_governance.py"
-Cohesion: 0.14
-Nodes (6): _DummySource, test_corpus_builder_rejects_unavailable_pinned_sources(), test_video_compose_blocks_silent_hyperframes_swap(), test_video_compose_ffmpeg_engine_reflects_path_availability(), test_video_compose_rejects_unknown_render_runtime(), test_video_compose_surfaces_all_three_runtimes()
+### Community 443 - "music"
+Cohesion: 0.12
+Nodes (16): Generate a project beat grid, 10. buses and master, 11. What mix.py writes, 12. qa_ok: acknowledging a deliberate exception, 13. Worked examples from a shipped film, 1. Top level and includes, 2. The cue file, 5. pools (+8 more)
 
 ### Community 444 - "RunwayVideo"
-Cohesion: 0.15
-Nodes (4): test_default_model_constant_matches_schema(), test_estimate_default_model_matches_schema(), HiggsFieldVideo, RunwayVideo
+Cohesion: 0.24
+Nodes (3): test_default_model_constant_matches_schema(), test_estimate_default_model_matches_schema(), RunwayVideo
 
-### Community 445 - "pexels.py"
+### Community 445 - ".claude/skills/real-sound/scripts/variant.py"
+Cohesion: 0.16
+Nodes (11): apply_ops(), change(), dump1(), edits_for(), find(), ident(), insert(), patch_text() (+3 more)
+
+### Community 447 - "test_forge_recipes_cut_noise.py"
 Cohesion: 0.21
-Nodes (3): PexelsSource, _pick_video_rendition(), _slug_tags_from_url()
-
-### Community 446 - "codegen.py"
-Cohesion: 0.20
-Nodes (9): _category_of(), critic_words(), _is_scalar(), _lit(), literal(), _scalar(), _space_lines(), to_recipe() (+1 more)
-
-### Community 447 - "mallet.py"
-Cohesion: 0.14
-Nodes (8): _damper(), _len(), _note(), _pluck(), render(), run_freqs(), _vary(), _voice()
+Nodes (14): _attack_ms(), _centroid(), _corr(), _env_db(), _low_share(), members(), _mono(), test_bank_knobs_aim_the_members() (+6 more)
 
 ### Community 449 - "English"
 Cohesion: 0.11
@@ -3174,13 +3175,9 @@ Nodes (15): A, AB, B, clip, __dir, even, havKm(), hs (+7 more)
 Cohesion: 0.11
 Nodes (18): loc(), 2. Decompose The Thematic Question Into Concrete Beats, 3. Write The Slot Description, 4. Write 2-3 Queries Per Slot, 5. Target Sources Per Slot (Era-Aware), 6. Mark Hero Slots, 7. Leave Headroom For The Asset Stage, 8. Record The Shot List (+10 more)
 
-### Community 454 - "manim"
-Cohesion: 0.11
-Nodes (3): YourScene, YourCameraScene, Your3DScene
-
 ### Community 455 - "Protocol"
-Cohesion: 0.15
-Nodes (12): Checkpoint Protocol — Meta Skill, Key Principles, Protocol, Sample Checkpoint (Reference-Driven Productions), Step 1: Check Manifest Policy, Step 2: Prepare Checkpoint Data, Step 3: Write Checkpoint, Step 4: Intra-Stage Checkpointing (Resume Support + Liveness) (+4 more)
+Cohesion: 0.10
+Nodes (13): Checkpoint Protocol — Meta Skill, Key Principles, Protocol, Sample Checkpoint (Reference-Driven Productions), Step 1: Check Manifest Policy, Step 2: Prepare Checkpoint Data, Step 3: Write Checkpoint, Step 4: Intra-Stage Checkpointing (Resume Support + Liveness) (+5 more)
 
 ### Community 456 - "ElevenLabs Agents Platform"
 Cohesion: 0.11
@@ -3219,8 +3216,8 @@ Cohesion: 0.11
 Nodes (19): properties, type, dominant_colors, end, end_time, energy_level, narration_text, on_screen_text (+11 more)
 
 ### Community 465 - "Remotion Skill"
-Cohesion: 0.09
-Nodes (22): Anime Scene — Multi-Image Crossfade + Particles, Architecture, Audio Layering, Cost Tracking, Critical Constraints, Dynamic Duration with calculateMetadata, How Artifacts Map to Remotion Props, Key Patterns (+14 more)
+Cohesion: 0.11
+Nodes (18): Architecture, Audio Layering, Cost Tracking, Critical Constraints, Dynamic Duration with calculateMetadata, How Artifacts Map to Remotion Props, Key Patterns, Media Profile Mapping (+10 more)
 
 ### Community 466 - "Image Generation Usage for OpenMontage"
 Cohesion: 0.11
@@ -3235,16 +3232,16 @@ Cohesion: 0.11
 Nodes (18): 1. Avatar Spokesperson, 2. Multi-Language Avatar, 3. Quick Social Content, 4. Photo-to-Explainer, Applying to OpenMontage, Audio, Common Workflows, expression_scale Tuning (+10 more)
 
 ### Community 469 - "edit"
-Cohesion: 0.10
-Nodes (25): Camera, Geometry, Numbers (the accepted draft), pith-21s — the window grew out of the terminal, Sound, What the first cut (20.0 s) did not have, Why it is a case, Animated Explainer Pipeline (`pipelines/explainer/`) — v2.0 (+17 more)
+Cohesion: 0.27
+Nodes (13): Animated Explainer Pipeline (`pipelines/explainer/`) — v2.0, Animation Pipeline (`pipelines/animation/`) — v2.0, Avatar Spokesperson Pipeline (`pipelines/avatar-spokesperson/`) — v2.0, Cinematic Pipeline (`pipelines/cinematic/`) — v2.0, Clip Factory Pipeline (`pipelines/clip-factory/`) — v2.0, Hybrid Pipeline (`pipelines/hybrid/`) — v2.0, Localization Dub Pipeline (`pipelines/localization-dub/`) — v2.0, Pipeline Stage Director Skills (+5 more)
 
 ### Community 470 - "Process"
 Cohesion: 0.11
 Nodes (18): Common Pitfalls, Execution Constraints, Prerequisites, Process, Quality Bar, Research Director — Animation Pipeline, Step 0: Check for Reference Video Context, Step 10: Assemble and Submit (+10 more)
 
-### Community 471 - "test_corpus_builder_total_failure.py"
-Cohesion: 0.16
-Nodes (9): _Candidate, run_builder(), run(), _Source, test_all_candidate_failures_fail_closed_with_diagnostics(), broken_clip_stack(), test_no_candidates_is_a_valid_empty_search(), test_skip_only_run_stays_successful() (+1 more)
+### Community 471 - ".dry_run"
+Cohesion: 0.13
+Nodes (4): wrapper(), _fingerprint_value(), _hash_file(), _is_cacheable()
 
 ### Community 472 - "DashscopeImage"
 Cohesion: 0.15
@@ -3252,27 +3249,23 @@ Nodes (3): TestDashscopeIdempotencyKeys, TestDashscopeImageSpecific, DashscopeIm
 
 ### Community 473 - "completed"
 Cohesion: 0.10
-Nodes (8): Communication Protocol, Human Checkpoint Protocol, Default Workflow, completed(), FakeResponse, TestAtlasVideoExecute, TestErrorHandling, TestReferenceToVideo
-
-### Community 474 - "Scene"
-Cohesion: 0.16
-Nodes (4): LowRankTransformation, QueryMap, ThinkAboutOverallMap, TwoHarrysExample
+Nodes (9): test_exact_atlas_model_pins_video_selector_candidate(), TestPaidToolsCannotSpend, completed(), FakeResponse, TestAtlasImageExecute, TestAtlasVideoExecute, TestErrorHandling, TestReferenceToVideo (+1 more)
 
 ### Community 475 - "test_remotion_staging_lifecycle.py"
 Cohesion: 0.18
 Nodes (9): _inputs(), _mp4(), _public_dir_arg(), render(), _staging_dirs(), test_cleanup_leaves_preexisting_dirs_alone(), test_pre_render_failure_still_cleans_staged_media(), test_public_dir_is_unique_per_render() (+1 more)
 
 ### Community 476 - "atlas_client.py"
-Cohesion: 0.16
-Nodes (10): aspect_ratio_from_size(), AtlasError, download(), get_api_key(), _headers(), _payload_of(), poll(), _raise_for_status() (+2 more)
+Cohesion: 0.22
+Nodes (8): AtlasError, download(), _headers(), _payload_of(), poll(), _raise_for_status(), submit(), upload_media()
 
-### Community 477 - "emit"
-Cohesion: 0.14
-Nodes (19): common(), add_cli(), run(), _text(), add_cli(), run(), add_cli(), add_cli() (+11 more)
+### Community 477 - "llm.py"
+Cohesion: 0.09
+Nodes (23): Step 6: Final Encode — MANDATORY, add_cli(), _check(), context(), encode(), Gemini, _json(), LLMError (+15 more)
 
-### Community 478 - "test_phase2_comparison.py"
-Cohesion: 0.16
-Nodes (4): comparison_outputs(), _get_file_size_mb(), _has_ffmpeg(), TestPhase2Comparison
+### Community 478 - "AudioEnhance"
+Cohesion: 0.06
+Nodes (17): comparison_outputs(), _get_duration(), _get_file_size_mb(), _has_ffmpeg(), TestPhase2Comparison, TestPhase2ErrorHandling, TestPresets, _audio() (+9 more)
 
 ### Community 479 - "Coral — Frame (video / frame layer)"
 Cohesion: 0.11
@@ -3291,15 +3284,15 @@ Cohesion: 0.13
 Nodes (15): A, AB, B, clip, __dir, even, havKm(), hs (+7 more)
 
 ### Community 483 - "Delaying, trimming"
-Cohesion: 0.11
-Nodes (15): Choose the timing boundary, Delaying, trimming, `durationInFrames`, Fallback, `from`, `loop`, Order of operations, `playbackRate` (+7 more)
+Cohesion: 0.25
+Nodes (8): Delaying, trimming, `durationInFrames`, Fallback, `from`, `loop`, Order of operations, `playbackRate`, `trimBefore`
 
 ### Community 484 - "skills/remotion-saas/rendering.md"
 Cohesion: 0.12
 Nodes (14): Azure Container Apps, Cloudflare Containers, Comparison of SSR methods, GitHub Actions, Plain Node.js APIs, Remotion Lambda, Steps to set up Lambda, Vercel (+6 more)
 
 ### Community 485 - "neural_network_basic.py"
-Cohesion: 0.17
+Cohesion: 0.14
 Nodes (3): NeuralNetwork, NeuralNetworkBasic, value_to_color()
 
 ### Community 486 - "Asset Upload and Management"
@@ -3350,9 +3343,9 @@ Nodes (5): Interactive3DTemplate, LightingTemplate, ParametricSurfaceTemplate, T
 Cohesion: 0.11
 Nodes (16): cURL / REST API, Getting an API Key, Installation, JavaScript / TypeScript, Python, cURL, ElevenLabs Sound Effects, Error Handling (+8 more)
 
-### Community 498 - "load_board_state"
-Cohesion: 0.14
-Nodes (10): list_projects(), load_board_state(), _load_pipeline_meta(), summarize_project(), _make_project(), projects_root(), TestBoardState, TestFindingsFixes (+2 more)
+### Community 498 - "test_theme_text_contrast_contract.py"
+Cohesion: 0.17
+Nodes (9): _composite(), _read(), test_components_render_from_props_not_literals(), test_every_playbook_theme_keeps_captions_legible(), test_explainer_gives_captions_the_theme_text_color(), test_hero_scrim_flips_with_theme_lightness(), test_overlay_renderer_receives_the_theme(), test_theme_text_color_is_threaded_into_overlay_components() (+1 more)
 
 ### Community 499 - "score_slideshow_risk"
 Cohesion: 0.19
@@ -3363,8 +3356,8 @@ Cohesion: 0.11
 Nodes (17): Applying to OpenMontage, Audio Enhancement, Cursor Behavior, Cursor Management, Dead Air Removal, Frame Rate, IDE/Editor Setup, Pan Rules (+9 more)
 
 ### Community 501 - "softmax"
-Cohesion: 0.17
-Nodes (4): MultiHeadedAttention, ScalingAPattern, ShowMasking, softmax()
+Cohesion: 0.10
+Nodes (7): MultiHeadedAttention, QueryMap, ScalingAPattern, ShowMasking, softmax(), ThinkAboutOverallMap, TwoHarrysExample
 
 ### Community 502 - "Executive Producer — Cinematic Pipeline"
 Cohesion: 0.11
@@ -3399,32 +3392,28 @@ Cohesion: 0.11
 Nodes (17): 1. Understand the topic, 2. Verify facts, 3. Generate and pick the hook, 4. Write the script in Kuwaiti Arabic, 5. Edit plan, 6. Caption, 7. CTA selection, 8. Quality score (+9 more)
 
 ### Community 512 - "test_new_video_model_support.py"
-Cohesion: 0.20
-Nodes (13): _queue_mocks(), get(), post(), _Response, test_fal_gemini_omni_and_minimax_h3_are_discovered_and_submit(), test_fal_seedance_20_reference_to_video_uses_fal_reference_fields(), test_fal_seedance_25_uses_current_endpoint_and_reference_fields(), test_runway_supports_all_three_current_model_identifiers() (+5 more)
+Cohesion: 0.21
+Nodes (12): _queue_mocks(), get(), post(), _Response, test_fal_seedance_20_reference_to_video_uses_fal_reference_fields(), test_fal_seedance_25_uses_current_endpoint_and_reference_fields(), test_runway_supports_all_three_current_model_identifiers(), get() (+4 more)
 
-### Community 514 - "DoubaoTTS"
-Cohesion: 0.15
-Nodes (3): probe_duration(), CompositionValidator, DoubaoTTS
-
-### Community 515 - "nasa.py"
-Cohesion: 0.13
-Nodes (5): _encode_url_path(), NasaSource, _pick_image_url(), _pick_video_url(), _sanitize_source_id()
+### Community 515 - "test_remotion_media_staging.py"
+Cohesion: 0.14
+Nodes (7): test_file_uri_to_raw_path(), test_mirror_is_read_only_toward_source(), test_mirror_missing_source_is_noop(), test_mirror_never_clobbers_staged_media(), test_mirror_public_dir_exposes_prestaged_assets(), test_unc_authority_still_treated_as_network_path(), visit()
 
 ### Community 516 - "Story"
-Cohesion: 0.18
-Nodes (9): 1. The one thing, 2. Three storylines, then one, 3. The hook, 4. Beats, 5. Worlds, 6. Copy and voice, 7. The brand, 8. Tells of a generated film (+1 more)
+Cohesion: 0.12
+Nodes (15): 1. The one thing, 2. Three storylines, then one, 3. The hook, 4. Beats, 5. Worlds, 6. Copy and voice, 7. The brand, 8. Tells of a generated film (+7 more)
 
-### Community 517 - "create-html.ts"
-Cohesion: 0.53
-Nodes (5): Args, extractBackgroundFromSvg(), main(), parseArgs(), printHelp()
+### Community 517 - "transcribe.mjs"
+Cohesion: 0.17
+Nodes (13): mergeTokensToWords(), atomicWrite(), inputPath, outPath, report(), runCli(), runParakeet(), { values: args } (+5 more)
 
 ### Community 518 - "moment_test.py"
 Cohesion: 0.18
 Nodes (11): build_moment(), candidates_for(), cmd_build(), current_cues(), _ir(), kpower(), loud150(), lufs_of() (+3 more)
 
-### Community 519 - "ThreeJSAssetCatalog"
-Cohesion: 0.21
-Nodes (5): test_catalog_install_inventories_gltf(), test_catalog_list_is_rights_explicit(), _download(), _sha256(), ThreeJSAssetCatalog
+### Community 519 - "_fit_texture"
+Cohesion: 0.14
+Nodes (9): _avg_stats(), _coherence(), _fit_am(), _fit_texture(), fit_density(), loss(), _grains(), _ridge_sig() (+1 more)
 
 ### Community 520 - "remotion-best-practices/remotion-maps/techniques/cesium/assets/CesiumFlythrough.tsx"
 Cohesion: 0.20
@@ -3445,10 +3434,6 @@ Nodes (11): bearing(), CesiumFlythrough(), CesiumFlythroughProps, clamp(), Flyov
 ### Community 524 - "tier-3-data-driven/remotion-src/package.json"
 Cohesion: 0.15
 Nodes (16): dependencies, react@^18.3.1, react-dom@^18.3.1, remotion@^4.0.0, @remotion/cli@^4.0.0, zod@^3.22.0, react, react-dom (+8 more)
-
-### Community 525 - "test_local_video_cache_inputs.py"
-Cohesion: 0.05
-Nodes (8): ff(), media(), test_actual_video_rendering_inputs_change_cached_artifact(), test_scene_analysis_cache_tracks_requested_minimum_length(), SceneDetectEscapingTests, SceneDetect, GreenScreenComposite, SilenceCutter
 
 ### Community 526 - "Standalone HyperFrames Slideshow Harness"
 Cohesion: 0.12
@@ -3524,27 +3509,27 @@ Nodes (16): 1. Pre-Edit Footage Review, 2. Post-Render Quality Gate, 3. Highligh
 
 ### Community 545 - "Process"
 Cohesion: 0.12
-Nodes (15): Common Pitfalls, Execution Constraints, Prerequisites, Process, Research Director — Cinematic Pipeline, Step 0: Check for Reference Video Context, Step 1: Classify the Brief, Step 2: Visual Reference Mining (+7 more)
+Nodes (16): Common Pitfalls, Execution Constraints, Prerequisites, Process, Research Director — Cinematic Pipeline, Step 0: Check for Reference Video Context, Step 1: Classify the Brief, Step 2: Visual Reference Mining (+8 more)
 
 ### Community 546 - "Process"
 Cohesion: 0.12
 Nodes (16): Gate Reminder (Binding), Prerequisites, Process, Scene Director — Talking Head Pipeline, Step 0: Footage Analysis, Step 10: Submit, Step 1: Watch & Listen — Understand the Content, Step 2: Propose Creative Overlays (+8 more)
 
 ### Community 547 - "RealtimeAudioSession"
-Cohesion: 0.17
-Nodes (4): test_mai_realtime_requires_session_ack_and_raw_pcm(), test_realtime_eleven_mints_secret_and_does_not_persist_it(), RealtimeAudio, RealtimeAudioSession
+Cohesion: 0.18
+Nodes (3): test_mai_realtime_requires_session_ack_and_raw_pcm(), RealtimeAudio, RealtimeAudioSession
 
-### Community 548 - "_clap_alts"
-Cohesion: 0.33
-Nodes (4): _clap_alts(), _clap_pick(), _row(), test_clap_rule_needs_the_margin_on_both_and_a_close_score()
+### Community 548 - "test_fit_choice.py"
+Cohesion: 0.18
+Nodes (13): _clap_alts(), _clap_pick(), _bed(), _db(), _row(), _strike(), test_bed_check_drops_a_bed_whose_stripped_fit_loses(), test_bed_check_records_both_scores_and_keeps_the_better() (+5 more)
 
-### Community 549 - "info, upgrade, compositions, timeline, docs, benchmark, telemetry, asset preprocessing"
-Cohesion: 0.12
-Nodes (12): Asset Preprocessing, benchmark, compositions, docs, info, info, upgrade, compositions, timeline, docs, benchmark, telemetry, asset preprocessing, Remaining harness usage, telemetry, upgrade (+4 more)
+### Community 549 - ".execute"
+Cohesion: 0.16
+Nodes (3): aspect_ratio_from_size(), get_api_key(), _is_remote()
 
 ### Community 550 - "Text To Speech"
-Cohesion: 0.06
-Nodes (30): Available routes, ffmpeg requirement, Gemini narration, HeyGen word-timestamp shape, Long scripts, Multilingual (Kokoro voice prefix → language), Narrating a HyperFrames docs video, Self-contained HeyGen (no CLI) — `scripts/heygen-tts.mjs` (+22 more)
+Cohesion: 0.12
+Nodes (14): Available routes, ffmpeg requirement, Gemini narration, HeyGen word-timestamp shape, Long scripts, Narrating a HyperFrames docs video, Self-contained HeyGen (no CLI) — `scripts/heygen-tts.mjs`, Speed (+6 more)
 
 ### Community 551 - "Media operations: agent guidance"
 Cohesion: 0.12
@@ -3555,8 +3540,8 @@ Cohesion: 0.13
 Nodes (12): abr, args, argv, audio, fail(), out, pa, po (+4 more)
 
 ### Community 553 - "remotion-captions/REFERENCE.md"
-Cohesion: 0.13
-Nodes (13): Importing .srt subtitles into Remotion, Prerequisites, Reading an .srt file, Using imported captions, Displaying captions, Generating captions, Importing captions, Post-creation (+5 more)
+Cohesion: 0.07
+Nodes (24): Adding the Basic Captions element, Displaying captions alongside video content, Displaying captions in Remotion, Prerequisites, White-space preservation, Importing .srt subtitles into Remotion, Prerequisites, Reading an .srt file (+16 more)
 
 ### Community 554 - "remotion-best-practices/remotion-maps/techniques/mapbox/TECHNIQUE.md"
 Cohesion: 0.12
@@ -3595,8 +3580,8 @@ Cohesion: 0.12
 Nodes (16): Color Palette, Content, Implementation Order, Narration Notes, Narrative Arc, Open Questions / Decisions Needed, Overview, Recurring Visual Motifs (+8 more)
 
 ### Community 563 - "Animations in Manim"
-Cohesion: 0.12
-Nodes (15): Animation Parameters, Animation vs Instant Changes, Animations in Manim, Best Practices, Common Animation Classes, Creation Animations, Movement Animations, Playing Multiple Animations (+7 more)
+Cohesion: 0.13
+Nodes (14): Animation Parameters, Animation vs Instant Changes, Animations in Manim, Common Animation Classes, Creation Animations, Movement Animations, Playing Multiple Animations, rate_func (+6 more)
 
 ### Community 564 - "Camera Control"
 Cohesion: 0.12
@@ -3662,17 +3647,17 @@ Nodes (15): 1. Lock The Presenter Layout, 2. Choose Background Discipline, 3. Ma
 Cohesion: 0.12
 Nodes (15): 1. Build Shared Assets First, 1b. Hero Scene Sample (Mandatory), 2. Generate Per-Clip Subtitles, 3. Normalize Audio Consistently, 4. Keep Hook Assets Lightweight, 5. Use Metadata For Batch Structure, 6. Quality Gate, Asset Director - Clip Factory Pipeline (+7 more)
 
-### Community 580 - "Process"
-Cohesion: 0.12
-Nodes (15): 1. Extract The Thematic Question, 2. Fix The Tone, 3. Pick A Duration And A Shape, 4. Note Music Intent (MANDATORY), 5. Note End-Tag Intent (MANDATORY), 6. Note Narration Intent (OPTIONAL), 7. Record The Brief, 8. Quality Gate (+7 more)
+### Community 580 - "CinematicRenderer.tsx"
+Cohesion: 0.05
+Nodes (47): Composition Authoring Mode — Templated vs Atelier, signalFromTomorrowWithMusicFixture, CinematicBaseScene, CinematicCaptionConfig, CinematicRendererProps, CinematicScene, CinematicSoundtrack, CinematicTitleScene (+39 more)
 
 ### Community 581 - "Process"
 Cohesion: 0.12
 Nodes (15): Asset Director — Talking Head Pipeline, Gate Reminder (Binding), Mid-Production Fact Verification, Prerequisites, Process, Step 0: Hero Scene Sample (Mandatory), Step 1: Generate Subtitles, Step 2: Extract and Process Audio (+7 more)
 
-### Community 582 - "ComfyUIError"
-Cohesion: 0.10
-Nodes (8): `comfyui_image` -- Image Generation, `comfyui_music` -- Music Generation (shipped, with a native-node bundled workflow), `comfyui_video` -- Video Generation, Open Questions, Tool Specifications, fake_generate(), fake_generate(), ComfyUIError
+### Community 582 - ".execute"
+Cohesion: 0.19
+Nodes (4): _find_cap_binary(), _find_cap_recordings_dir(), _get_recent_recordings(), _is_cap_running()
 
 ### Community 584 - "earshot/skills/real-sound/scripts/mux.mjs"
 Cohesion: 0.13
@@ -3686,9 +3671,9 @@ Nodes (12): escapeRegExp(), readTargetAttrs(), run(), { values: args }, duckKeyf
 Cohesion: 0.13
 Nodes (14): threshold(), guardrails, AdaptiveDetector, Algorithm Selection, Applying to OpenMontage, Component Weights (Advanced), Content-Type Presets, ContentDetector (Default, Start Here) (+6 more)
 
-### Community 587 - "run_fit"
-Cohesion: 0.20
-Nodes (7): fit_pair(), morph_model(), save(), _paths(), run_fit(), run_morph(), _write_wav()
+### Community 587 - "build"
+Cohesion: 0.13
+Nodes (10): _adapt(), build(), _field_types(), measure_summary(), _sdk(), run(), test_agent_text_states_no_preference_as_a_rule(), test_mcp_server_registers_all_tools() (+2 more)
 
 ### Community 588 - "skills/remotion-markup/compositions.md"
 Cohesion: 0.13
@@ -3778,9 +3763,9 @@ Nodes (4): NumericVector, value_to_color(), WeightMatrix, WeightsVsData
 Cohesion: 0.13
 Nodes (15): 7.10 Hoist RegExp Creation, 7.11 Use flatMap to Map and Filter in One Pass, 7.12 Use Loop for Min/Max Instead of Sort, 7.13 Use Set/Map for O(1) Lookups, 7.14 Use toSorted() Instead of sort() for Immutability, 7.1 Avoid Layout Thrashing, 7.2 Build Index Maps for Repeated Lookups, 7.3 Cache Property Access in Loops (+7 more)
 
-### Community 610 - "Commands"
-Cohesion: 0.13
-Nodes (14): Audio only, Commands, Download best quality, Download specific resolution, Download subtitles, Get metadata (no download), List available formats, Output Template Variables (+6 more)
+### Community 610 - "The process"
+Cohesion: 0.12
+Nodes (15): 0. Cue list from the picture, 10. Master, credits, mux, 1. Brief, 2. Sourcing, per category (`templates/prompts/sourcing.md`), 3. Licence audit (`templates/prompts/licence_audit.md`), 4. Music (`templates/prompts/music_supervisor.md`), 5. Design fragments, per category (`templates/prompts/designer.md`), 6-7. Integrate, QA, listen (+7 more)
 
 ### Community 611 - "Visual Style"
 Cohesion: 0.13
@@ -3826,9 +3811,9 @@ Nodes (14): AI-specific tips, AI TTS (ElevenLabs) Mixing, Applying to OpenMontag
 Cohesion: 0.13
 Nodes (14): Anti-Subjective Rule, Applying to OpenMontage, Camera Intent Per Beat, Guided Discovery (3Blue1Brown Method), Hook Types, Mayer's Multimedia Learning Principles (Applied), Misconception-First Approach (Research-Backed), Pacing Rules (+6 more)
 
-### Community 622 - "The construction route"
-Cohesion: 0.13
-Nodes (14): 1.5 Plan each scene as its own composition — no hero-component spine, 1. Commit to an art direction *for this subject* — the divergence engine, 2. Decide the motion language — principles, not presets, 3. Reach for a richer vocabulary only when the concept demands it, 4. Get the engine mechanics right — the gotcha codex, 5. Render through the runtime-appropriate bespoke path, Atelier and the two runtimes, Bespoke Composition (Atelier Mode) (+6 more)
+### Community 622 - "test_fit_gesture.py"
+Cohesion: 0.24
+Nodes (12): _balance_db(), _band(), _band_db(), test_air_only_and_tone_floor(), test_gesture_fit_splits_tones_and_air(), test_render_determinism_fresh_air_and_json(), test_render_knobs(), test_residual_takes_a_tone_out_and_leaves_the_rest() (+4 more)
 
 ### Community 623 - "Process"
 Cohesion: 0.13
@@ -3839,8 +3824,8 @@ Cohesion: 0.13
 Nodes (14): After ASSETS stage:, After COMPOSE stage:, After EDIT stage:, After IDEA stage:, After SCENE_PLAN stage:, After SCRIPT stage:, Common Pitfalls, Cumulative State (+6 more)
 
 ### Community 625 - "render_report"
-Cohesion: 0.06
-Nodes (31): render_report(), Stage Agents, Canonical Artifacts (11 types, all JSON-schema validated), Architecture: Instruction-Driven (Agent-First), Available Pipelines, Identity, Key Files, Key Patterns (+23 more)
+Cohesion: 0.10
+Nodes (21): render_report(), Stage Agents, Canonical Artifacts (11 types, all JSON-schema validated), Key Patterns, At compose stage:, At publish stage:, Final Self-Review Review, Common Pitfalls (+13 more)
 
 ### Community 626 - "Process"
 Cohesion: 0.13
@@ -3874,13 +3859,13 @@ Nodes (14): 1. Decide The Script Mode, 2. Build The Action Map, 3. Write Section
 Cohesion: 0.18
 Nodes (11): `<AbsoluteFill>` → positioned div, `<Composition>` → root `#stage`, Crossfading scene boundaries, `<Freeze>`, `<Loop>`, Multiple parallel tracks, Nested `<Sequence>` flattens, `<Sequence>` → sub-composition host (+3 more)
 
-### Community 635 - "unsplash.py"
-Cohesion: 0.19
-Nodes (6): test_unsplash_helpers_preserve_query_params(), _build_download_url(), _matches_orientation(), _orientation_for_unsplash(), _photo_to_candidate(), UnsplashSource
+### Community 635 - "style_bridge"
+Cohesion: 0.20
+Nodes (8): _first(), _font(), _motion_easing(), _render_design_md(), style_bridge(), test_style_bridge_edit_decision_override_wins(), test_style_bridge_fallback_has_all_required_vars(), test_style_bridge_picks_up_playbook_palette()
 
 ### Community 636 - "scipy"
-Cohesion: 0.16
-Nodes (12): stereo(), _box_ir(), _knock(), _mode(), note(), render(), _room_tone(), _skin() (+4 more)
+Cohesion: 0.19
+Nodes (11): _box_ir(), _knock(), _mode(), note(), render(), _room_tone(), _skin(), _symp() (+3 more)
 
 ### Community 637 - "SFX index (`assets/sfx/`)"
 Cohesion: 0.14
@@ -3905,10 +3890,6 @@ Nodes (14): Agent Settings, Basic Usage, Complete Example, Configuration Overrid
 ### Community 642 - "flux-best-practices/SKILL.md"
 Cohesion: 0.15
 Nodes (9): Critical Rules, Example Prompt, FLUX Best Practices, Model Selection, Prompt Structure Formula, Quick Reference, Related, Rules Reference (+1 more)
-
-### Community 643 - "heygen/SKILL.md"
-Cohesion: 0.12
-Nodes (10): Full Example: Brief to Production Prompt, Input Brief, Output Prompt, Premium Report, Product Comparison, Ready-to-Use Templates, Social Ad (30 seconds), Strategy Presentation (+2 more)
 
 ### Community 644 - "manim-composer/SKILL.md"
 Cohesion: 0.14
@@ -3961,10 +3942,6 @@ Nodes (13): Audio Requirements, Commit Message, Configuration, Direct WebSocket 
 ### Community 656 - "React Best Practices"
 Cohesion: 0.14
 Nodes (14): 2.1 Avoid Barrel File Imports, 2.2 Conditional Module Loading, 2.3 Defer Non-Critical Third-Party Libraries, 2.4 Dynamic Imports for Heavy Components, 2.5 Preload Based on User Intent, 2. Bundle Size Optimization, 8.1 Initialize App Once, Not Per Mount, 8.2 Store Event Handlers in Refs (+6 more)
-
-### Community 657 - "test_base_tool_cache_formats.py"
-Cohesion: 0.24
-Nodes (5): enabled_cache(), _ffmpeg(), _format(), test_changed_container_renders_but_same_format_renames_hit(), test_key_api_accepts_absent_or_empty_destination()
 
 ### Community 658 - "properties"
 Cohesion: 0.14
@@ -4022,10 +3999,6 @@ Nodes (14): bg, highlight, text, bg, radius, text, overlays, code_block (+6 more
 Cohesion: 0.14
 Nodes (14): font, weight, font, size_multiplier, weight, typography, code, scale_system (+6 more)
 
-### Community 673 - "_gate_map"
-Cohesion: 0.18
-Nodes (7): mk(), _gate_map(), f(), _gain_db(), test_gate_moves_with_the_knobs_that_move_time(), test_morph_moves_each_gate_onto_the_morphs_timeline(), test_spacing_moves_the_reopening_with_the_next_strike()
-
 ### Community 674 - "ScreenRecorder"
 Cohesion: 0.20
 Nodes (3): _detect_audio_device_mac(), _detect_audio_device_windows(), ScreenRecorder
@@ -4043,8 +4016,8 @@ Cohesion: 0.14
 Nodes (13): compilerOptions, esModuleInterop, forceConsistentCasingInFileNames, jsx, lib, module, moduleResolution, noEmit (+5 more)
 
 ### Community 678 - "config_model.py"
-Cohesion: 0.13
-Nodes (8): BudgetConfig, CheckpointConfig, CheckpointPolicy, LLMConfig, OpenMontageConfig, OutputConfig, PathsConfig, TestConfig
+Cohesion: 0.20
+Nodes (8): BudgetConfig, BudgetMode, CheckpointConfig, CheckpointPolicy, LLMConfig, OutputConfig, PathsConfig, CostTrackerGovernanceTests
 
 ### Community 679 - "Component quality bar"
 Cohesion: 0.15
@@ -4075,8 +4048,8 @@ Cohesion: 0.15
 Nodes (12): compilerOptions, esModuleInterop, forceConsistentCasingInFileNames, isolatedModules, jsx, module, moduleResolution, resolveJsonModule (+4 more)
 
 ### Community 686 - "Remotion → HyperFrames API Map"
-Cohesion: 0.17
-Nodes (12): Composition root, Distributed rendering, Lottie, Media, Parameters, React patterns, Reading this table, Remotion → HyperFrames API Map (+4 more)
+Cohesion: 0.15
+Nodes (13): Composition root, Distributed rendering, Fonts, Lottie, Media, Parameters, React patterns, Reading this table (+5 more)
 
 ### Community 687 - "Avatar Video"
 Cohesion: 0.15
@@ -4090,9 +4063,9 @@ Nodes (13): Authentication Errors (401), Circuit Breaker Pattern, Common Errors 
 Cohesion: 0.15
 Nodes (12): Example 1: Explaining the Dot Product, Example 2: Introduction to Fourier Series, Example 3: Matrix as Linear Transformation, Scene 1: Grid Transformation, Scene 1: The Hook, Scene 1: The Question, Scene 2: Basis Vectors Determine Everything, Scene 2: Building Blocks (+4 more)
 
-### Community 690 - "manimce-best-practices/examples/lorenz_attractor.py"
-Cohesion: 0.22
-Nodes (4): lorenz_system(), LorenzAttractor, LorenzAttractorSimple, ode_solution_points()
+### Community 690 - "Operations Reference"
+Cohesion: 0.14
+Nodes (13): compress, concat, convert, CRF-based (simple, recommended), extract-audio, GIF conversion (high quality, two-pass palette), info, Operations Reference (+5 more)
 
 ### Community 691 - "bloch_sphere_3d.py"
 Cohesion: 0.18
@@ -4158,9 +4131,9 @@ Nodes (12): 1. Classify The Avatar Path, 2. Define The Message Shape, 3. Capture
 Cohesion: 0.15
 Nodes (12): 1. Write For Speech, Not For Slides, 2. Break Into Scene-Safe Chunks, 3. Keep On-Screen Text Light, 4. Use Metadata For Delivery Notes, 5. Quality Gate, Common Pitfalls, Gate Reminder (Binding), Mid-Production Fact Verification (+4 more)
 
-### Community 708 - "apply_post"
-Cohesion: 0.18
-Nodes (7): apply_post(), _env_gain(), sc(), _gate_gain(), _judge(), judge(), _with_bed()
+### Community 708 - "Video Toolkit"
+Cohesion: 0.14
+Nodes (13): Composition Patterns, Cost Estimates (Modal), CRITICAL: Toolkit Path, Error Recovery, Per-Scene Audio, Per-Scene Narrator PiP, Setup, Step 1: Check Current State (+5 more)
 
 ### Community 709 - "Process"
 Cohesion: 0.15
@@ -4226,13 +4199,13 @@ Nodes (13): font, line_height, weight, font, weight, font, size_multiplier, weig
 Cohesion: 0.15
 Nodes (13): font, line_height, weight, font, weight, font, size_multiplier, weight (+5 more)
 
-### Community 725 - "_CMA"
-Cohesion: 0.20
-Nodes (3): _CMA, _mirror(), test_mirror_keeps_points_in_the_unit_cube()
+### Community 725 - "FalElevenLabsMusic"
+Cohesion: 0.27
+Nodes (6): _response(), test_contract_and_rounded_cost(), test_error_redacts_fal_key(), test_execute_rejects_missing_duration_without_request(), test_execute_submits_once_and_downloads_audio(), FalElevenLabsMusic
 
-### Community 726 - "bake-basemap.mjs"
-Cohesion: 0.20
-Nodes (5): CENTER, COUNTRIES, framesDir, MARGIN, N
+### Community 726 - "_synth"
+Cohesion: 0.16
+Nodes (7): _fine_gain(), _gauss_process(), _k_gain2(), _stft(), _synth(), _wband(), _workers()
 
 ### Community 729 - "test_music_gen_force_instrumental.py"
 Cohesion: 0.19
@@ -4251,8 +4224,8 @@ Cohesion: 0.18
 Nodes (5): [cmd, ...rest], font(), gridFilters(), opt, pos
 
 ### Community 734 - "earshot/skills/real-sound/scripts/analyze.py"
-Cohesion: 0.24
-Nodes (10): analyze(), clean(), db(), decode(), describe(), frame_rms(), key_estimate(), main() (+2 more)
+Cohesion: 0.26
+Nodes (9): analyze(), clean(), db(), decode(), describe(), frame_rms(), key_estimate(), main() (+1 more)
 
 ### Community 735 - "Files"
 Cohesion: 0.17
@@ -4260,19 +4233,19 @@ Nodes (11): 1 · Deconstruct the reference before touching anything (硬规则),
 
 ### Community 736 - "Recipes (practice, use deliberately)"
 Cohesion: 0.17
-Nodes (11): 2. The main accent (a title, a logo, the finale), in layers, 3. Riser → dip → hit (for one or two heroic moments per film), 4. An interface cluster (clicks, panels appearing), 5. Music carries the film, 6. Voice carries the film (a narrator on top), 7. What `suggest_cues.py` does by default, Recipes (practice, use deliberately), Sound design recipes and what backs them (+3 more)
+Nodes (11): 1. A cut (the default), 3. Riser → dip → hit (for one or two heroic moments per film), 4. An interface cluster (clicks, panels appearing), 5. Music carries the film, 6. Voice carries the film (a narrator on top), 7. What `suggest_cues.py` does by default, Recipes (practice, use deliberately), Sound design recipes and what backs them (+3 more)
 
 ### Community 737 - "Sound design rules: launch videos and code-made films"
 Cohesion: 0.17
 Nodes (11): 10. The cheap tells (what makes a soundtrack sound like random stock effects), 1. The bar, 2. Launch-video grammar (picture event -> sound), 3. Music, 4. Levels, arc and mix, 5. Sync, 6. Variation without randomness, 7. Tuning (+3 more)
 
-### Community 738 - "check_scene_variation"
-Cohesion: 0.27
-Nodes (5): check_scene_variation(), _scenes(), test_non_consecutive_same_size_pairs_do_not_trip_run_check(), test_true_run_of_three_is_flagged(), test_unspecified_shots_do_not_form_a_run()
+### Community 738 - "bench_runner.py"
+Cohesion: 0.14
+Nodes (14): check_scene_variation(), BenchResult, BenchScenario, build_scenarios(), _cut(), main(), print_results(), run_bench() (+6 more)
 
 ### Community 739 - "test_unicode_tokenizers.py"
-Cohesion: 0.12
-Nodes (12): test_transcript_comparison_catches_literal_punctuation_leak(), test_transcript_comparison_graceful_when_inputs_missing(), test_transcript_comparison_passes_clean_audio(), _old_compose_tokenize(), _random_ascii(), test_compose_tokenize_ascii_unchanged(), test_compose_tokenize_hebrew_punctuation(), test_compose_tokenize_keeps_hebrew() (+4 more)
+Cohesion: 0.24
+Nodes (7): _old_compose_tokenize(), _random_ascii(), test_compose_tokenize_ascii_unchanged(), test_compose_tokenize_hebrew_punctuation(), test_compose_tokenize_keeps_hebrew(), test_compose_tokenize_pointed_matches_unpointed(), test_scoring_tokenize_ascii_unchanged()
 
 ### Community 742 - "Rate Limiting"
 Cohesion: 0.17
@@ -4450,25 +4423,25 @@ Nodes (10): 1. Container (always), 2. Font choice, 3. Tashkeel (diacritics) — 
 Cohesion: 0.18
 Nodes (10): Background Removal, Canonical 3-layer template (plate + content + cutout), Compositing patterns — pick the right one, Device (`--device`), Layer separation (`--background-output`), Output Format, Quality (`--quality`), Text-behind-subject pattern (two non-obvious rules) (+2 more)
 
-### Community 788 - "Request Fields"
-Cohesion: 0.20
-Nodes (10): value(), video_inputs[].background Fields, Python, Request Fields, Top-Level Fields, TypeScript, video_inputs[].background Fields, video_inputs[].character Fields (+2 more)
+### Community 788 - "verify_promo.py"
+Cohesion: 0.09
+Nodes (31): energy(), energy_map(), flow(), main(), sheets(), stats(), audio_stats(), film_fps() (+23 more)
 
 ### Community 789 - "Pro editing style & pacing (AG Anime house style)"
 Cohesion: 0.18
 Nodes (10): 0. Method (before writing code), 1. Hook (0–1.5 s), 2. Story arc, 3. Rhythm & cuts, 4. Effects — restraint, 5. Framing 9:16, 6. Genre presets, 7. Ending (+2 more)
 
-### Community 790 - "Using audio in Remotion"
-Cohesion: 0.20
-Nodes (10): Delaying, Importing Audio, Looping, Muting, Pitch, Prerequisites, Speed, Trimming (+2 more)
+### Community 790 - "Compose Director - Cinematic Pipeline"
+Cohesion: 0.15
+Nodes (12): 0. Check Hard Requirements Before Rendering, 1. Use Frame Treatment Deliberately, 2. Preserve Audio Dynamics, 3. Verify The Final Mood, 4. Use Render Metadata, Common Pitfalls, Compose Director - Cinematic Pipeline, Fast Full-Song Beat Montage (BMTS-Lite) (+4 more)
 
 ### Community 791 - "Religious HUD reel (Remotion)"
 Cohesion: 0.18
 Nodes (10): 0. Non-negotiable, 1. Format & rhythm, 2. Palette (one dominant + one accent), 3. Background kit, 4. HUD elements (SVG, eased, never linear), 5. Typography, 6. Sound (from `assets/sfx`, see INDEX.md), 7. Ending (+2 more)
 
 ### Community 792 - "Color correction"
-Cohesion: 0.29
-Nodes (6): Color correction, LUTs and combining effects, Primary adjustments, See also, Studio workflow, Supported format and limitations
+Cohesion: 0.18
+Nodes (9): Color correction, LUTs and combining effects, Primary adjustments, See also, Studio workflow, Supported format and limitations, Available effects, Custom effects (+1 more)
 
 ### Community 793 - "MapTiler maps in Remotion"
 Cohesion: 0.18
@@ -4483,16 +4456,16 @@ Cohesion: 0.20
 Nodes (11): CI integration, Critical: encoder config, Eval: how to validate a translation end-to-end, Per-fixture flow, Reading `diff/summary.json`, The three scripts, Threshold rule of thumb, Validated tier thresholds (+3 more)
 
 ### Community 796 - "Patterns that work with caveats"
-Cohesion: 0.17
-Nodes (11): Code-split components (`React.lazy`), Custom `presentation` in `<TransitionSeries>`, `<Loop>` with stateful children, Patterns that always work, Patterns that work with caveats, React patterns the skill refuses, Remotion's `<Img>` with crossOrigin, Reporting gaps to the user (+3 more)
+Cohesion: 0.18
+Nodes (10): Code-split components (`React.lazy`), Custom `presentation` in `<TransitionSeries>`, `<Loop>` with stateful children, Patterns that work with caveats, React patterns the skill refuses, Remotion's `<Img>` with crossOrigin, Reporting gaps to the user, Translation limitations (+2 more)
 
 ### Community 797 - "eigenvalue_equations.py"
 Cohesion: 0.20
 Nodes (3): ChangeOfBasisVisualization, DiagonalMatrixPowers, EigenvalueEquations
 
-### Community 798 - "character"
-Cohesion: 0.20
-Nodes (6): Request Parameters, character(), _glide(), plan(), test_character_classes(), test_long_sounds_try_the_gesture_model_after_sines()
+### Community 798 - "bandwidths"
+Cohesion: 0.21
+Nodes (8): analyse(), _band_nfft(), bandwidths(), n_frames(), _ridge_remove(), warp(), weights(), test_bands_partition_and_widths()
 
 ### Community 799 - "render.ts"
 Cohesion: 0.27
@@ -4619,7 +4592,7 @@ Cohesion: 0.18
 Nodes (11): motion, animation_style, entrance, exit, pacing_rules, transitions, max_scene_hold_seconds, min_scene_hold_seconds (+3 more)
 
 ### Community 832 - "test_caption_workspace_isolation.py"
-Cohesion: 0.36
+Cohesion: 0.31
 Nodes (6): _pixels(), _request(), _source(), test_native_encoder_failure_cleans_only_owned_subtitle(), test_same_second_native_caption_calls_have_private_subtitles(), run()
 
 ### Community 833 - "preview, play, render, publish"
@@ -4651,8 +4624,8 @@ Cohesion: 0.12
 Nodes (14): Moving Map Render Stability, Plate sizing and sharpness, Required pattern: fixed map plate, Symptom and cause, Verification, Animated flight route example, Basic map example, Camera guidance (+6 more)
 
 ### Community 840 - "Color correction"
-Cohesion: 0.29
-Nodes (6): Color correction, LUTs and combining effects, Primary adjustments, See also, Studio workflow, Supported format and limitations
+Cohesion: 0.18
+Nodes (9): Color correction, LUTs and combining effects, Primary adjustments, See also, Studio workflow, Supported format and limitations, Available effects, Custom effects (+1 more)
 
 ### Community 841 - "Using videos in Remotion"
 Cohesion: 0.20
@@ -4678,9 +4651,9 @@ Nodes (10): Full Example: Brief to Production Prompt, Input Brief, Output Prompt
 Cohesion: 0.20
 Nodes (10): Authentication, Best Practices, Core Workflow, Create Video, Default Workflow, Foundation, Quick Reference, Reference Files (+2 more)
 
-### Community 847 - "fit_hybrid"
-Cohesion: 0.24
-Nodes (6): _add_space(), _cand_fit(), channels_of(), fit_hybrid(), fit_kind(), test_hybrid_counts_the_tone_layers_side_once()
+### Community 847 - "test_mcp_stdio_describe_keeps_models_warm"
+Cohesion: 0.27
+Nodes (8): _is_error(), _stdio_session(), test_mcp_stdio_describe_keeps_models_warm(), calls(), test_mcp_stdio_end_to_end(), calls(), test_mcp_stdio_warm_start_answers_and_preloads(), _text()
 
 ### Community 848 - "Reference Files"
 Cohesion: 0.20
@@ -4689,6 +4662,10 @@ Nodes (10): Advanced Features, Core Video Creation, Default Workflow, Foundation
 ### Community 849 - "Narrative Patterns for Math Explainers"
 Cohesion: 0.20
 Nodes (10): Combining Patterns, Emotional Arc, Narrative Patterns for Math Explainers, Pacing Guidelines, Pattern 1: Mystery → Investigation → Resolution, Pattern 2: Build Up → Payoff, Pattern 3: Two Perspectives → Unity, Pattern 4: Wrong → Less Wrong → Right (+2 more)
+
+### Community 852 - "skills/INDEX.md"
+Cohesion: 0.17
+Nodes (11): Adding New Tools, Capability Families & Tool Discovery, Capability Family Reference, Core Skills, Creative Skills, Installed Agent Skills (Layer 3), Knowledge Architecture, Meta Skills (+3 more)
 
 ### Community 854 - "Using audio in Remotion"
 Cohesion: 0.20
@@ -4731,8 +4708,8 @@ Cohesion: 0.20
 Nodes (9): Audio at Stitch Points, Audio Coordination, Audio Level Targets, Quality Checklist, Stitch Planning Template, Tools, Video Stitching Strategy Skill, When to Stitch — Decision Tree (+1 more)
 
 ### Community 864 - "The composition — one HTML file, every value a function of time"
-Cohesion: 0.07
-Nodes (25): A camera, Contract, Footage in the composition, Moves come from `lib/motion.js`, Natural media — a brush, Probe — read the composition before rendering it, Render, The composition — one HTML file, every value a function of time (+17 more)
+Cohesion: 0.18
+Nodes (10): A camera, Contract, Footage in the composition, Moves come from `lib/motion.js`, Natural media — a brush, Probe — read the composition before rendering it, Render, The composition — one HTML file, every value a function of time (+2 more)
 
 ### Community 865 - "Publish Director - Animation Pipeline"
 Cohesion: 0.20
@@ -4821,10 +4798,6 @@ Nodes (8): Alternative, Basic usage, Getting GIF duration, Looping behavior, Pla
 ### Community 890 - "Map Explainer — architecture reference"
 Cohesion: 0.22
 Nodes (8): 1. The render harness (per frame), 2. Timing model — time-based; beat length derived from the sequences, 3. Provider-vector animation, 4. Custom line animation — reveal + electric draw-head, 5. Country animation — border draws → fill blooms → label rises, 6. Labels — HTML overlay, projected each frame, 7. Camera — fixed map plate for any movement, Map Explainer — architecture reference
-
-### Community 891 - "api-map.md"
-Cohesion: 0.26
-Nodes (5): Pattern: `<TransitionSeries>` is `<Series>` with overlap, Timing translations, Transitions translation: @remotion/transitions → HF crossfades / shader-transitions, When the source uses a custom Presentation, When to use HF shader-transitions
 
 ### Community 892 - "Lottie translation: @remotion/lottie → HF lottie adapter"
 Cohesion: 0.22
@@ -4931,8 +4904,8 @@ Cohesion: 0.28
 Nodes (3): _jsx_block(), test_chart_scenes_receive_the_theme_text_color(), test_comparison_card_surface_follows_the_theme()
 
 ### Community 921 - "Sound for films: the bank, `earshot sfx`, `earshot kit`"
-Cohesion: 0.12
-Nodes (16): sound(), An event list without a list file, Rules, Sound already in the project: synthesis, stems, a synthesizer script, The loudness of the replaced layer and the author's chain, A design-time list, a render fitted to the voice: the time map, Checking "is this the right render", Format (+8 more)
+Cohesion: 0.09
+Nodes (17): An event list without a list file, Format, How to give a new project such a list, The event time and the synthesized sound, The project's event list (typed cues), Typing, test_polling_timeout_is_bounded_and_preserves_task_id(), time() (+9 more)
 
 ### Community 925 - "OpenMontage Provider Guide"
 Cohesion: 0.18
@@ -5027,8 +5000,8 @@ Cohesion: 0.25
 Nodes (7): `anchor` — label centre via pole of inaccessibility, Basemap styling — strip the clutter, `border` — complete source geometry, Map Explainer — basemap & geo prep, `../scripts/prep-geo.mjs` → outputs, `stop` — when a country lights up, Tuning the geo prep for a new scenario
 
 ### Community 948 - "Delaying, trimming"
-Cohesion: 0.25
-Nodes (8): Delaying, trimming, `durationInFrames`, Fallback, `from`, `loop`, Order of operations, `playbackRate`, `trimBefore`
+Cohesion: 0.18
+Nodes (9): Choose the timing boundary, Delaying, trimming, `durationInFrames`, Fallback, `from`, `loop`, Order of operations, `playbackRate` (+1 more)
 
 ### Community 949 - "interface"
 Cohesion: 0.25
@@ -5110,9 +5083,9 @@ Nodes (7): interface, brand_color, default_prompt, display_name, icon_large, ico
 Cohesion: 0.25
 Nodes (7): interface, brand_color, default_prompt, display_name, icon_large, icon_small, short_description
 
-### Community 969 - "music"
-Cohesion: 0.04
-Nodes (50): Generate a project beat grid, `data-automation`: envelopes, Group buses, Level and fades, Mixing in HyperFrames, Music under a voice, 1. Top level and includes, 0. Cue list from the picture (+42 more)
+### Community 969 - "The process"
+Cohesion: 0.12
+Nodes (15): 0. Cue list from the picture, 10. Master, credits, mux, 1. Brief, 2. Sourcing, per category (`templates/prompts/sourcing.md`), 3. Licence audit (`templates/prompts/licence_audit.md`), 4. Music (`templates/prompts/music_supervisor.md`), 5. Design fragments, per category (`templates/prompts/designer.md`), 6-7. Integrate, QA, listen (+7 more)
 
 ### Community 970 - "interface"
 Cohesion: 0.25
@@ -5198,9 +5171,25 @@ Nodes (3): TestPrecisionSelection, resolve_precision(), _vram_gb()
 Cohesion: 0.25
 Nodes (7): Inspection Protocol, Known Risk Areas, Purpose, Quality Validation Plan — Phase 3.5 + G3.11, Run Order, Success Criteria, Test Scripts (all ready to run)
 
+### Community 994 - "._process_candidate"
+Cohesion: 0.18
+Nodes (4): test_process_candidate_rejects_traversing_clip_id(), _extract_video_thumbs(), _guess_ext(), _save_as_jpeg()
+
+### Community 996 - "MapTiler maps in Remotion"
+Cohesion: 0.18
+Nodes (11): Choose the source for each map element, Drawing rivers, Files, Hybrid, Keep it minmal, MapTiler maps in Remotion, MapTiler SDK (`@maptiler/sdk`), MapTiler vector (+3 more)
+
+### Community 997 - "spring_mass_system.py"
+Cohesion: 0.25
+Nodes (4): MultipleSprings, SpringMassDemo, SpringWithGraph, 4. Scene Variants
+
 ### Community 998 - "ig-caption"
 Cohesion: 0.25
 Nodes (7): First, decide which job this caption has, Hashtags, honestly, ig-caption, Rules, Search terms matter more than hashtags now, The loop, The shape
+
+### Community 999 - "Ready-to-Use Templates"
+Cohesion: 0.20
+Nodes (10): Full Example: Brief to Production Prompt, Input Brief, Output Prompt, Premium Report, Product Comparison, Ready-to-Use Templates, Social Ad (30 seconds), Strategy Presentation (+2 more)
 
 ### Community 1000 - "Frame Treatments"
 Cohesion: 0.29
@@ -5274,13 +5263,13 @@ Nodes (6): Context, Critic lens: director (does the soundtrack tell the film's s
 Cohesion: 0.25
 Nodes (7): How to reply, ig-reply, Input, Keyword comments, Output, The move most people miss, Triage first
 
-### Community 1019 - "Brief: design the {{CATEGORY}} fragment"
-Cohesion: 0.33
-Nodes (5): Brief: design the {{CATEGORY}} fragment, Context, Return, Rules, Steps
+### Community 1019 - "_doc"
+Cohesion: 0.07
+Nodes (23): Brief: design the {{CATEGORY}} fragment, Context, Return, Rules, Steps, Brief: the fixer (one agent applies the critics' changes), Context, Operations (the format every critic used; `scripts/variant.py` applies them) (+15 more)
 
-### Community 1020 - "07-custom-hook.tsx"
-Cohesion: 0.29
-Nodes (6): CustomHookDriven(), useFadeIn(), Cases, Tier 4 — escape-hatch, Validation, What it tests
+### Community 1020 - "verify_scene_pacing.py"
+Cohesion: 0.33
+Nodes (4): assert_alignment(), Landmark, step_duration(), trace()
 
 ### Community 1021 - "Measuring text in Remotion"
 Cohesion: 0.29
@@ -5314,9 +5303,13 @@ Nodes (5): General rendering strategy, Transparent videos, Rendering Transparent
 Cohesion: 0.57
 Nodes (6): read_json_value(), require_render_tier_tools(), run_lint_tier(), run_render_tier(), run.sh script, write_result()
 
-### Community 1030 - "Get Avatar Details (v2 API)"
-Cohesion: 0.29
-Nodes (7): Complete Example: Generate Video with Any Avatar's Default Voice, Get Avatar Details (v2 API), Recommended Flow, Response Format, TypeScript, Using Avatar's Default Voice, Why Use Default Voice?
+### Community 1030 - "Animation Runtime Selector"
+Cohesion: 0.20
+Nodes (9): Animation library decision matrix, Animation Runtime Selector, Check against the pipeline's stage director, HARD RULE — present both runtimes, don't silently default, Never do, Running GSAP deterministically inside Remotion, Runtime choice (Remotion vs HyperFrames vs FFmpeg), The "keep it simple" bias (+1 more)
+
+### Community 1031 - "earshot: ears for an agent"
+Cohesion: 0.20
+Nodes (9): earshot: ears for an agent, Limits (say these plainly when they matter), Loop 2: review a mix or a film, Loop 3: A/B a change, Loop 4: make a sound in code (earshot forge), Optional: a second opinion in words (audio LLM), Reading the numbers, Setup (once) (+1 more)
 
 ### Community 1032 - "CRUD Operations"
 Cohesion: 0.29
@@ -5338,13 +5331,13 @@ Nodes (7): Display/Decorative, Font Style Categories, Handwritten, Monospace, Sa
 Cohesion: 0.29
 Nodes (6): Apple Silicon (MPS) Support, How It Works, Known Limitations, Quick Setup, Requirements, Verifying MPS Is Active
 
-### Community 1038 - "HeyGenVideo"
-Cohesion: 0.39
-Nodes (3): HeyGenVideo, estimate_quality_cost(), estimate_speed_runtime()
+### Community 1038 - "FakeRequests"
+Cohesion: 0.22
+Nodes (4): install(), FakeRequests, RequestException, Timeout
 
-### Community 1040 - "_fit_gate"
-Cohesion: 0.25
-Nodes (4): _env_half(), _fit_gate(), _runs(), _rdp()
+### Community 1040 - "test_transcriber_device_selection.py"
+Cohesion: 0.28
+Nodes (5): _Info, test_transcriber_falls_back_when_cuda_fails_during_iteration(), transcribe(), test_transcriber_uses_ctranslate2_cuda_without_torch(), transcribe()
 
 ### Community 1042 - "Importing assets in Remotion"
 Cohesion: 0.29
@@ -5381,10 +5374,6 @@ Nodes (6): Connectors, Design Principles, Figma, HeyGen Video Agent, HTML Slides
 ### Community 1050 - "Connectors"
 Cohesion: 0.29
 Nodes (6): Connectors, Design Principles, Figma, HeyGen Video Agent, HTML Slides, paper.design
-
-### Community 1051 - "test_mps_device.py"
-Cohesion: 0.05
-Nodes (19): _make_pipeline_mocks(), mock_torch(), test_face_restore_uses_signature_guard(), test_get_torch_device_cpu_when_mps_backend_missing(), test_get_torch_device_cpu_when_mps_not_built(), test_get_torch_device_returns_cpu_as_fallback(), test_get_torch_device_returns_cpu_when_torch_not_installed(), test_get_torch_device_returns_cuda_when_available() (+11 more)
 
 ### Community 1052 - "BGM Montage Lite"
 Cohesion: 0.29
@@ -5439,24 +5428,24 @@ Cohesion: 0.29
 Nodes (6): chart_palette, color_rules, colorblind_safe, contrast_validation, harmony_type, quality_rules
 
 ### Community 1070 - "corpus_builder.py"
-Cohesion: 0.04
-Nodes (34): ClipRecord, DummyCandidate, DummyTraversingSource, test_corpus_builder_execute_skips_and_records_unsafe_candidates(), mock_process_candidate(), test_is_safe_clip_id_accepts_valid_ids(), test_is_safe_clip_id_rejects_malicious_and_traversal_ids(), test_process_candidate_rejects_traversing_clip_id() (+26 more)
-
-### Community 1071 - "peak_db"
-Cohesion: 0.29
-Nodes (6): 0.3.0 - 2026-10-19, Added, Changed, Fixed (review before release), sfx_list(), run()
+Cohesion: 0.03
+Nodes (48): ClipRecord, AspectRatio, get_profiles_for_platform(), MediaProfile, DummyCandidate, DummyTraversingSource, test_corpus_builder_execute_skips_and_records_unsafe_candidates(), mock_process_candidate() (+40 more)
 
 ### Community 1072 - "gateway"
 Cohesion: 0.38
 Nodes (5): gateway(), do_GET(), do_POST(), local_request(), respond()
 
+### Community 1074 - "pith-21s — the window grew out of the terminal"
+Cohesion: 0.25
+Nodes (7): Camera, Geometry, Numbers (the accepted draft), pith-21s — the window grew out of the terminal, Sound, What the first cut (20.0 s) did not have, Why it is a case
+
 ### Community 1075 - "renderAt"
 Cohesion: 0.29
 Nodes (7): cameraAt(), clamp(), finalizeWorld(), formatTime(), interpolateVector(), renderAt(), smoothstep()
 
-### Community 1076 - "HyperFrames"
-Cohesion: 0.29
-Nodes (6): Contract, HyperFrames, Keep it editable, The HyperFrames desktop app, What to read, Work loop
+### Community 1076 - "Decision Communication Contract"
+Cohesion: 0.25
+Nodes (8): Announce Before Execution, Ask Before Major Changes, Decision Communication Contract, Escalate Blockers Explicitly, No Unilateral Substitutions, Present Both Composition Runtimes (HARD RULE), Re-log Changed Decisions (Binding), Recommendation Style
 
 ### Community 1077 - "Licences: what may go into a film, how to verify it, how to credit it"
 Cohesion: 0.29
@@ -5546,9 +5535,13 @@ Nodes (5): Beat sheet (what shipped), motion-web-15s — the worked example, Ref
 Cohesion: 0.33
 Nodes (5): Levels, Scoring, Sound — a palette in a room, The palette (`scripts/sfx_palette.py`), The room
 
-### Community 1099 - "listen_page.py"
-Cohesion: 0.08
-Nodes (25): build(), cut_moment(), duration_of(), extract_audio(), kind_of(), lan_ip(), main(), make_handler() (+17 more)
+### Community 1099 - "make_handler"
+Cohesion: 0.53
+Nodes (5): make_handler(), do_GET(), do_HEAD(), do_POST(), _send()
+
+### Community 1100 - "add-motion.mjs"
+Cohesion: 0.25
+Nodes (6): catPath, clips, clipsDir, entry, here, i
 
 ### Community 1101 - "Brief: licence audit of every recording"
 Cohesion: 0.33
@@ -5595,16 +5588,16 @@ Cohesion: 0.33
 Nodes (5): Custom geodata mode, Decision rule, Hybrid mode, Map element data sources, MapTiler vector mode
 
 ### Community 1113 - "When to bow out: the runtime interop pattern"
-Cohesion: 0.29
-Nodes (7): The lint output already includes recommendations, The recommendation message, What the interop pattern actually does, When NOT to bow out: warnings only, When the source has BOTH blockers AND warnings, When to bow out: the runtime interop pattern, When to recommend interop
+Cohesion: 0.13
+Nodes (13): Animation runtimes, dotLottie browser setup, GSAP facts that bite, Other runtimes, The seek protocol, Contract, The lint output already includes recommendations, The recommendation message (+5 more)
 
 ### Community 1114 - "Map element data sources"
 Cohesion: 0.33
 Nodes (5): Custom geodata mode, Decision rule, Hybrid mode, Map element data sources, MapTiler vector mode
 
-### Community 1115 - "platform_settings"
-Cohesion: 0.29
-Nodes (7): auth, call_limits, conversation (inside conversation_config), platform_settings, privacy, Top-Level Fields, widget
+### Community 1115 - "OpenMontage - Shared Project Context"
+Cohesion: 0.25
+Nodes (8): Architecture: Instruction-Driven (Agent-First), Available Pipelines, Identity, Key Files, Knowledge Architecture (3 Layers), OpenMontage - Shared Project Context, Source of Truth, When Building New Pipelines
 
 ### Community 1116 - "Tier 2 — title-image-outro"
 Cohesion: 0.33
@@ -5618,9 +5611,9 @@ Nodes (6): Common Visual Metaphors, Derivatives as Slopes, Functions as Machines
 Cohesion: 0.33
 Nodes (5): Calculate Metadata, Default Props, Folders, Nesting compositions within another, Stills
 
-### Community 1120 - "Adding AI voiceover to a Remotion composition"
-Cohesion: 0.33
-Nodes (6): Adding AI voiceover to a Remotion composition, Delaying audio start, Dynamic composition duration with calculateMetadata, Generating audio with ElevenLabs, Prerequisites, Rendering audio in the component
+### Community 1120 - "rules/voiceover.md"
+Cohesion: 0.14
+Nodes (11): Getting audio duration, Getting audio duration with Mediabunny, In Node.js and Bun, Usage, Using with staticFile in Remotion, Adding AI voiceover to a Remotion composition, Delaying audio start, Dynamic composition duration with calculateMetadata (+3 more)
 
 ### Community 1121 - "Workflow"
 Cohesion: 0.33
@@ -5638,9 +5631,9 @@ Nodes (6): 1.1 Defer Await Until Needed, 1.2 Dependency-Based Parallelization, 1
 Cohesion: 0.33
 Nodes (5): Creating a New Rule, Getting Started, React Best Practices, Rule File Structure, Structure
 
-### Community 1125 - "Transparent Background Videos (WebM)"
-Cohesion: 0.29
-Nodes (7): curl, Note on Status Polling, Transparent Background Videos (WebM), TypeScript, WebM Example: Loom-Style (Avatar Over Screen Recording), WebM Request Fields, When to Use WebM vs MP4
+### Community 1125 - "Compose Director - Documentary Montage Pipeline"
+Cohesion: 0.25
+Nodes (7): Common Pitfalls, Compose Director - Documentary Montage Pipeline, Mental Model, Prerequisites, Runtime Routing (HARD CONSTRAINT), When The Render Fails, When To Use
 
 ### Community 1126 - "contact_links"
 Cohesion: 0.33
@@ -5714,13 +5707,13 @@ Nodes (6): identity, best_for, category, mood, name, pace
 Cohesion: 0.32
 Nodes (3): main(), _result_record(), run()
 
-### Community 1145 - "Transparent Background Videos (WebM)"
-Cohesion: 0.29
-Nodes (7): curl, Note on Status Polling, Transparent Background Videos (WebM), TypeScript, WebM Example: Loom-Style (Avatar Over Screen Recording), WebM Request Fields, When to Use WebM vs MP4
+### Community 1145 - "The process: how a real-recordings soundtrack gets built by agents who cannot hear"
+Cohesion: 0.25
+Nodes (7): 1. Roles and files, 3. What each critic measures, 4. Thresholds and where they come from, 5. Variants: how critics test a fix without touching the design, 6. Rounds, stopping, reporting, Contents, The process: how a real-recordings soundtrack gets built by agents who cannot hear
 
 ### Community 1146 - "test_no_timeout_flag_when_not_requested"
-Cohesion: 0.18
-Nodes (8): test_high_level_render_forwards_timeout_to_remotion(), fake_remotion_render(), test_no_timeout_flag_when_not_requested(), test_remotion_timeout_ms_is_passed_through(), test_render_failure_surfaces_remotion_stderr_tail(), fake_run_command(), test_timeout_expired_gives_actionable_message(), tool()
+Cohesion: 0.25
+Nodes (5): test_no_timeout_flag_when_not_requested(), test_remotion_timeout_ms_is_passed_through(), test_render_failure_surfaces_remotion_stderr_tail(), fake_run_command(), test_timeout_expired_gives_actionable_message()
 
 ### Community 1147 - "Brief: licence audit of every recording"
 Cohesion: 0.33
@@ -5738,9 +5731,9 @@ Nodes (5): Brief: source real recordings for {{CATEGORY}}, Context, Return, Rule
 Cohesion: 0.25
 Nodes (7): 1. Tool in one minute, 2. Mistake and fix, 3. Hidden feature, 4. Before and after, 5. Myth vs reality, Series templates, Using a series
 
-### Community 1151 - "init, capture, skills"
-Cohesion: 0.40
-Nodes (4): capture, init, init, capture, skills, skills
+### Community 1151 - "The process: how a real-recordings soundtrack gets built by agents who cannot hear"
+Cohesion: 0.29
+Nodes (6): 1. Roles and files, 4. Thresholds and where they come from, 5. Variants: how critics test a fix without touching the design, 6. Rounds, stopping, reporting, Contents, The process: how a real-recordings soundtrack gets built by agents who cannot hear
 
 ### Community 1152 - "doctor, browser"
 Cohesion: 0.40
@@ -5766,9 +5759,9 @@ Nodes (4): Cutouts, Grade and style footage and images, Local media commands, So
 Cohesion: 0.40
 Nodes (4): Files, Preferences — remembered defaults, Recipes — frozen video bundles, User memory — preferences and recipes
 
-### Community 1158 - "Getting audio duration with Mediabunny"
-Cohesion: 0.40
-Nodes (5): Getting audio duration, Getting audio duration with Mediabunny, In Node.js and Bun, Usage, Using with staticFile in Remotion
+### Community 1158 - ".__init__"
+Cohesion: 0.33
+Nodes (4): Ctx, need(), InputError, lufs()
 
 ### Community 1159 - "openverse-sfx: free sounds from Openverse, licence-checked"
 Cohesion: 0.40
@@ -5842,6 +5835,14 @@ Nodes (5): Content, Narration Notes, Scene 1: [Scene Name], Technical Notes, Vis
 Cohesion: 0.40
 Nodes (5): Content, Narration Notes, Scene 3: [Scene Name], Technical Notes, Visual Elements
 
+### Community 1183 - "Critic lens: tonal (pleasant on phones and laptops: harshness, brightness, low end, width, key, limiter)"
+Cohesion: 0.29
+Nodes (6): Context, Critic lens: tonal (pleasant on phones and laptops: harshness, brightness, low end, width, key, limiter), Measure, Return (JSON only), Test your fixes, Typical fixes
+
+### Community 1184 - "Using Three.js and React Three Fiber in Remotion"
+Cohesion: 0.29
+Nodes (6): Animate using `useCurrentFrame()`, No animations not driven by `useCurrentFrame()`, Prerequisites, Using `<Sequence>` inside `<ThreeCanvas>`, Using Three.js and React Three Fiber in Remotion, Using ThreeCanvas
+
 ### Community 1186 - "Checking if a video can be decoded"
 Cohesion: 0.40
 Nodes (4): Checking if a video can be decoded, The `canDecode()` function, Usage, Using with Blob
@@ -5866,9 +5867,9 @@ Nodes (5): 4.1 Deduplicate Global Event Listeners, 4.2 Use Passive Event Listene
 Cohesion: 0.40
 Nodes (4): Guidelines Source, How It Works, Usage, Web Interface Guidelines
 
-### Community 1193 - "remotion-best-practices/rules/text-animations.md"
-Cohesion: 0.50
-Nodes (3): Text animations, Typewriter Effect, Word Highlighting
+### Community 1193 - "Captions for talking-head / VO reels"
+Cohesion: 0.29
+Nodes (6): Captions for talking-head / VO reels, Chunking rules, House style component (AG Anime: Cairo Black, white, active word yellow, dark pill, lower third), QA, Timing sources (best first), Variants
 
 ### Community 1194 - "Alibaba DashScope — Qwen Image + TTS + ASR"
 Cohesion: 0.40
@@ -5877,10 +5878,6 @@ Nodes (5): Alibaba DashScope — Qwen Image + TTS + ASR, API notes, Pricing, Set
 ### Community 1195 - "Volcengine Jimeng — 即梦 AI Video Generation"
 Cohesion: 0.40
 Nodes (5): API notes, Pricing, Setup, Volcengine Jimeng — 即梦 AI Video Generation, What it's best for
-
-### Community 1196 - "Rendering Transparent Videos"
-Cohesion: 0.50
-Nodes (3): Rendering Transparent Videos, Transparent ProRes, Transparent WebM (VP9)
 
 ### Community 1197 - "Sponsors"
 Cohesion: 0.40
@@ -5926,6 +5923,10 @@ Nodes (5): asset_generation, consistency_anchors, diagram_style, image_negative_
 Cohesion: 0.52
 Nodes (4): _has_audio(), _sine(), test_full_mix_multi_narration_plus_music_with_ducking(), test_full_mix_single_narration_plus_music_with_ducking()
 
+### Community 1212 - "Using Three.js and React Three Fiber in Remotion"
+Cohesion: 0.29
+Nodes (6): Animate using `useCurrentFrame()`, No animations not driven by `useCurrentFrame()`, Prerequisites, Using `<Sequence>` inside `<ThreeCanvas>`, Using Three.js and React Three Fiber in Remotion, Using ThreeCanvas
+
 ### Community 1213 - "Transition Selection"
 Cohesion: 0.50
 Nodes (4): Decision Tree, Transition Duration by Content Pace, Transition Reference, Transition Selection
@@ -5934,9 +5935,9 @@ Nodes (4): Decision Tree, Transition Duration by Content Pace, Transition Refere
 Cohesion: 0.33
 Nodes (5): ig-profile, Input, Output, Score it, Then rewrite, in this order
 
-### Community 1215 - "Examples"
-Cohesion: 0.33
-Nodes (6): Custom Avatar, Custom Colors, Custom Text, Examples, Expanded Variant, Full Customization
+### Community 1215 - "Gotchas in practice (hard-earned)"
+Cohesion: 0.29
+Nodes (7): Always preview-scrub footage-forward scenes before render, Bump stock-footage legibility, not opacity, Full-frame background video: source-resolution trap (NOT a framework bug), Gotchas in practice (hard-earned), Render with `--workers 1` for video-heavy compositions, Stock clips need dense keyframes before render, Use Outfit / Inter / JetBrains Mono, not Space Grotesk
 
 ### Community 1216 - "SFX Credits"
 Cohesion: 0.50
@@ -6074,33 +6075,33 @@ Nodes (4): font, tracking, weight, headings
 Cohesion: 0.83
 Nodes (3): _read(), test_explainer_directors_do_not_reference_fictitious_submit_functions(), test_music_plans_discover_all_music_capabilities()
 
-### Community 1253 - "Request Fields"
-Cohesion: 0.33
-Nodes (6): Python, Request Fields, Top-Level Fields, TypeScript, video_inputs[].character Fields, video_inputs[].voice Fields
-
-### Community 1255 - "Critic lens: masking and density (can every sound be heard; is the effect layer dense or repetitive?)"
+### Community 1253 - "Executive Producer - Character Animation Pipeline"
 Cohesion: 0.29
-Nodes (6): Context, Critic lens: masking and density (can every sound be heard; is the effect layer dense or repetitive?), Measure, Return (JSON only), Test your fixes, Typical fixes
+Nodes (6): Contract, Executive Producer - Character Animation Pipeline, Governance Rules, Send-Back Triggers, Stage Order, When To Use
+
+### Community 1255 - "gain_db"
+Cohesion: 0.06
+Nodes (32): Context, Critic lens: masking and density (can every sound be heard; is the effect layer dense or repetitive?), Measure, Return (JSON only), Test your fixes, Typical fixes, 0.3.0 - 2026-10-19, Added (+24 more)
 
 ### Community 1264 - "Try These Prompts"
 Cohesion: 0.33
 Nodes (6): Free real-footage documentary path, Full setup (~$1–$3), Start from a reference video, Try These Prompts, With an image/video provider configured (~$0.15–$1.50), Zero keys needed
 
-### Community 1321 - "Integration: earshot inside a Cinetic film"
+### Community 1321 - "DummyTool"
 Cohesion: 0.33
-Nodes (6): 1. What Cinetic produces that the soundtrack needs, 2. The bridge, step by step (Cinetic untouched), 3. Where earshot slots into Cinetic's self-critique loop, 4. A minimal change list for a future Cinetic, Integration: earshot inside a Cinetic film, score.json sections -> an arrange.py arc
+Nodes (3): DummyTool, TestBaseTool, execute()
 
-### Community 1401 - "Import into HyperFrames"
+### Community 1401 - "_clicks"
 Cohesion: 0.33
-Nodes (5): Hosted, Import into HyperFrames, Media, Native: translate, then verify, Series
+Nodes (4): _clicks(), _local_norm(), _movavg(), test_levelled_grain_train_follows_its_expectation()
 
 ### Community 1402 - "Doubao Speech — Mandarin TTS"
 Cohesion: 0.33
 Nodes (6): API Notes, Doubao Speech — Mandarin TTS, Pacing, Pricing, Setup, What It Is Best For
 
-### Community 1403 - "Client Tools"
-Cohesion: 0.40
-Nodes (5): Client Tool Options, Client Tool Return Values, Client Tools, Defining Client Tools, Registering Client Tools with Agent
+### Community 1403 - ".__init__"
+Cohesion: 0.33
+Nodes (4): Ctx, need(), InputError, lufs()
 
 ### Community 1404 - "SAM Content OS — مهارة صناعة ريلز انستقرام على Claude"
 Cohesion: 0.33
@@ -6126,6 +6127,10 @@ Nodes (5): 决策审计跟踪, 制作治理, 基于评分的提供商选择, 质
 Cohesion: 0.40
 Nodes (4): 1. The run, 2. The page, 3. The plan beside it, Storyboard recipe — plan a video as stills the person approves
 
+### Community 1410 - "Critic lens: tonal (pleasant on phones and laptops: harshness, brightness, low end, width, key, limiter)"
+Cohesion: 0.29
+Nodes (6): Context, Critic lens: tonal (pleasant on phones and laptops: harshness, brightness, low end, width, key, limiter), Measure, Return (JSON only), Test your fixes, Typical fixes
+
 ### Community 1416 - "Detailed director-level package"
 Cohesion: 0.40
 Nodes (4): Detailed director-level package, Full package layout, Storyboard format, Tool-specific video prompt
@@ -6133,6 +6138,10 @@ Nodes (4): Detailed director-level package, Full package layout, Storyboard form
 ### Community 1417 - "Editor brief"
 Cohesion: 0.40
 Nodes (4): Editor brief, Format, Rules, When to use
+
+### Community 1418 - "Skill installation and freshness"
+Cohesion: 0.33
+Nodes (5): Diagnose and update, Keep the project's CLI current, Skill installation and freshness, Stale-skills notice, What `init` does
 
 ### Community 1423 - "fish.audio — Expressive TTS + Voice Cloning"
 Cohesion: 0.50
@@ -6143,8 +6152,8 @@ Cohesion: 0.50
 Nodes (4): API and billing notes, Models and capabilities, Setup, Volcengine Ark — Direct Seedance 2.0 and 2.5 Video Generation
 
 ### Community 1428 - "AtlasImage"
-Cohesion: 0.06
-Nodes (10): _clear_atlas_env(), test_exact_atlas_model_pins_image_selector_candidate(), TestContract, TestImageRoutes, TestLiveApiMarkerIsSkipped, TestAtlasImageExecute, operation_routes(), _video_spec() (+2 more)
+Cohesion: 0.19
+Nodes (4): test_exact_atlas_model_pins_image_selector_candidate(), TestImageRoutes, TestLiveApiMarkerIsSkipped, AtlasImage
 
 ### Community 1429 - "Kling Official — Direct API"
 Cohesion: 0.50
@@ -6154,33 +6163,73 @@ Nodes (4): Kling Official — Direct API, Notes, Setup, What It Is Best For
 Cohesion: 0.50
 Nodes (4): MiniMax H3 video, MiniMax — Official Direct Image and Video API, Pricing, Setup
 
-### Community 1434 - "Using Different Character Types"
-Cohesion: 0.67
-Nodes (3): Avatar, Talking Photo, Using Different Character Types
+### Community 1431 - "Mixing in HyperFrames"
+Cohesion: 0.33
+Nodes (5): `data-automation`: envelopes, Group buses, Level and fades, Mixing in HyperFrames, Music under a voice
 
-### Community 1435 - "Using Different Character Types"
-Cohesion: 0.67
-Nodes (3): Avatar, Talking Photo, Using Different Character Types
+### Community 1432 - "Editable video timelines"
+Cohesion: 0.33
+Nodes (6): Choose the cut behavior, Editable video timelines, Keep synchronized layers on one clock, Place overlays at the scope they span, Preserve the edit when restructuring, Put music segments on a shared track
+
+### Community 1434 - "Transitions translation: @remotion/transitions → HF crossfades / shader-transitions"
+Cohesion: 0.33
+Nodes (6): Pattern: `<TransitionSeries>` is `<Series>` with overlap, Presentation table, Timing translations, Transitions translation: @remotion/transitions → HF crossfades / shader-transitions, When the source uses a custom Presentation, When to use HF shader-transitions
+
+### Community 1436 - "test_decision_log_approval_policy.py"
+Cohesion: 0.53
+Nodes (4): _decision_log(), test_approval_policy_category_is_schema_valid(), test_checkpoint_accepts_approval_policy_decision_log(), test_unknown_category_still_rejected()
+
+### Community 1437 - "test_remotion_render_preserves_direct_cinematic_scenes"
+Cohesion: 0.33
+Nodes (4): test_remotion_render_adapts_cuts_and_stages_local_video(), fake_run_command(), test_remotion_render_preserves_direct_cinematic_scenes(), test_remotion_timeout_scales_with_scene_count()
+
+### Community 1440 - "fit_report"
+Cohesion: 0.33
+Nodes (3): fit_report(), _load(), test_real_refs_resynthesis_near_floor()
+
+### Community 1441 - "compact"
+Cohesion: 0.40
+Nodes (5): compact(), _dumps(), _format(), _shrink(), test_mcp_compact_json_is_bounded()
+
+### Community 1442 - "Offline assets: SFX, fonts, overlays"
+Cohesion: 0.40
+Nodes (4): Fonts — `assets/fonts/<Family>/` (WOFF2 + OFL.txt), Offline assets: SFX, fonts, overlays, Overlays — `assets/overlays/`, Sound effects — `assets/sfx/` (see `assets/sfx/INDEX.md` for every file)
+
+### Community 1443 - "2. Technical Implementation"
+Cohesion: 0.40
+Nodes (5): 2. Technical Implementation, Basic Parametric Surface, Camera Setup and Movement, Sphere with Latitude/Longitude Lines, Torus Parameterization
+
+### Community 1444 - "Composition Authoring Mode Review"
+Cohesion: 0.40
+Nodes (5): At compose stage (when composition_mode == "atelier"):, At proposal stage:, At publish stage (when composition_mode == "atelier"):, At scene_plan / edit stage (when composition_mode == "atelier"):, Composition Authoring Mode Review
+
+### Community 1446 - "Using fonts in Remotion"
+Cohesion: 0.50
+Nodes (4): Google Fonts with @remotion/google-fonts, Prerequisites, Using fonts in Remotion, Using in components
+
+### Community 1447 - "Pipeline System"
+Cohesion: 0.50
+Nodes (4): Available Pipelines, Pipeline Manifests, Pipeline System, Standard Stage Progression
 
 ## Knowledge Gaps
 - **1 isolated node(s):** `earshot`
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 15089 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **254 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 15102 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **268 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `ToolResult` connect `ToolResult` to `ToolStatus`, `RemotionCaptionBurn`, `DoubaoTTS`, `ThreeJSAssetCatalog`, `VideoCompose`, `VideoAnalyzer`, `test_local_video_cache_inputs.py`, `HeyGenVideo`, `PixabayMusic`, `test_provider_refresh.py`, `GoogleTTS`, `write_checkpoint`, `GrokVideo`, `test_mps_device.py`, `TTSSelector`, `RealtimeAudioSession`, `ToolRegistry`, `test_hyperframes_compose.py`, `test_phase0_contracts.py`, `corpus_builder.py`, `HunyuanImage`, `test_phase2_contracts.py`, `HyperFramesCompose`, `DependencyError`, `FishAudioTTS`, `ComfyUIError`, `KlingLipSync`, `.execute`, `KlingOfficialVideo`, `test_seedream_image.py`, `DashscopeAsr`, `WanVideo`, `VideoUnderstand`, `VideoStitch`, `test_no_timeout_flag_when_not_requested`, `ToolStatus`, `AzureTTS`, `ImageSelector`, `KlingOfficialImage`, `test_3d_asset_generation.py`, `pytest`, `VideoSelector`, `HunyuanCloudVideo`, `test_base_tool_cache.py`, `AudioMixer`, `ElevenLabsTTS`, `ScreenRecorder`, `MiniMaxFalVideo`, `test_backlot_contract.py`, `AtlasVideo`, `MathAnimate`, `MiniMaxImage`, `ComfyUIMusic`, `SunoMusic`, `.execute`, `KlingVideo`, `video_compose.py`, `SubtitleGen`, `KlingTTS`, `ThreeJSWorld`, `JimengVideo`, `.execute`, `GrokImage`, `test_export_bundle.py`, `SeedanceArkVideo`, `Any`, `._generate`, `EyeEnhance`, `._generate`, `test_openai_image_multi_output.py`, `.execute`, `.execute`, `.estimate_cost`, `AtlasImage`, `._safe_error`, `_oom_aware_error`, `GreenScreenProcessor`, `test_kling_official_avatar.py`, `MiniMaxVideo`, `SoraVideo`, `_wan_engine.py`, `Corpus`, `ComfyUIVideo`, `RunwayVideo`, `AutoReframe`, `DashscopeImage`, `atlas_client.py`, `LipSync`, `ComfyUIImage`, `DashscopeTTS`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+- **Why does `ToolResult` connect `ToolStatus` to `RemotionCaptionBurn`, `DoubaoTTS`, `validate_artifact`, `VideoCompose`, `VideoTrimmer`, `.execute`, `PixabayMusic`, `test_provider_refresh.py`, `GoogleTTS`, `write_checkpoint`, `GrokVideo`, `._build_upsampler`, `TTSSelector`, `RealtimeAudioSession`, `ToolRegistry`, `.execute`, `test_hyperframes_compose.py`, `json`, `corpus_builder.py`, `ImageGen`, `HunyuanImage`, `DiagramGen`, `HyperFramesCompose`, `FishAudioTTS`, `.execute`, `VeoVideo`, `KlingLipSync`, `.execute`, `KlingOfficialVideo`, `test_seedream_image.py`, `DashscopeAsr`, `WanVideo`, `VideoUnderstand`, `VideoStitch`, `AzureSpeechToText`, `_shared.py`, `AzureTTS`, `ImageSelector`, `KlingOfficialImage`, `test_3d_asset_generation.py`, `pytest`, `VideoSelector`, `VideoDownloader`, `HunyuanCloudVideo`, `test_base_tool_cache.py`, `AudioMixer`, `ElevenLabsTTS`, `ScreenCaptureSelector`, `ScreenRecorder`, `MiniMaxFalVideo`, `test_backlot_contract.py`, `.execute`, `MathAnimate`, `MiniMaxImage`, `ComfyUIMusic`, `FalElevenLabsMusic`, `SunoMusic`, `.execute`, `KlingVideo`, `SubtitleGen`, `KlingTTS`, `SilenceCutter`, `ThreeJSWorld`, `test_freesound_music.py`, `JimengVideo`, `.execute`, `GrokImage`, `SeedanceArkVideo`, `DummyTool`, `kling_official_image.py`, `MusicLibrary`, `.execute`, `Any`, `ComfyUIClient`, `._generate`, `EyeEnhance`, `._generate`, `.execute`, `.execute`, `AtlasImage`, `._safe_error`, `_oom_aware_error`, `GreenScreenProcessor`, `KlingAvatar`, `MiniMaxVideo`, `SoraVideo`, `_wan_engine.py`, `Corpus`, `ComfyUIVideo`, `RunwayVideo`, `AutoReframe`, `DashscopeImage`, `completed`, `AudioEnhance`, `LipSync`, `TalkingHead`, `ComfyUIImage`, `DashscopeTTS`?**
+  _High betweenness centrality (0.059) - this node is a cross-community bridge._
 - **Are the 159 inferred relationships involving `ToolResult` (e.g. with `Tool Class Naming Convention` and `BaseTool Contract`) actually correct?**
   _`ToolResult` has 159 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `earshot` to the rest of the system?**
   _1 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `ToolStatus` be split into smaller, more focused modules?**
-  _Cohesion score 0.03284114489547427 - nodes in this community are weakly interconnected._
-- **Why does `width()` connect `width` to `Using Animated images in Remotion`, `Using calculateMetadata`, `skills/remotion-markup/motion-blur.md`, `modal.py`, `kit.py`, `Using audio in Remotion`, `duration`, `remotion-interactivity/SKILL.md`, `remotion-interactivity/REFERENCE.md`, `Remotion → HyperFrames API Map`, `space.py`, `HyperFrames`, `gain_db`, `numpy`, `remotion-markup/REFERENCE.md`, `ComfyUIError`, `skills/remotion-markup/compositions.md`, `Remotion Skill`, `Motion-design SFX: how the pros build them, as synthesis recipes`, `Using calculateMetadata`, `rules/compositions.md`, `test_forge_refsets.py`, `Using Animated images in Remotion`, `Using Animated images in Remotion`?**
-  _High betweenness centrality (0.036) - this node is a cross-community bridge._
+  _Cohesion score 0.027474855061061957 - nodes in this community are weakly interconnected._
+- **Why does `width()` connect `n_of` to `Using Animated images in Remotion`, `Cards over talking-head footage`, `Using calculateMetadata`, `timeline.py`, `Sound for films: the bank, `earshot sfx`, `earshot kit``, `Using Three.js and React Three Fiber in Remotion`, `Using audio in Remotion`, `remotion-interactivity/SKILL.md`, `remotion-interactivity/REFERENCE.md`, `Remotion → HyperFrames API Map`, `Using Three.js and React Three Fiber in Remotion`, `fade_out`, `remotion-markup/REFERENCE.md`, `remotion-markup/SKILL.md`, `skills/remotion-markup/compositions.md`, `Remotion Skill`, `numpy`, `When to bow out: the runtime interop pattern`, `Using calculateMetadata`, `rules/compositions.md`, `ComfyUIClient`, `gain_db`, `test_forge_refsets.py`, `Using Animated images in Remotion`, `Using Animated images in Remotion`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
 - **Are the 141 inferred relationships involving `ToolStatus` (e.g. with `TestContract` and `_DegradedComfyImage`) actually correct?**
   _`ToolStatus` has 141 INFERRED edges - model-reasoned connections that need verification._
-- **Should `json` be split into smaller, more focused modules?**
-  _Cohesion score 0.03503774391112377 - nodes in this community are weakly interconnected._
+- **Should `sys` be split into smaller, more focused modules?**
+  _Cohesion score 0.0579476861167002 - nodes in this community are weakly interconnected._

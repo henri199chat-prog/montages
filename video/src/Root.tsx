@@ -4,6 +4,7 @@ import { ReligiousDemo } from "./religious/ReligiousDemo";
 import religiousSample from "./religious/data/sample-tawbah-102-104.json";
 import { NiamReel, NIAM_TOTAL } from "./religious/NiamReel";
 import { DinarReel, DINAR_TOTAL } from "./religious/DinarReel";
+import { BaoudaReel, BAOUDA_TOTAL } from "./religious/BaoudaReel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -39,6 +40,15 @@ export const RemotionRoot: React.FC = () => {
         id="DinarReel"
         component={DinarReel}
         durationInFrames={Math.round(DINAR_TOTAL * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      {/* «البعوضة» — science narration around Al-Baqarah 2:26 (voice only, music removed) */}
+      <Composition
+        id="BaoudaReel"
+        component={BaoudaReel}
+        durationInFrames={Math.round(BAOUDA_TOTAL * 30)}
         fps={30}
         width={1080}
         height={1920}

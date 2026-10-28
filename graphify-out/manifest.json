@@ -6654,9 +6654,9 @@
     "semantic_hash": ""
   },
   "video/src/Root.tsx": {
-    "mtime": 1793126255.2402945,
-    "seen": 1793126640.8656807,
-    "ast_hash": "4e7b268efd77ddcfce91512e56a07d2f",
+    "mtime": 1793172864.3197932,
+    "seen": 1793173706.4348974,
+    "ast_hash": "afb3045c039d47f5f7ab99697c990251",
     "semantic_hash": ""
   },
   "video/src/TasbihAd.tsx": {
@@ -14448,9 +14448,9 @@
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793126568.7163248,
-    "seen": 1793126640.9040997,
-    "ast_hash": "83bbfa60a6c7a7a2a7e3332bdb99f08b",
+    "mtime": 1793173627.2948906,
+    "seen": 1793173706.4651828,
+    "ast_hash": "594a9bbc52eaaa1d94c980fcbf583d07",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -14841,6 +14841,24 @@
     "mtime": 1793128565.1014605,
     "seen": 1793128645.0567904,
     "ast_hash": "eab8ca03fb7d532aa43708b2f1f1c632",
+    "semantic_hash": ""
+  },
+  "video/src/religious/BaoudaReel.tsx": {
+    "mtime": 1793173033.4308264,
+    "seen": 1793173706.4350061,
+    "ast_hash": "1a69f3f39d887331be2d26cd43f90a4b",
+    "semantic_hash": ""
+  },
+  "video/src/religious/data/baouda.json": {
+    "mtime": 1793172680.8071015,
+    "seen": 1793173706.4352834,
+    "ast_hash": "dbdc5afdf53505e2c98526687102e866",
+    "semantic_hash": ""
+  },
+  "videos/baouda-v1.mp4": {
+    "mtime": 1793173570.0259976,
+    "seen": 1793173706.474275,
+    "ast_hash": "86afcd82e3de5cb87eda625729e024cc",
     "semantic_hash": ""
   }
 }
