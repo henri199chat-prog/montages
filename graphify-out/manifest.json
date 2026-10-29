@@ -6642,9 +6642,9 @@
     "semantic_hash": ""
   },
   "video/package.json": {
-    "mtime": 1793017435.5019238,
-    "seen": 1793018875.338479,
-    "ast_hash": "c00da7e3477f7ea50b10ec40dd765472",
+    "mtime": 1793052053.0414627,
+    "seen": 1793284735.0196736,
+    "ast_hash": "eaae5cfe53ece624d7fd3330bdb18b2d",
     "semantic_hash": ""
   },
   "video/remotion.config.ts": {
@@ -6654,9 +6654,9 @@
     "semantic_hash": ""
   },
   "video/src/Root.tsx": {
-    "mtime": 1793036233.5595794,
-    "seen": 1793036893.6948087,
-    "ast_hash": "3282ab627b063b86c771d5d09c809cca",
+    "mtime": 1793051723.402196,
+    "seen": 1793284735.0196834,
+    "ast_hash": "5e22d78d9052572c7c424e61e637e658",
     "semantic_hash": ""
   },
   "video/src/TasbihAd.tsx": {
@@ -14567,18 +14567,6 @@
     "ast_hash": "45835e298fc5c320f475c4a372f40a5c",
     "semantic_hash": ""
   },
-  "audio/tasbih_reel_voice_pro.mp3": {
-    "mtime": 1793028906.2291355,
-    "seen": 1793036893.6995242,
-    "ast_hash": "d9a12215bc2315b7f3ba37af8308e64e",
-    "semantic_hash": ""
-  },
-  "audio/tasbih_reel_voice_raw.m4a": {
-    "mtime": 1793028905.2276213,
-    "seen": 1793036893.699526,
-    "ast_hash": "55c064089a23f740bc0b8c19b5f703d5",
-    "semantic_hash": ""
-  },
   "video/public/aymen/cut.mp4": {
     "mtime": 1793036079.8268874,
     "seen": 1793036893.6995392,
@@ -14631,12 +14619,6 @@
     "mtime": 1793036145.851918,
     "seen": 1793036893.6995552,
     "ast_hash": "bac15f6a0de42410277d05c1a669eb9d",
-    "semantic_hash": ""
-  },
-  "video/public/aymen/voice.wav": {
-    "mtime": 1793036102.513378,
-    "seen": 1793036893.699557,
-    "ast_hash": "fee0b5f90a4706f85489f39f80514ad6",
     "semantic_hash": ""
   },
   "video/public/sfx/logo_sting_soft_bloom.mp3": {
@@ -14693,12 +14675,6 @@
     "ast_hash": "42c7a590f5159fa4fec4010c343ab3b4",
     "semantic_hash": ""
   },
-  "video/public/vo/tasbih-reel-vo.wav": {
-    "mtime": 1793028501.1610665,
-    "seen": 1793036893.6996126,
-    "ast_hash": "fe5de6c863c460e5f3b55cfd3edae6a9",
-    "semantic_hash": ""
-  },
   "videos/aymen-edit-v1.mp4": {
     "mtime": 1793036659.282882,
     "seen": 1793036893.6996148,
@@ -14721,6 +14697,156 @@
     "mtime": 1793028891.6931357,
     "seen": 1793036893.6996264,
     "ast_hash": "199db19a4712162ff3100fc3080e5994",
+    "semantic_hash": ""
+  },
+  "scripts/freellmapi": {
+    "mtime": 1793038439.785629,
+    "seen": 1793284735.0193799,
+    "ast_hash": "9ebe46cddf9edc3df9a9bb7938c31e0c",
+    "semantic_hash": ""
+  },
+  "scripts/image-to-video.py": {
+    "mtime": 1793037289.190876,
+    "seen": 1793284735.019383,
+    "ast_hash": "2e17c59d6d24cf6702e6a85cd6cc40bc",
+    "semantic_hash": ""
+  },
+  "scripts/install-i2v": {
+    "mtime": 1793037177.1377192,
+    "seen": 1793284735.0193865,
+    "ast_hash": "91f05219dfcea4a37cf4c2386417130b",
+    "semantic_hash": ""
+  },
+  "scripts/my-voice": {
+    "mtime": 1793043706.979361,
+    "seen": 1793284735.0193887,
+    "ast_hash": "4be0ae39204f490f47d863c8abeaacb9",
+    "semantic_hash": ""
+  },
+  "scripts/my-voice-check.py": {
+    "mtime": 1793047368.4473264,
+    "seen": 1793284735.0193906,
+    "ast_hash": "4a842daf36fb6af878e0779ae698f608",
+    "semantic_hash": ""
+  },
+  "video/src/KidneyJourney.tsx": {
+    "mtime": 1793052347.7230835,
+    "seen": 1793284735.0196795,
+    "ast_hash": "6384e1066d5787b3edd40cb99a192a2a",
+    "semantic_hash": ""
+  },
+  "video/src/KidneyReel.tsx": {
+    "mtime": 1793043635.0202243,
+    "seen": 1793284735.0196815,
+    "ast_hash": "00e74de90b6b07bdec54a400f74e3075",
+    "semantic_hash": ""
+  },
+  "video/src/kidney-vo.json": {
+    "mtime": 1793049846.2287428,
+    "seen": 1793284735.0197,
+    "ast_hash": "5c568f1caca4000ad7fe4f32335401bb",
+    "semantic_hash": ""
+  },
+  ".claude/skills/freellmapi/SKILL.md": {
+    "mtime": 1793038457.9103472,
+    "seen": 1793284735.0197248,
+    "ast_hash": "3238044953f198e2f50cf76e215f556d",
+    "semantic_hash": ""
+  },
+  ".claude/skills/image-to-video/SKILL.md": {
+    "mtime": 1793037365.040941,
+    "seen": 1793284735.0199006,
+    "ast_hash": "f270ec6d22845974f98c78c2dca2cef5",
+    "semantic_hash": ""
+  },
+  ".claude/skills/launch-motion-style/SKILL.md": {
+    "mtime": 1793051498.1035006,
+    "seen": 1793284735.0199046,
+    "ast_hash": "980b6fa9d6cd3e6c22edf2ee95fec53a",
+    "semantic_hash": ""
+  },
+  ".claude/skills/my-voice/SKILL.md": {
+    "mtime": 1793043734.3780196,
+    "seen": 1793284735.0199482,
+    "ast_hash": "5afed62681825d17cd6efba8eff5aa9f",
+    "semantic_hash": ""
+  },
+  ".claude/skills/review-animations/SKILL.md": {
+    "mtime": 1793043622.5401378,
+    "seen": 1793284735.0203924,
+    "ast_hash": "7e7b5d395bec64529fcd2727c1208768",
+    "semantic_hash": ""
+  },
+  ".claude/skills/review-animations/STANDARDS.md": {
+    "mtime": 1793043622.532845,
+    "seen": 1793284735.0203936,
+    "ast_hash": "716d393c408aa5199960ef3791438314",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/chime_soft_01.mp3": {
+    "mtime": 1793043275.8056166,
+    "seen": 1793284735.022299,
+    "ast_hash": "a8ec0836833e632fab4e00a28246b020",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/drip_drop.mp3": {
+    "mtime": 1793043276.107616,
+    "seen": 1793284735.0223007,
+    "ast_hash": "fafccb318578dd8cbcead60f678a4b86",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/drone_calm_low_loop.mp3": {
+    "mtime": 1793043275.7873652,
+    "seen": 1793284735.022302,
+    "ast_hash": "31d0d58c91195eecae9ad22962d44e78",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/hit_soft_01.mp3": {
+    "mtime": 1793043275.5993652,
+    "seen": 1793284735.0223029,
+    "ast_hash": "56b4da627b7e83308033001b518820b0",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/pop_01.mp3": {
+    "mtime": 1793043275.8113651,
+    "seen": 1793284735.022304,
+    "ast_hash": "bd994b4ea1e8536c0ebb2c7e68ac39a3",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/pop_high_02.mp3": {
+    "mtime": 1793043275.8214655,
+    "seen": 1793284735.0223048,
+    "ast_hash": "7433f53ee415c136140c1cf0d9a933cd",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/shimmer_01.mp3": {
+    "mtime": 1793043275.6125238,
+    "seen": 1793284735.0223055,
+    "ast_hash": "55527f55c6808b2234034c30937b956d",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/swish_soft.mp3": {
+    "mtime": 1793043276.1033652,
+    "seen": 1793284735.0223064,
+    "ast_hash": "42c7a590f5159fa4fec4010c343ab3b4",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/whoosh_deep_03.mp3": {
+    "mtime": 1793043275.5073652,
+    "seen": 1793284735.0223074,
+    "ast_hash": "8b7559aa1b98b155379417af97ae9049",
+    "semantic_hash": ""
+  },
+  "video/public/kidney/sfx/whoosh_fast_02.mp3": {
+    "mtime": 1793043275.517603,
+    "seen": 1793284735.0223083,
+    "ast_hash": "8695f9ce80321ab054e175162ac11930",
+    "semantic_hash": ""
+  },
+  "videos/image-to-video-demo-v1.mp4": {
+    "mtime": 1793037374.4348752,
+    "seen": 1793284735.0223365,
+    "ast_hash": "b3c80cf869216d5fbe76c85eef2612a5",
     "semantic_hash": ""
   }
 }
