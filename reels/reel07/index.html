@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Tajawal"; font-weight: 500; font-display: block; src: url("assets/fonts/Tajawal-500-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      @font-face { font-family: "Tajawal"; font-weight: 500; font-display: block; src: url("assets/fonts/Tajawal-500-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Tajawal"; font-weight: 800; font-display: block; src: url("assets/fonts/Tajawal-800-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      @font-face { font-family: "Tajawal"; font-weight: 800; font-display: block; src: url("assets/fonts/Tajawal-800-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+2190-21FF; }
+      @font-face { font-family: "Aref Ruqaa"; font-weight: 700; font-display: block; src: url("assets/fonts/ArefRuqaa-700-arabic.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFF; }
+      :root { --lav: #c9b8ef; --lav-soft: #ece5fb; --sky: #bfe3f7; --sky-soft: #e3f3fc; --peach: #ffd3bf; --acc: #e8775a; --ink: #2b2540; --muted: #8a82a3; --ok: #4fb38a; --mono: "JetBrains Mono", monospace; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--lav-soft); }
+      #root { position: relative; width: 1080px; height: 1920px; font-family: "Tajawal", sans-serif; color: var(--ink); }
+      .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #bg { position: absolute; inset: 0; background: linear-gradient(165deg, var(--lav-soft) 0%, #f1ecfc 45%, var(--sky-soft) 100%); }
+      #glow { position: absolute; left: 140px; top: 420px; width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(255,211,191,.7) 0%, rgba(255,211,191,0) 70%); }
+      #handle { position: absolute; left: 60px; top: 70px; font-weight: 800; font-size: 30px; color: var(--muted); direction: ltr; }
+      .card { position: absolute; background: #fff; border-radius: 30px; box-shadow: 0 30px 60px -20px rgba(60,40,110,.28), 0 4px 12px rgba(60,40,110,.08); }
+      .tile { position: absolute; width: 230px; height: 230px; border-radius: 52px; background: #fff; box-shadow: 0 30px 60px -20px rgba(60,40,110,.3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; font-weight: 800; font-size: 34px; direction: ltr; }
+      .tile i { font-style: normal; font-size: 84px; line-height: 1; }
+      .tile.cl { background: var(--ink); color: #fff; }
+      .tile.cl i { color: var(--acc); }
+
+      /* hook: Claude reaching the services */
+      #hTitle { position: absolute; left: 0; top: 300px; width: 1080px; text-align: center; font-weight: 800; font-size: 82px; line-height: 1.2; }
+      #hTitle span { color: var(--acc); }
+      #tC { left: 425px; top: 760px; } #tN { left: 110px; top: 1060px; } #tG { left: 740px; top: 1060px; }
+      #wires { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+
+      /* MCP */
+      #mBig { position: absolute; left: 0; top: 330px; width: 1080px; text-align: center; font-family: var(--mono); font-weight: 800; font-size: 230px; direction: ltr; color: var(--ink); }
+      #mFull { position: absolute; left: 0; top: 620px; width: 1080px; text-align: center; font-family: var(--mono); font-size: 52px; font-weight: 700; direction: ltr; }
+      #mFull b { color: var(--acc); }
+      #mBadge { position: absolute; left: 270px; top: 730px; width: 540px; height: 84px; border-radius: 42px; background: var(--ink); color: #fff; font-size: 36px; font-weight: 800; line-height: 84px; text-align: center; }
+      #hand { position: absolute; left: 0; top: 880px; width: 1080px; height: 520px; }
+      #mC { left: 70px; top: 1010px; width: 200px; height: 200px; border-radius: 46px; }
+      .svc { position: absolute; left: 770px; width: 250px; height: 110px; border-radius: 30px; background: #fff; box-shadow: 0 20px 40px -16px rgba(60,40,110,.3); font-weight: 800; font-size: 34px; line-height: 110px; text-align: center; direction: ltr; }
+      #sv1 { top: 900px; } #sv2 { top: 1055px; } #sv3 { top: 1210px; }
+
+      /* ready connector, no code */
+      #rT { position: absolute; left: 0; top: 340px; width: 1080px; text-align: center; font-weight: 800; font-size: 84px; line-height: 1.25; }
+      #rT span { font-family: "Aref Ruqaa"; color: var(--acc); }
+      #plug { left: 190px; top: 720px; width: 300px; height: 300px; border-radius: 60px; display: flex; align-items: center; justify-content: center; font-size: 150px; }
+      #code { left: 590px; top: 720px; width: 300px; height: 300px; border-radius: 60px; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 110px; font-weight: 800; color: var(--muted); }
+      #cross { position: absolute; left: 600px; top: 860px; width: 280px; height: 22px; border-radius: 11px; background: var(--acc); }
+      #plugOk { position: absolute; left: 190px; top: 1050px; width: 300px; text-align: center; font-size: 40px; font-weight: 800; color: var(--ok); }
+
+      /* steps: one app window (illustration) */
+      #steps { position: absolute; left: 0; top: 200px; width: 1080px; display: flex; justify-content: center; gap: 26px; direction: rtl; }
+      .st { width: 92px; height: 92px; border-radius: 30px; background: #fff; color: var(--muted); font-weight: 800; font-size: 44px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 24px -12px rgba(60,40,110,.4); }
+      #win { left: 90px; top: 340px; width: 900px; height: 1000px; overflow: hidden; direction: ltr; }
+      #bar { position: absolute; left: 0; top: 0; width: 900px; height: 84px; display: flex; align-items: center; gap: 12px; padding: 0 30px; border-bottom: 2px solid #f0ecf8; }
+      #bar i { width: 16px; height: 16px; border-radius: 50%; background: #ddd6ee; }
+      #bar i:first-child { background: var(--acc); }
+      #illu { position: absolute; right: 24px; top: 22px; height: 40px; padding: 0 16px; border-radius: 20px; background: var(--lav-soft); color: #6d55b8; font-size: 22px; font-weight: 800; line-height: 40px; direction: rtl; }
+      .pane { position: absolute; left: 0; top: 84px; width: 900px; height: 916px; }
+      .pane h2 { position: absolute; left: 50px; top: 46px; font-size: 52px; font-weight: 800; font-family: Georgia, serif; }
+      #tabs { position: absolute; left: 50px; top: 140px; display: flex; gap: 14px; font-size: 30px; font-weight: 500; }
+      #tabs div { height: 58px; line-height: 58px; padding: 0 22px; border-radius: 16px; color: var(--ink); }
+      #tabSk { background: #f1eef7; }
+      #srch { position: absolute; left: 50px; top: 240px; width: 800px; height: 76px; border-radius: 20px; border: 3px solid #e7e2f1; font-size: 32px; line-height: 70px; padding: 0 24px; color: var(--muted); }
+      #srchTxt { color: var(--ink); }
+      .row { position: absolute; left: 50px; width: 800px; height: 120px; border-radius: 22px; border: 3px solid #eee8f8; padding: 22px 26px; }
+      .row b { display: block; font-size: 32px; } .row span { display: block; margin-top: 6px; font-size: 22px; color: var(--muted); }
+      #rowN { top: 350px; } #rowX1 { top: 490px; opacity: .45; } #rowX2 { top: 630px; opacity: .3; }
+      #btnC { position: absolute; right: 26px; top: 30px; height: 60px; padding: 0 28px; border-radius: 18px; background: var(--ink); color: #fff; font-size: 28px; font-weight: 800; line-height: 60px; }
+      #auth { left: 120px; top: 200px; width: 660px; height: 520px; padding: 46px; border-radius: 30px; text-align: center; }
+      #auth .lg { margin: 0 auto; width: 120px; height: 120px; border-radius: 30px; background: #f1eef7; font-size: 34px; font-weight: 800; line-height: 120px; }
+      #auth p { margin-top: 30px; font-size: 32px; font-weight: 800; }
+      #auth small { display: block; margin-top: 14px; font-size: 24px; color: var(--muted); }
+      #allow { position: absolute; left: 160px; top: 390px; width: 340px; height: 76px; border-radius: 20px; background: var(--ink); color: #fff; font-size: 30px; font-weight: 800; line-height: 76px; }
+      #done { position: absolute; left: 230px; top: 780px; width: 440px; height: 80px; border-radius: 24px; background: var(--ok); color: #fff; font-size: 34px; font-weight: 800; line-height: 80px; text-align: center; }
+      #user { position: absolute; right: 40px; top: 120px; max-width: 660px; padding: 26px 32px; border-radius: 30px 30px 8px 30px; background: var(--ink); color: #fff; font-size: 34px; font-weight: 500; direction: rtl; line-height: 1.4; }
+      #used { position: absolute; left: 40px; top: 360px; height: 54px; padding: 0 20px; border-radius: 16px; background: var(--lav-soft); font-family: var(--mono); font-size: 24px; line-height: 54px; color: #6d55b8; }
+      #reply { position: absolute; left: 40px; top: 440px; width: 700px; padding: 30px; border-radius: 30px 30px 30px 8px; background: #faf8fe; }
+      #reply i { display: block; height: 18px; border-radius: 9px; background: var(--lav); margin-bottom: 20px; }
+      #cursor { position: absolute; left: 0; top: 0; width: 80px; height: 80px; }
+
+      /* next lesson */
+      #nT { position: absolute; left: 0; top: 340px; width: 1080px; text-align: center; font-weight: 800; font-size: 78px; line-height: 1.25; }
+      #nT span { color: var(--acc); }
+      #nCard { left: 140px; top: 690px; width: 800px; height: 200px; padding: 40px 44px; direction: ltr; }
+      #nCard b { display: block; font-family: var(--mono); font-size: 50px; }
+      #nCard span { display: block; margin-top: 12px; font-size: 28px; color: var(--muted); }
+      #nNext { left: 290px; top: 950px; width: 500px; height: 100px; border-radius: 34px; background: var(--acc); color: #fff; font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+      /* cta */
+      #ctaT { position: absolute; left: 0; top: 380px; width: 1080px; text-align: center; font-weight: 800; font-size: 76px; line-height: 1.25; }
+      #ctaT span { font-family: "Aref Ruqaa"; color: var(--acc); }
+      #cmt { left: 150px; top: 700px; width: 780px; height: 190px; padding: 30px 36px; display: flex; gap: 26px; align-items: center; direction: rtl; }
+      #cmt .av { width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(135deg, var(--lav), var(--sky)); flex: none; }
+      #cmt small { display: block; font-size: 26px; color: var(--muted); font-weight: 500; direction: ltr; text-align: right; }
+      #cmt b { display: block; font-size: 64px; font-weight: 800; color: var(--ink); direction: ltr; text-align: right; }
+      #heart { position: absolute; left: 50px; top: 66px; font-size: 54px; }
+      #gift { left: 200px; top: 960px; width: 680px; height: 110px; border-radius: 34px; background: var(--acc); color: #fff; font-size: 38px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+      .src { position: absolute; left: 0; top: 1800px; width: 1080px; text-align: center; font-size: 24px; color: var(--muted); font-weight: 500; }
+      .src b { font-family: var(--mono); font-weight: 400; direction: ltr; unicode-bidi: isolate; }
+      .cap-wrap { position: absolute; left: 0; top: 1440px; width: 1080px; }
+      .cap { width: 1080px; text-align: center; font-weight: 800; font-size: 68px; line-height: 1.3; padding: 0 60px; }
+      .w { display: inline-block; }
+      .key { background: var(--acc); color: #fff; border-radius: 18px; padding: 0 20px 6px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="40.61" data-width="1080" data-height="1920">
+      <audio id="vo" class="clip" src="assets/vo.mp3" data-start="0" data-track-index="20" data-volume="1"></audio>
+      <audio id="w1" class="clip" src="assets/whoosh.wav" data-start="2.395" data-track-index="21" data-volume="0.45"></audio>
+      <audio id="w2" class="clip" src="assets/whoosh.wav" data-start="10.469" data-track-index="22" data-volume="0.4"></audio>
+      <audio id="w3" class="clip" src="assets/whoosh.wav" data-start="14.21" data-track-index="23" data-volume="0.4"></audio>
+      <audio id="w4" class="clip" src="assets/whoosh.wav" data-start="29.321" data-track-index="24" data-volume="0.45"></audio>
+      <audio id="w5" class="clip" src="assets/whoosh.wav" data-start="35.247" data-track-index="25" data-volume="0.45"></audio>
+      <audio id="k1" class="clip" src="assets/pop.wav" data-start="16.741" data-track-index="26" data-volume="0.5"></audio>
+      <audio id="k2" class="clip" src="assets/pop.wav" data-start="19.704" data-track-index="27" data-volume="0.5"></audio>
+      <audio id="k3" class="clip" src="assets/pop.wav" data-start="21.963" data-track-index="28" data-volume="0.5"></audio>
+      <audio id="k4" class="clip" src="assets/tick.wav" data-start="27.444" data-track-index="29" data-volume="0.45"></audio>
+      <audio id="k5" class="clip" src="assets/pop.wav" data-start="36.5" data-track-index="30" data-volume="0.5"></audio>
+
+      <div id="background" class="clip full" data-start="0" data-duration="40.61" data-track-index="0">
+        <div id="bg"></div><div id="glow"></div><div id="handle">aymen.ai.lab</div>
+      </div>
+
+      <div id="sHook" class="clip full" data-start="0" data-duration="2.915" data-track-index="1">
+        <div id="hTitle">خلّ <span>Claude</span> يشتغل<br>في خدماتك</div>
+        <svg id="wires" viewBox="0 0 1080 1920"><path id="wN" d="M540 990 C 420 1060, 300 1080, 225 1100" fill="none" stroke="#e8775a" stroke-width="10" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400"/><path id="wG" d="M540 990 C 660 1060, 780 1080, 855 1100" fill="none" stroke="#e8775a" stroke-width="10" stroke-linecap="round" stroke-dasharray="400" stroke-dashoffset="400"/></svg>
+        <div id="tN" class="tile"><i>N</i>Notion</div>
+        <div id="tG" class="tile"><i>📅</i>Calendar</div>
+        <div id="tC" class="tile cl"><i>✳</i>Claude</div>
+      </div>
+
+      <div id="sMcp" class="clip full" data-start="2.815" data-duration="8.324" data-track-index="2">
+        <div id="mBig">MCP</div>
+        <div id="mFull"><b>M</b>odel <b>C</b>ontext <b>P</b>rotocol</div>
+        <div id="mBadge">معيار مفتوح من Anthropic</div>
+        <svg id="hand" viewBox="0 880 1080 520"><path id="arm" d="M270 1110 C 470 1110, 560 960, 770 955" fill="none" stroke="#2b2540" stroke-width="12" stroke-linecap="round" stroke-dasharray="560" stroke-dashoffset="560"/><path id="arm2" d="M270 1110 L 770 1110" fill="none" stroke="#2b2540" stroke-width="12" stroke-linecap="round" stroke-dasharray="500" stroke-dashoffset="500"/><path id="arm3" d="M270 1110 C 470 1110, 560 1265, 770 1265" fill="none" stroke="#2b2540" stroke-width="12" stroke-linecap="round" stroke-dasharray="560" stroke-dashoffset="560"/></svg>
+        <div id="mC" class="tile cl"><i>✳</i>Claude</div>
+        <div id="sv1" class="svc">Notion</div><div id="sv2" class="svc">Calendar</div><div id="sv3" class="svc">Drive</div>
+      </div>
+
+      <div id="sReady" class="clip full" data-start="10.889" data-duration="3.991" data-track-index="3">
+        <div id="rT">موصّل <span>جاهز</span><br>بدون كود</div>
+        <div id="plug" class="card">🔌</div>
+        <div id="code" class="card">&lt;/&gt;</div><div id="cross"></div>
+        <div id="plugOk">✓ ضغطة وحدة</div>
+      </div>
+
+      <div id="sSteps" class="clip full" data-start="14.63" data-duration="15.361" data-track-index="4">
+        <div id="steps"><div class="st" id="st1">1</div><div class="st" id="st2">2</div><div class="st" id="st3">3</div></div>
+        <div id="win" class="card">
+          <div id="bar"><i></i><i></i><i></i><div id="illu">رسم توضيحي</div></div>
+          <div class="pane" id="p1">
+            <h2>Customize</h2>
+            <div id="tabs"><div id="tabSk">Skills</div><div id="tabCo">Connectors</div><div>Plugins</div></div>
+            <div id="srch">🔍 <span id="srchTxt">Notion</span></div>
+            <div id="rowN" class="row"><b>Notion</b><span>Connector</span><div id="btnC">Connect</div></div>
+            <div id="rowX1" class="row"><b>Google Calendar</b><span>Connector</span></div>
+            <div id="rowX2" class="row"><b>Google Drive</b><span>Connector</span></div>
+          </div>
+          <div class="pane" id="p2">
+            <div id="auth" class="card"><div class="lg">N</div><p>Claude wants to access<br>your Notion workspace</p><small>Sign in, then allow access</small><div id="allow">Allow access</div></div>
+            <div id="done">✓ Connected</div>
+          </div>
+          <div class="pane" id="p3">
+            <div id="user">ابحث في Notion عن ملاحظات آخر اجتماع ولخّصها</div>
+            <div id="used">✓ Searched Notion</div>
+            <div id="reply"><i style="width:92%"></i><i style="width:80%"></i><i style="width:86%"></i><i style="width:58%"></i></div>
+          </div>
+        </div>
+        <svg id="cursor" viewBox="0 0 80 80"><path d="M10 6 L10 62 L24 49 L34 72 L44 67 L34 45 L54 45 Z" fill="#2b2540" stroke="#fff" stroke-width="4" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div id="sNext" class="clip full" data-start="29.741" data-duration="6.176" data-track-index="5">
+        <div id="nT">وإذا خدمتك<br><span>ما لها موصّل؟</span></div>
+        <div id="nCard" class="card"><b>mcp-builder</b><span>Skill · by Anthropic</span></div>
+        <div id="nNext" class="card">⏭ الدرس الجاي</div>
+      </div>
+
+      <div id="sCta" class="clip full" data-start="35.667" data-duration="4.943" data-track-index="6">
+        <div id="ctaT">تبي قائمة <span>الموصّلات</span>؟</div>
+        <div id="cmt" class="card"><div class="av"></div><div><small>@you</small><b>MCP</b></div><div id="heart"><span id="hW">🤍</span><span id="hR" style="position:absolute;left:0;top:0;opacity:0">❤️</span></div></div>
+        <div id="gift" class="card">📋 أرسلها لك في الخاص</div>
+      </div>
+
+      <div id="srcA" class="clip full" data-start="2.815" data-duration="11.815" data-track-index="10"><div class="src">المصدر: <b>modelcontextprotocol.io</b> · <b>anthropic.com</b></div></div>
+      <div id="srcB" class="clip full" data-start="14.63" data-duration="15.111" data-track-index="11"><div class="src">المصدر: <b>support.claude.com</b> · Connectors</div></div>
+      <div id="capline0" class="clip cap-wrap" data-start="0.0" data-duration="1.333" data-track-index="9"><div class="cap"><span id="c0u0" class="w">تبي</span> <span id="c0u1" class="w key">Claude</span> <span id="c0u2" class="w">يقرأ</span> <span id="c0u3" class="w">ويكتب</span></div></div>
+      <div id="capline1" class="clip cap-wrap" data-start="1.333" data-duration="1.482" data-track-index="9"><div class="cap"><span id="c1u0" class="w">في</span> <span id="c1u1" class="w key">Notion وتقويمك؟</span></div></div>
+      <div id="capline2" class="clip cap-wrap" data-start="2.815" data-duration="1.815" data-track-index="9"><div class="cap"><span id="c2u0" class="w">هذا</span> <span id="c2u1" class="w">اسمه</span> <span id="c2u2" class="w key">MCP…</span></div></div>
+      <div id="capline3" class="clip cap-wrap" data-start="4.63" data-duration="2.333" data-track-index="9"><div class="cap"><span id="c3u0" class="w">اختصار</span> <span id="c3u1" class="w key">Model Context Protocol.</span></div></div>
+      <div id="capline4" class="clip cap-wrap" data-start="6.963" data-duration="1.63" data-track-index="9"><div class="cap"><span id="c4u0" class="w">معيار</span> <span id="c4u1" class="w key">مفتوح</span> <span id="c4u2" class="w">من</span> <span id="c4u3" class="w">Anthropic،</span></div></div>
+      <div id="capline5" class="clip cap-wrap" data-start="8.593" data-duration="1.074" data-track-index="9"><div class="cap"><span id="c5u0" class="w">يعطي</span> <span id="c5u1" class="w">Claude</span> <span id="c5u2" class="w key">يد</span></div></div>
+      <div id="capline6" class="clip cap-wrap" data-start="9.667" data-duration="1.222" data-track-index="9"><div class="cap"><span id="c6u0" class="w">يمدها</span> <span id="c6u1" class="w key">لخدماتك.</span></div></div>
+      <div id="capline7" class="clip cap-wrap" data-start="10.889" data-duration="0.963" data-track-index="9"><div class="cap"><span id="c7u0" class="w">والخدمات</span> <span id="c7u1" class="w">المشهورة</span></div></div>
+      <div id="capline8" class="clip cap-wrap" data-start="11.852" data-duration="1.555" data-track-index="9"><div class="cap"><span id="c8u0" class="w">لها</span> <span id="c8u1" class="w key">موصّل جاهز…</span></div></div>
+      <div id="capline9" class="clip cap-wrap" data-start="13.407" data-duration="1.223" data-track-index="9"><div class="cap"><span id="c9u0" class="w">ما</span> <span id="c9u1" class="w">تحتاج</span> <span id="c9u2" class="w key">تبني</span> <span id="c9u3" class="w">شي.</span></div></div>
+      <div id="capline10" class="clip cap-wrap" data-start="14.63" data-duration="1.889" data-track-index="9"><div class="cap"><span id="c10u0" class="w key">أولاً:</span> <span id="c10u1" class="w">افتح</span> <span id="c10u2" class="w key">Customize،</span></div></div>
+      <div id="capline11" class="clip cap-wrap" data-start="16.519" data-duration="1.074" data-track-index="9"><div class="cap"><span id="c11u0" class="w">ثم</span> <span id="c11u1" class="w key">Connectors.</span></div></div>
+      <div id="capline12" class="clip cap-wrap" data-start="17.593" data-duration="1.777" data-track-index="9"><div class="cap"><span id="c12u0" class="w key">ثانياً:</span> <span id="c12u1" class="w">ابحث</span> <span id="c12u2" class="w">عن</span> <span id="c12u3" class="w key">Notion،</span></div></div>
+      <div id="capline13" class="clip cap-wrap" data-start="19.37" data-duration="1.111" data-track-index="9"><div class="cap"><span id="c13u0" class="w">واضغط</span> <span id="c13u1" class="w key">Connect.</span></div></div>
+      <div id="capline14" class="clip cap-wrap" data-start="20.481" data-duration="1.482" data-track-index="9"><div class="cap"><span id="c14u0" class="w key">ثالثاً:</span> <span id="c14u1" class="w">سجّل</span> <span id="c14u2" class="w key">دخولك،</span></div></div>
+      <div id="capline15" class="clip cap-wrap" data-start="21.963" data-duration="1.444" data-track-index="9"><div class="cap"><span id="c15u0" class="w">ووافق</span> <span id="c15u1" class="w">على</span> <span id="c15u2" class="w key">الصلاحيات.</span></div></div>
+      <div id="capline16" class="clip cap-wrap" data-start="23.407" data-duration="0.926" data-track-index="9"><div class="cap"><span id="c16u0" class="w">والحين</span> <span id="c16u1" class="w">قل</span> <span id="c16u2" class="w">له:</span></div></div>
+      <div id="capline17" class="clip cap-wrap" data-start="24.333" data-duration="0.852" data-track-index="9"><div class="cap"><span id="c17u0" class="w">ابحث</span> <span id="c17u1" class="w">في</span> <span id="c17u2" class="w">Notion</span></div></div>
+      <div id="capline18" class="clip cap-wrap" data-start="25.185" data-duration="1.519" data-track-index="9"><div class="cap"><span id="c18u0" class="w">عن</span> <span id="c18u1" class="w key">ملاحظات آخر اجتماع</span></div></div>
+      <div id="capline19" class="clip cap-wrap" data-start="26.704" data-duration="0.74" data-track-index="9"><div class="cap"><span id="c19u0" class="w key">ولخّصها…</span></div></div>
+      <div id="capline20" class="clip cap-wrap" data-start="27.444" data-duration="1.075" data-track-index="9"><div class="cap"><span id="c20u0" class="w">وهو</span> <span id="c20u1" class="w">يروح</span> <span id="c20u2" class="w key">لحسابك</span></div></div>
+      <div id="capline21" class="clip cap-wrap" data-start="28.519" data-duration="1.222" data-track-index="9"><div class="cap"><span id="c21u0" class="w">ويجيب</span> <span id="c21u1" class="w">لك</span> <span id="c21u2" class="w key">الجواب.</span></div></div>
+      <div id="capline22" class="clip cap-wrap" data-start="29.741" data-duration="0.926" data-track-index="9"><div class="cap"><span id="c22u0" class="w">طيب</span> <span id="c22u1" class="w">وإذا</span> <span id="c22u2" class="w">خدمتك</span></div></div>
+      <div id="capline23" class="clip cap-wrap" data-start="30.667" data-duration="1.0" data-track-index="9"><div class="cap"><span id="c23u0" class="w key">ما لها موصّل؟</span></div></div>
+      <div id="capline24" class="clip cap-wrap" data-start="31.667" data-duration="2.666" data-track-index="9"><div class="cap"><span id="c24u0" class="w">هنا</span> <span id="c24u1" class="w">تجي</span> <span id="c24u2" class="w">مهارة</span> <span id="c24u3" class="w key">mcp-builder…</span></div></div>
+      <div id="capline25" class="clip cap-wrap" data-start="34.333" data-duration="1.334" data-track-index="9"><div class="cap"><span id="c25u0" class="w">وهذا</span> <span id="c25u1" class="w key">درسنا الجاي.</span></div></div>
+      <div id="capline26" class="clip cap-wrap" data-start="35.667" data-duration="1.629" data-track-index="9"><div class="cap"><span id="c26u0" class="w">اكتب</span> <span id="c26u1" class="w key">MCP</span> <span id="c26u2" class="w">في</span> <span id="c26u3" class="w">التعليقات،</span></div></div>
+      <div id="capline27" class="clip cap-wrap" data-start="37.296" data-duration="3.314" data-track-index="9"><div class="cap"><span id="c27u0" class="w">وأرسل</span> <span id="c27u1" class="w">لك</span> <span id="c27u2" class="w key">قائمة الموصّلات</span> <span id="c27u3" class="w">الجاهزة.</span></div></div>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#glow", { x: -60, y: 0 }, { x: 80, y: 160, duration: 40.61, ease: "sine.inOut" }, 0);
+      const out = (sel, t) => tl.to(sel, { y: -170, scale: .93, opacity: 0, filter: "blur(16px)", duration: .42, ease: "power3.in" }, t);
+      const inn = (sel, t) => tl.fromTo(sel, { y: 220, opacity: 0, filter: "blur(16px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: .5, ease: "power3.out" }, t);
+
+      // hook: Claude in the middle, wires reach Notion and Calendar
+      inn("#hTitle", .1);
+      tl.fromTo("#tC", { scale: .3, opacity: 0 }, { scale: 1, opacity: 1, duration: .45, ease: "back.out(2)" }, .5);
+      tl.fromTo(["#tN", "#tG"], { scale: .3, opacity: 0 }, { scale: 1, opacity: 1, duration: .4, ease: "back.out(2)", stagger: .15 }, 1.519 - .1);
+      tl.to(["#wN", "#wG"], { attr: { "stroke-dashoffset": 0 }, duration: .6, ease: "power2.inOut" }, 1.519 + .2);
+      tl.fromTo(["#tN", "#tG"], { boxShadow: "0 0 0 0 rgba(232,119,90,0)" }, { boxShadow: "0 0 0 12px rgba(232,119,90,.35)", duration: .3, yoyo: true, repeat: 1 }, 1.519 + .8);
+      out(["#hTitle", "#tC", "#tN", "#tG", "#wires"], 2.815 - .45);
+
+      // MCP: the letters, the full name, the badge, then Claude's arm reaching three services
+      tl.fromTo("#mBig", { scale: 1.6, opacity: 0, filter: "blur(18px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: .5, ease: "power3.out" }, 2.815 + .05);
+      tl.fromTo("#mFull", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .4, ease: "power3.out" }, 5.333 - .1);
+      tl.fromTo("#mBadge", { scale: .5, opacity: 0 }, { scale: 1, opacity: 1, duration: .35, ease: "back.out(2.4)" }, 6.963);
+      tl.fromTo("#mC", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: .4, ease: "power3.out" }, 8.593 - .2);
+      tl.fromTo(".svc", { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: .35, ease: "power3.out", stagger: .1 }, 8.593);
+      tl.to(["#arm", "#arm2", "#arm3"], { attr: { "stroke-dashoffset": 0 }, duration: .55, ease: "power2.inOut", stagger: .12 }, 9.333);
+      tl.to(".svc", { backgroundColor: "#ffd3bf", duration: .25, stagger: .12 }, 9.667);
+      out(["#mBig", "#mFull", "#mBadge", "#hand", "#mC", ".svc"], 10.889 - .45);
+
+      // ready connector vs code
+      inn("#rT", 10.889 + .05);
+      tl.fromTo("#plug", { scale: .4, opacity: 0 }, { scale: 1, opacity: 1, duration: .4, ease: "back.out(2)" }, 12.222);
+      tl.fromTo("#code", { scale: .4, opacity: 0 }, { scale: 1, opacity: 1, duration: .4, ease: "back.out(2)" }, 13.407);
+      tl.fromTo("#cross", { scaleX: 0, rotation: -18, transformOrigin: "left center" }, { scaleX: 1, rotation: -18, duration: .3, ease: "power3.out" }, 13.926);
+      tl.fromTo("#plugOk", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: .3 }, 13.926 + .2);
+      out(["#rT", "#plug", "#code", "#cross", "#plugOk"], 14.63 - .45);
+
+      // steps
+      tl.fromTo("#win", { y: 220, opacity: 0, scale: 1.04 }, { y: 0, opacity: 1, scale: 1, duration: .55, ease: "power3.out" }, 14.63 + .05);
+      tl.fromTo(".st", { scale: 0 }, { scale: 1, duration: .3, ease: "back.out(2.4)", stagger: .06 }, 14.63 + .1);
+      const step = (n, t) => {
+        tl.to("#st" + n, { backgroundColor: "#e8775a", color: "#ffffff", scale: 1.12, duration: .25, ease: "back.out(2)" }, t);
+        if (n > 1) tl.to("#st" + (n - 1), { backgroundColor: "#4fb38a", color: "#ffffff", scale: 1, duration: .25 }, t);
+      };
+      const cur = (x, y, t, d = .45) => tl.to("#cursor", { x: x, y: y, duration: d, ease: "power3.inOut" }, t);
+      const click = (t) => tl.to("#cursor", { scale: .8, duration: .07, yoyo: true, repeat: 1, transformOrigin: "20% 15%" }, t);
+      tl.set("#cursor", { x: 980, y: 1500, opacity: 0 }, 0);
+      tl.set(["#p2", "#p3", "#srch", "#rowN", "#rowX1", "#rowX2", "#done"], { opacity: 0 }, 0);
+
+      // 1: Customize > Connectors (window at 90,340; pane top 84)
+      step(1, 14.63);
+      tl.to("#cursor", { opacity: 1, duration: .2 }, 15.333);
+      cur(90 + 50 + 150 + 120, 340 + 84 + 140 + 20, 16.519 - .5);
+      click(16.741 - .05);
+      tl.to("#tabSk", { backgroundColor: "rgba(0,0,0,0)", duration: .15 }, 16.741);
+      tl.to("#tabCo", { backgroundColor: "#f1eef7", duration: .15 }, 16.741);
+      tl.fromTo(["#rowX1", "#rowX2"], { y: 30 }, { y: 0, opacity: 1, duration: .3, stagger: .08 }, 16.741 + .1);
+      tl.set("#rowX1", { opacity: .45 }, 16.741 + .45); tl.set("#rowX2", { opacity: .3 }, 16.741 + .5);
+
+      // 2: search Notion, Connect
+      step(2, 17.593);
+      tl.fromTo("#srch", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: .25 }, 17.593);
+      tl.fromTo("#srchTxt", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: .5, ease: "steps(6)" }, 18.667);
+      tl.fromTo("#rowN", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .3, ease: "back.out(2)" }, 18.889);
+      tl.to(["#rowX1", "#rowX2"], { y: 0, duration: .01 }, 18.889);
+      cur(90 + 850 - 26 - 90, 340 + 84 + 350 + 60, 19.37 - .3);
+      click(19.704 - .05);
+      tl.fromTo("#btnC", { scale: 1 }, { scale: .9, duration: .08, yoyo: true, repeat: 1 }, 19.704 - .05);
+
+      // 3: sign in and allow
+      step(3, 20.481);
+      tl.to("#p1", { x: -120, opacity: 0, filter: "blur(10px)", duration: .3, ease: "power2.in" }, 20.481 - .3);
+      tl.fromTo("#p2", { x: 160, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: .4, ease: "power3.out" }, 20.481);
+      cur(90 + 120 + 160 + 200, 340 + 84 + 200 + 390 + 50, 21.519 - .3);
+      click(21.963 - .05);
+      tl.to("#allow", { backgroundColor: "#4fb38a", duration: .2 }, 21.963);
+      tl.fromTo("#done", { opacity: 0, y: 30, scale: .9 }, { opacity: 1, y: 0, scale: 1, duration: .35, ease: "back.out(2)" }, 22.37);
+      tl.to("#cursor", { opacity: 0, duration: .2 }, 22.481);
+
+      // try it: the request and the answer
+      tl.to("#st3", { backgroundColor: "#4fb38a", scale: 1, duration: .25 }, 23.407);
+      tl.to("#p2", { x: -120, opacity: 0, filter: "blur(10px)", duration: .3, ease: "power2.in" }, 23.407 - .3);
+      tl.fromTo("#p3", { x: 160, opacity: 0, filter: "blur(10px)" }, { x: 0, opacity: 1, filter: "blur(0px)", duration: .4, ease: "power3.out" }, 23.407);
+      tl.set(["#user", "#used", "#reply"], { opacity: 0 }, 0);
+      tl.fromTo("#user", { opacity: 0, y: 40, scale: .9 }, { opacity: 1, y: 0, scale: 1, duration: .3, ease: "back.out(2)" }, 23.704);
+      tl.fromTo("#used", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: .25 }, 27.444);
+      tl.fromTo("#reply", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .25 }, 27.889);
+      tl.fromTo("#reply i", { scaleX: 0, transformOrigin: "left center" }, { scaleX: 1, duration: .2, stagger: .12 }, 27.889 + .05);
+      out(["#win", "#steps"], 29.741 - .45);
+
+      // next lesson
+      inn("#nT", 29.741 + .05);
+      tl.fromTo("#nCard", { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: .4, ease: "back.out(1.6)" }, 32.148);
+      tl.fromTo("#nNext", { scale: .5, opacity: 0 }, { scale: 1, opacity: 1, duration: .35, ease: "back.out(2.4)" }, 34.333);
+      out(["#nT", "#nCard", "#nNext"], 35.667 - .45);
+
+      // cta
+      inn("#ctaT", 35.667 + .05);
+      tl.fromTo("#cmt", { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: .4, ease: "back.out(1.6)" }, 35.667 + .4);
+      tl.fromTo("#cmt b", { scale: .4 }, { scale: 1, duration: .3, ease: "back.out(3)", transformOrigin: "right center" }, 36.0);
+      tl.set("#hW", { opacity: 0 }, 36.0 + .5); tl.set("#hR", { opacity: 1 }, 36.0 + .5);
+      tl.fromTo("#heart", { scale: 1 }, { scale: 1.4, duration: .15, yoyo: true, repeat: 1 }, 36.0 + .5);
+      tl.fromTo("#gift", { opacity: 0, scale: .5 }, { opacity: 1, scale: 1, duration: .4, ease: "back.out(2.4)" }, 37.296);
+
+      tl.fromTo("#c0u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},0.0);
+      tl.fromTo("#c0u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},0.296);
+      tl.fromTo("#c0u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},0.667);
+      tl.fromTo("#c0u3",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},0.963);
+      tl.fromTo("#c1u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},1.333);
+      tl.fromTo("#c1u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},1.519);
+      tl.fromTo("#c2u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},2.815);
+      tl.fromTo("#c2u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},3.037);
+      tl.fromTo("#c2u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},3.556);
+      tl.fromTo("#c3u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},4.63);
+      tl.fromTo("#c3u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},5.333);
+      tl.fromTo("#c4u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},6.963);
+      tl.fromTo("#c4u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},7.296);
+      tl.fromTo("#c4u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},7.704);
+      tl.fromTo("#c4u3",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},7.889);
+      tl.fromTo("#c5u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},8.593);
+      tl.fromTo("#c5u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},8.963);
+      tl.fromTo("#c5u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},9.333);
+      tl.fromTo("#c6u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},9.667);
+      tl.fromTo("#c6u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},9.975);
+      tl.fromTo("#c7u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},10.889);
+      tl.fromTo("#c7u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},11.37);
+      tl.fromTo("#c8u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},11.852);
+      tl.fromTo("#c8u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},12.222);
+      tl.fromTo("#c9u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},13.407);
+      tl.fromTo("#c9u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},13.556);
+      tl.fromTo("#c9u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},13.926);
+      tl.fromTo("#c9u3",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},14.185);
+      tl.fromTo("#c10u0",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},14.63);
+      tl.fromTo("#c10u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},15.333);
+      tl.fromTo("#c10u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},15.63);
+      tl.fromTo("#c11u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},16.519);
+      tl.fromTo("#c11u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},16.741);
+      tl.fromTo("#c12u0",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},17.593);
+      tl.fromTo("#c12u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},18.296);
+      tl.fromTo("#c12u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},18.667);
+      tl.fromTo("#c12u3",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},18.889);
+      tl.fromTo("#c13u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},19.37);
+      tl.fromTo("#c13u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},19.704);
+      tl.fromTo("#c14u0",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},20.481);
+      tl.fromTo("#c14u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},21.111);
+      tl.fromTo("#c14u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},21.519);
+      tl.fromTo("#c15u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},21.963);
+      tl.fromTo("#c15u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},22.37);
+      tl.fromTo("#c15u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},22.481);
+      tl.fromTo("#c16u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},23.407);
+      tl.fromTo("#c16u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},23.704);
+      tl.fromTo("#c16u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},23.926);
+      tl.fromTo("#c17u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},24.333);
+      tl.fromTo("#c17u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},24.667);
+      tl.fromTo("#c17u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},24.852);
+      tl.fromTo("#c18u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},25.185);
+      tl.fromTo("#c18u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},25.296);
+      tl.fromTo("#c19u0",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},26.704);
+      tl.fromTo("#c20u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},27.444);
+      tl.fromTo("#c20u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},27.667);
+      tl.fromTo("#c20u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},27.889);
+      tl.fromTo("#c21u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},28.519);
+      tl.fromTo("#c21u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},28.815);
+      tl.fromTo("#c21u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},28.963);
+      tl.fromTo("#c22u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},29.741);
+      tl.fromTo("#c22u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},30.0);
+      tl.fromTo("#c22u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},30.333);
+      tl.fromTo("#c23u0",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},30.667);
+      tl.fromTo("#c24u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},31.667);
+      tl.fromTo("#c24u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},31.926);
+      tl.fromTo("#c24u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},32.148);
+      tl.fromTo("#c24u3",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},32.593);
+      tl.fromTo("#c25u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},34.333);
+      tl.fromTo("#c25u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},34.815);
+      tl.fromTo("#c26u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},35.667);
+      tl.fromTo("#c26u1",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},36.0);
+      tl.fromTo("#c26u2",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},36.407);
+      tl.fromTo("#c26u3",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},36.481);
+      tl.fromTo("#c27u0",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},37.296);
+      tl.fromTo("#c27u1",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},37.704);
+      tl.fromTo("#c27u2",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.22,ease:"back.out(3)"},37.815);
+      tl.fromTo("#c27u3",{opacity:0,y:14,color:"#b9b2cc"},{opacity:1,y:0,color:"#2b2540",duration:.18,ease:"power2.out"},38.741);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
