@@ -5,6 +5,7 @@ import religiousSample from "./religious/data/sample-tawbah-102-104.json";
 import { NiamReel, NIAM_TOTAL } from "./religious/NiamReel";
 import { DinarReel, DINAR_TOTAL } from "./religious/DinarReel";
 import { BaoudaReel, BAOUDA_TOTAL } from "./religious/BaoudaReel";
+import { ImranReel, IMRAN_TOTAL } from "./religious/ImranReel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -49,6 +50,15 @@ export const RemotionRoot: React.FC = () => {
         id="BaoudaReel"
         component={BaoudaReel}
         durationInFrames={Math.round(BAOUDA_TOTAL * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      {/* Aal-Imran 3:133–134, child's recitation, original audio untouched */}
+      <Composition
+        id="ImranReel"
+        component={ImranReel}
+        durationInFrames={Math.round(IMRAN_TOTAL * 30)}
         fps={30}
         width={1080}
         height={1920}
