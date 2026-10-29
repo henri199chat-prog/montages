@@ -4,6 +4,7 @@ import { NavyBackground, TextShield } from "./NavyBackground";
 import { HudFrame, ProgressTicks } from "./HudFrame";
 import { AyahKaraoke, pageAt } from "./AyahKaraoke";
 import { LogoIntro, LogoOutro, worldFade } from "./LogoBrand";
+import { InkLayer } from "./InkBoil";
 import { useReligiousFonts, FPS } from "./theme";
 import type { AyahData } from "./types";
 
@@ -26,6 +27,8 @@ export type RecitationReelProps = {
   camera?: (t: number) => { s: number; x: number; y: number }; // slow push/pull, never a cut
   dustBoost?: (t: number) => number;
   cta?: React.ReactNode;
+  /** style v2: hand-inked boil + brush grain on the scene layer (default on; false = clean vector lines) */
+  ink?: boolean;
 };
 
 export const RecitationReel: React.FC<RecitationReelProps> = ({
@@ -40,6 +43,7 @@ export const RecitationReel: React.FC<RecitationReelProps> = ({
   camera,
   dustBoost,
   cta,
+  ink = true,
 }) => {
   const ready = useReligiousFonts();
   const t = useCurrentFrame() / FPS;
@@ -60,7 +64,7 @@ export const RecitationReel: React.FC<RecitationReelProps> = ({
             transformOrigin: `${cam.x}px ${cam.y}px`,
           }}
         >
-          {scene?.(t, k)}
+          {ink ? <InkLayer>{scene?.(t, k)}</InkLayer> : scene?.(t, k)}
         </AbsoluteFill>
         <TextShield />
         <HudFrame

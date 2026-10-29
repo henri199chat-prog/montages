@@ -239,3 +239,22 @@ end, lavender/peach palette, accent pill `#e8775a`, AI voiceover) does NOT apply
 - **Captions/hooks**: `ig-reel` (`hookscore.py`, `beats.py`) and `ig-caption` skills are English-centric; scores on
   Arabic are rough. Religious text rules (§7) always win.
 - Sources list: `docs/resources.md`.
+
+## 16. الأسلوب ٢ — Style v2 (2026-10-29): hand-inked, acted, finished
+Same palette, same HUD, same rules. What changed (from the `clawd-animation` and `video-finishing-sound` skills):
+- **Ink boil + brush grain** on the scene layer (`InkLayer`, `video/src/religious/InkBoil.tsx`; on by default in
+  `RecitationReel`, `ink={false}` for clean vectors). Lines wave very slightly and change 12×/s like hand-drawn animation;
+  a fine grain makes strokes look brushed. Colours are untouched. Use it in talk reels too: wrap the `<Scene/>` in `<InkLayer>`.
+- **Write the reads before the code** (a small timing sheet per page): for every word/phrase, what the viewer must
+  understand, when, and where the eye is. One read at a time; fast actions, held meanings; let the reads set the length.
+- **Draw the meaning (tafsir), not decoration**: every key word gets its own visual beat that matches its meaning
+  (e.g. «عرضها السماوات والأرض» = a width line spanning seven heavens and the earth). Up = divine (light only), down = worldly.
+- **Motion**: anticipation before big moves (squash/crouch), overshoot + settle on pose changes (`E.back`), arcs for
+  thrown/rising things, no twinning (pairs of figures get different poses, sizes and phases), something always moving.
+- **Hook** in the first 3 s over the logo intro: one plain-Arabic line that states the promise of the verses (never
+  Quran text, never hype), e.g. «سباقٌ… جائزتُه بِسَعَةِ السماواتِ والأرض».
+- **Recitation kept exactly as is** when Ayman asks: only silence in front for the intro, AAC 320k, and verify
+  correlation with the source ≥ 0.999 (see `ImranReel`). When the reciter repeats words, the text repeats them.
+- **Finishing**: render with `--crf 17 --color-space bt709`, then `bash religious/tools/finish.sh in.mp4 out.mp4`
+  (+faststart, BT.709 tags, loudness report; streams copied).
+Reference build: `video/src/religious/ImranReel.tsx` → `videos/imran-133-134-v2.mp4`.

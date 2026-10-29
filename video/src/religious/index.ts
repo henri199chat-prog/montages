@@ -10,3 +10,4 @@ export * from "./LogoBrand";
 export * from "./StickFigure";
 export * from "./LineArt";
 export * from "./RecitationReel";
+export * from "./InkBoil";

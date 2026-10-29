@@ -13,6 +13,9 @@ Priority on conflicts: **Quran/hadith accuracy (README §7) > Ayman's style (REA
 
 ## Workflow
 
+Style v2 (README §16) is the default: ink boil on the scene, a written reads sheet before code, the tafsir drawn word
+by word, anticipation/overshoot/no twinning, a hook over the intro, `finish.sh` at the end.
+
 ### 0. Report progress honestly
 Give Ayman an accurate % with what is done and what remains. Reply in simple Arabic.
 
@@ -91,13 +94,18 @@ directly instead of `RecitationReel`.
 `religious/original-pipeline/` has the original HTML/SVG/GSAP scene of reel 002 (`web/scene.js`): read it for more scene
 ideas; the Remotion kit is its translation (same coordinates and timings).
 
+### 6b. Reads sheet first (style v2)
+Before scene code, write per page: word → what the viewer must understand → the visual that shows its meaning → time.
+One read at a time; give each meaning time to land. Hook line for 0.5–2.9 s (plain Arabic, not Quran text).
+
 ### 7. QA
 Run the checklist in README §12. Render stills at several times and look at them:
 `cd video && npx remotion still <Id> /tmp/s.png --frame=<n>`. Check text vs `quran.py`, loudness with `scripts/analyze-audio`.
 
 ### 8. Render + deliver
 ```bash
-cd video && npx remotion render <Id> ../videos/<name>-v<N>.mp4 --codec h264 --color-space bt709
+cd video && npx remotion render <Id> ../videos/<name>-v<N>.tmp.mp4 --codec h264 --crf 17 --color-space bt709 --audio-bitrate 320k
+cd .. && bash religious/tools/finish.sh videos/<name>-v<N>.tmp.mp4 videos/<name>-v<N>.mp4 && rm videos/<name>-v<N>.tmp.mp4
 ```
 Never overwrite an older version. Commit + push, add the row in `religious/content-log.md`, give Ayman the caption
 (README §11) and post timing (after maghrib or isha).

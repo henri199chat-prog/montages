@@ -14358,9 +14358,9 @@
     "semantic_hash": ""
   },
   "video/src/religious/RecitationReel.tsx": {
-    "mtime": 1793022457.337205,
-    "seen": 1793025983.0248728,
-    "ast_hash": "bd1b23e3eea750670ec1f84523cd26ca",
+    "mtime": 1793296780.9296663,
+    "seen": 1793297281.27511,
+    "ast_hash": "c3a70e353d777a932eafa41bd43c6166",
     "semantic_hash": ""
   },
   "video/src/religious/ReligiousDemo.tsx": {
@@ -14400,9 +14400,9 @@
     "semantic_hash": ""
   },
   "video/src/religious/index.ts": {
-    "mtime": 1793022457.337205,
-    "seen": 1793025983.0248818,
-    "ast_hash": "fc5888a4fb873b1e549ce43524da1993",
+    "mtime": 1793296780.9301672,
+    "seen": 1793297281.2753856,
+    "ast_hash": "aeb3901661e71ea0fe155e846134b1da",
     "semantic_hash": ""
   },
   "video/src/religious/theme.ts": {
@@ -14418,9 +14418,9 @@
     "semantic_hash": ""
   },
   ".claude/skills/religious-reel/SKILL.md": {
-    "mtime": 1793022456.337501,
-    "seen": 1793025983.0252028,
-    "ast_hash": "9d1f4642ff5b62725c12bb48c54c44cc",
+    "mtime": 1793297223.2856796,
+    "seen": 1793297281.2907383,
+    "ast_hash": "21cb58b59673edcaaa1570ffb2663dda",
     "semantic_hash": ""
   },
   "assets/fonts/IBMPlexMono/OFL.txt": {
@@ -14442,15 +14442,15 @@
     "semantic_hash": ""
   },
   "religious/README.md": {
-    "mtime": 1793179571.287214,
-    "seen": 1793179629.292743,
-    "ast_hash": "8c623862e926ce25f1412e79e736eaf7",
+    "mtime": 1793297223.285143,
+    "seen": 1793297281.3179255,
+    "ast_hash": "9b467083a4eaa2d70ba7beae12f6d560",
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793296593.268879,
-    "seen": 1793296679.4483078,
-    "ast_hash": "16a0ae9452cb8ded533ac72f9e4e7664",
+    "mtime": 1793297223.3039548,
+    "seen": 1793297281.3179286,
+    "ast_hash": "52da489123539414532aa8c89c0cab0c",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -14868,9 +14868,9 @@
     "semantic_hash": ""
   },
   "video/src/religious/ImranReel.tsx": {
-    "mtime": 1793296360.2125344,
-    "seen": 1793296679.4103088,
-    "ast_hash": "ef9d04897b1d7613bcdec8617e95ec14",
+    "mtime": 1793296821.6163688,
+    "seen": 1793297281.2749853,
+    "ast_hash": "a6a9d8790417e300b1d9a3ca4745a14d",
     "semantic_hash": ""
   },
   "video/src/religious/data/imran-133-134.json": {
@@ -14883,6 +14883,24 @@
     "mtime": 1793296571.2479074,
     "seen": 1793296679.4590986,
     "ast_hash": "09d58b16098e3b9672224ad13784fed4",
+    "semantic_hash": ""
+  },
+  "religious/tools/finish.sh": {
+    "mtime": 1793296821.6208398,
+    "seen": 1793297281.2650845,
+    "ast_hash": "63d8d7a6670e1ca628966bf2143872b5",
+    "semantic_hash": ""
+  },
+  "video/src/religious/InkBoil.tsx": {
+    "mtime": 1793296769.6679192,
+    "seen": 1793297281.2749896,
+    "ast_hash": "a6f31c193f7b1bd5673fb8eb6fe5a9cf",
+    "semantic_hash": ""
+  },
+  "videos/imran-133-134-v2.mp4": {
+    "mtime": 1793297181.8319438,
+    "seen": 1793297281.3282819,
+    "ast_hash": "65d48eba3b94a5bcc4a7cf5b9935c096",
     "semantic_hash": ""
   }
 }

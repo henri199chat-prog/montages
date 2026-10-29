@@ -86,9 +86,9 @@ const Scene: React.FC<{ t: number }> = ({ t }) => {
     [w(4, 2) - 0.1, POSE.sujud], // المحسنين
   ];
   let base = POSE.stand;
-  for (let i = 0; i < keys.length; i++) if (t >= keys[i][0]) base = i === 0 ? keys[0][1] : mixPose(keys[i - 1][1], keys[i][1], P(t, keys[i][0], 0.9, E.io));
+  for (let i = 0; i < keys.length; i++) if (t >= keys[i][0]) base = i === 0 ? keys[0][1] : mixPose(keys[i - 1][1], keys[i][1], P(t, keys[i][0], 0.85, E.back));
   let pose = mixPose(base, run, running);
-  pose = { ...pose, sq: squash(t, keys.slice(1).map((k) => k[0])) };
+  pose = { ...pose, sq: squash(t, [p0 - 0.05, ...keys.slice(1).map((k) => k[0])], 1.4) };
   const heroOp = P(t, p0 - 0.6, 0.8, E.s);
 
   // ---------- page 0: the race to forgiveness ----------
@@ -225,7 +225,7 @@ const Scene: React.FC<{ t: number }> = ({ t }) => {
           </g>
           {/* للمتقين: the muttaqin stand at the gate */}
           {[-1, 1].map((sx, i) => (
-            <StickFigure key={i} pose={POSE.chest} x={540 + sx * 250} t={t + i} scale={1.15} opacity={muttaqin * 0.85} />
+            <StickFigure key={i} pose={i ? POSE.dua : POSE.chest} x={540 + sx * 250} t={t + i * 1.7} scale={i ? 1.08 : 1.15} opacity={muttaqin * P(t, w(1, 5) - 0.2 + i * 0.35, 0.9, E.o) * 0.85} />
           ))}
           <Label x={540} y={1090} text="AL-MUTTAQIN" op={muttaqin} color={C.gold} />
         </g>
@@ -258,7 +258,7 @@ const Scene: React.FC<{ t: number }> = ({ t }) => {
           )}
           {/* recipients on both sides, his gifts reach them */}
           {[-1, 1].map((sx, i) => (
-            <StickFigure key={i} pose={POSE.kneelDua} x={540 + sx * 300} t={t + 2 * i} scale={1.0} opacity={0.55 * P(t, w(2, 1) - 0.2, 0.8)} />
+            <StickFigure key={i} pose={i ? POSE.sitDua : POSE.kneelDua} x={540 + sx * 300} t={t + 2.3 * i} scale={i ? 0.95 : 1.0} opacity={0.55 * P(t, w(2, 1) - 0.2 + i * 0.3, 0.8)} />
           ))}
           {give > 0.001 &&
             Array.from({ length: 8 }, (_, i) => {
