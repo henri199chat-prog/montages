@@ -6654,9 +6654,9 @@
     "semantic_hash": ""
   },
   "video/src/Root.tsx": {
-    "mtime": 1793350639.1286304,
-    "seen": 1793351073.3450346,
-    "ast_hash": "0811b6bfefd9d9f87147328717ba7422",
+    "mtime": 1793399562.322241,
+    "seen": 1793399858.3118813,
+    "ast_hash": "ae1dc32afee5add139668393727dfc87",
     "semantic_hash": ""
   },
   "video/src/TasbihAd.tsx": {
@@ -14448,9 +14448,9 @@
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793351003.2518218,
-    "seen": 1793351073.3753283,
-    "ast_hash": "2036eebfa65d147256262e017ea35009",
+    "mtime": 1793399780.3761714,
+    "seen": 1793399858.3434346,
+    "ast_hash": "8215ac77cac62e421cce208a9cea6b59",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -14919,6 +14919,24 @@
     "mtime": 1793350949.1721127,
     "seen": 1793351073.3843763,
     "ast_hash": "b04fcf7ed63d2a23fe14bca5fa8642fe",
+    "semantic_hash": ""
+  },
+  "video/src/religious/LawReel.tsx": {
+    "mtime": 1793399648.3715925,
+    "seen": 1793399858.3121498,
+    "ast_hash": "7bab49a99fd2a02215f3c5460dace8ad",
+    "semantic_hash": ""
+  },
+  "video/src/religious/data/law.json": {
+    "mtime": 1793399654.137753,
+    "seen": 1793399858.3125236,
+    "ast_hash": "3c2c178761e7366dacf0c48c654b6dce",
+    "semantic_hash": ""
+  },
+  "videos/law-v1.mp4": {
+    "mtime": 1793399760.306505,
+    "seen": 1793399858.353448,
+    "ast_hash": "1fee36def7c36ff521999a2c22c3fe82",
     "semantic_hash": ""
   }
 }

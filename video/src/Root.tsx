@@ -7,6 +7,7 @@ import { DinarReel, DINAR_TOTAL } from "./religious/DinarReel";
 import { BaoudaReel, BAOUDA_TOTAL } from "./religious/BaoudaReel";
 import { ImranReel, IMRAN_TOTAL } from "./religious/ImranReel";
 import { JumuahReel, JUMUAH_TOTAL } from "./religious/JumuahReel";
+import { LawReel, LAW_TOTAL } from "./religious/LawReel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -69,6 +70,15 @@ export const RemotionRoot: React.FC = () => {
         id="JumuahReel"
         component={JumuahReel}
         durationInFrames={Math.round(JUMUAH_TOTAL * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      {/* Ibn Uthaymeen «لا تقل لو» — voice only, clearer */}
+      <Composition
+        id="LawReel"
+        component={LawReel}
+        durationInFrames={Math.round(LAW_TOTAL * 30)}
         fps={30}
         width={1080}
         height={1920}
