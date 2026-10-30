@@ -6654,9 +6654,9 @@
     "semantic_hash": ""
   },
   "video/src/Root.tsx": {
-    "mtime": 1793295946.9111373,
-    "seen": 1793296679.4100566,
-    "ast_hash": "0266fb37303143f1b4ea33cffcaa9d2c",
+    "mtime": 1793350639.1286304,
+    "seen": 1793351073.3450346,
+    "ast_hash": "0811b6bfefd9d9f87147328717ba7422",
     "semantic_hash": ""
   },
   "video/src/TasbihAd.tsx": {
@@ -14448,9 +14448,9 @@
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793297223.3039548,
-    "seen": 1793297281.3179286,
-    "ast_hash": "52da489123539414532aa8c89c0cab0c",
+    "mtime": 1793351003.2518218,
+    "seen": 1793351073.3753283,
+    "ast_hash": "2036eebfa65d147256262e017ea35009",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -14901,6 +14901,24 @@
     "mtime": 1793297181.8319438,
     "seen": 1793297281.3282819,
     "ast_hash": "65d48eba3b94a5bcc4a7cf5b9935c096",
+    "semantic_hash": ""
+  },
+  "video/src/religious/JumuahReel.tsx": {
+    "mtime": 1793350736.810229,
+    "seen": 1793351073.3452487,
+    "ast_hash": "b1a9972584c810ba5efc7a05a3dbec23",
+    "semantic_hash": ""
+  },
+  "video/src/religious/data/jumuah.json": {
+    "mtime": 1793350639.1279783,
+    "seen": 1793351073.345618,
+    "ast_hash": "140f0a678445430118cd1286069ede69",
+    "semantic_hash": ""
+  },
+  "videos/jumuah-v1.mp4": {
+    "mtime": 1793350949.1721127,
+    "seen": 1793351073.3843763,
+    "ast_hash": "b04fcf7ed63d2a23fe14bca5fa8642fe",
     "semantic_hash": ""
   }
 }
