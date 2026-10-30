@@ -1,0 +1,14 @@
+هلا 👋 هذي قائمة الموصّلات الجاهزة اللي وعدتك فيها 📋
+
+📧 الإيميل والتقويم: Gmail · Google Calendar · Microsoft 365
+📁 الملفات والملاحظات: Google Drive · Notion · Box
+🎨 التصميم: Canva · Figma · Adobe
+✅ المهام والفرق: Slack · Asana · monday.com · Linear · Atlassian
+🛍 البيع والتسويق: Shopify · HubSpot
+🎥 الاجتماعات: Zoom
+
+وأكثر من 1000 موصّل كامل في claude.com/connectors
+
+طريقة الربط: Customize ← Connectors ← ابحث عن الخدمة ← Connect ← سجّل دخولك ✅
+💡 نصيحة: شغّل الموصّل لكل محادثة من زر + ← Connectors، عشان Claude يوصل بس للي تحتاجه.
+وخدمتك مو في القائمة؟ هذا درسنا الجاي 🔔
