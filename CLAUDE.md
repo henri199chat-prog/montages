@@ -67,3 +67,12 @@ Rules:
   the repo has no licence file, so keep it for personal use). It loads through the symlink
   `.claude/skills/sam-content-os`. Use it whenever the user sends a reel topic: hook, script, caption, edit guide, CTA,
   score. Keep its content log at `reels/content-log.md`. `reels/sam-content-os.skill` is the upload file for claude.ai.
+
+## Notify the user by email when work is done (user's standing instruction, 2026-11-18)
+
+- After every finished task (a rendered video, a new skill, a fix — anything the user asked for), send ONE email with
+  the Gmail connector (`send_message`) to the user's own address (the `userEmail` in the session context; never write
+  the address into this public repo).
+- Tone: respectful and warm, addressed «يا سيدي أيمن». Arabic. Subject starts with ✅ and names the task.
+  Body: what was finished, where to find it (file/branch), anything that needs his action, then «مع خالص الاحترام والتقدير».
+- Only for finished work, not for progress updates or questions.
