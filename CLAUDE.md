@@ -74,5 +74,6 @@ Rules:
   the Gmail connector (`send_message`) to the user's own address (the `userEmail` in the session context; never write
   the address into this public repo).
 - Tone: respectful and warm, addressed «يا سيدي أيمن». Arabic. Subject starts with ✅ and names the task.
-  Body: what was finished, where to find it (file/branch), anything that needs his action, then «مع خالص الاحترام والتقدير».
+- SHORT (3-5 lines) with emojis (🎬 ✨ 📁 👉 🙏 …): what was finished, where to find it, anything that needs his
+  action, then «مع خالص الاحترام والتقدير 🌹».
 - Only for finished work, not for progress updates or questions.
