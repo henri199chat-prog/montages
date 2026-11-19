@@ -8,6 +8,7 @@ import { BaoudaReel, BAOUDA_TOTAL } from "./religious/BaoudaReel";
 import { ImranReel, IMRAN_TOTAL } from "./religious/ImranReel";
 import { JumuahReel, JUMUAH_TOTAL } from "./religious/JumuahReel";
 import { LawReel, LAW_TOTAL } from "./religious/LawReel";
+import { DinarStory, DINAR_STORY_TOTAL } from "./tn-dinar/DinarStory";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -79,6 +80,15 @@ export const RemotionRoot: React.FC = () => {
         id="LawReel"
         component={LawReel}
         durationInFrames={Math.round(LAW_TOTAL * 30)}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      {/* «قصة الدينار التونسي» — economic documentary reel (not religious style) */}
+      <Composition
+        id="DinarStory"
+        component={DinarStory}
+        durationInFrames={Math.round(DINAR_STORY_TOTAL * 30)}
         fps={30}
         width={1080}
         height={1920}

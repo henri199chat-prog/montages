@@ -6654,9 +6654,9 @@
     "semantic_hash": ""
   },
   "video/src/Root.tsx": {
-    "mtime": 1793399562.322241,
-    "seen": 1793399858.3118813,
-    "ast_hash": "ae1dc32afee5add139668393727dfc87",
+    "mtime": 1795111929.0433059,
+    "seen": 1795112740.849494,
+    "ast_hash": "5e238c4ac65e3de99b793e7533359d57",
     "semantic_hash": ""
   },
   "video/src/TasbihAd.tsx": {
@@ -14430,9 +14430,9 @@
     "semantic_hash": ""
   },
   "reels/content-log.md": {
-    "mtime": 1793022456.9686933,
-    "seen": 1793025983.026737,
-    "ast_hash": "42f7ae17cc93203e12dceac2d4714690",
+    "mtime": 1795112672.7836468,
+    "seen": 1795112740.8788147,
+    "ast_hash": "7fe59366fb179c5bac7886460e8dce34",
     "semantic_hash": ""
   },
   "reels/sam-content-os/AYMAN_NOTES.md": {
@@ -14937,6 +14937,216 @@
     "mtime": 1793399760.306505,
     "seen": 1793399858.353448,
     "ast_hash": "1fee36def7c36ff521999a2c22c3fe82",
+    "semantic_hash": ""
+  },
+  "video/src/tn-dinar/DinarStory.tsx": {
+    "mtime": 1795112136.4850464,
+    "seen": 1795112740.8502543,
+    "ast_hash": "fa0f08e6bbc3a33ce69a79b7b0b6591b",
+    "semantic_hash": ""
+  },
+  "video/src/tn-dinar/data/dinar.json": {
+    "mtime": 1795111678.583702,
+    "seen": 1795112740.8502576,
+    "ast_hash": "d4cf90cc3edc8d48ee2e5d51770b1aa9",
+    "semantic_hash": ""
+  },
+  "video/src/tn-dinar/theme.ts": {
+    "mtime": 1795111774.5875933,
+    "seen": 1795112740.8502598,
+    "ast_hash": "0a15ccd1274f34bd86de7760169f86de",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/grain_tile_512.png": {
+    "mtime": 1795111731.587591,
+    "seen": 1795112740.8834314,
+    "ast_hash": "4c1a04a5affffe7d7ef44c9e39ca3a1c",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/light_leak_red_04.jpg": {
+    "mtime": 1795111731.5366123,
+    "seen": 1795112740.883434,
+    "ast_hash": "a283a3619ed9d5c7e700d846d96435fc",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/beep_data_03.mp3": {
+    "mtime": 1795111730.6896396,
+    "seen": 1795112740.8876543,
+    "ast_hash": "80df97430bc39fad8d16b0b98b2f148c",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/boom_cinematic_01.mp3": {
+    "mtime": 1795111730.699503,
+    "seen": 1795112740.8876567,
+    "ast_hash": "421d1c016125263ca9ea2e08b9a2849d",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/boom_sub_02.mp3": {
+    "mtime": 1795111730.6395907,
+    "seen": 1795112740.8876588,
+    "ast_hash": "2cbb35961f1e96fe0432dc1848c5ce98",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/counter_roll_01.mp3": {
+    "mtime": 1795111730.6796806,
+    "seen": 1795112740.8876603,
+    "ast_hash": "c193c01516b3b0594074cdcd6ec5eb7b",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/downlifter_01.mp3": {
+    "mtime": 1795111730.6937983,
+    "seen": 1795112740.887662,
+    "ast_hash": "fb8278634bb39b8bcf81e31a8f87f964",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/drone_dark_space_loop.mp3": {
+    "mtime": 1795111730.755591,
+    "seen": 1795112740.8876636,
+    "ast_hash": "6112b0fb0c802f4dfa3093966827fb20",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/glitch_digital_01.mp3": {
+    "mtime": 1795111730.6975121,
+    "seen": 1795112740.8876657,
+    "ast_hash": "af4c801663b3f9ead0c0c405ed8ea984",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/heartbeat_slow_loop.mp3": {
+    "mtime": 1795111730.7123384,
+    "seen": 1795112740.887668,
+    "ast_hash": "e0d25761530e62aa136a39871678579d",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/hit_soft_01.mp3": {
+    "mtime": 1795111730.681257,
+    "seen": 1795112740.8876696,
+    "ast_hash": "56b4da627b7e83308033001b518820b0",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/hit_trailer_01.mp3": {
+    "mtime": 1795111730.6715908,
+    "seen": 1795112740.887671,
+    "ast_hash": "2a543936a13e68d231b7014a8773560e",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/keypress_01.mp3": {
+    "mtime": 1795111730.6862006,
+    "seen": 1795112740.887673,
+    "ast_hash": "22d4589c4086c9cd0e375f929d5a8f4e",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/pop_drop_04.mp3": {
+    "mtime": 1795111730.6954043,
+    "seen": 1795112740.887674,
+    "ast_hash": "8b6f16337bc02fa1225c6b2d5c55767b",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/riser_dark_03.mp3": {
+    "mtime": 1795111730.2635908,
+    "seen": 1795112740.887676,
+    "ast_hash": "e6159bcc9b63326157b2da6a5a1e0152",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/riser_tonal_02.mp3": {
+    "mtime": 1795111730.6921253,
+    "seen": 1795112740.887677,
+    "ast_hash": "7c4500eb8afe0dfa2497a4887245a9ae",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/scan_hud_01.mp3": {
+    "mtime": 1795111730.6879427,
+    "seen": 1795112740.8876784,
+    "ast_hash": "e97d69869683a4bb4962995cd1a3950c",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/swell_reveal_01.mp3": {
+    "mtime": 1795111730.7149272,
+    "seen": 1795112740.88768,
+    "ast_hash": "857321c9743b1293d684f7c71cc4f1e2",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/swish_01.mp3": {
+    "mtime": 1795111730.7039058,
+    "seen": 1795112740.8876817,
+    "ast_hash": "f408ddc94789fe1849c7eaa489fb21cb",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/swish_02.mp3": {
+    "mtime": 1795111730.705566,
+    "seen": 1795112740.8876836,
+    "ast_hash": "5e753528666a65b07d00d330b2be1331",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/swish_03.mp3": {
+    "mtime": 1795111730.7073052,
+    "seen": 1795112740.8876855,
+    "ast_hash": "ad9460ed3cfd263526b6079c4f29e1b3",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/swish_04.mp3": {
+    "mtime": 1795111730.7090826,
+    "seen": 1795112740.8876867,
+    "ast_hash": "4755c867ca83bfe619de3f15cec05f35",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/thud_soft_01.mp3": {
+    "mtime": 1795111730.76502,
+    "seen": 1795112740.8876882,
+    "ast_hash": "ea6d284cf169916b989cf850282176c7",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/tick_01.mp3": {
+    "mtime": 1795111730.6830132,
+    "seen": 1795112740.88769,
+    "ast_hash": "b9a026f0852c111d0c2b8c7a656ee99e",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/tick_02.mp3": {
+    "mtime": 1795111730.6846745,
+    "seen": 1795112740.8876917,
+    "ast_hash": "a81c5012dda726a1e1dbcf09f2357166",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/typewriter_key_01.mp3": {
+    "mtime": 1795111730.7668343,
+    "seen": 1795112740.8876934,
+    "ast_hash": "ca048437891517bc42bc645082ce662f",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/whoosh_fast_02.mp3": {
+    "mtime": 1795111730.7631505,
+    "seen": 1795112740.8876948,
+    "ast_hash": "8695f9ce80321ab054e175162ac11930",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/whoosh_long_04.mp3": {
+    "mtime": 1795111730.702055,
+    "seen": 1795112740.8876963,
+    "ast_hash": "0dccf317b9762364a7e93500fe034b88",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/whoosh_reverse_05.mp3": {
+    "mtime": 1795111730.6776974,
+    "seen": 1795112740.8876977,
+    "ast_hash": "bac15f6a0de42410277d05c1a669eb9d",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/sfx/whoosh_soft_01.mp3": {
+    "mtime": 1795111730.761203,
+    "seen": 1795112740.887699,
+    "ast_hash": "5430b33dd43234c26249cee66e63bf59",
+    "semantic_hash": ""
+  },
+  "video/public/tn-dinar/voice.mp3": {
+    "mtime": 1795111738.3235912,
+    "seen": 1795112740.8877006,
+    "ast_hash": "8c710edaa43de664bc8333f4ebb5fd89",
+    "semantic_hash": ""
+  },
+  "videos/dinar-story-v1.mp4": {
+    "mtime": 1795112492.971636,
+    "seen": 1795112740.8877532,
+    "ast_hash": "cd796161fcd304e8bd5328ee749906c7",
     "semantic_hash": ""
   }
 }
