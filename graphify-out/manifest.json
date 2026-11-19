@@ -6654,9 +6654,9 @@
     "semantic_hash": ""
   },
   "video/src/Root.tsx": {
-    "mtime": 1795111929.0433059,
-    "seen": 1795112740.849494,
-    "ast_hash": "5e238c4ac65e3de99b793e7533359d57",
+    "mtime": 1795116952.772202,
+    "seen": 1795118143.5731297,
+    "ast_hash": "8ad10211b7fd6f1ea76bd14465ca91d8",
     "semantic_hash": ""
   },
   "video/src/TasbihAd.tsx": {
@@ -14430,9 +14430,9 @@
     "semantic_hash": ""
   },
   "reels/content-log.md": {
-    "mtime": 1795112672.7836468,
-    "seen": 1795112740.8788147,
-    "ast_hash": "7fe59366fb179c5bac7886460e8dce34",
+    "mtime": 1795118079.1669943,
+    "seen": 1795118143.6036623,
+    "ast_hash": "5b07183896ff713fbb23367a9f643a3d",
     "semantic_hash": ""
   },
   "reels/sam-content-os/AYMAN_NOTES.md": {
@@ -14940,9 +14940,9 @@
     "semantic_hash": ""
   },
   "video/src/tn-dinar/DinarStory.tsx": {
-    "mtime": 1795112136.4850464,
-    "seen": 1795112740.8502543,
-    "ast_hash": "fa0f08e6bbc3a33ce69a79b7b0b6591b",
+    "mtime": 1795117201.743445,
+    "seen": 1795118143.5739489,
+    "ast_hash": "6030bb9da18b7de9c884c2cea69a1596",
     "semantic_hash": ""
   },
   "video/src/tn-dinar/data/dinar.json": {
@@ -15147,6 +15147,12 @@
     "mtime": 1795112492.971636,
     "seen": 1795112740.8877532,
     "ast_hash": "cd796161fcd304e8bd5328ee749906c7",
+    "semantic_hash": ""
+  },
+  "videos/dinar-story-v2.mp4": {
+    "mtime": 1795118034.3389916,
+    "seen": 1795118143.6186943,
+    "ast_hash": "a66f2399e05805a3fac564ef38e31b32",
     "semantic_hash": ""
   }
 }

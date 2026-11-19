@@ -93,6 +93,15 @@ export const RemotionRoot: React.FC = () => {
         width={1080}
         height={1920}
       />
+      {/* same film at 60 fps: render this, then blend frame pairs to 30 fps for a 180° motion-blur shutter */}
+      <Composition
+        id="DinarStory60"
+        component={DinarStory}
+        durationInFrames={Math.round(DINAR_STORY_TOTAL * 60)}
+        fps={60}
+        width={1080}
+        height={1920}
+      />
     </>
   );
 };
