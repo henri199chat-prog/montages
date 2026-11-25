@@ -9,6 +9,7 @@ import { ImranReel, IMRAN_TOTAL } from "./religious/ImranReel";
 import { JumuahReel, JUMUAH_TOTAL } from "./religious/JumuahReel";
 import { LawReel, LAW_TOTAL } from "./religious/LawReel";
 import { DinarStory, DINAR_STORY_TOTAL } from "./tn-dinar/DinarStory";
+import { AdhkarReel, ADHKAR_TOTAL } from "./religious/AdhkarReel";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -99,6 +100,15 @@ export const RemotionRoot: React.FC = () => {
         component={DinarStory}
         durationInFrames={Math.round(DINAR_STORY_TOTAL * 60)}
         fps={60}
+        width={1080}
+        height={1920}
+      />
+      {/* «فضل الأذكار» — the two sahih hadiths only, voice only */}
+      <Composition
+        id="AdhkarReel"
+        component={AdhkarReel}
+        durationInFrames={Math.round(ADHKAR_TOTAL * 30)}
+        fps={30}
         width={1080}
         height={1920}
       />

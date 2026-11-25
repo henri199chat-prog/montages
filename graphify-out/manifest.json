@@ -6654,9 +6654,9 @@
     "semantic_hash": ""
   },
   "video/src/Root.tsx": {
-    "mtime": 1795116952.772202,
-    "seen": 1795118143.5731297,
-    "ast_hash": "8ad10211b7fd6f1ea76bd14465ca91d8",
+    "mtime": 1795593613.888453,
+    "seen": 1795594076.3237095,
+    "ast_hash": "9c848e2f50cb7f734886631bdf63713e",
     "semantic_hash": ""
   },
   "video/src/TasbihAd.tsx": {
@@ -14448,9 +14448,9 @@
     "semantic_hash": ""
   },
   "religious/content-log.md": {
-    "mtime": 1793399780.3761714,
-    "seen": 1793399858.3434346,
-    "ast_hash": "8215ac77cac62e421cce208a9cea6b59",
+    "mtime": 1795594007.3822238,
+    "seen": 1795594076.3616545,
+    "ast_hash": "9a8c4228ac7cb1af184907acd222d737",
     "semantic_hash": ""
   },
   "religious/original-pipeline/web/index.html": {
@@ -15153,6 +15153,24 @@
     "mtime": 1795118034.3389916,
     "seen": 1795118143.6186943,
     "ast_hash": "a66f2399e05805a3fac564ef38e31b32",
+    "semantic_hash": ""
+  },
+  "video/src/religious/AdhkarReel.tsx": {
+    "mtime": 1795592064.619429,
+    "seen": 1795594076.3238025,
+    "ast_hash": "17b3178ebe0f3346702a2573f084743e",
+    "semantic_hash": ""
+  },
+  "video/src/religious/data/adhkar.json": {
+    "mtime": 1795593613.8835213,
+    "seen": 1795594076.3242104,
+    "ast_hash": "365420615419933065b1c249ea18f3d6",
+    "semantic_hash": ""
+  },
+  "videos/adhkar-v1.mp4": {
+    "mtime": 1795593990.3955438,
+    "seen": 1795594076.3773704,
+    "ast_hash": "80f86bbe5c1739fdcb4c5a0d242b6750",
     "semantic_hash": ""
   }
 }
